@@ -1,0 +1,4 @@
+{
+    "MongoURI": "mongodb://mernstack:mern123@localhost:27017/mern",
+    "jwtSecret": "mysecrettoken"
+}
