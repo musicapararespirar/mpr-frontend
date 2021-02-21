@@ -1,18 +1,33 @@
 // import logo from './logo.svg';
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
+import Dashboard from './components/dashboard/Dashboard';
+import PrivateRoute from './components/routing/PrivateRoute';
 import './App.css';
-
+import { loadUser } from './actions/auth';
 // Redux imports
 import { Provider } from 'react-redux';
 import store from './store';
+import setAuthToken from './utils/setAuthToken';
 
-const App = () => (
+
+if(localStorage.token) {
+    setAuthToken(localStorage.token)
+}
+
+const App = () => {
+    // Use effect is a constant loop unless there's []
+    // With [] it's like a React component-did-mount
+    useEffect(() => {
+        store.dispatch(loadUser());
+    }, []);
+
+    return (
     <Provider store={store}>
     <Router>
     <Fragment>
@@ -23,10 +38,11 @@ const App = () => (
             <Switch>
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
         </section>
         </Fragment>
     </Router>
     </Provider>
-);
+)};
 export default App;
