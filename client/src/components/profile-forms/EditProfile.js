@@ -46,7 +46,7 @@ useEffect(() => {
         youtube:  loading || !profile.social    ? '' : profile.social.youtube,
         instagram:loading || !profile.social    ? '' : profile.social.instagram,
     });
-}, [loading]); // When prop is called (loading) then this should trigger useEffect
+}, [loading, getCurrentProfile]); // When prop is called (loading) then this should trigger useEffect
 
 
 const {
