@@ -6,6 +6,7 @@ const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
 
 const Profile = require('../../models/Profile');
+const Post = require('../../models/Post');
 const User = require('../../models/User');
 
 // @route  GET api/profile/me
@@ -147,7 +148,8 @@ router.get('/user/:user_id', async (req, res) => {
 // @access Private
 router.delete('/', auth, async (req, res) => {
     try {
-        // @todo - remove users posts
+        // Remove user posts
+        await Post.deleteMany({ user: req.user.id });
 
         // Remove user profile
         // Private so we have access to token
