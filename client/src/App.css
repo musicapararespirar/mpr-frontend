@@ -298,26 +298,77 @@ button {
   background: var(--light-color);
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 2rem;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0;
-  border-bottom: solid 1px var(--primary-color);
-  opacity: 0.9;
+/* logo */
+.logo {
+    display: flex;
+    z-index: 40;
+    align-items: center;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: 60px;
+    opacity: 0.4;
 }
 
+.logo:hover {
+    opacity: 1;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-bottom-color: rgba(23, 24, 26, 0.11);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgba(23, 24, 26, 0.11);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgba(23, 24, 26, 0.11);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgba(23, 24, 26, 0.11);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition-delay: 0s, 0s;
+    transition-duration: 0.5s, 0.4s;
+    transition-property: border-color, opacity;
+    transition-timing-function: ease, ease;
+    user-select: none;
+    z-index: 40;
+    align-items: right;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 400px;
+    opacity: 0.9;
+}
+
+.navbar .navitem {
+	align-items: center;
+	display: flex;
+	border-right: 1px solid #d4d7d9;
+	flex-grow: 1;
+	justify-content: center;
+	transition: background-color .2s ease-out;
+}
 .navbar ul {
   display: flex;
 }
 
 .navbar a {
-  color: #fff;
+  color: #000000;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
@@ -329,6 +380,7 @@ button {
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
+
 
 /* Landing Page */
 .landing {
@@ -564,7 +616,7 @@ button {
   .dash-buttons a {
     display: block;
     width: 100%;
-    margin-bottom: 0.2rem;
+/*     margin-bottom: 0.2rem; */
   }
 
   .post {
@@ -574,4 +626,7 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+
+
 }
+

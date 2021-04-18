@@ -8,7 +8,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = (
         <ul>
             <li><Link to="/about-us">About Us</Link></li>
-            <li><Link to="/profiles">Developers</Link></li>
+            <li><Link to="/profiles">Musicians</Link></li>
             <li><Link to="/posts">Posts</Link></li>
             <li><Link to="/dashboard">
             <i className="fas fa-user" />{' '}
@@ -24,19 +24,14 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const guestLinks = (
         <ul>
             <li><Link to="/about-us">About Us</Link></li>
-            <li><Link to="/profiles">Developers</Link></li>
+            <li><Link to="/profiles">Musicians</Link></li>
             <li><Link to="/register">Register</Link></li>
             <li><Link to="/login">Login</Link></li>
         </ul>
     );
 
     return (
-        <nav className="navbar bg-dark">
-        <h1>
-            <Link to="/">
-            <i className="fas fa-music" /> Música Para Respirar
-            </Link>
-        </h1>
+        <nav className="navbar bg-light">
         {   // Change navbar state depending on whether user is auth'd
             // Can use && because there is a null after :
           !loading && (
@@ -50,7 +45,6 @@ Navbar.propTypes = {
     logout: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 }
-
 
 const mapStateToProps = state => ({
     auth: state.auth
