@@ -54,6 +54,7 @@ const App = () => {
                 <Route exact path="/about-us" component={AboutUs} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/profile/:id" component={Profile} />
                 <Route exact path="/profiles" component={Profiles} />
                 <Route exact path="/concerts" component={Concerts} />
                 <Route exact path="/contact" component={Contact} />
