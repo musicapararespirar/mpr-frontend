@@ -2,8 +2,14 @@
 import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
+import Logo from './components/layout/Logo';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
+import AboutUs from './components/information/AboutUs';
+import Concerts from './components/information/Concerts';
+import Contact from './components/information/Contact';
+import Contribute from './components/information/Contribute';
+import Impact from './components/information/Impact';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
@@ -18,7 +24,6 @@ import Post from './components/post/Post';
 import PrivateRoute from './components/routing/PrivateRoute';
 import './App.css';
 import { loadUser } from './actions/auth';
-
 // Redux imports
 import { Provider } from 'react-redux';
 import store from './store';
@@ -40,15 +45,20 @@ const App = () => {
     <Provider store={store}>
     <Router>
     <Fragment>
+        <Logo />
         <Navbar />
         <Route exact path="/" component={Landing} />
         <section className="container">
             <Alert />
             <Switch>
+                <Route exact path="/about-us" component={AboutUs} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/profiles" component={Profiles} />
-                <Route exact path="/profile/:id" component={Profile} />
+                <Route exact path="/concerts" component={Concerts} />
+                <Route exact path="/contact" component={Contact} />
+                <Route exact path="/contribute" component={Contribute} />
+                <Route exact path="/impact" component={Impact} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/create-profile" component={CreateProfile} />
                 <PrivateRoute exact path="/edit-profile" component={EditProfile} />
