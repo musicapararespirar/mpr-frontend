@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { Link as WebLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import logoLarge from '../../img/logo-large.png';
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn } from "react-scroll-motion";
 
 const Landing = ({ isAuthenticated }) => {
@@ -18,7 +19,7 @@ const Landing = ({ isAuthenticated }) => {
             <section className="landing">
                 <div className="dark-overlay">
                     <div className="landing-inner">
-                        <h1 className="x-large">MÚSICA PARA RESPIRAR 24/7</h1>
+                        <img src={logoLarge} className="logo-image"/>
                         <h4>repiensa | renueva | revive</h4>
                         <i className="landing-arrow fas fa-chevron-down fa-5x" />
                     </div>
@@ -28,10 +29,8 @@ const Landing = ({ isAuthenticated }) => {
 
             <ScrollPage page={1}>
             <Animator animation={ZoomInScrollOut}>
-                    <div style={{ fontSize: "35px" }}>
-                    <h1 className="text-light">PIDE TU CONCIERTO</h1>
+                    <h1 className="x-large">PIDE TU CONCIERTO</h1>
                     <WebLink to="/concert/request" className="btn btn-primary">AQUÍ</WebLink>
-                </div>
             </Animator>
             </ScrollPage>
         </ScrollContainer>
