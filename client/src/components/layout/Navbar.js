@@ -23,10 +23,14 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
     const guestLinks = (
         <ul>
-            <li><Link to="/about-us">About Us</Link></li>
-            <li><Link to="/profiles">Musicians</Link></li>
-            <li><Link to="/register">Register</Link></li>
-            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/about-us">Sobre</Link></li>
+            <li><Link to="/concerts">Conciertos</Link></li>
+            <li><Link to="/impact">Impacto</Link></li>
+            <li><Link to="/contribute">Contribuye</Link></li>
+            <li><Link to="/contact">Contáctanos</Link></li>
+            {/*<li><Link to="/profiles">Musicians</Link></li>*/}
+            {/*<li><Link to="/register">Register</Link></li>*/}
+            {/*<li><Link to="/login">Login</Link></li>*/}
         </ul>
     );
 

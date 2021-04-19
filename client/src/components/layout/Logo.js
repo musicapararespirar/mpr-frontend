@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
-import logo from '../../img/logo.png';
+import logo from '../../img/logo2.png';
 
 const Logo = ({ auth: { isAuthenticated, loading }, logout }) => {
     return (

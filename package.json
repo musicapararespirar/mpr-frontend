@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evanjt/mern-tutorial.git"
+    "url": "git+https://github.com/evanjt/MusicaParaRespirar.git"
   },
   "author": "Evan Thomas",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/evanjt/mern-tutorial/issues"
+    "url": "https://github.com/evanjt/MusicaParaRespirar/issues"
   },
-  "homepage": "https://github.com/evanjt/mern-tutorial#readme",
+  "homepage": "https://github.com/evanjt/MusicaParaRespirar#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.3.3",
@@ -28,6 +28,9 @@
     "gravatar": "^1.8.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.14",
+    "multer": "^1.4.2",
+    "react-scroll": "^1.8.2",
+    "react-scroll-motion": "^0.2.1",
     "request": "^2.88.2"
   },
   "devDependencies": {

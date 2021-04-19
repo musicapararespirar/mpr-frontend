@@ -6,6 +6,10 @@ import Logo from './components/layout/Logo';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import AboutUs from './components/information/AboutUs';
+import Concerts from './components/information/Concerts';
+import Contact from './components/information/Contact';
+import Contribute from './components/information/Contribute';
+import Impact from './components/information/Impact';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
@@ -51,7 +55,10 @@ const App = () => {
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/profiles" component={Profiles} />
-                <Route exact path="/profile/:id" component={Profile} />
+                <Route exact path="/concerts" component={Concerts} />
+                <Route exact path="/contact" component={Contact} />
+                <Route exact path="/contribute" component={Contribute} />
+                <Route exact path="/impact" component={Impact} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/create-profile" component={CreateProfile} />
                 <PrivateRoute exact path="/edit-profile" component={EditProfile} />
