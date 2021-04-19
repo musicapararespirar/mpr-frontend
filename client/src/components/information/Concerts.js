@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Concerts = () => {
     return <Fragment>
             <p className="lead">
-                <i className="fas fa-music"></i> Concerts
+                <i className="fas fa-music"></i> Conciertos
             </p>
 Para recibir un concierto, el o la oyente simplemente debe enviar su nombre y número de teléfono a las redes sociales de La Sociedad (@lasociedad.bo), o hacerlo a través de esta página y en hasta 30 minutos un artista se contactará con ustedes para brindarles un concierto.<br/>
 <br/>

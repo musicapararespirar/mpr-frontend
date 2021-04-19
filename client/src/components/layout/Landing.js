@@ -29,7 +29,7 @@ const Landing = ({ isAuthenticated }) => {
             <ScrollPage page={1}>
             <Animator animation={ZoomInScrollOut}>
                     <div style={{ fontSize: "35px" }}>
-                    <h1 className="text-dark">PIDE TU CONCIERTO</h1>
+                    <h1 className="text-light">PIDE TU CONCIERTO</h1>
                     <WebLink to="/concert/request" className="btn btn-primary">AQUÍ</WebLink>
                 </div>
             </Animator>

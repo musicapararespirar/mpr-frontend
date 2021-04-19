@@ -6,7 +6,7 @@ import Spinner from '../layout/Spinner';
 const Contact = () => {
     return <Fragment>
             <p className="lead">
-                <i className="fas fa-music"></i> Contact
+                <i className="fas fa-music"></i> Contactános
             </p>
 
             </Fragment>;

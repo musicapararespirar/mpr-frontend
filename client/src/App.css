@@ -17,8 +17,8 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
-  color: #333;
+  background-color: #232327;
+  color: var(--light-color);
 }
 
 a {
@@ -50,7 +50,6 @@ img {
   padding: 0 1rem;
   margin-top: 0rem;
   margin-bottom: 0rem;
-
 }
 
 .horizontal {
@@ -84,6 +83,10 @@ img {
 
 .text-dark {
   color: var(--dark-color);
+}
+
+.text-light {
+  color: var(--light-color);
 }
 
 /* Padding */
@@ -336,7 +339,6 @@ button {
     font-size: 0.85rem;
     display: flex;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
     border-bottom-color: rgba(23, 24, 26, 0.11);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -360,17 +362,12 @@ button {
     border-top-width: 1px;
     box-sizing: border-box;
     font-family: sans-serif;
-    transition-delay: 0s, 0s;
-    transition-duration: 0.5s, 0.4s;
-    transition-property: border-color, opacity;
-    transition-timing-function: ease, ease;
-    user-select: none;
     z-index: 40;
     align-items: right;
     position: absolute;
     right: 10px;
     top: 25px;
-    width: 450px;
+    width: 400px;
     opacity: 0.9;
 }
 
@@ -385,10 +382,23 @@ button {
 .navbar ul {
   display: flex;
 }
-
+.navbar li{
+    display: inline-block;
+    position: relative;
+    float: left;
+    padding: 0 1px;
+}
+.navbar li:not(:last-child)::after {
+    position: absolute;
+    width: 2px;
+    right: 0;
+    content: ' ';
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
 .navbar a {
   color: #000000;
-  padding: 0.45rem;
+  padding: 0.2rem;
   margin: 0 0.25rem;
 }
 
@@ -400,6 +410,8 @@ button {
   margin-right: 0.6rem;
 }
 
+.contribute {
+}
 
 /* Landing Page */
 .landing {

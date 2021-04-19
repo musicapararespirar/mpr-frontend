@@ -6,7 +6,7 @@ import Spinner from '../layout/Spinner';
 const Impact = () => {
     return <Fragment>
         <p className="lead">
-            <i className="fas fa-music"></i> Impact
+            <i className="fas fa-music"></i> Impacto
         </p>
 
         </Fragment>;
