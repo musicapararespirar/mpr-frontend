@@ -4,6 +4,7 @@ import { Link as WebLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import logoLarge from '../../img/logo-large.png';
+import LoginLogo from './LoginLogo'
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn } from "react-scroll-motion";
 
 const Landing = ({ isAuthenticated }) => {
@@ -32,6 +33,7 @@ const Landing = ({ isAuthenticated }) => {
                     <h1 className="x-large">PIDE TU CONCIERTO</h1>
                     <WebLink to="/concert/request" className="btn btn-primary">AQUÍ</WebLink>
             </Animator>
+            <LoginLogo />
             </ScrollPage>
         </ScrollContainer>
     )

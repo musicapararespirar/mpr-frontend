@@ -315,7 +315,7 @@ button {
 }
 
 .table th {
-  background: var(--light-color);
+  background: var(--dark-color);
 }
 
 /* logo */
@@ -329,13 +329,27 @@ button {
     width: 30px;
     opacity: 0.4;
 }
-
 .logo:hover {
     opacity: 1;
 }
 .logo-image {
     width: 20rem;
 }
+.logo-login {
+    color: #db992e;
+    opacity: 0.2;
+}
+.logo-login:hover {
+    opacity: 1;
+}
+
+.bottomright {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
 /* Navbar */
 .navbar {
     font-family: 'Raleway', sans-serif;
@@ -412,7 +426,13 @@ button {
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
-
+.navbar .loggedin {
+    position: absolute;
+    right: 10px;
+    top: 65px;
+    width: 400px;
+    opacity: 0.9;
+}
 .contribute {
 }
 

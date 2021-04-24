@@ -22,4 +22,8 @@ export const DELETE_POST = 'DELETE_POST';
 export const ADD_POST = 'ADD_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
-
+export const GET_CONCERTS = 'GET_CONCERTS';
+export const GET_CONCERT = 'GET_CONCERT';
+export const CONCERT_ERROR = 'CONCERT_ERROR';
+export const DELETE_CONCERT = 'DELETE_CONCERT';
+export const ADD_CONCERT = 'ADD_CONCERT';

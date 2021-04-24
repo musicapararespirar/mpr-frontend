@@ -7,17 +7,25 @@ import { logout } from '../../actions/auth';
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = (
         <ul>
-            <li><Link to="/about-us">About Us</Link></li>
-            <li><Link to="/profiles">Musicians</Link></li>
+            {/*<li><Link to="/about-us">About Us</Link></li>*/}
+            {/*<li><Link to="/profiles">Musicians</Link></li>*/}
+            {/*<li><Link to="/about-us">Sobre</Link></li>*/}
+            {/*<li><Link to="/concerts">Conciertos</Link></li>*/}
+            <li><Link to="/impact">Impacto</Link></li>
+            <li><Link to="/contribute">Contribuye</Link></li>
+            <li><Link to="/contact">Contáctanos</Link></li>
             <li><Link to="/posts">Posts</Link></li>
-            <li><Link to="/dashboard">
-            <i className="fas fa-user" />{' '}
-            <span className="hide-sm">
-            Dashboard</span></Link></li>
+            <li>
+                <Link to="/dashboard">
+                    <i className="fas fa-tachometer-alt" />
+                </Link>
+            </li>
 
-            <li><a onClick={logout} href="#!">
-            <i className="fas fa-sign-out-alt" />{' '}
-            <span className="hide-sm">Logout</span></a></li>
+            <li>
+                <a onClick={logout} href="#!">
+                    <i className="fas fa-sign-out-alt" />{' '}
+                </a>
+            </li>
         </ul>
     );
 

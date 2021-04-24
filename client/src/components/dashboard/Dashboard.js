@@ -6,11 +6,15 @@ import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
 import Experience from './Experience';
 import Education from './Education';
+import Concerts from './Concerts';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
+import { getConcerts } from '../../actions/concert';
 
 const Dashboard = ({
     getCurrentProfile,
     deleteAccount,
+    getConcerts,
+    concerts,
     auth: { user },
     profile: {
         profile,
@@ -18,7 +22,8 @@ const Dashboard = ({
     }}) => {
         useEffect(() => {
             getCurrentProfile();
-    }, [getCurrentProfile]);
+            getConcerts();
+    }, [getCurrentProfile, getConcerts]);
 
     return loading && profile === null ? <Spinner /> : <Fragment>
     <h1 className="large text-primary">Dashboard</h1>
@@ -30,6 +35,7 @@ const Dashboard = ({
             <DashboardActions />
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
+            <Concerts concertsAll={concerts} />
             <div className="my-2">
                 <button className="btn btn-danger" onClick={() => deleteAccount()}>
                     <i className="fas fa-user-minus"></i> Delete My Account
@@ -47,14 +53,17 @@ const Dashboard = ({
 
 Dashboard.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
+    getConcerts: PropTypes.func.isRequired,
     deleteAccount: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
-    profile: PropTypes.object.isRequired
+    profile: PropTypes.object.isRequired,
+    concerts: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
     auth: state.auth,
-    profile: state.profile
+    profile: state.profile,
+    concerts: state.concerts
 });
 
-export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(Dashboard);
+export default connect(mapStateToProps, { getCurrentProfile, deleteAccount, getConcerts } )(Dashboard);

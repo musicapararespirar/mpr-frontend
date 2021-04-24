@@ -3,11 +3,23 @@ const router = express.Router();
 const request = require('request');
 const config = require('config');
 const auth = require('../../middleware/auth');
+// const multer = require('multer');
 const { check, validationResult } = require('express-validator');
 
 const Profile = require('../../models/Profile');
 const Post = require('../../models/Post');
 const User = require('../../models/User');
+/*
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-'
+    }
+});*/
+
+// const upload = multer({ storage: storage });
 
 // @route  GET api/profile/me
 // @desc   Get current users profile
@@ -17,14 +29,14 @@ router.get('/me', auth, async (req, res) => {
         const profile = await Profile.findOne({ user: req.user.id }).populate('user', ['name', 'avatar']);
 
         if(!profile) {
-            res.status(400).json({ msg: 'There is no profile for this user' });
+            return res.status(400).json({ msg: 'There is no profile for this user' });
         }
 
         res.json(profile);
 
     } catch(err) {
         console.error(err.message);
-        res.status(500).send('Server error');
+        return res.status(500);
     }
 
 
@@ -104,7 +116,7 @@ router.post(
 
         } catch(err) {
             console.error(err.message);
-            res.status(500).send("Server error");
+            return res.status(500).send("Server error");
         }
 //         console.log(profileFields.social);
 
@@ -120,7 +132,7 @@ router.get('/', async (req, res) => {
         res.json(profiles);
     } catch(err) {
         console.error(err.message);
-        res.status(500).send("Server error");
+        return res.status(500).send("Server error");
     }
 });
 
@@ -139,7 +151,7 @@ router.get('/user/:user_id', async (req, res) => {
         if(err.kind == 'ObjectId') {
             return res.status(400).json({ msg: "Profile not found" });
         }
-        res.status(500).send("Server error");
+        return res.status(500).send({ error: "Server error"});
     }
 });
 
@@ -161,9 +173,23 @@ router.delete('/', auth, async (req, res) => {
 
     } catch(err) {
         console.error(err.message);
-        res.status(500).send("Server error");
+        return res.status(500).send("Server error");
     }
 });
+
+// @route  PUT api/profile/image
+// @desc   Put an image in the userspace
+// @access Private
+// router.post('/image', upload.single('image'), auth, async (req, res) => {
+//     try {
+//         const posts = await Post.find().sort({ date: -1 });
+//         res.json(posts);
+//
+//     } catch(err) {
+//         console.error(err.message);
+//         res.status(500).send("Server error");
+//     }
+// });
 
 // @route  PUT api/profile/experience
 // @desc   Add profile experience
@@ -213,7 +239,7 @@ router.put(
             res.json(profile);
         } catch(err) {
             console.error(err.message);
-            res.status(500).send("Server error");
+            return res.status(500).send("Server error");
         }
 });
 
@@ -235,7 +261,7 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
         res.json(profile);
     } catch(err) {
         console.error(err.message);
-        res.status(500).send("Server error");
+        return res.status(500).send("Server error");
     }
 });
 
@@ -288,7 +314,7 @@ router.put(
             res.json(profile);
         } catch(err) {
             console.error(err.message);
-            res.status(500).send("Server error");
+            return res.status(500).send("Server error");
         }
 });
 
@@ -310,7 +336,7 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
         res.json(profile);
     } catch(err) {
         console.error(err.message);
-        res.status(500).send("Server error");
+        return res.status(500).send("Server error");
     }
 });
 
@@ -336,7 +362,7 @@ router.get('/github/:username', async (req, res) => {
 
     } catch(err) {
         console.error(err.message);
-        res.status(500).send("Server error");
+        return res.status(500).send("Server error");
     }
 });
 module.exports = router;
