@@ -13,6 +13,7 @@ import LoginLogo from './LoginLogo'
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn } from "react-scroll-motion";
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
+import NavbarDropdown from 'react-navbar-dropdown';
 
 const Landing = ({ isAuthenticated }) => {
     if(isAuthenticated) {
@@ -34,6 +35,7 @@ const Landing = ({ isAuthenticated }) => {
                 animationType="fadeout"
                 fadeOutAnimation={true}
                 animationDuration="900"
+                infinite={true}
                 disableButtonsControls={true}>
                 {images.map((each, index) => <img key={index} src={each} className="sliderimg"/>)}
                 </AliceCarousel>
@@ -49,8 +51,35 @@ const Landing = ({ isAuthenticated }) => {
 
             <ScrollPage page={1}>
             <Animator animation={ZoomInScrollOut}>
-                    <h1 className="x-large">PIDE TU CONCIERTO</h1>
-                    <WebLink to="/concert/request" className="btn btn-primary">AQUÍ</WebLink>
+            <h1 className="x-large">PIDE TU CONCIERTO</h1>
+            <Fragment>
+                <NavbarDropdown>
+                    <NavbarDropdown.Toggle className="reqmenu__item">
+                    <NavbarDropdown.Open>
+                        <div className="btn btn-primary">AQUÍ</div>
+                    </NavbarDropdown.Open>
+                    <NavbarDropdown.Close>
+                        <div className="btn btn-danger">AQUÍ</div>
+                    </NavbarDropdown.Close>
+                    </NavbarDropdown.Toggle>
+                    <NavbarDropdown.Menu className="reqmenu-menu">
+                        <div className="reqmenu-menu__row">
+                            <WebLink to='/request/personal'>
+                                <NavbarDropdown.Item className="reqmenu-item">
+                                    <div className="reqmenu-item__icon"><i className="fas fa-user" /></div>
+                                    <div className="reqmenu-item__text">Personal</div>
+                                </NavbarDropdown.Item>
+                            </WebLink>
+                            <WebLink to='/request/institution'>
+                                <NavbarDropdown.Item className="navmenu-item">
+                                    <div className="reqmenu-item__icon"><i className="fas fa-users" /></div>
+                                    <div className="reqmenu-item__text">Institution</div>
+                                </NavbarDropdown.Item>
+                            </WebLink>
+                        </div>
+                    </NavbarDropdown.Menu>
+                </NavbarDropdown>
+            </Fragment>
             </Animator>
             <LoginLogo />
             </ScrollPage>

@@ -355,8 +355,8 @@ button {
     z-index: 40;
     align-items: right;
     position: absolute;
-    right: 70px;
-    top: 25px;
+    right: 20px;
+    top: 15px;
     opacity: 0.9;
     display: flex;
     justify-content: center;
@@ -399,6 +399,53 @@ button {
     font-size: 12px;
   }
 
+.reqmenu {
+    z-index: 40;
+    align-items: right;
+    position: absolute;
+    right: 70px;
+    top: 25px;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+}
+
+.reqmenu-menu {
+  display: flex;
+  flex-direction: column;
+  top: 28px;
+  right: -150px;
+  padding: 8px 8px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #c3c5c7;
+}
+.reqmenu-menu__row {
+    display: flex;
+    flex-direction: row;
+  }
+
+.reqmenu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  height: 60px;
+  width: 80px;
+  color: #333537;
+}
+.reqmenu-item:hover {
+    background-color: #f3f5f7;
+}
+
+.reqmenu-item__icon {
+    font-size: 20px;
+  }
+
+.reqmenu-item__text {
+    font-size: 12px;
+  }
 
 
 /* Navbar */
@@ -515,8 +562,8 @@ button {
   z-index: 5;
 }
 .alice-carousel ul li img{
-  height: 40rem;
-/*   width: 80%; */
+  height: 90vh;
+  width: 100%;
   object-fit: cover;
 }
 .landing-nav {
