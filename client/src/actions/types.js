@@ -26,4 +26,4 @@ export const GET_CONCERTS = 'GET_CONCERTS';
 export const GET_CONCERT = 'GET_CONCERT';
 export const CONCERT_ERROR = 'CONCERT_ERROR';
 export const DELETE_CONCERT = 'DELETE_CONCERT';
-export const ADD_CONCERT = 'ADD_CONCERT';
+export const REQUEST_CONCERT = 'REQUEST_CONCERT';

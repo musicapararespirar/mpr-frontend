@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Logo from './components/layout/Logo';
 import Landing from './components/layout/Landing';
-import Register from './components/auth/Register';
+// import Register from './components/auth/Register';
 import AboutUs from './components/information/AboutUs';
 import Concerts from './components/information/Concerts';
 import Contact from './components/information/Contact';
@@ -22,6 +22,8 @@ import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
+import RequestPersonal from './components/concerts/RequestPersonal';
+import RequestInstitution from './components/concerts/RequestInstitution';
 import PrivateRoute from './components/routing/PrivateRoute';
 import './App.css';
 import { loadUser } from './actions/auth';
@@ -53,14 +55,16 @@ const App = () => {
             <Alert />
             <Switch>
                 <Route exact path="/about-us" component={AboutUs} />
-                <Route exact path="/register" component={Register} />
+                {/*<Route exact path="/register" component={Register} />*/}
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/profile/:id" component={Profile} />
-                <Route exact path="/profiles" component={Profiles} />
+                {/*<Route exact path="/profile/:id" component={Profile} />*/}
+                {/*<Route exact path="/profiles" component={Profiles} />*/}
                 <Route exact path="/concerts" component={Concerts} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/contribute" component={Contribute} />
                 <Route exact path="/impact" component={Impact} />
+                <Route exact path="/request/personal" component={RequestPersonal} />
+                <Route exact path="/request/institution" component={RequestInstitution} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/concerts/:id" component={IndividualConcert} />
                 <PrivateRoute exact path="/create-profile" component={CreateProfile} />

@@ -40,6 +40,10 @@ const ConcertSchema = new Schema({
     },
     dateFor: {
         type: Date
+    },
+    requestType: {
+        type: String,
+        required: true
     }
 });
 

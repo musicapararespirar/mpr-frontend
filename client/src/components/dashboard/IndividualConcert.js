@@ -21,7 +21,7 @@ const IndividualConcert = ({
 
     return <Fragment>
         {auth.loading || concert === null ? <Spinner /> : <Fragment>
-            <Link to='/dashboard' className='btn btn-light'>Back to Dashboard</Link>
+            <Link to='/dashboard' className='btn btn-light'><i className='far fa-hand-point-left' /> Back to Dashboard</Link>
 
             <h1>Concert</h1>
 

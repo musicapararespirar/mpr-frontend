@@ -31,7 +31,8 @@ router.post(
                 listenerLocation: req.body.listenerLocation,
                 listenerNumber: req.body.listenerNumber,
                 asap: req.body.asap,
-                dateFor: req.body.dateFor
+                dateFor: req.body.dateFor,
+                type: req.body.requestType
             })
 
             const concert = await newConcert.save();

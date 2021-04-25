@@ -3,7 +3,7 @@ import {
     GET_CONCERT,
     CONCERT_ERROR,
     DELETE_CONCERT,
-    ADD_CONCERT
+    REQUEST_CONCERT
 } from '../actions/types';
 
 const initialState = {
@@ -29,12 +29,12 @@ export default function(state = initialState, action) {
                 concert: payload,
                 loading: false
             };
-        case ADD_CONCERT:
+        case REQUEST_CONCERT:
             return {
                 ...state,
                 concerts: [
-                payload,
-                ...state.concerts
+                    payload,
+                    ...state.concerts
                 ],
                 loading: false
             };

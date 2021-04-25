@@ -4,7 +4,7 @@ import Spinner from '../layout/Spinner';
 import { Link } from 'react-router-dom';
 
 
-const Concerts = () => {
+const ConcertAbout = () => {
     return <Fragment>
             <p className="lead">
                 <i className="fas fa-music"></i> Conciertos
@@ -22,4 +22,4 @@ Para recibir un concierto, el o la oyente simplemente debe enviar su nombre y n√
             </Fragment>;
 }
 
-export default Concerts;
+export default ConcertAbout;

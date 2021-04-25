@@ -5,7 +5,7 @@ import {
     GET_CONCERTS,
     CONCERT_ERROR,
     DELETE_CONCERT,
-    ADD_CONCERT,
+    REQUEST_CONCERT,
 } from './types';
 
 // Get concerts
@@ -70,33 +70,33 @@ export const getConcertById = concertId => async dispatch => {
 // }
 
 // Add concert
-// export const addPost = formData => async dispatch => {
-//     const config = {
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     }
-//
-//     try {
-//         const res = await axios.post('/api/posts', formData, config);
-//
-//         dispatch({
-//             type: ADD_POST,
-//             payload: res.data
-//         });
-//
-//         dispatch(setAlert('Post Created', 'success'));
-//
-//     } catch(err) {
-//         dispatch({
-//             type: POST_ERROR,
-//             payload: {
-//                 msg: err.response.statusText,
-//                 status: err.response.status
-//             }
-//         });
-//     }
-// }
+export const requestConcert = formData => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    try {
+        const res = await axios.post('/api/concert', formData, config);
+
+        dispatch({
+            type: REQUEST_CONCERT,
+            payload: res.data
+        });
+
+        dispatch(setAlert('Request Added', 'success'));
+
+    } catch(err) {
+        dispatch({
+            type: CONCERT_ERROR,
+            payload: {
+                msg: err.response.statusText,
+                status: err.response.status
+            }
+        });
+    }
+}
 
 // Get concert
 // export const getPost = id => async dispatch => {
