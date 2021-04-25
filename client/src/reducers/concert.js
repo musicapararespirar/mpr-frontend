@@ -41,7 +41,7 @@ export default function(state = initialState, action) {
         case DELETE_CONCERT:
             return {
                 ...state,
-                concerts: state.posts.filter(concert => concert._id !== payload),
+                concerts: state.concerts.filter(concert => concert._id !== payload),
                 loading: false
             };
         case CONCERT_ERROR:

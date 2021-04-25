@@ -310,8 +310,9 @@ button {
 
 .table th,
 .table td {
-  padding: 1rem;
-  text-align: left;
+  padding: 0.3rem;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 .table th {
@@ -439,8 +440,9 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url('./img/background.jpg') no-repeat center center/cover;
+/*   background: url('./img/background.jpg') no-repeat center center/cover; */
   height: 100vh;
+  z-index: 5;
 }
 
 .landing-inner {
@@ -453,14 +455,20 @@ button {
   align-items: center;
   justify-content: center;
   text-align: center;
+  z-index: 5;
 }
 .landing-arrow {
   color: #db992e;
   padding-top: 400px;
   position: absolute;
   right: 5rem;
+  z-index: 5;
 }
-
+.alice-carousel ul li img{
+  height: 40rem;
+/*   width: 80%; */
+  object-fit: cover;
+}
 .landing-nav {
   padding-top: 5000px;
   color: #fff;
@@ -472,6 +480,7 @@ button {
   align-items: center;
   justify-content: center;
   text-align: center;
+  z-index: 5;
 }
 
 .profile {

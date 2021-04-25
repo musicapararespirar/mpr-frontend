@@ -13,6 +13,7 @@ import Impact from './components/information/Impact';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
+import IndividualConcert from './components/dashboard/IndividualConcert';
 import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
 import AddExperience from './components/profile-forms/AddExperience';
@@ -61,6 +62,7 @@ const App = () => {
                 <Route exact path="/contribute" component={Contribute} />
                 <Route exact path="/impact" component={Impact} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                <PrivateRoute exact path="/concerts/:id" component={IndividualConcert} />
                 <PrivateRoute exact path="/create-profile" component={CreateProfile} />
                 <PrivateRoute exact path="/edit-profile" component={EditProfile} />
                 <PrivateRoute exact path="/add-experience" component={AddExperience} />

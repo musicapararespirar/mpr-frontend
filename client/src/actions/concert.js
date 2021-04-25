@@ -12,7 +12,6 @@ import {
 export const getConcerts = () => async dispatch => {
     try {
         const res = await axios.get('/api/concert');
-
         dispatch({
             type: GET_CONCERTS,
             payload: res.data
@@ -28,6 +27,25 @@ export const getConcerts = () => async dispatch => {
     }
 }
 
+// Get concert by ID
+export const getConcertById = concertId => async dispatch => {
+    try {
+        const res = await axios.get(`/api/concert/${concertId}`);
+
+        dispatch({
+            type: GET_CONCERT,
+            payload: res.data
+        });
+    } catch(err) {
+        dispatch({
+            type: CONCERT_ERROR,
+            payload: {
+                msg: err.response.statusText,
+                status: err.response.status
+            }
+        });
+    }
+}
 // Delete concert
 // export const deletePost = id => async dispatch => {
 //     try {
