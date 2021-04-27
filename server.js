@@ -19,6 +19,7 @@ app.use('/api/concert', require('./routes/api/concert'));
 // Serve static assets in production
 if(process.env.NODE_ENV === 'production') {
     // Set static folder
+    console.log("Production!")
     app.use(express.static('client/build'));
 
     app.get('*', (req, res) => {
