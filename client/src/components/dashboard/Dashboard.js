@@ -6,7 +6,7 @@ import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
 import Experience from './Experience';
 import Education from './Education';
-import Concerts from './Concerts';
+import ConcertList from '../concerts/ConcertList';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
 import { getConcerts } from '../../actions/concert';
 
@@ -35,7 +35,7 @@ const Dashboard = ({
             {/*<DashboardActions />*/}
             {/*<Experience experience={profile.experience} />*/}
             {/*<Education education={profile.education} />*/}
-            <Concerts concertList={concerts}/>
+            <ConcertList concertList={concerts}/>
             {/*<div className="my-2">
                 <button className="btn btn-danger" onClick={() => deleteAccount()}>
                     <i className="fas fa-user-minus"></i> Delete My Account

@@ -1,13 +1,30 @@
-import React, { Fragment, useState } from 'react';
+import React, { Component, Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { requestConcert } from '../../actions/concert';
 import momentTZ from 'moment-timezone';
 
-const RequestPersonal = ({
+const RequestPersonal = () => {
 
-}) => {
+    const handleLoaded = _ =>   {
+        window.grecaptcha.ready(_ => {
+        window.grecaptcha
+        .execute("6LfuLb0aAAAAAGMx4PVAFv-mug4oW9bCUnBqc1rd", { action: "homepage" })
+        .then(token => {
+
+        })
+    })
+    }
+
+    useEffect(() => {
+        // Add reCaptcha
+        const script = document.createElement("script")
+        script.src = "https://www.google.com/recaptcha/api.js?render=6LfuLb0aAAAAAGMx4PVAFv-mug4oW9bCUnBqc1rd"
+        script.addEventListener("load", handleLoaded)
+        document.body.appendChild(script)
+    }, [])
+
     const defaultTimeZone = momentTZ.tz.guess();
     const timeZonesList = momentTZ.tz.names();
     const [formData, setFormData] = useState({
@@ -117,6 +134,11 @@ const RequestPersonal = ({
                 ></textarea>
                 </div>*/}
                 <input type="submit" className="btn btn-primary my-1" />
+                  <div
+                    className="g-recaptcha"
+                    data-sitekey="6LfuLb0aAAAAAGMx4PVAFv-mug4oW9bCUnBqc1rd"
+                    data-size="invisible"
+                ></div>
                 <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
             </form>
     </Fragment>

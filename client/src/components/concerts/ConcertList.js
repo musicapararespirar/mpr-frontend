@@ -7,7 +7,7 @@ import 'moment-timezone';
 import { useTable, useSortBy } from 'react-table';
 
 
-const Concerts = ({ concertList }) => {
+const ConcertList = ({ concertList }) => {
     Moment.globalTimezone = "America/La_Paz"
     const concerts = concertList.map(con => (
     <tr key={con._id}>
@@ -127,9 +127,9 @@ const Concerts = ({ concertList }) => {
     )
 }
 
-Concerts.propTypes = {
+ConcertList.propTypes = {
     concertList: PropTypes.array.isRequired
 }
 
-export default connect(null)(Concerts);
+export default connect(null)(ConcertList);
 
