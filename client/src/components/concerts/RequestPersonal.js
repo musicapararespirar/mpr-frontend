@@ -66,9 +66,7 @@ const RequestPersonal = ({ requestConcert }) => {
                 <div className="form-group">
                     <input type="text" placeholder="* Your name" name="requesterName" value={requesterName} onChange={e => onChange(e)} required />
                 </div>
-
-
-                 <div className="form-group">
+                <div className="form-group">
                     <input list="timezones" placeholder="Listener's timezone" onChange={e => onChange(e)} name="listenerTimezone"/>
                     <datalist id='timezones' contentEditable={false}>
                         {timeZonesList.map(e => (<Fragment><option value={e} /></Fragment>))}
@@ -76,13 +74,9 @@ const RequestPersonal = ({ requestConcert }) => {
                 </div>
                 <div className="form-group">
                     <h4>Time requested</h4>
-                    <DateTime name="dateFor"
-                              value={setDate}
-                              locale="es"
-                              onChange={e => {
+                    <DateTime name="dateFor" value={setDate} locale="es" onChange={e => {
                                   setFormData({ ...formData, dateFor: moment(e).format()});
-                                  setDate = e;
-                                        }}/>
+                                  setDate = e;}}/>
                 </div>
                 <div className="form-group">
                 <p><input type="checkbox" name="preferredMusician" checked={preferredMusician} value={preferredMusician} onChange={e => {

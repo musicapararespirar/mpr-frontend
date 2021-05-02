@@ -31,8 +31,14 @@ const IndividualConcert = ({
             Musician: {concert.preferredMusicianName}<br />
             Message: {concert.listenerMessage}<br />
             Location: {concert.listenerLocation}<br />
+            Timezone: {concert.listenerTimezone}<br />
             Number: {concert.listenerNumber}<br />
-            Time: <Moment format='DD/MM h:mm:ss'>{concert.dateFor}</Moment> (<Moment fromNow>{concert.dateFor}</Moment>)
+            Time: <Moment format='DD/MM h:mm:ss'>{concert.dateFor}</Moment> (<Moment fromNow>{concert.dateFor}</Moment>)<br/>
+            {concert.scheduled === true ?
+                <div className="btn btn-primary my-1">Scheduled</div>
+                :
+                <div className="btn btn-danger my-1">Not Scheduled</div>
+            }
             </Fragment>
         }
     </Fragment>
