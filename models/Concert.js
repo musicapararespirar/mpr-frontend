@@ -29,7 +29,7 @@ const ConcertSchema = new Schema({
     listenerName: {
         type: String
     },
-    listenerLocation: {
+    listenerTimezone: {
         type: String
     },
     listenerNumber: {
@@ -41,10 +41,39 @@ const ConcertSchema = new Schema({
     dateFor: {
         type: Date
     },
+    scheduled: {
+        type: Boolean,
+        default: false
+    },
+    requestState: {
+        type: String
+    },
     requestType: {
         type: String,
         required: true
-    }
+    },
+    duration: {
+        type: Number
+    },
+    notes: [
+        {
+            coordinator: {
+                type: Schema.Types.ObjectId,
+                ref: 'users'
+            },
+            text: {
+                type: String,
+                required: true
+            },
+            name: {
+                type: String
+            },
+            date: {
+                type: Date,
+                default: Date.now
+            }
+        }
+    ]
 });
 
 module.exports = Concert = mongoose.model('concert', ConcertSchema);

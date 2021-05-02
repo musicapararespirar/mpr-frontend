@@ -718,6 +718,26 @@ button {
   margin-bottom: 0.5rem;
 }
 
+.rdtPicker {
+    color: white;
+    background-color: black;
+    border-right: 1px solid #d4d7d9;
+}
+
+.rdtPicker:hover {
+/*     background-color: yellow; */
+}
+
+.link {
+  color: #0000ff;
+  font-weight: bold;
+
+}
+
+.link:hover {
+   color: #aaaa7f;
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   .container {

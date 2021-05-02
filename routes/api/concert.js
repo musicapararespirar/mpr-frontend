@@ -17,13 +17,13 @@ router.post(
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
+            return res.status(400).json({ input: req.body , errors: errors.array() });
         }
 
         try {
             const newConcert = new Concert({
                 requesterName: req.body.requesterName,
-                reason: req.body.reason,
+                requestType: req.body.requestType,
                 preferredMusician: req.body.preferredMusician,
                 preferredMusicianName: req.body.preferredMusicianName,
                 listenerMessage: req.body.listenerMessage,
@@ -32,7 +32,6 @@ router.post(
                 listenerNumber: req.body.listenerNumber,
                 asap: req.body.asap,
                 dateFor: req.body.dateFor,
-                type: req.body.requestType
             })
 
             const concert = await newConcert.save();

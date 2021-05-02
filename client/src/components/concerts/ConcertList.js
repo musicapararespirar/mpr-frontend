@@ -9,19 +9,6 @@ import { useTable, useSortBy } from 'react-table';
 
 const ConcertList = ({ concertList }) => {
     Moment.globalTimezone = "America/La_Paz"
-    const concerts = concertList.map(con => (
-    <tr key={con._id}>
-        <td>{con.requesterName}</td>
-
-        <td>{con.listenerName}</td>
-        <td className="hide-sm">{con.reason}</td>
-        <td>{con.preferredMusician ? con.preferredMusicianName : "No preference"}</td>
-        <td className="hide-sm">{con.listenerMessage}</td>
-        <td className="hide-sm">{con.listenerLocation}</td>
-        <td className="hide-sm">{con.listenerNumber}</td>
-        <td>{con.asap ? "ASAP" : <Fragment><Moment format='DD/MM h:mm:ss'>{con.dateFor}</Moment><br /> (<Moment fromNow>{con.dateFor}</Moment>)</Fragment>}</td>
-    </tr>
-    ));
 
     const data = React.useMemo(
      () => concertList,
@@ -34,11 +21,18 @@ const ConcertList = ({ concertList }) => {
          Header: 'From',
          accessor: a => (
              <Fragment>
-                <Link to={`/concerts/${a._id}`}>
+                <Link to={`/concerts/${a._id}`} className='link'>
                     {a.requesterName}
                 </Link>
             </Fragment>
         ),
+        getProps: (state, rowInfo, column) => {
+            return {
+                style: {
+                    background: rowInfo && rowInfo.row.reason === "gift" ? 'red' : null,
+                },
+            };
+        }
        },
        {
          Header: 'For',
@@ -47,26 +41,19 @@ const ConcertList = ({ concertList }) => {
        {
          Header: 'Reason',
          accessor: 'reason',
+         headerClassName: 'hide-sm',
+         className: 'hide-sm'
        },
         {
          Header: 'Musician',
          accessor: a => (a.preferredMusician ? a.preferredMusicianName : "No preference")
        },
        {
-         Header: 'Message',
-         accessor: 'listenerMessage',
-       },
-       {
-         Header: 'Location',
-         accessor: 'listenerLocation',
-       },
-        {
-         Header: 'Number',
-         accessor: 'listenerNumber',
-       },
-        {
          Header: 'Time (in Bolivia)',
-         accessor: a => <Fragment><Moment format='DD/MM h:mm:ss'>{a.dateFor}</Moment><br /> (<Moment fromNow>{a.dateFor}</Moment>)</Fragment>,
+         accessor: a =>
+            <Fragment>
+                <Moment format='DD/MM h:mm:ss'>{a.dateFor}</Moment><br /> (<Moment fromNow>{a.dateFor}</Moment>)
+            </Fragment>,
        },
      ],
      []
@@ -78,10 +65,8 @@ const ConcertList = ({ concertList }) => {
      headerGroups,
      rows,
      prepareRow,
-   } = useTable({ columns, data }, useSortBy)
-
-
-
+   } = useTable({ columns, data },
+                useSortBy)
 
     return (
         <Fragment>
@@ -110,7 +95,7 @@ const ConcertList = ({ concertList }) => {
          {rows.map(row => {
            prepareRow(row)
            return (
-             <tr className='table' {...row.getRowProps()}>
+             <tr className='table' {...row.getRowProps()} style={{ background: row.original.scheduled ? '#006837' : '#a50026' }}>{console.log(row)}
                {row.cells.map(cell => {
                  return (
                    <td {...cell.getCellProps()}>
