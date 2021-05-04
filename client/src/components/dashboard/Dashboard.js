@@ -9,6 +9,7 @@ import Education from './Education';
 import ConcertList from '../concerts/ConcertList';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
 import { getConcerts } from '../../actions/concert';
+import MainCalendar from '../calendar/MainCalendar';
 
 const Dashboard = ({
     getCurrentProfile,
@@ -35,6 +36,7 @@ const Dashboard = ({
             {/*<DashboardActions />*/}
             {/*<Experience experience={profile.experience} />*/}
             {/*<Education education={profile.education} />*/}
+            <MainCalendar />
             <ConcertList concertList={concerts}/>
             {/*<div className="my-2">
                 <button className="btn btn-danger" onClick={() => deleteAccount()}>
@@ -42,7 +44,6 @@ const Dashboard = ({
                 </button>
             </div>*/}
         </Fragment>
-
     </Fragment>;
 }
 

@@ -95,7 +95,7 @@ const ConcertList = ({ concertList }) => {
          {rows.map(row => {
            prepareRow(row)
            return (
-             <tr className='table' {...row.getRowProps()} style={{ background: row.original.scheduled ? '#006837' : '#a50026' }}>{console.log(row)}
+             <tr className='table' {...row.getRowProps()} style={{ background: row.original.scheduled ? '#006837' : '#a50026' }}>
                {row.cells.map(cell => {
                  return (
                    <td {...cell.getCellProps()}>
