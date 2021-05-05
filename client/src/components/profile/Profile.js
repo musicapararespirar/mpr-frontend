@@ -57,7 +57,7 @@ const Profile = ({
                             availability={avail} />
                         ))}
                     </Fragment>
-                ) : (<h4>No education credentials</h4>)}
+                ) : (<h4>No available dates</h4>)}
                 </div>
 
             </div>
