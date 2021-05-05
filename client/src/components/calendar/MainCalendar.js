@@ -37,13 +37,17 @@ const MainCalendar = ({
                               borderColor: conc.asap ? "yellow" : 'blue',
                               editable: false,
                             }))
+
     const musicianAvailabilityEvents = profiles.map(prof => prof.availability.map(avail => ({
                                     title: prof.user.name,
                                     start: avail.from,
                                     end: avail.to,
-                                    backgroundColor: 'blue',
-                                    borderColor: 'blue',
+                                    backgroundColor: prof.colour,
+                                    borderColor: 'black',
                                     editable: false,
+                                    selectable: false,
+                                    type: 'musician',
+                                    id: prof.user._id,
     })))
 
     for (var i = 0; i < musicianAvailabilityEvents.length; i++) {
@@ -56,7 +60,12 @@ const MainCalendar = ({
     }, []);
 
     const handleEventClick = useCallback(arg => {
-        history.push(`/concerts/${arg.event.id}`)
+        console.log(arg);
+        if (arg.event.extendedProps.type === 'musician') {
+            history.push(`/profile/${arg.event.id}`);
+        } else {
+            history.push(`/concerts/${arg.event.id}`);
+        }
     }, []);
 
     return <FullCalendar

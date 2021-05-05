@@ -86,6 +86,17 @@ const ProfileSchema = new mongoose.Schema({
             }
         }
     ],
+    availability: [
+        {
+            from: {
+                type: Date,
+                required: true
+            },
+            to: {
+                type: Date
+            }
+        }
+    ],
     social: {
             youtube: {
                 type: String

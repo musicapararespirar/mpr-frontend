@@ -57,8 +57,8 @@ const App = () => {
                 <Route exact path="/about-us" component={AboutUs} />
                 {/*<Route exact path="/register" component={Register} />*/}
                 <Route exact path="/login" component={Login} />
-                {/*<Route exact path="/profile/:id" component={Profile} />*/}
-                {/*<Route exact path="/profiles" component={Profiles} />*/}
+                <Route exact path="/profile/:id" component={Profile} />
+                <Route exact path="/profiles" component={Profiles} />
                 <Route exact path="/concerts" component={Concerts} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/contribute" component={Contribute} />
@@ -68,9 +68,9 @@ const App = () => {
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/concerts/:id" component={IndividualConcert} />
                 {/*<PrivateRoute exact path="/create-profile" component={CreateProfile} />*/}
-                {/*<PrivateRoute exact path="/edit-profile" component={EditProfile} />*/}
+                <PrivateRoute exact path="/edit-profile" component={EditProfile} />
                 {/*<PrivateRoute exact path="/add-experience" component={AddExperience} />*/}
-                {/*<PrivateRoute exact path="/add-education" component={AddEducation} />*/}
+                <PrivateRoute exact path="/add-education" component={AddEducation} />
                 <PrivateRoute exact path="/posts" component={Posts} />
                 <PrivateRoute exact path="/posts/:id" component={Post} />
             </Switch>

@@ -340,6 +340,69 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
     }
 });
 
+// @route  PUT api/profile/availability
+// @desc   Add profile availability
+// @access Private
+router.put(
+    '/availability',
+    [
+        auth,
+        [
+            check('from', 'From date is required').not().isEmpty(),
+            check('to', 'From date is required').not().isEmpty()
+        ]
+    ],
+    async (req, res) => {
+        const errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+        const {
+            from,
+            to,
+        } = req.body;
+
+        const newAvailability = {
+            from,
+            to,
+        }
+
+        try {
+            const profile = await Profile.findOne({ user: req.user.id });
+
+            profile.availability.unshift(newAvailability);
+
+            await profile.save();
+
+            res.json(profile);
+        } catch(err) {
+            console.error(err.message);
+            return res.status(500).send("Server error");
+        }
+});
+
+// @route  DELETE api/profile/availability/:avail_id
+// @desc   Delete availability timeframe from profile
+// @access Private
+router.delete('/availability/:avail_id', auth, async (req, res) => {
+    try {
+        const profile = await Profile.findOne({ user: req.user.id })
+
+        // Get remove index
+        const removeIndex = profile.availability
+        .map(item => item.id)
+        .indexOf(req.params.avail_id);
+
+        profile.availability.splice(removeIndex, 1) // Splice to take something out
+
+        await profile.save();
+        res.json(profile);
+    } catch(err) {
+        console.error(err.message);
+        return res.status(500).send("Server error");
+    }
+});
+
 // @route  GET api/profile/github/:username
 // @desc   Get user repos from github
 // @access Public

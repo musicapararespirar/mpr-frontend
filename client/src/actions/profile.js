@@ -163,7 +163,40 @@ export const addExperience = (formData, history) => async dispatch => {
         });
     }
 }
+// Add experience
 
+export const addAvailability = (formData, history) => async dispatch => {
+    try {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        const res = await axios.put('/api/profile/availability', formData, config );
+        dispatch({
+            type: UPDATE_PROFILE,
+            payload: res.data // Should be the profile
+        });
+
+        dispatch(setAlert('Availability added', 'success'));
+
+        history.push('/dashboard');
+    } catch(err) {
+        const errors = err.response.data.errors;
+
+        if(errors) {
+            errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
+        }
+        dispatch({
+            type: PROFILE_ERROR,
+            payload: {
+                msg: err.response.statusText,
+                status: err.response.status
+            }
+        });
+    }
+}
 // Add education
 
 export const addEducation = (formData, history) => async dispatch => {
