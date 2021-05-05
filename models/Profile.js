@@ -19,8 +19,7 @@ const ProfileSchema = new mongoose.Schema({
         required: true
     },
     skills: {
-        type: [String],
-        required: true
+        type: [String]
     },
     bio: {
         type: String
@@ -35,14 +34,12 @@ const ProfileSchema = new mongoose.Schema({
             },
             company: {
                 type: String,
-                required: true
             },
             location: {
                 type: String
             },
             from: {
                 type: Date,
-                required: true
             },
             to: {
                 type: Date
@@ -93,7 +90,8 @@ const ProfileSchema = new mongoose.Schema({
                 required: true
             },
             to: {
-                type: Date
+                type: Date,
+                required: true
             }
         }
     ],

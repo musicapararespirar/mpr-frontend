@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 
-const ProfileEducation = ({
+const ProfileAvailability = ({
     availability: {
         to,
         from,
@@ -14,8 +14,8 @@ const ProfileEducation = ({
     </p>
 </div>;
 
-ProfileEducation.propTypes = {
+ProfileAvailability.propTypes = {
     availability: PropTypes.array.isRequired
 }
 
-export default ProfileEducation
+export default ProfileAvailability

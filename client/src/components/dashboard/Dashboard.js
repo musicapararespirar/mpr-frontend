@@ -6,6 +6,7 @@ import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
 import Experience from './Experience';
 import Availability from './Availability';
+import AddAvailability from '../profile-forms/AddAvailability';
 import ConcertList from '../concerts/ConcertList';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
 import { getConcerts } from '../../actions/concert';
@@ -16,7 +17,7 @@ const Dashboard = ({
     deleteAccount,
     getConcerts,
     concert: { concerts },
-    auth: { user },
+    auth,
     profile: {
         profile,
         loading
@@ -29,18 +30,29 @@ const Dashboard = ({
     return loading && profile === null ? <Spinner /> : <Fragment>
         <h1 className="large text-primary">Dashboard</h1>
         <p className="lead">
-        <i className="fas fa-user"></i> Welcome { user && user.name }</p>
-            <Fragment>
+        <i className="fas fa-user"></i> Welcome { auth.user && auth.user.name }
+        {auth.isAuthenticated && loading === false && profile !== null &&
+            auth.user._id === profile.user._id && (
+            <Link to='/edit-profile' className='btn btn-dark'>
+                Edit Profile
+            </Link>
+            )} {profile === null && (<Link to='create-profile' className="btn btn-primary my-1">Create Profile</Link>)}</p>
+
+        <Fragment>
+            <MainCalendar />
+            <ConcertList concertList={concerts}/>
+            {profile !== null ? (
                 <Availability availability={profile.availability} />
-                <MainCalendar />
-                <ConcertList concertList={concerts}/>
-                {/*<div className="my-2">
-                    <button className="btn btn-danger" onClick={() => deleteAccount()}>
-                        <i className="fas fa-user-minus"></i> Delete My Account
-                    </button>
-                </div>*/}
-            </Fragment>
-        </Fragment>;
+
+            ) : (
+                <Fragment>
+                    <p>You have not yet setup a profile, please add some info</p>
+                    <Link to='create-profile' className="btn btn-primary my-1">Create Profile</Link>
+                </Fragment>
+            )}
+            <AddAvailability />
+        </Fragment>
+    </Fragment>;
     }
 
 Dashboard.propTypes = {
