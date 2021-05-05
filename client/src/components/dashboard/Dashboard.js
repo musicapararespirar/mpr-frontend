@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
 import Experience from './Experience';
-import Education from './Education';
+import Availability from './Availability';
 import ConcertList from '../concerts/ConcertList';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
 import { getConcerts } from '../../actions/concert';
@@ -27,25 +27,21 @@ const Dashboard = ({
     }, [getCurrentProfile, getConcerts]);
 
     return loading && profile === null ? <Spinner /> : <Fragment>
-    <h1 className="large text-primary">Dashboard</h1>
-    <p className="lead">
-    <i className="fas fa-user"></i> Welcome { user && user.name }</p>
-
-
-        <Fragment>
-            {/*<DashboardActions />*/}
-            {/*<Experience experience={profile.experience} />*/}
-            {/*<Education education={profile.education} />*/}
-            <MainCalendar />
-            <ConcertList concertList={concerts}/>
-            {/*<div className="my-2">
-                <button className="btn btn-danger" onClick={() => deleteAccount()}>
-                    <i className="fas fa-user-minus"></i> Delete My Account
-                </button>
-            </div>*/}
-        </Fragment>
-    </Fragment>;
-}
+        <h1 className="large text-primary">Dashboard</h1>
+        <p className="lead">
+        <i className="fas fa-user"></i> Welcome { user && user.name }</p>
+            <Fragment>
+                <Availability availability={profile.availability} />
+                <MainCalendar />
+                <ConcertList concertList={concerts}/>
+                {/*<div className="my-2">
+                    <button className="btn btn-danger" onClick={() => deleteAccount()}>
+                        <i className="fas fa-user-minus"></i> Delete My Account
+                    </button>
+                </div>*/}
+            </Fragment>
+        </Fragment>;
+    }
 
 Dashboard.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,

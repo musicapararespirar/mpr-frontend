@@ -197,6 +197,29 @@ export const addAvailability = (formData, history) => async dispatch => {
         });
     }
 }
+
+// Delete Availability
+export const deleteAvailability = id => async dispatch => {
+    try {
+        const res = await axios.delete(`/api/profile/availability/${id}`);
+
+        dispatch({
+            type: UPDATE_PROFILE,
+            payload: res.data
+        });
+
+        dispatch(setAlert('Availability removed', 'success'));
+    } catch(err) {
+        dispatch({
+            type: PROFILE_ERROR,
+            payload: {
+                msg: err.response.statusText,
+                status: err.response.status
+            }
+        });
+    }
+};
+
 // Add education
 
 export const addEducation = (formData, history) => async dispatch => {
