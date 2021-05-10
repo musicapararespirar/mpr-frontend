@@ -85,13 +85,14 @@ const ProfileSchema = new mongoose.Schema({
     ],
     availability: [
         {
-            from: {
+            dateFrom: {
                 type: Date,
-                required: true
             },
-            to: {
+            dateTo: {
                 type: Date,
-                required: true
+            },
+            personalTimezone: {
+                type: String,
             }
         }
     ],

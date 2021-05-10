@@ -295,6 +295,26 @@ button {
   width: 4rem;
 }
 
+.date-from {
+    float: left;
+    width: 35%;
+}
+.date-from h4 {
+    text-align: center;
+}
+.date-from iframe {
+    width: 100%;
+}
+.date-to {
+    float: left;
+    width: 35%;
+    text-align: center;
+
+}
+.clearfix {
+    clear:both;
+}
+
 .form .social-input i.fa-twitter {
   color: #38a1f3;
 }
@@ -322,6 +342,10 @@ button {
   background: var(--dark-color);
 }
 
+.table-center {
+    float: left;
+
+}
 /* logo */
 .logo {
     display: flex;
@@ -752,6 +776,7 @@ button {
 .fc-daygrid-day-number {
     color: #487f8d;
 }
+
 /* .fc-timegrid-axis-cushion { */
 /*     color: #000000; */
 /* } */

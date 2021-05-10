@@ -347,8 +347,9 @@ router.put(
     [
         auth,
         [
-            check('from', 'From date is required').not().isEmpty(),
-            check('to', 'From date is required').not().isEmpty()
+            check('dateFrom', 'From date is required').not().isEmpty(),
+            check('dateTo', 'From date is required').not().isEmpty(),
+            check('personalTimezone', 'Personal timezone is required').not().isEmpty()
         ]
     ],
     async (req, res) => {
@@ -357,13 +358,15 @@ router.put(
             return res.status(400).json({ errors: errors.array() });
         }
         const {
-            from,
-            to,
+            dateFrom,
+            dateTo,
+            personalTimezone
         } = req.body;
 
         const newAvailability = {
-            from,
-            to,
+            dateFrom,
+            dateTo,
+            personalTimezone
         }
 
         try {

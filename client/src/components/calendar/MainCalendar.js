@@ -41,8 +41,8 @@ const MainCalendar = ({
 
     const musicianAvailabilityEvents = profiles.map(prof => prof.availability.map(avail => ({
                                     title: prof.user.name,
-                                    start: avail.from,
-                                    end: avail.to,
+                                    start: avail.dateFrom,
+                                    end: avail.dateTo,
                                     backgroundColor: prof.colour,
                                     borderColor: 'black',
                                     editable: false,

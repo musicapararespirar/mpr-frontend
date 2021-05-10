@@ -57,41 +57,37 @@ const AddAvailability = ({ addAvailability, history }) => {
                     </select>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group date-from">
                     <h4>Date From</h4>
                     <DatePicker
                               selected={startDate}
                               locale={es}
                               inline
-                              showTimeInput
+                              showTimeSelect
                               onChange={e => {
                                   setStartDate(e);
-                                  console.log(moment.tz(e, personalTimezone));
-                                  console.log(moment(e.getUTCDate()).tz(personalTimezone));
+                                  setEndDate(e);
                                   setFormData({ ...formData,
-                                      dateFrom: moment.tz(e, personalTimezone)});
+                                      dateFrom: moment.tz(e, personalTimezone).toISOString()});
+                                  console.log(moment.tz(e, personalTimezone).toISOString());
                               }}/>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group date-to">
                     <h4>Date To</h4>
                     <DatePicker
                               selected={endDate}
                               locale={es}
                               inline
-                              showTimeInput
+                              showTimeSelect
                               onChange={e => {
                                   setEndDate(e);
-                                  console.log(moment.tz(e, personalTimezone));
-                                  console.log(moment(e.getUTCDate()).tz(personalTimezone));
                                   setFormData({ ...formData,
-                                      dateTo: moment.tz(e, personalTimezone)});
+                                      dateTo: moment.tz(e, personalTimezone).toISOString()});
                               }}/>
                 </div>
-                {moment(dateFrom).format()}<br/>
-                {moment(dateFrom).utc().format()}<br/>
-                {dateFrom}<br/>
-
+                {console.log(dateTo)}
+                <div class="clearfix"></div>
                 <div>
                 <table className="table">
                     <tr>
@@ -112,7 +108,7 @@ const AddAvailability = ({ addAvailability, history }) => {
                 </table>
                 </div>
 
-                <input type="submit" className="btn btn-primary my-1" />
+                <input type="submit" className="btn btn-primary my-1" value='Send times'/>
                 <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
             </form>
         </Fragment>

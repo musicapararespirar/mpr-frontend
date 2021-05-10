@@ -8,10 +8,10 @@ const Availability = ({ availability, deleteAvailability }) => {
     const availabilities = availability.map(avail => (
         <tr key={avail._id}>
             <td>
-                <Moment format='YYYY/MM/DD'>{avail.from}</Moment>
+                <Moment format='YYYY/MM/DD LT'>{avail.from}</Moment>
             </td>
             <td>
-                <Moment format='YYYY/MM/DD'>{avail.to}</Moment>
+                <Moment format='YYYY/MM/DD LT'>{avail.to}</Moment>
             </td>
             <td>
                 <button onClick={() => deleteAvailability(avail._id)} className='btn btn-danger'>Delete</button>
