@@ -2,13 +2,14 @@ import React, { Fragment, useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import FullCalendar from '@fullcalendar/react';
+import FullCalendar, { changeView } from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid'
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
 import { getProfiles } from '../../actions/profile';
 import { getConcerts } from '../../actions/concert';
 import interactionPlugin from "@fullcalendar/interaction";
+import esLocale from '@fullcalendar/core/locales/es';
 
 const MainCalendar = ({
     getCurrentProfile,
@@ -57,6 +58,11 @@ const MainCalendar = ({
 
     const handleDateClick = useCallback(arg => {
         console.log(arg);
+        arg.view.calendar.changeView('timeGridDay', arg.dateStr);
+
+//         if(arg.view.type=="dayGridMonth"){
+//             changeView("timeGridDay",arg.dateStr);
+//         }
     }, []);
 
     const handleEventClick = useCallback(arg => {
@@ -67,7 +73,7 @@ const MainCalendar = ({
             history.push(`/concerts/${arg.event.id}`);
         }
     }, []);
-
+<script src='fullcalendar/locale/es.js'></script>
     return <FullCalendar
                 plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
                 headerToolbar={{
@@ -77,11 +83,13 @@ const MainCalendar = ({
                 }}
                 dateClick={handleDateClick}
                 eventClick={handleEventClick}
-                initialView="dayGridMonth"
+                initialView="timeGridDay"
                 weekends={true}
                 events={concertEvents}
                 selectable={true}
                 editable={true}
+                slotDuration="00:05:00"
+                locale="es"
                   />
     }
 

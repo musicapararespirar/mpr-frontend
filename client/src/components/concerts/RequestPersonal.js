@@ -21,16 +21,15 @@ const RequestPersonal = ({ requestConcert }) => {
         preferredMusicianName: '',
         listenerMessage: '',
         listenerName: '',
-        listenerTimezone: '',
+        listenerTimezone: defaultTimeZone,
         listenerNumber: '',
         asap: false,
-        dateFor: '',
+        dateFor: moment.now(),
         type: 'personal'
     });
 
-    const [musicianNameEnabled, toggleEnabled] = useState(true);
+    const [musicianNameEnabled, toggleMusician] = useState(true);
 
-    var setDate = '';
 
     const {
         requesterName,
@@ -53,7 +52,7 @@ const RequestPersonal = ({ requestConcert }) => {
             Back home
         </Link>
         <h1 className="large text-primary">
-            Request private concert
+            Request personal concert
             </h1>
             <p className="lead">
                 <i className="fas fa-code-branch"></i> Fill in your details below to request a concert
@@ -66,22 +65,35 @@ const RequestPersonal = ({ requestConcert }) => {
                 <div className="form-group">
                     <input type="text" placeholder="* Your name" name="requesterName" value={requesterName} onChange={e => onChange(e)} required />
                 </div>
+
                 <div className="form-group">
-                    <input list="timezones" placeholder="Listener's timezone" onChange={e => onChange(e)} name="listenerTimezone"/>
-                    <datalist id='timezones' contentEditable={false}>
-                        {timeZonesList.map(e => (<Fragment><option value={e} /></Fragment>))}
-                    </datalist>
+                    <select name="listenerTimezone"
+                     value={listenerTimezone}
+                     contentEditable={false}
+                     onChange={ e => onChange(e) }
+                     >
+                        {timeZonesList.map(e => (<Fragment><option value={e}>{e}</option></Fragment>))}
+                    </select>
                 </div>
+
                 <div className="form-group">
                     <h4>Time requested</h4>
-                    <DateTime name="dateFor" value={setDate} locale="es" onChange={e => {
-                                  setFormData({ ...formData, dateFor: moment(e).format()});
-                                  setDate = e;}}/>
-                </div>
+                    <DateTime name="dateFor"
+                              value={dateFor}
+                              locale="es"
+                              displayTimeZone={listenerTimezone}
+                              onChange={e => {
+                                  setFormData({ ...formData,
+                                      dateFor: e});
+                                  console.log(e.toISOString());
+                              }}/>
+                </div><b>You:</b> Selected time in {defaultTimeZone}: <Moment tz={defaultTimeZone} format="LLLL">{dateFor}</Moment><br/>
+                <b>Them:</b>  Selected time in {listenerTimezone}: <Moment tz={listenerTimezone} format="LLLL">{dateFor}</Moment><br/>
+
                 <div className="form-group">
                 <p><input type="checkbox" name="preferredMusician" checked={preferredMusician} value={preferredMusician} onChange={e => {
                     setFormData({ ...formData, preferredMusician: !preferredMusician });
-                    toggleEnabled(!musicianNameEnabled);
+                    toggleMusician(!musicianNameEnabled);
                 }} /> {' '}Request specific musician</p>
                 </div>
 

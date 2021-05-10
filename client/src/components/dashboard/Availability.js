@@ -37,7 +37,6 @@ const Availability = ({ availability, deleteAvailability }) => {
 }
 
 Availability.propTypes = {
-    education: PropTypes.array.isRequired,
     deleteAvailability: PropTypes.func.isRequired
 }
 

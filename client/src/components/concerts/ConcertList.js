@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
-import 'moment-timezone';
+import momentTZ from 'moment-timezone';
+import moment from 'moment';
 import { useTable, useSortBy } from 'react-table';
 
 
 const ConcertList = ({ concertList }) => {
-    Moment.globalTimezone = "America/La_Paz"
-
     const data = React.useMemo(
      () => concertList,
      []
@@ -49,16 +48,20 @@ const ConcertList = ({ concertList }) => {
          accessor: a => (a.preferredMusician ? a.preferredMusicianName : "No preference")
        },
        {
-         Header: 'Time (in Bolivia)',
-         accessor: a =>
-            <Fragment>
-                <Moment format='DD/MM h:mm:ss'>{a.dateFor}</Moment><br /> (<Moment fromNow>{a.dateFor}</Moment>)
-            </Fragment>,
+         Header: 'Time (Bolivia)',
+         accessor: a => (
+            <Fragment><Moment tz="America/La_Paz" format="MM/DD LT">{a.dateFor}</Moment>
+                <br /> (<Moment fromNow>{a.dateFor}</Moment>)
+            </Fragment>)
        },
+        {
+         Header: 'Time (Theirs)',
+         accessor: a => (
+            <Fragment><Moment tz={a.listenerTimezone} format="MM/DD LT">{a.dateFor}</Moment><br /></Fragment>)
+        }
      ],
      []
    )
-
    const {
      getTableProps,
      getTableBodyProps,
