@@ -4,13 +4,12 @@ import Moment from 'react-moment';
 
 const ProfileAvailability = ({
     availability: {
-        to,
-        from,
+        dateTo,
+        dateFrom,
     }
 }) => <div>
     <p>
-        <Moment format="YYYY/MM/DD">{from}</Moment> - {!to ? ' Now' :
-            <Moment format="YYYY/MM/DD">{to}</Moment>}
+        <Moment format="YYYY/MM/DD LT">{dateFrom}</Moment> - {<Moment format="YYYY/MM/DD LT">{dateTo}</Moment>}
     </p>
 </div>;
 
