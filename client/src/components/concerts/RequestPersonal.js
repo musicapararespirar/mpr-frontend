@@ -9,8 +9,23 @@ import "react-datetime/css/react-datetime.css";
 import "moment/locale/es";
 import Moment from 'react-moment';
 import moment from 'moment';
+import DatePicker from 'react-datepicker';
+import es from 'date-fns/locale/es';
+import { getProfiles } from '../../actions/profile';
+import ProfileAvailability from '../profile/ProfileAvailability';
 
-const RequestPersonal = ({ requestConcert }) => {
+const RequestPersonal = ({
+    requestConcert,
+    getProfiles,
+    profile: {
+        profiles,
+        loading
+    },
+}) => {
+
+    useEffect(() => {
+        getProfiles();
+        }, [getProfiles]);
 
     const defaultTimeZone = momentTZ.tz.guess();
     const timeZonesList = momentTZ.tz.names();
@@ -28,9 +43,6 @@ const RequestPersonal = ({ requestConcert }) => {
         type: 'personal'
     });
 
-    const [musicianNameEnabled, toggleMusician] = useState(true);
-
-
     const {
         requesterName,
         requestType,
@@ -44,6 +56,12 @@ const RequestPersonal = ({ requestConcert }) => {
         dateFor,
         type
          } = formData;
+
+    const [musicianNameEnabled, toggleMusician] = useState(true);
+    const [timePicker, setTime] = useState(new Date(moment(dateFor)));
+    const [profileObject, setProfileObject] = useState('');
+
+
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -78,70 +96,67 @@ const RequestPersonal = ({ requestConcert }) => {
 
                 <div className="form-group">
                     <h4>Time requested</h4>
-                    <DateTime name="dateFor"
-                              value={dateFor}
-                              locale="es"
-                              displayTimeZone={listenerTimezone}
+                    <DatePicker
+                              selected={timePicker}
+                              locale={es}
+                              inline
+                              showTimeSelect
                               onChange={e => {
+                                  setTime(e);
                                   setFormData({ ...formData,
-                                      dateFor: e});
-                                  console.log(e.toISOString());
+                                      dateFor: moment.tz(e, listenerTimezone).toISOString()});
+                                  console.log(moment.tz(e, listenerTimezone).toISOString());
                               }}/>
-                </div><b>You:</b> Selected time in {defaultTimeZone}: <Moment tz={defaultTimeZone} format="LLLL">{dateFor}</Moment><br/>
+                </div>
+
+                <b>You:</b> Selected time in {defaultTimeZone}: <Moment tz={defaultTimeZone} format="LLLL">{dateFor}</Moment><br/>
                 <b>Them:</b>  Selected time in {listenerTimezone}: <Moment tz={listenerTimezone} format="LLLL">{dateFor}</Moment><br/>
 
                 <div className="form-group">
+                </div>
+
+                <div className="form-group">
+                    <input type="radio" id="gift" name="requestType"
+                        value="gift" onChange={e => onChange(e)}/>
+                    <label for="gift">Gift</label><br/>
+
+                    <input type="radio" id="personal" name="requestType"
+                        value="personal" onChange={e => onChange(e)}/>
+                    <label for="personal">Personal</label><br/>
+
+                    <input type="radio" id="other" name="requestType"
+                        value="other" onChange={e => onChange(e)}/>
+                    <label for="other">Other</label><br/>
+                </div>
                 <p><input type="checkbox" name="preferredMusician" checked={preferredMusician} value={preferredMusician} onChange={e => {
                     setFormData({ ...formData, preferredMusician: !preferredMusician });
                     toggleMusician(!musicianNameEnabled);
                 }} /> {' '}Request specific musician</p>
-                </div>
+                <div className="form-group">
 
-                <div className="form-group">
-                    <input type="radio" id="gift" name="requestType" value="gift" onChange={e => onChange(e)}/>
-                    <label for="gift">Gift</label><br/>
-                    <input type="radio" id="personal" name="requestType" value="personal" onChange={e => onChange(e)}/>
-                    <label for="personal">Personal</label><br/>
-                    <input type="radio" id="other" name="requestType" value="other" onChange={e => onChange(e)}/>
-                    <label for="other">Other</label><br/>
-                </div>
-                <div className="form-group">
-                <input type="text" placeholder="Musician's name" name="preferredMusicianName" value={preferredMusicianName} onChange={e => onChange(e)} disabled={musicianNameEnabled ? 'disabled' : ''}/>
+                <select name="preferredMusicianName"
+                        contentEditable={false}
+                        onChange={ e => {
+                            onChange(e);
+                        } }
+                        disabled={musicianNameEnabled ? 'disabled' : ''}
+                        >
+                        <option value="" selected disabled hidden>Choose Musician</option>
+                        {profiles.map(profile => (
+                            <Fragment>
+                                <option value={profile._id}>{profile.user.name}</option>
+                            </Fragment>))}
+                </select>
+                {profiles.map(profile =>
+                    profile.availability.map(
+                        avail => (profile._id === preferredMusicianName ? (
+                            <ProfileAvailability key={avail._id} availability={avail} />) : (<Fragment></Fragment>))))}
+
                 </div>
                 <div className="form-group">
                     <input type="text" placeholder="Message for listener" name="listenerMessage" value={listenerMessage} onChange={e => onChange(e)} required />
                 </div>
 
-
-                {/*<div className="form-group">
-                <input type="text" placeholder="* Degree or Certificate" name="degree" value={degree} onChange={e => onChange(e)} required />
-                </div>
-                <div className="form-group">
-                <input type="text" placeholder="Field of Study" name="fieldofstudy" value={fieldofstudy} onChange={e => onChange(e)} />
-                </div>
-                <div className="form-group">
-                <h4>From Date</h4>
-                <input type="date" name="from" value={from} onChange={e => onChange(e)} />
-                </div>
-                <div className="form-group">
-                <p><input type="checkbox" name="current" checked={current} value={current} onChange={e => {
-                    setFormData({ ...formData, current: !current });
-                    toggleDisabled(!toDateDisabled);
-                }} /> {' '}Current School</p>
-                </div>
-                <div className="form-group">
-                <h4>To Date</h4>
-                <input type="date" name="to" value={to} onChange={e => onChange(e)} disabled={toDateDisabled ? 'disabled' : ''}/>
-                </div>
-                <div className="form-group">
-                <textarea
-                    name="description"
-                    cols="30"
-                    rows="5"
-                    placeholder="Program Description"
-                    value={description} onChange={e => onChange(e)}
-                ></textarea>
-                </div>*/}
                 <input type="submit" className="btn btn-primary my-1" />
                 <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
             </form>
@@ -150,8 +165,14 @@ const RequestPersonal = ({ requestConcert }) => {
 
 }
 RequestPersonal.propTypes = {
-    requestConcert: PropTypes.func.isRequired
+    requestConcert: PropTypes.func.isRequired,
+    getProfiles: PropTypes.func.isRequired,
+    profile: PropTypes.object.isRequired
 }
 
+const mapStateToProps = state => ({
+    profile: state.profile
+});
 
-export default connect(null, { requestConcert })(RequestPersonal);
+
+export default connect(mapStateToProps, { requestConcert, getProfiles })(RequestPersonal);

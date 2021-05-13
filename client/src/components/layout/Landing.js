@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useRef } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Link as WebLink } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -23,6 +23,8 @@ const Landing = ({ isAuthenticated }) => {
 
     const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 
+    const scrollRef = useRef(null)
+    const executeScroll = () => myRef.current.scrollIntoView()
 
     return (
         <ScrollContainer>
@@ -43,7 +45,10 @@ const Landing = ({ isAuthenticated }) => {
                     <div className="landing-inner">
                         <img src={logoLarge} className="logo-image"/>
                         <h4>repiensa | renueva | revive</h4>
-                        <i className="landing-arrow fas fa-chevron-down fa-5x" />
+                        <button >
+                            <i onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x" />
+                        </button>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -51,6 +56,7 @@ const Landing = ({ isAuthenticated }) => {
 
             <ScrollPage page={1}>
             <Animator animation={ZoomInScrollOut}>
+            <div ref={scrollRef} />
             <h1 className="x-large">PIDE TU CONCIERTO</h1>
             <Fragment>
                 <NavbarDropdown>
