@@ -22,10 +22,7 @@ const Landing = ({ isAuthenticated }) => {
        return <Redirect to='/dashboard' />
     }
     const images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5]
-
     const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
-
-
 
     return (
         <ScrollContainer>
@@ -46,7 +43,7 @@ const Landing = ({ isAuthenticated }) => {
                     <div className="landing-inner">
                         <img src={logoLarge} className="logo-image"/>
                         <h4>repiensa | renueva | revive</h4>
-                            <i ref={scrollRef} onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x" />
+                            <i ref={scrollRef} onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x hide-sm" />
                     </div>
                 </div>
             </section>
