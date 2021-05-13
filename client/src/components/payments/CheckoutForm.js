@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-// import "./App.css";
 import {
   Elements,
   CardElement,
@@ -8,9 +7,7 @@ import {
   useElements
 } from "@stripe/react-stripe-js";
 
-const stripePromise = loadStripe("pk_test_51IqaDELHTCikUAWZC4rVEwjy7UPfoWeoRKbtSlSvzSVzrtWnVLNMTssIXXlGoJrU7g7zzBE9sOLjjI3cr1IuLdfi00q3SnQz3C");
-
-const CheckOutForm = () => {
+const CheckOutForm = ( {amount} ) => {
     const [succeeded, setSucceeded] = useState(false);
     const [error, setError] = useState(null);
     const [processing, setProcessing] = useState('');
@@ -27,7 +24,7 @@ const CheckOutForm = () => {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({items: [{ id: "xl-tshirt" }]})
+        body: JSON.stringify({item: amount })
       })
       .then(res => {
         return res.json();
@@ -81,7 +78,9 @@ const CheckOutForm = () => {
   };
 
   return (
+
         <form id="payment-form" onSubmit={handleSubmit}>
+
         <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
         <button
             disabled={processing || disabled || succeeded}
@@ -91,7 +90,7 @@ const CheckOutForm = () => {
             {processing ? (
                 <div className="spinner" id="spinner"></div>
             ) : (
-                "Pay now"
+                `Pay ${parseInt(amount/100).toLocaleString('en-US', { style: 'currency', currency: 'USD',})} now`
             )}
             </span>
         </button>

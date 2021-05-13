@@ -14,6 +14,7 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import IndividualConcert from './components/concerts/IndividualConcert';
+import Donate from './components/payments/Donate';
 import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
 import AddExperience from './components/profile-forms/AddExperience';
@@ -66,6 +67,7 @@ const App = () => {
                 <Route exact path="/impact" component={Impact} />
                 <Route exact path="/request/personal" component={RequestPersonal} />
                 <Route exact path="/request/institution" component={RequestInstitution} />
+                <Route exact path="/donate" component={Donate} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/concerts/:id" component={IndividualConcert} />
                 <PrivateRoute exact path="/create-profile" component={CreateProfile} />

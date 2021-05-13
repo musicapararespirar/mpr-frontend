@@ -35,6 +35,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                             <div className="navmenu-item__text">Impacto</div>
                         </NavbarDropdown.Item>
                     </Link>
+                    <Link to='/donate'>
+                        <NavbarDropdown.Item className="navmenu-item">
+                            <div className="navmenu-item__text">Donate</div>
+                        </NavbarDropdown.Item>
+                    </Link>
                 </div>
                 <div className="navmenu-menu__row">
                     <Link to='/contribute'>
