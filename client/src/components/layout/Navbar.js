@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 import NavbarDropdown from 'react-navbar-dropdown';
+import { setLanguage } from '../../actions/language';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         const guestLinks = (
@@ -122,8 +123,42 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </NavbarDropdown>
     );
 
+    const languageButtons = (
+        <NavbarDropdown className="languagemenu">
+            <NavbarDropdown.Toggle className="menu__item">
+            <NavbarDropdown.Open>
+                <i className="fas fa-globe fa-3x" />
+            </NavbarDropdown.Open>
+            <NavbarDropdown.Close>
+                <i className="fa fa-times fa-3x" />
+            </NavbarDropdown.Close>
+            </NavbarDropdown.Toggle>
+            <NavbarDropdown.Menu className="languagemenu-menu">
+                <div className="languagemenu-menu__row">
+                        <NavbarDropdown.Item className="languagemenu-item">
+                            <div className="languagemenu-item__text" onClick={setLanguage("en")}>English</div>
+                        </NavbarDropdown.Item>
+                </div>
+                <div className="languagemenu-menu__row">
+                    <Link to='/donate'>
+                        <NavbarDropdown.Item className="languagemenu-item">
+                            <div className="languagemenu-item__text">Spanish</div>
+                        </NavbarDropdown.Item>
+                    </Link>
+                </div>
+                <div className="languagemenu-menu__row">
+                    <Link to='/contact'>
+                        <NavbarDropdown.Item className="languagemenu-item">
+                            <div className="languagemenu-item__text">Portuguese</div>
+                        </NavbarDropdown.Item>
+                    </Link>
+                </div>
+            </NavbarDropdown.Menu>
+        </NavbarDropdown>
+    );
     return (
         <nav className="navmenu">
+            {languageButtons}
            {!loading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
         </nav>
     )
@@ -131,6 +166,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
 Navbar.propTypes = {
     logout: PropTypes.func.isRequired,
+    setLanguage: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 }
 
@@ -138,4 +174,4 @@ const mapStateToProps = state => ({
     auth: state.auth
 });
 
-export default connect(mapStateToProps, { logout })(Navbar);
+export default connect(mapStateToProps, { logout, setLanguage })(Navbar);

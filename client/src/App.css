@@ -533,6 +533,57 @@ button {
   font-size: 18px;
 }
 
+.languagemenu {
+    z-index: 40;
+    align-items: right;
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.languagemenu-menu {
+  display: flex;
+  flex-direction: column;
+  top: 28px;
+  right: 0;
+  padding: 8px 8px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #c3c5c7;
+}
+.languagemenu-menu__row {
+    display: flex;
+    flex-direction: row;
+  }
+
+.languagemenu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  height: 30px;
+  width: 80px;
+  color: #333537;
+
+}
+.languagemenu-item:hover {
+    background-color: #f3f5f7;
+}
+
+.languagemenu-item__icon {
+    font-size: 20px;
+  }
+
+.languagemenu-item__text {
+    font-family: century-gothic, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+  }
+
 .navmenu {
     z-index: 40;
     align-items: right;

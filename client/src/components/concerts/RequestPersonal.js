@@ -61,8 +61,6 @@ const RequestPersonal = ({
     const [timePicker, setTime] = useState(new Date(moment(dateFor)));
     const [profileObject, setProfileObject] = useState('');
 
-
-
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     return <Fragment>
@@ -105,7 +103,6 @@ const RequestPersonal = ({
                                   setTime(e);
                                   setFormData({ ...formData,
                                       dateFor: moment.tz(e, listenerTimezone).toISOString()});
-                                  console.log(moment.tz(e, listenerTimezone).toISOString());
                               }}/>
                 </div>
 
@@ -158,7 +155,7 @@ const RequestPersonal = ({
                 </div>
 
                 <input type="submit" className="btn btn-primary my-1" />
-                <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
+                <Link to="/" className="btn btn-light my-1">Go Back</Link>
             </form>
     </Fragment>
 

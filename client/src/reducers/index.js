@@ -4,6 +4,7 @@ import auth from './auth';
 import profile from './profile';
 import post from './post';
 import concert from './concert';
+import language from './language';
 
 
 export default combineReducers({
@@ -11,5 +12,6 @@ export default combineReducers({
     auth,
     profile,
     post,
-    concert
+    concert,
+    language
 });
