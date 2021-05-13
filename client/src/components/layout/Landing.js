@@ -43,7 +43,7 @@ const Landing = ({ isAuthenticated }) => {
                     <div className="landing-inner">
                         <img src={logoLarge} className="logo-image"/>
                         <h4>repiensa | renueva | revive</h4>
-                            <i ref={scrollRef} onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x hide-sm" />
+                            <i ref={scrollRef} onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x" />
                     </div>
                 </div>
             </section>
