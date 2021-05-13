@@ -37,6 +37,7 @@ if(localStorage.token) {
     setAuthToken(localStorage.token)
 }
 
+
 const App = () => {
     // Use effect is a constant loop unless there's []
     // With [] it's like a React component-did-mount
