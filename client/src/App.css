@@ -413,6 +413,7 @@ button {
   height: 60px;
   width: 80px;
   color: #333537;
+
 }
 .navmenu-item:hover {
     background-color: #f3f5f7;
@@ -423,7 +424,9 @@ button {
   }
 
 .navmenu-item__text {
+    font-family: century-gothic, sans-serif;
     font-size: 12px;
+    font-style: normal;
   }
 
 .reqmenu {
@@ -471,7 +474,9 @@ button {
   }
 
 .reqmenu-item__text {
+    font-family: century-gothic, sans-serif;
     font-size: 12px;
+    font-style: normal;
   }
 
 

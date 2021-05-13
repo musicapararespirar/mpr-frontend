@@ -66,13 +66,11 @@ const Landing = ({ isAuthenticated }) => {
                         <div className="reqmenu-menu__row">
                             <WebLink to='/request/personal'>
                                 <NavbarDropdown.Item className="reqmenu-item">
-                                    <div className="reqmenu-item__icon"><i className="fas fa-user" /></div>
                                     <div className="reqmenu-item__text">Personal</div>
                                 </NavbarDropdown.Item>
                             </WebLink>
                             <WebLink to='/request/institution'>
                                 <NavbarDropdown.Item className="navmenu-item">
-                                    <div className="reqmenu-item__icon"><i className="fas fa-users" /></div>
                                     <div className="reqmenu-item__text">Institution</div>
                                 </NavbarDropdown.Item>
                             </WebLink>

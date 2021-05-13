@@ -20,13 +20,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 <div className="navmenu-menu__row">
                     <Link to='/about-us'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__icon"><i className="fas fa-users" /></div>
                             <div className="navmenu-item__text">Sobre</div>
                         </NavbarDropdown.Item>
                     </Link>
                     <Link to='/concerts'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__icon"><i className="fas fa-guitar" /></div>
                             <div className="navmenu-item__text">Conciertos</div>
                         </NavbarDropdown.Item>
                     </Link>
@@ -34,7 +32,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 <div className="navmenu-menu__row">
                     <Link to='/impact'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__icon"><i className="fas fa-hands-helping" /></div>
                             <div className="navmenu-item__text">Impacto</div>
                         </NavbarDropdown.Item>
                     </Link>
@@ -42,13 +39,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 <div className="navmenu-menu__row">
                     <Link to='/contribute'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__icon"><i className="fas fa-donate" /></div>
                             <div className="navmenu-item__text">Contribuye</div>
                         </NavbarDropdown.Item>
                     </Link>
                     <Link to='/contact'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__icon"><i className="fas fa-envelope" /></div>
                             <div className="navmenu-item__text">Contáctanos</div>
                         </NavbarDropdown.Item>
                     </Link>
