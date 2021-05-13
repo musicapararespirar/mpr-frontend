@@ -16,6 +16,8 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import NavbarDropdown from 'react-navbar-dropdown';
 
 const Landing = ({ isAuthenticated }) => {
+    const scrollRef = useRef(null);
+    const executeScroll = () => scrollRef.current.scrollIntoView({ behavior: 'smooth' });
     if(isAuthenticated) {
        return <Redirect to='/dashboard' />
     }
@@ -23,8 +25,7 @@ const Landing = ({ isAuthenticated }) => {
 
     const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 
-    const scrollRef = useRef(null)
-    const executeScroll = () => myRef.current.scrollIntoView()
+
 
     return (
         <ScrollContainer>
@@ -45,10 +46,7 @@ const Landing = ({ isAuthenticated }) => {
                     <div className="landing-inner">
                         <img src={logoLarge} className="logo-image"/>
                         <h4>repiensa | renueva | revive</h4>
-                        <button >
-                            <i onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x" />
-                        </button>
-                        </a>
+                            <i ref={scrollRef} onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x" />
                     </div>
                 </div>
             </section>
@@ -56,7 +54,6 @@ const Landing = ({ isAuthenticated }) => {
 
             <ScrollPage page={1}>
             <Animator animation={ZoomInScrollOut}>
-            <div ref={scrollRef} />
             <h1 className="x-large">PIDE TU CONCIERTO</h1>
             <Fragment>
                 <NavbarDropdown>
@@ -87,6 +84,7 @@ const Landing = ({ isAuthenticated }) => {
                 </NavbarDropdown>
             </Fragment>
             </Animator>
+            <div ref={scrollRef} />
             <LoginLogo />
             </ScrollPage>
         </ScrollContainer>
