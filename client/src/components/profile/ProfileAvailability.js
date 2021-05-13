@@ -8,7 +8,7 @@ const ProfileAvailability = ({
         dateFrom,
     }
 }) => <div>
-    <p><h4>Times</h4>
+    <p>
         <Moment format="YYYY/MM/DD LT">{dateFrom}</Moment> - {<Moment format="YYYY/MM/DD LT">{dateTo}</Moment>}
     </p>
 </div>;
