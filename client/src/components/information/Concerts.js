@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { Link } from 'react-router-dom';
 import { Provider, Translate } from 'react-translated';
-import translation from './translation';
+import translation from '../translation/concerts';
 import { setLanguage } from '../../actions/language';
 import PropTypes from 'prop-types';
 
@@ -12,15 +12,13 @@ const ConcertAbout = ({
         languageCode,
         loading
     },
-    setLanguage
 }) => {
-    return <Provider language="en" translation={translation}>
+    return <Provider language={languageCode} translation={translation}>
     <Fragment>
             <p className="lead">
-                <i className="fas fa-music"></i> Conciertos
+                <i className="fas fa-music"></i> <Translate text="Concerts"></Translate>
             </p>
-            {languageCode}
-        <Translate text="Para recibir"></Translate> un concierto, el o la oyente simplemente debe enviar su nombre y número de teléfono a las redes sociales de La Sociedad (@lasociedad.bo), o hacerlo a través de esta página y en hasta 30 minutos un artista se contactará con ustedes para brindarles un concierto.<br/>
+        <Translate text="ConcertDescription"></Translate><br/>
         <br/>
         <div className="form-group social-input instagram">
             <a target="_blank" href="https://www.instagram.com/lasociedad.bo/">
@@ -38,7 +36,6 @@ ConcertAbout.propTypes = {
     setLanguage: PropTypes.func.isRequired,
     language: PropTypes.string.isRequired
 }
-
 
 const mapStateToProps = state => ({
     language: state.language

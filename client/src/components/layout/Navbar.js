@@ -6,7 +6,17 @@ import { logout } from '../../actions/auth';
 import NavbarDropdown from 'react-navbar-dropdown';
 import { setLanguage } from '../../actions/language';
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const Navbar = ({
+    auth: {
+        isAuthenticated,
+        loading
+    },
+    logout,
+    setLanguage,
+    language: {
+        languageCode
+    }
+}) => {
         const guestLinks = (
         <NavbarDropdown>
             <NavbarDropdown.Toggle className="menu__item">
@@ -36,7 +46,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                             <div className="navmenu-item__text">Impacto</div>
                         </NavbarDropdown.Item>
                     </Link>
-                    <Link to='/donate'>
+                <Link to='/donate'>
                         <NavbarDropdown.Item className="navmenu-item">
                             <div className="navmenu-item__text">Donate</div>
                         </NavbarDropdown.Item>
@@ -72,13 +82,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             <div className="navmenu-menu__row">
                 <Link to='/about-us'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__icon"><i className="fas fa-users" /></div>
                         <div className="navmenu-item__text">Sobre</div>
                     </NavbarDropdown.Item>
                 </Link>
                 <Link to='/concerts'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__icon"><i className="fas fa-guitar" /></div>
                         <div className="navmenu-item__text">Conciertos</div>
                     </NavbarDropdown.Item>
                 </Link>
@@ -86,21 +94,23 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             <div className="navmenu-menu__row">
                 <Link to='/impact'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__icon"><i className="fas fa-hands-helping" /></div>
                         <div className="navmenu-item__text">Impacto</div>
+                    </NavbarDropdown.Item>
+                </Link>
+                <Link to='/donate'>
+                    <NavbarDropdown.Item className="navmenu-item">
+                        <div className="navmenu-item__text">Donate</div>
                     </NavbarDropdown.Item>
                 </Link>
             </div>
             <div className="navmenu-menu__row">
                 <Link to='/contribute'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__icon"><i className="fas fa-donate" /></div>
                         <div className="navmenu-item__text">Contribuye</div>
                     </NavbarDropdown.Item>
                 </Link>
                 <Link to='/contact'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__icon"><i className="fas fa-envelope" /></div>
                         <div className="navmenu-item__text">Contáctanos</div>
                     </NavbarDropdown.Item>
                 </Link>
@@ -108,13 +118,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             <div className="navmenu-menu__row">
                 <Link to='/dashboard'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__icon"><i className="fas fa-tachometer-alt" /></div>
                         <div className="navmenu-item__text">Dashboard</div>
                     </NavbarDropdown.Item>
                 </Link>
                 <a onClick={logout} href="#!">
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__icon"><i className="fas fa-sign-out-alt" /></div>
                         <div className="navmenu-item__text">Logout</div>
                     </NavbarDropdown.Item>
                 </a>
@@ -124,35 +132,31 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     );
 
     const languageButtons = (
-        <NavbarDropdown className="languagemenu">
-            <NavbarDropdown.Toggle className="menu__item">
+        <NavbarDropdown className="languagemenu-icon">
+            <NavbarDropdown.Toggle className="languagemenu__item">
             <NavbarDropdown.Open>
-                <i className="fas fa-globe fa-3x" />
+                <div>{languageCode.toUpperCase()}</div>
             </NavbarDropdown.Open>
             <NavbarDropdown.Close>
-                <i className="fa fa-times fa-3x" />
+                <div>{languageCode.toUpperCase()}</div>
             </NavbarDropdown.Close>
             </NavbarDropdown.Toggle>
             <NavbarDropdown.Menu className="languagemenu-menu">
-                <div className="languagemenu-menu__row">
-                        <NavbarDropdown.Item className="languagemenu-item">
-                            <div className="languagemenu-item__text" onClick={setLanguage("en")}>English</div>
-                        </NavbarDropdown.Item>
-                </div>
-                <div className="languagemenu-menu__row">
-                    <Link to='/donate'>
-                        <NavbarDropdown.Item className="languagemenu-item">
-                            <div className="languagemenu-item__text">Spanish</div>
-                        </NavbarDropdown.Item>
-                    </Link>
-                </div>
-                <div className="languagemenu-menu__row">
-                    <Link to='/contact'>
-                        <NavbarDropdown.Item className="languagemenu-item">
-                            <div className="languagemenu-item__text">Portuguese</div>
-                        </NavbarDropdown.Item>
-                    </Link>
-                </div>
+                <a onClick={() => setLanguage("es")} href="#!">
+                    <NavbarDropdown.Item className="languagemenu-item">
+                        <div className="languagemenu-item__text">Español</div>
+                    </NavbarDropdown.Item>
+                </a>
+                <a onClick={() => setLanguage("pt")} href="#!">
+                    <NavbarDropdown.Item className="languagemenu-item">
+                        <div className="languagemenu-item__text">Português</div>
+                    </NavbarDropdown.Item>
+                </a>
+                <a onClick={() => setLanguage("en")} href="#!">
+                    <NavbarDropdown.Item className="languagemenu-item">
+                        <div className="languagemenu-item__text">English</div>
+                    </NavbarDropdown.Item>
+                </a>
             </NavbarDropdown.Menu>
         </NavbarDropdown>
     );
@@ -171,7 +175,8 @@ Navbar.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    auth: state.auth
+    auth: state.auth,
+    language: state.language
 });
 
 export default connect(mapStateToProps, { logout, setLanguage })(Navbar);

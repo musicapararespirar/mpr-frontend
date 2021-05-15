@@ -3,14 +3,27 @@ import spinner from './spinner.gif';
 
 export default () => (
     <Fragment>
-    <img
-        src={spinner}
-        style={{
+        <div class="loadingio-spinner-spinner-dx00ijgi3o6"
+            alt='Loading...'
+            style={{
             width: '200px',
             margin: 'auto',
             display: 'block'
-        }}
-        alt='Loading...'
-        />
+            }}>
+            <div class="ldio-xwrktmxvjdj">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     </Fragment>
 );
