@@ -28,6 +28,7 @@ const Landing = ({
        return <Redirect to='/dashboard' />
     }
     const images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5]
+    const images_mobile = [slideshow2, slideshow3, slideshow4]
     const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 
     // Combine translation files
@@ -49,7 +50,12 @@ const Landing = ({
                 animationDuration="900"
                 infinite={true}
                 disableButtonsControls={true}>
-                {images.map((each, index) => <img key={index} src={each} className="sliderimg"/>)}
+                {/* Different photos for mobile */}
+                {window.innerWidth > 700 ? (
+                    images.map((each, index) => <img key={index} src={each} className="sliderimg"/>)
+                    ) : (
+                    images_mobile.map((each, index) => <img key={index} src={each} className="sliderimg"/>))
+                }
                 </AliceCarousel>
                 <div className="dark-overlay">
                     <div className="landing-inner">
