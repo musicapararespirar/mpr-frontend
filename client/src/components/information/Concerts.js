@@ -9,8 +9,7 @@ import PropTypes from 'prop-types';
 
 const ConcertAbout = ({
     language: {
-        languageCode,
-        loading
+        languageCode
     },
 }) => {
     // Combine translation files
@@ -34,7 +33,7 @@ const ConcertAbout = ({
                 <i className="small-container fab fa-facebook fa" /> lasociedad.bo
             </a>
         </div>
-            </Fragment></Provider>;
+            </Fragment></Provider>
 }
 
 
@@ -46,4 +45,4 @@ const mapStateToProps = state => ({
     language: state.language
 });
 
-export default connect( mapStateToProps)(ConcertAbout);
+export default connect(mapStateToProps)(ConcertAbout);

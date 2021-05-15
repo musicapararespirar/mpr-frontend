@@ -7,7 +7,7 @@ export default {
     'About': {
         en: 'About',
         es: 'Sobre',
-        pt: 'Concertos'
+        pt: 'Sobre'
     },
     'Impact': {
         en: 'Impact',
@@ -38,5 +38,25 @@ export default {
         en: 'Logout',
         es: 'Salir',
         pt: 'Sair'
+    },
+    'Here': {
+        en: 'Here',
+        es: 'Aquí',
+        pt: 'Aqui'
+    },
+    'HERE': {
+        en: 'HERE',
+        es: 'AQUÍ',
+        pt: 'AQUI'
+    },
+    'Personal': {
+        en: 'Personal',
+        es: 'Personal',
+        pt: 'Pessoal'
+    },
+    'Institution': {
+        en: 'Institution',
+        es: 'Institución',
+        pt: 'Instituição'
     },
 }

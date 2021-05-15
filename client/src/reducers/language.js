@@ -25,13 +25,13 @@ function languageFilter(language) {
     if (['es', 'en', 'pt'].includes(chosenLanguage)) {
         return chosenLanguage
     } else {
-        throw "Language not in supported list";
+        // Default will be Spanish
+        return 'es'
     }
 }
 
 const initialState = {
     languageCode: languageFilter(),
-    loading: true,
     error: {}
 }
 
@@ -43,13 +43,11 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 languageCode: payload,
-                loading: false
             };
         case LANGUAGE_ERROR:
             return {
                 ...state,
                 error: payload,
-                loading: false
             };
         default:
             return state;

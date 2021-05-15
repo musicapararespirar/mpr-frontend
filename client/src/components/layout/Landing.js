@@ -14,8 +14,14 @@ import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveI
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import NavbarDropdown from 'react-navbar-dropdown';
+import landingTranslation from '../translation/landing';
+import titlesTranslation from '../translation/titles';
+import { Provider, Translate } from 'react-translated';
 
-const Landing = ({ isAuthenticated }) => {
+const Landing = ({
+    isAuthenticated,
+    language: { languageCode }
+}) => {
     const scrollRef = useRef(null);
     const executeScroll = () => scrollRef.current.scrollIntoView({ behavior: 'smooth' });
     if(isAuthenticated) {
@@ -24,7 +30,13 @@ const Landing = ({ isAuthenticated }) => {
     const images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5]
     const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 
-    return (
+    // Combine translation files
+    const allTranslations = {
+        ...landingTranslation,
+        ...titlesTranslation
+    }
+
+    return (<Provider language={languageCode} translation={allTranslations}>
         <ScrollContainer>
             <ScrollPage page={0}>
             <section className="landing">
@@ -42,7 +54,7 @@ const Landing = ({ isAuthenticated }) => {
                 <div className="dark-overlay">
                     <div className="landing-inner">
                         <img src={logoLarge} className="logo-image"/>
-                        <h4>repiensa | renueva | revive</h4>
+                        <h4><Translate text="repiensa" /> | <Translate text="renueva" /> | <Translate text="revive" /></h4>
                             <i ref={scrollRef} onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x" />
                     </div>
                 </div>
@@ -51,27 +63,27 @@ const Landing = ({ isAuthenticated }) => {
 
             <ScrollPage page={1}>
             <Animator animation={ZoomInScrollOut}>
-            <h1 className="x-large">PIDE TU CONCIERTO</h1>
+            <h1 className="x-large"><Translate text="pideConcierto" /></h1>
             <Fragment>
                 <NavbarDropdown>
                     <NavbarDropdown.Toggle className="reqmenu__item">
                     <NavbarDropdown.Open>
-                        <div className="btn btn-primary">AQUÍ</div>
+                        <div className="btn btn-primary"><Translate text="HERE" /></div>
                     </NavbarDropdown.Open>
                     <NavbarDropdown.Close>
-                        <div className="btn btn-danger">AQUÍ</div>
+                        <div className="btn btn-danger"><Translate text="HERE" /></div>
                     </NavbarDropdown.Close>
                     </NavbarDropdown.Toggle>
                     <NavbarDropdown.Menu className="reqmenu-menu">
                         <div className="reqmenu-menu__row">
                             <WebLink to='/request/personal'>
                                 <NavbarDropdown.Item className="reqmenu-item">
-                                    <div className="reqmenu-item__text">Personal</div>
+                                    <div className="reqmenu-item__text"><Translate text="Personal" /></div>
                                 </NavbarDropdown.Item>
                             </WebLink>
                             <WebLink to='/request/institution'>
                                 <NavbarDropdown.Item className="navmenu-item">
-                                    <div className="reqmenu-item__text">Institution</div>
+                                    <div className="reqmenu-item__text"><Translate text="Institution" /></div>
                                 </NavbarDropdown.Item>
                             </WebLink>
                         </div>
@@ -82,16 +94,19 @@ const Landing = ({ isAuthenticated }) => {
             <div ref={scrollRef} />
             <LoginLogo />
             </ScrollPage>
-        </ScrollContainer>
+        </ScrollContainer></Provider>
     )
 }
 
 Landing.propTypes = {
-    isAuthenticated: PropTypes.bool.isRequired
+    isAuthenticated: PropTypes.bool.isRequired,
+    language: PropTypes.object.isRequired
+
 }
 
 const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
+    language: state.language
 });
 
 export default connect(mapStateToProps)(Landing);

@@ -550,7 +550,7 @@ button {
   flex-direction: column;
   top: 10px;
   right: 10px;
-  width: 30px;
+  width: 40px;
   height: 30px;
   padding: 2px 2px;
   background-color: #0;
@@ -623,6 +623,20 @@ button {
   border-radius: 5px;
   box-shadow: 0px 0px 5px #c3c5c7;
 }
+
+.navmenu-icon {
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+  right: 0;
+  padding: 0px 0px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
 .navmenu-menu__row {
     display: flex;
     flex-direction: row;

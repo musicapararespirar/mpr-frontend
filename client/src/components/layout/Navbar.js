@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
+import Spinner from '../layout/Spinner';
 import NavbarDropdown from 'react-navbar-dropdown';
 import { setLanguage } from '../../actions/language';
 import titlesTranslation from '../translation/titles';
@@ -11,16 +12,17 @@ import { Provider, Translate } from 'react-translated';
 const Navbar = ({
     auth: {
         isAuthenticated,
-        loading
+        loading: authLoading
     },
     logout,
     setLanguage,
     language: {
-        languageCode
+        languageCode,
+        loading: languageLoading
     }
 }) => {
         const guestLinks = (
-        <NavbarDropdown>
+        <NavbarDropdown className="navmenu-icon">
             <NavbarDropdown.Toggle className="menu__item">
             <NavbarDropdown.Open>
                 <i className="fas fa-bars fa-3x" />
@@ -71,7 +73,7 @@ const Navbar = ({
     );
 
     const authLinks = (
-            <NavbarDropdown>
+        <NavbarDropdown className="navmenu-icon">
         <NavbarDropdown.Toggle className="menu__item">
         <NavbarDropdown.Open>
             <i className="fas fa-bars fa-3x" />
@@ -165,7 +167,7 @@ const Navbar = ({
     return (<Provider language={languageCode} translation={titlesTranslation}>
         <nav className="navmenu">
             {languageButtons}
-           {!loading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
+           {!authLoading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
         </nav></Provider>
     )
 }
