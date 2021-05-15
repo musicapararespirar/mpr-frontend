@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { Link } from 'react-router-dom';
 import { Provider, Translate } from 'react-translated';
-import translation from '../translation/concerts';
-import { setLanguage } from '../../actions/language';
+import concertTranslation from '../translation/concerts';
+import titlesTranslation from '../translation/titles';
 import PropTypes from 'prop-types';
 
 const ConcertAbout = ({
@@ -13,12 +13,18 @@ const ConcertAbout = ({
         loading
     },
 }) => {
-    return <Provider language={languageCode} translation={translation}>
+    // Combine translation files
+    const allTranslations = {
+        ...concertTranslation,
+        ...titlesTranslation
+    }
+
+    return <Provider language={languageCode} translation={allTranslations}>
     <Fragment>
             <p className="lead">
-                <i className="fas fa-music"></i> <Translate text="Concerts"></Translate>
+                <i className="fas fa-music"></i> <Translate text="Concerts" />
             </p>
-        <Translate text="ConcertDescription"></Translate><br/>
+        <Translate text="Description" /><br/>
         <br/>
         <div className="form-group social-input instagram">
             <a target="_blank" href="https://www.instagram.com/lasociedad.bo/">
@@ -33,12 +39,11 @@ const ConcertAbout = ({
 
 
 ConcertAbout.propTypes = {
-    setLanguage: PropTypes.func.isRequired,
-    language: PropTypes.string.isRequired
+    language: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
     language: state.language
 });
 
-export default connect( mapStateToProps, { setLanguage } )(ConcertAbout);
+export default connect( mapStateToProps)(ConcertAbout);

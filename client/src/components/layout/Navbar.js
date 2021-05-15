@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 import NavbarDropdown from 'react-navbar-dropdown';
 import { setLanguage } from '../../actions/language';
+import titlesTranslation from '../translation/titles';
+import { Provider, Translate } from 'react-translated';
 
 const Navbar = ({
     auth: {
@@ -31,36 +33,36 @@ const Navbar = ({
                 <div className="navmenu-menu__row">
                     <Link to='/about-us'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text">Sobre</div>
+                            <div className="navmenu-item__text"><Translate text="About" /></div>
                         </NavbarDropdown.Item>
                     </Link>
                     <Link to='/concerts'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text">Conciertos</div>
+                            <div className="navmenu-item__text"><Translate text="Concerts" /></div>
                         </NavbarDropdown.Item>
                     </Link>
                 </div>
                 <div className="navmenu-menu__row">
                     <Link to='/impact'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text">Impacto</div>
+                            <div className="navmenu-item__text"><Translate text="Impact" /></div>
                         </NavbarDropdown.Item>
                     </Link>
                 <Link to='/donate'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text">Donate</div>
+                            <div className="navmenu-item__text"><Translate text="Donate" /></div>
                         </NavbarDropdown.Item>
                     </Link>
                 </div>
                 <div className="navmenu-menu__row">
                     <Link to='/contribute'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text">Contribuye</div>
+                            <div className="navmenu-item__text"><Translate text="Contribute" /></div>
                         </NavbarDropdown.Item>
                     </Link>
                     <Link to='/contact'>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text">Contáctanos</div>
+                            <div className="navmenu-item__text"><Translate text="Contact Us" /></div>
                         </NavbarDropdown.Item>
                     </Link>
                 </div>
@@ -82,48 +84,48 @@ const Navbar = ({
             <div className="navmenu-menu__row">
                 <Link to='/about-us'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text">Sobre</div>
+                        <div className="navmenu-item__text"><Translate text="About" /></div>
                     </NavbarDropdown.Item>
                 </Link>
                 <Link to='/concerts'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text">Conciertos</div>
+                        <div className="navmenu-item__text"><Translate text="Concerts" /></div>
                     </NavbarDropdown.Item>
                 </Link>
             </div>
             <div className="navmenu-menu__row">
                 <Link to='/impact'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text">Impacto</div>
+                        <div className="navmenu-item__text"><Translate text="Impact" /></div>
                     </NavbarDropdown.Item>
                 </Link>
                 <Link to='/donate'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text">Donate</div>
+                        <div className="navmenu-item__text"><Translate text="Donate" /></div>
                     </NavbarDropdown.Item>
                 </Link>
             </div>
             <div className="navmenu-menu__row">
                 <Link to='/contribute'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text">Contribuye</div>
+                        <div className="navmenu-item__text"><Translate text="Contribute" /></div>
                     </NavbarDropdown.Item>
                 </Link>
                 <Link to='/contact'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text">Contáctanos</div>
+                        <div className="navmenu-item__text"><Translate text="Contact Us" /></div>
                     </NavbarDropdown.Item>
                 </Link>
             </div>
             <div className="navmenu-menu__row">
                 <Link to='/dashboard'>
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text">Dashboard</div>
+                        <div className="navmenu-item__text"><Translate text="Dashboard" /></div>
                     </NavbarDropdown.Item>
                 </Link>
                 <a onClick={logout} href="#!">
                     <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text">Logout</div>
+                        <div className="navmenu-item__text"><Translate text="Logout" /></div>
                     </NavbarDropdown.Item>
                 </a>
             </div>
@@ -160,11 +162,11 @@ const Navbar = ({
             </NavbarDropdown.Menu>
         </NavbarDropdown>
     );
-    return (
+    return (<Provider language={languageCode} translation={titlesTranslation}>
         <nav className="navmenu">
             {languageButtons}
            {!loading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
-        </nav>
+        </nav></Provider>
     )
 }
 
