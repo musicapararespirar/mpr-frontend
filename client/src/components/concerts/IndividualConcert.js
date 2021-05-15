@@ -39,6 +39,9 @@ const IndividualConcert = ({
                 :
                 <div className="btn btn-danger my-1">Not Scheduled</div>
             }
+            <a href={`http://video.evanjt.com/call/${concert._id}`} target="_blank">
+                <div className="btn btn-primary my-1"><i className="fas fa-video" /> Goto Call</div>
+            </a>
             </Fragment>
         }
     </Fragment>

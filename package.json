@@ -28,6 +28,7 @@
     "gravatar": "^1.8.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.14",
+    "node-docker-log-monitor": "^1.0.9",
     "request": "^2.88.2",
     "stripe": "^8.148.0"
   },
