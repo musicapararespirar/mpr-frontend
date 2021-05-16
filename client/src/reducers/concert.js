@@ -1,6 +1,7 @@
 import {
     GET_CONCERTS,
     GET_CONCERT,
+    GET_CONCERT_RESPONSE,
     CONCERT_ERROR,
     DELETE_CONCERT,
     REQUEST_CONCERT
@@ -10,7 +11,8 @@ const initialState = {
     concerts: [],
     concert: null,
     loading: true,
-    error: {}
+    error: {},
+    request: null
 }
 
 export default function(state = initialState, action) {
@@ -23,6 +25,7 @@ export default function(state = initialState, action) {
                 concerts: payload,
                 loading: false
             };
+        case GET_CONCERT_RESPONSE:
         case GET_CONCERT:
             return {
                 ...state,
@@ -32,10 +35,7 @@ export default function(state = initialState, action) {
         case REQUEST_CONCERT:
             return {
                 ...state,
-                concerts: [
-                    payload,
-                    ...state.concerts
-                ],
+                request: payload,
                 loading: false
             };
         case DELETE_CONCERT:

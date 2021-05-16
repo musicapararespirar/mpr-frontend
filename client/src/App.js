@@ -25,6 +25,7 @@ import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 import RequestPersonal from './components/concerts/RequestPersonal';
 import RequestInstitution from './components/concerts/RequestInstitution';
+import RequestResponse from './components/concerts/RequestResponse';
 import PrivateRoute from './components/routing/PrivateRoute';
 import './App.css';
 import { loadUser } from './actions/auth';
@@ -67,6 +68,7 @@ const App = () => {
                 <Route exact path="/impact" component={Impact} />
                 <Route exact path="/request/personal" component={RequestPersonal} />
                 <Route exact path="/request/institution" component={RequestInstitution} />
+                <Route exact path="/request/response/:id" component={RequestResponse} />
                 <Route exact path="/donate" component={Donate} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/concerts/:id" component={IndividualConcert} />

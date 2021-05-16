@@ -88,7 +88,7 @@ const Landing = ({
                                 </NavbarDropdown.Item>
                             </WebLink>
                             <WebLink to='/request/institution'>
-                                <NavbarDropdown.Item className="navmenu-item">
+                                <NavbarDropdown.Item className="reqmenu-item">
                                     <div className="reqmenu-item__text"><Translate text="Institution" /></div>
                                 </NavbarDropdown.Item>
                             </WebLink>

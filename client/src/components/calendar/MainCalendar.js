@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useCallback } from 'react';
+import React, { Fragment, useEffect, useState, useRef, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -10,6 +10,9 @@ import { getProfiles } from '../../actions/profile';
 import { getConcerts } from '../../actions/concert';
 import interactionPlugin from "@fullcalendar/interaction";
 import esLocale from '@fullcalendar/core/locales/es';
+import momentTimezonePlugin from '@fullcalendar/moment-timezone';
+import momentTZ from 'moment-timezone';
+import moment from 'moment';
 
 const MainCalendar = ({
     getCurrentProfile,
@@ -27,7 +30,13 @@ const MainCalendar = ({
             getConcerts();
             getProfiles();
     }, [getCurrentProfile, getConcerts, getProfiles]);
+
+    const calendarRef = useRef();
     const history = useHistory();
+
+    const defaultTimeZone = momentTZ.tz.guess();
+    const timeZonesList = momentTZ.tz.names();
+    const [timezonePicker, setTimezone] = useState(defaultTimeZone);
 
     const concertEvents = concerts.map(conc => (
                             { title: conc.listenerName,
@@ -59,10 +68,6 @@ const MainCalendar = ({
     const handleDateClick = useCallback(arg => {
         console.log(arg);
         arg.view.calendar.changeView('timeGridDay', arg.dateStr);
-
-//         if(arg.view.type=="dayGridMonth"){
-//             changeView("timeGridDay",arg.dateStr);
-//         }
     }, []);
 
     const handleEventClick = useCallback(arg => {
@@ -73,9 +78,28 @@ const MainCalendar = ({
             history.push(`/concerts/${arg.event.id}`);
         }
     }, []);
+    {console.log(calendarRef)}
+    {console.log(moment.tz(new Date().getUTCDate(), timezonePicker).toISOString())}
+    {console.log(moment.tz(timezonePicker).format())}
+    {console.log(moment.tz(Date(), timezonePicker).format())}
 <script src='fullcalendar/locale/es.js'></script>
-    return <FullCalendar
-                plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
+    return <Fragment>
+
+                <select name="timezonePicker"
+                    value={timezonePicker}
+                    contentEditable={false}
+                    onChange={ e => {
+                        setTimezone(e.target.value);
+                        calendarRef.current.render();
+                } }
+                    >
+                    {timeZonesList.map(e => (<Fragment><option value={e}>{e}</option></Fragment>))}
+                </select>
+
+                <FullCalendar
+                plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin, momentTimezonePlugin ]}
+                timeZone={timezonePicker}
+                ref={calendarRef}
                 headerToolbar={{
                     left: 'prev,next today',
                     center: 'title',
@@ -88,9 +112,14 @@ const MainCalendar = ({
                 events={concertEvents}
                 selectable={true}
                 editable={true}
-                slotDuration="00:05:00"
+                aspectRatio='2'
+                scrollTime={moment.tz(timezonePicker).toISOString()}
+                nowIndicator={true}
+                now={moment.tz(timezonePicker).toISOString()}
+                slotDuration="00:10:00"
                 locale="es"
-                  />
+                />
+                </Fragment>
     }
 
 

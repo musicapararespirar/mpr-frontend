@@ -6,6 +6,7 @@ import {
     CONCERT_ERROR,
     DELETE_CONCERT,
     REQUEST_CONCERT,
+    GET_CONCERT_RESPONSE,
 } from './types';
 
 // Get concerts
@@ -46,6 +47,26 @@ export const getConcertById = concertId => async dispatch => {
         });
     }
 }
+
+export const getConcertResponseById = concertId => async dispatch => {
+    try {
+        const res = await axios.get(`/api/concert/response/${concertId}`);
+
+        dispatch({
+            type: GET_CONCERT_RESPONSE,
+            payload: res.data
+        });
+    } catch(err) {
+        dispatch({
+            type: CONCERT_ERROR,
+            payload: {
+                msg: err.response.statusText,
+                status: err.response.status
+            }
+        });
+    }
+}
+
 // Delete concert
 // export const deletePost = id => async dispatch => {
 //     try {

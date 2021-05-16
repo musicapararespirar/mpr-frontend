@@ -11,7 +11,7 @@ const Availability = ({ availability, deleteAvailability }) => {
                 <Moment format='YYYY/MM/DD LT'>{avail.dateFrom}</Moment>
             </td>
             <td>
-                <Moment format='YYYY/MM/DD LT'>{avail.DateTo}</Moment>
+                <Moment format='YYYY/MM/DD LT'>{avail.dateTo}</Moment>
             </td>
             <td>
                 <button onClick={() => deleteAvailability(avail._id)} className='btn btn-danger'>Delete</button>

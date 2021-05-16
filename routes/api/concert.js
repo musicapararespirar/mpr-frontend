@@ -59,6 +59,29 @@ router.get('/', auth, async (req, res) => {
     }
 });
 
+// @route  GET api/concert/response/:id
+// @desc   Get concert response by ID (for requester/public to access)
+// @access Public
+router.get('/response/:id', async (req, res) => {
+    try {
+        const concert = await Concert.findById(req.params.id);
+        if(!concert) {
+            return res.status(404).json({ msg: "Concert not found" });
+        }
+        res.json({ _id: concert._id,
+                    listenerName: concert.listenerName,
+                    preferredMusicianName: concert.preferredMusicianName,
+                    dateFor: concert.dateFor
+                });
+    } catch(err) {
+        console.error(err.message);
+        if(err.kind === "ObjectId") {
+            return res.status(404).json({ msg: "Concert not found" });
+        }
+        res.status(500).send("Server error");
+    }
+});
+
 
 // @route  GET api/concert/:id
 // @desc   Get concert by ID

@@ -1,7 +1,7 @@
 import React, { Component, Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { requestConcert } from '../../actions/concert';
 import momentTZ from 'moment-timezone';
 import DateTime from 'react-datetime';
@@ -21,6 +21,11 @@ const RequestPersonal = ({
         profiles,
         loading
     },
+    concert: {
+        request,
+        concert,
+        error
+    }
 }) => {
 
     useEffect(() => {
@@ -62,6 +67,10 @@ const RequestPersonal = ({
     const [profileObject, setProfileObject] = useState('');
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    if(request !== null && request._id !== null) {
+        return <Redirect to={`/request/response/${request._id}`} />
+    }
 
     return <Fragment>
         <Link to='/' className='btn'>
@@ -164,11 +173,13 @@ const RequestPersonal = ({
 RequestPersonal.propTypes = {
     requestConcert: PropTypes.func.isRequired,
     getProfiles: PropTypes.func.isRequired,
-    profile: PropTypes.object.isRequired
+    profile: PropTypes.object.isRequired,
+    concert: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-    profile: state.profile
+    profile: state.profile,
+    concert: state.concert
 });
 
 
