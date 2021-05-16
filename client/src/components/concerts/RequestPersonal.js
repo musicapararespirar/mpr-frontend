@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { requestConcert } from '../../actions/concert';
 import momentTZ from 'moment-timezone';
-import DateTime from 'react-datetime';
-import "react-datetime/css/react-datetime.css";
 import "moment/locale/es";
 import Moment from 'react-moment';
 import moment from 'moment';

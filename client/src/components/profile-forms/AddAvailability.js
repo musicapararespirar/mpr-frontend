@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addAvailability } from '../../actions/profile';
 import momentTZ from 'moment-timezone';
-import DateTime from 'react-datetime';
-import "react-datetime/css/react-datetime.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "moment/locale/es";
 import Moment from 'react-moment';
