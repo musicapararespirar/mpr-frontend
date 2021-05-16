@@ -61,7 +61,7 @@ const Landing = ({
                     <div className="landing-inner">
                         <img src={logoLarge} className="logo-image"/>
                         <h4><Translate text="repiensa" /> | <Translate text="renueva" /> | <Translate text="revive" /></h4>
-                            <i ref={scrollRef} onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x" />
+                            <i ref={scrollRef} onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x hide-sm" />
                     </div>
                 </div>
             </section>

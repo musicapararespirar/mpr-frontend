@@ -37,7 +37,9 @@ const Navbar = ({
                         <NavbarDropdown.Item className="navmenu-item">
                             <div className="navmenu-item__text"><Translate text="About" /></div>
                         </NavbarDropdown.Item>
-                    </Link>
+                </Link>
+                </div>
+                <div className="navmenu-menu__row">
                     <Link to='/concerts'>
                         <NavbarDropdown.Item className="navmenu-item">
                             <div className="navmenu-item__text"><Translate text="Concerts" /></div>
@@ -49,7 +51,9 @@ const Navbar = ({
                         <NavbarDropdown.Item className="navmenu-item">
                             <div className="navmenu-item__text"><Translate text="Impact" /></div>
                         </NavbarDropdown.Item>
-                    </Link>
+                </Link>
+                </div>
+                <div className="navmenu-menu__row">
                 <Link to='/donate'>
                         <NavbarDropdown.Item className="navmenu-item">
                             <div className="navmenu-item__text"><Translate text="Donate" /></div>
@@ -61,7 +65,9 @@ const Navbar = ({
                         <NavbarDropdown.Item className="navmenu-item">
                             <div className="navmenu-item__text"><Translate text="Contribute" /></div>
                         </NavbarDropdown.Item>
-                    </Link>
+                </Link>
+                </div>
+                <div className="navmenu-menu__row">
                     <Link to='/contact'>
                         <NavbarDropdown.Item className="navmenu-item">
                             <div className="navmenu-item__text"><Translate text="Contact Us" /></div>
@@ -89,6 +95,8 @@ const Navbar = ({
                         <div className="navmenu-item__text"><Translate text="About" /></div>
                     </NavbarDropdown.Item>
                 </Link>
+            </div>
+            <div className="navmenu-menu__row">
                 <Link to='/concerts'>
                     <NavbarDropdown.Item className="navmenu-item">
                         <div className="navmenu-item__text"><Translate text="Concerts" /></div>
@@ -101,6 +109,8 @@ const Navbar = ({
                         <div className="navmenu-item__text"><Translate text="Impact" /></div>
                     </NavbarDropdown.Item>
                 </Link>
+            </div>
+            <div className="navmenu-menu__row">
                 <Link to='/donate'>
                     <NavbarDropdown.Item className="navmenu-item">
                         <div className="navmenu-item__text"><Translate text="Donate" /></div>
@@ -113,6 +123,8 @@ const Navbar = ({
                         <div className="navmenu-item__text"><Translate text="Contribute" /></div>
                     </NavbarDropdown.Item>
                 </Link>
+            </div>
+            <div className="navmenu-menu__row">
                 <Link to='/contact'>
                     <NavbarDropdown.Item className="navmenu-item">
                         <div className="navmenu-item__text"><Translate text="Contact Us" /></div>
@@ -125,6 +137,8 @@ const Navbar = ({
                         <div className="navmenu-item__text"><Translate text="Dashboard" /></div>
                     </NavbarDropdown.Item>
                 </Link>
+            </div>
+            <div className="navmenu-menu__row">
                 <a onClick={logout} href="#!">
                     <NavbarDropdown.Item className="navmenu-item">
                         <div className="navmenu-item__text"><Translate text="Logout" /></div>

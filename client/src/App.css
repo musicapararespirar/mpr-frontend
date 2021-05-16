@@ -581,9 +581,10 @@ button {
   justify-content: center;
   align-items: center;
   margin: 4px;
-  height: 30px;
+  height: 20px;
   width: 80px;
   color: #333537;
+
 
 }
 .languagemenu-item:hover {
@@ -648,7 +649,7 @@ button {
   justify-content: center;
   align-items: center;
   margin: 4px;
-  height: 60px;
+  height: 20px;
   width: 80px;
   color: #333537;
 
