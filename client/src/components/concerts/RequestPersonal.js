@@ -25,10 +25,10 @@ const RequestPersonal = ({
         error
     }
 }) => {
-
     useEffect(() => {
         getProfiles();
         }, [getProfiles]);
+
 
     const defaultTimeZone = momentTZ.tz.guess();
     const timeZonesList = momentTZ.tz.names();

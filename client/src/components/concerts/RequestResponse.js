@@ -6,9 +6,26 @@ import Spinner from '../layout/Spinner';
 import { getConcertResponseById } from '../../actions/concert';
 import Moment from 'react-moment';
 import 'moment-timezone';
-import {ChatWidget} from '@papercups-io/chat-widget';
+import {ChatWidget, ChatWindow, Papercups} from '@papercups-io/chat-widget';
+import {Storytime} from '@papercups-io/storytime';
+
+const st = Storytime.init({
+  accountId: 'd4bd73ac-d3a0-47c2-be83-e2e69c8b4be3',
+
+//   Optionally pass in metadata to identify the customer
+  customer: {
+   name: 'Test User',
+   email: 'test@test.com',
+   external_id: '123',
+  },
+
+  // Optionally specify the base URL
+  baseUrl: 'https://chat.evanjt.com',
+});
+
 
 const IndividualConcert = ({
+
     getConcertResponseById,
     concert: {
         concert,
@@ -27,10 +44,14 @@ const IndividualConcert = ({
         primaryColor="#ef9e21"
         greeting="One moment please"
         newMessagePlaceholder="Start typing..."
-        accountId="f6f86b6a-fce4-4d03-a799-633c281f6484"
+        accountId="d4bd73ac-d3a0-47c2-be83-e2e69c8b4be3"
         baseUrl="https://chat.evanjt.com"
+        greeting='Hi there! How can I help you?'
+        isOpenByDefault={true}
         showAgentAvailability={true}
         requireEmailUpfront={true}
+        setDefaultGreeting={(settings) => {console.log(settings)}}
+        onChatOpened={() => console.log(ChatWidget)}
       />
 
         {loading || concert === null ? <Spinner /> : <Fragment>
