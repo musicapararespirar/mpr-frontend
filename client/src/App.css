@@ -276,6 +276,11 @@ img {
   border: 1px solid #ccc;
 }
 
+.dropdown {
+    width: 45%;
+    color: #000;
+    z-index: 10;
+}
 .payment-form {
   width: 30vw;
   align-self: center;
