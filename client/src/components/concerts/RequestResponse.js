@@ -10,7 +10,7 @@ import {ChatWidget, ChatWindow, Papercups} from '@papercups-io/chat-widget';
 import {Storytime} from '@papercups-io/storytime';
 
 const st = Storytime.init({
-  accountId: 'd4bd73ac-d3a0-47c2-be83-e2e69c8b4be3',
+  accountId: '9020932e-93af-4211-aae8-82b13f49f3ca',
 
 //   Optionally pass in metadata to identify the customer
   customer: {
@@ -22,7 +22,6 @@ const st = Storytime.init({
   // Optionally specify the base URL
   baseUrl: 'https://chat.evanjt.com',
 });
-
 
 const IndividualConcert = ({
 
@@ -44,7 +43,7 @@ const IndividualConcert = ({
         primaryColor="#ef9e21"
         greeting="One moment please"
         newMessagePlaceholder="Start typing..."
-        accountId="d4bd73ac-d3a0-47c2-be83-e2e69c8b4be3"
+        accountId="9020932e-93af-4211-aae8-82b13f49f3ca"
         baseUrl="https://chat.evanjt.com"
         greeting='Hi there! How can I help you?'
         isOpenByDefault={true}

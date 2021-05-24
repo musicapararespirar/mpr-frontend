@@ -33,12 +33,12 @@ import { loadUser } from './actions/auth';
 import { Provider } from 'react-redux';
 import store from './store';
 import setAuthToken from './utils/setAuthToken';
-
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
 if(localStorage.token) {
     setAuthToken(localStorage.token)
 }
-
 
 const App = () => {
     // Use effect is a constant loop unless there's []
@@ -50,6 +50,7 @@ const App = () => {
     return (
     <Provider store={store}>
     <Router>
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
     <Fragment>
         <Logo />
         <Navbar />
@@ -81,6 +82,7 @@ const App = () => {
             </Switch>
         </section>
         </Fragment>
+    </MuiPickersUtilsProvider>
     </Router>
     </Provider>
 )};

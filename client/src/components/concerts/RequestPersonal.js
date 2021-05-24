@@ -7,11 +7,20 @@ import momentTZ from 'moment-timezone';
 import "moment/locale/es";
 import Moment from 'react-moment';
 import moment from 'moment';
-import DatePicker from 'react-datepicker';
 import es from 'date-fns/locale/es';
 import { getProfiles } from '../../actions/profile';
 import ProfileAvailability from '../profile/ProfileAvailability';
-
+import { zonedTimeToUtc, utcToZonedTime, format } from 'date-fns-tz';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  DatePicker,
+  TimePicker,
+  DateTimePicker,
+  MuiPickersUtilsProvider,
+} from '@material-ui/pickers';
+import { useStaticState, ClockView, Calendar } from "@material-ui/pickers";
+import { Paper, Button } from "@material-ui/core";
+import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline';
 const RequestPersonal = ({
     requestConcert,
     getProfiles,
@@ -29,9 +38,18 @@ const RequestPersonal = ({
         getProfiles();
         }, [getProfiles]);
 
-
     const defaultTimeZone = momentTZ.tz.guess();
     const timeZonesList = momentTZ.tz.names();
+
+
+    function roundedDateTime (inDate) {
+            // Returns a rounded date to the nearest half-hour
+            const coeff = 1000 * 60 * 30;
+            const roundedDate = new Date(Math.round(inDate / coeff) * coeff);
+
+            return roundedDate
+        };
+
     const [formData, setFormData] = useState({
         requesterName: '',
         requestType: '',
@@ -42,7 +60,7 @@ const RequestPersonal = ({
         listenerTimezone: defaultTimeZone,
         listenerNumber: '',
         asap: false,
-        dateFor: moment.now(),
+        dateFor: roundedDateTime(moment()),
         type: 'personal'
     });
 
@@ -63,14 +81,20 @@ const RequestPersonal = ({
     const [musicianNameEnabled, toggleMusician] = useState(true);
     const [timePicker, setTime] = useState(new Date(moment(dateFor)));
     const [profileObject, setProfileObject] = useState('');
-
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+        const [value, handleDateChange] = useState(new Date());
+
+        // you can past mostly all available props, like minDate, maxDate, autoOk and so on
+        const { pickerProps, wrapperProps } = useStaticState({
+        value,
+        onChange: handleDateChange,
+        });
 
     if(request !== null && request._id !== null) {
         return <Redirect to={`/request/response/${request._id}`} />
     }
-
-    return <Fragment>
+    return     <Fragment>
         <Link to='/' className='btn'>
             Back home
         </Link>
@@ -93,24 +117,26 @@ const RequestPersonal = ({
                     <select name="listenerTimezone"
                      value={listenerTimezone}
                      contentEditable={false}
-                     onChange={ e => onChange(e) }
+                     onChange={ e => {
+                         onChange(e);
+                    }}
                      >
                         {timeZonesList.map(e => (<Fragment><option value={e}>{e}</option></Fragment>))}
                     </select>
                 </div>
 
                 <div className="form-group">
-                    <h4>Time requested</h4>
-                    <DatePicker
-                              selected={timePicker}
-                              locale={es}
-                              inline
-                              showTimeSelect
-                              onChange={e => {
-                                  setTime(e);
-                                  setFormData({ ...formData,
-                                      dateFor: moment.tz(e, listenerTimezone).toISOString()});
-                              }}/>
+                    <h4>Time requested in {listenerTimezone}</h4>
+                              <ScopedCssBaseline className='container'>
+                        <Calendar {...pickerProps} />
+                        <ClockView
+                        type="hours"
+                        date={value}
+                        ampm={false}
+                        onMinutesChange={() => {}}
+                        onSecondsChange={() => {}}
+                        onHourChange={date => handleDateChange(date)}
+                        /></ScopedCssBaseline>
                 </div>
 
                 <b>You:</b> Selected time in {defaultTimeZone}: <Moment tz={defaultTimeZone} format="LLLL">{dateFor}</Moment><br/>
