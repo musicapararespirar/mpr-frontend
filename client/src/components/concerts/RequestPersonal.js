@@ -4,13 +4,15 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { requestConcert } from '../../actions/concert';
 import momentTZ from 'moment-timezone';
+import es from 'date-fns/locale/es';
 import "moment/locale/es";
 import Moment from 'react-moment';
 import moment from 'moment';
-import es from 'date-fns/locale/es';
 import { getProfiles } from '../../actions/profile';
 import ProfileAvailability from '../profile/ProfileAvailability';
 import TimezoneSelect, { i18nTimezones } from 'react-timezone-select'
+import DatePicker from 'react-datepicker';
+
 
 const RequestPersonal = ({
     requestConcert,
@@ -53,6 +55,8 @@ const RequestPersonal = ({
 
     const [formData, setFormData] = useState({
         requesterName: '',
+        requesterNumber: '',
+        requesterEmail: '',
         requestType: 'personal',
         preferredMusician: false,
         preferredMusicianName: '',
@@ -67,6 +71,8 @@ const RequestPersonal = ({
 
     const {
         requesterName,
+        requesterNumber,
+        requesterEmail,
         requestType,
         preferredMusician,
         preferredMusicianName,
@@ -81,14 +87,6 @@ const RequestPersonal = ({
 
     const [selectedTimezone, setSelectedTimezone] = useState(Intl.DateTimeFormat().resolvedOptions().timeZone)
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
-
-        const [value, handleDateChange] = useState(new Date());
-
-        // you can past mostly all available props, like minDate, maxDate, autoOk and so on
-        const { pickerProps, wrapperProps } = useStaticState({
-        value,
-        onChange: handleDateChange,
-        });
 
     if(request !== null && request._id !== null) {
         return <Redirect to={`/request/response/${request._id}`} />
@@ -112,6 +110,12 @@ const RequestPersonal = ({
                     <input type="text" placeholder="* Your name" name="requesterName" value={requesterName} onChange={e => onChange(e)} required />
                 </div>
                 <div className="form-group">
+                    <input type="text" placeholder="* Your number" name="requesterNumber" value={requesterNumber} onChange={e => onChange(e)} required />
+                </div>
+                <div className="form-group">
+                    <input type="text" placeholder="* Your email" name="requesterEmail" value={requesterEmail} onChange={e => onChange(e)} required />
+                </div>
+                <div className="form-group">
                     <input type="radio" id="personal" name="requestType"
                         value="personal" onChange={e => onChange(e)} checked={requestType==='personal'}/>
                     <label for="personal">For me</label><br/>
@@ -122,13 +126,19 @@ const RequestPersonal = ({
                 </div>
 
                 {requestType === 'gift' ? (
-                    <div className="form-group">
-                    <input type="text" placeholder="* Their name" name="listenerName" value={requesterName} onChange={e => onChange(e)} required />
+                <Fragment><div className="form-group">
+                    <input type="text" placeholder="* Their name" name="listenerName" value={listenerName} onChange={e => onChange(e)} required />
                 </div>
-                ) : (null)}
                 <div className="form-group">
-                    <input type="text" placeholder="* Your number" name="listenerNumber" value={requesterName} onChange={e => onChange(e)} required />
+                    <input type="text" placeholder="* Their number" name="listenerNumber" value={listenerNumber} onChange={e => onChange(e)} required />
                 </div>
+                <div className="form-group">
+                    <input type="text" placeholder="Message for listener" name="listenerMessage" value={listenerMessage} onChange={e => onChange(e)} required />
+                </div>
+                </Fragment>
+
+                ) : (null)}
+
                 <p>
                     <input type="checkbox" name="preferredMusician" checked={preferredMusician} value={preferredMusician} onChange={e => {
                         setFormData({ ...formData, preferredMusician: !preferredMusician });
@@ -155,13 +165,7 @@ const RequestPersonal = ({
                             <Fragment><ProfileAvailability key={avail._id} availability={avail} /></Fragment>) : (<Fragment></Fragment>)))))}
                 </div>
                 <div className="form-group textarea">
-                        <TimezoneSelect
-                        className="form-group dropdown"
-                        value={selectedTimezone}
-                        timezones={{...i18nTimezones}}
-                        onChange={setSelectedTimezone}
-                        />
-
+                <h4>Timezone</h4>
                     <select name="listenerTimezone"
                      value={listenerTimezone}
                      contentEditable={false}
@@ -183,18 +187,11 @@ const RequestPersonal = ({
                               onChange={e => {
                                   setTime(e);
                                   setFormData({ ...formData,
-                                      dateFor: moment(e).utc(true).format()});
+                                      dateFor: moment(e, listenerTimezone).utc(true).format()});
                               }}/>
                 </div>
-                <div className="form-group">
-                </div>
-
-
-
-                <div className="form-group">
-                    <input type="text" placeholder="Message for listener" name="listenerMessage" value={listenerMessage} onChange={e => onChange(e)} required />
-                </div>
-
+                {moment(dateFor).tz(listenerTimezone).format("LLLL")}<br/>
+                {dateFor}<br/>
                 <input type="submit" className="btn btn-primary my-1" />
                 <Link to="/" className="btn btn-light my-1">Go Back</Link>
             </form>
