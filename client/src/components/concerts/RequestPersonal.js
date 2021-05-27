@@ -90,7 +90,12 @@ const RequestPersonal = ({
 
     const [selectedTimezone, setSelectedTimezone] = useState(Intl.DateTimeFormat().resolvedOptions().timeZone)
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+    function datepickerUTC (e, timezone) {
+        const flattime = moment(e).utc(true).format('YYYY-MM-DDTHH:mm:ss');
+        const modifiedTime = moment.tz(flattime, listenerTimezone).utc().format();
 
+        return modifiedTime;
+    }
     if(request !== null && request._id !== null) {
         return <Redirect to={`/request/response/${request._id}`} />
     }
@@ -142,15 +147,14 @@ const RequestPersonal = ({
 
                 ) : (null)}
 
-                  <div>
-    <GooglePlacesAutocomplete
-    apiKey="AIzaSyAL44Nx7XNZVHgRQd0dugCD8zvw8CJYRc8"
-    selectProps={{
-        searchLocation,
-        onChange: setSearchLocation
-    }}/>
-
-  </div>
+                  <div className="form-group">
+                    <GooglePlacesAutocomplete
+                    apiKey="AIzaSyAL44Nx7XNZVHgRQd0dugCD8zvw8CJYRc8"
+                    selectProps={{
+                        searchLocation,
+                        onChange: setSearchLocation
+                    }}/>
+                </div>
                 <p>
                     <input type="checkbox" name="preferredMusician" checked={preferredMusician} value={preferredMusician} onChange={e => {
                         setFormData({ ...formData, preferredMusician: !preferredMusician });
@@ -182,6 +186,8 @@ const RequestPersonal = ({
                      value={listenerTimezone}
                      contentEditable={false}
                      onChange={ e => {
+                         setFormData({ ...formData,
+                                      dateFor: datepickerUTC(timePicker, e.value)});
                          onChange(e);
                     }}
                      >
@@ -199,12 +205,12 @@ const RequestPersonal = ({
                               onChange={e => {
                                   setTime(e);
                                   setFormData({ ...formData,
-                                      dateFor: moment(e, listenerTimezone).utc(true).format()});
+                                      dateFor: datepickerUTC(e, listenerTimezone)});
                               }}/>
                 </div>
-                {moment(dateFor).tz(listenerTimezone).format("LLLL")}<br/>
-                {dateFor}<br/>
-                <input type="submit" className="btn btn-primary my-1" />
+                {dateFor} in {listenerTimezone}<br/>
+                {moment(dateFor).tz(listenerTimezone).format("LLLL")}                (<Moment fromNow>{dateFor}</Moment>)<br/>
+                <input type="submit" value="Request!" className="btn btn-primary my-1" />
                 <Link to="/" className="btn btn-light my-1">Go Back</Link>
             </form>
     </Fragment>
