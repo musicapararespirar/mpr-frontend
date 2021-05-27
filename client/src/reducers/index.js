@@ -5,7 +5,7 @@ import profile from './profile';
 import post from './post';
 import concert from './concert';
 import language from './language';
-
+import location from './location';
 
 export default combineReducers({
     alert,
@@ -13,5 +13,6 @@ export default combineReducers({
     profile,
     post,
     concert,
-    language
+    language,
+    location
 });

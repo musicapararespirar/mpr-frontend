@@ -22,6 +22,7 @@
   "homepage": "https://github.com/evanjt/MusicaParaRespirar#readme",
   "dependencies": {
     "@date-io/date-fns": "^1.3.13",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "config": "^3.3.3",
     "date-fns": "^2.21.3",

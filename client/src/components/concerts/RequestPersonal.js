@@ -10,13 +10,15 @@ import Moment from 'react-moment';
 import moment from 'moment';
 import { getProfiles } from '../../actions/profile';
 import ProfileAvailability from '../profile/ProfileAvailability';
-import TimezoneSelect, { i18nTimezones } from 'react-timezone-select'
 import DatePicker from 'react-datepicker';
-
+import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+import { getLocationFromId } from '../../actions/external';
 
 const RequestPersonal = ({
     requestConcert,
     getProfiles,
+    getLocationFromId,
+    location,
     profile: {
         profiles,
         loading
@@ -27,9 +29,11 @@ const RequestPersonal = ({
         error
     }
 }) => {
-    useEffect(() => {
-        getProfiles();
-        }, [getProfiles]);
+    useEffect(() => { getProfiles() }, [getProfiles]);
+    useEffect(() => {getLocationFromId(searchLocation)}, [getLocationFromId])
+
+
+    const [searchLocation, setSearchLocation] = useState(null);
 
     function roundedDateTime (inDate) {
         const coeff = 1000 * 60 * 30;
@@ -43,7 +47,6 @@ const RequestPersonal = ({
     const [profileObject, setProfileObject] = useState('');
     const defaultTimeZone = momentTZ.tz.guess();
     const timeZonesList = momentTZ.tz.names();
-
 
     function roundedDateTime (inDate) {
             // Returns a rounded date to the nearest half-hour
@@ -139,6 +142,15 @@ const RequestPersonal = ({
 
                 ) : (null)}
 
+                  <div>
+    <GooglePlacesAutocomplete
+    apiKey="AIzaSyAL44Nx7XNZVHgRQd0dugCD8zvw8CJYRc8"
+    selectProps={{
+        searchLocation,
+        onChange: setSearchLocation
+    }}/>
+
+  </div>
                 <p>
                     <input type="checkbox" name="preferredMusician" checked={preferredMusician} value={preferredMusician} onChange={e => {
                         setFormData({ ...formData, preferredMusician: !preferredMusician });
@@ -202,14 +214,17 @@ const RequestPersonal = ({
 RequestPersonal.propTypes = {
     requestConcert: PropTypes.func.isRequired,
     getProfiles: PropTypes.func.isRequired,
+    getLocationFromId: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired,
-    concert: PropTypes.object.isRequired
+    concert: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
     profile: state.profile,
-    concert: state.concert
+    concert: state.concert,
+    location: state.location
 });
 
 
-export default connect(mapStateToProps, { requestConcert, getProfiles })(RequestPersonal);
+export default connect(mapStateToProps, { requestConcert, getProfiles, getLocationFromId })(RequestPersonal);
