@@ -30,10 +30,14 @@ const RequestPersonal = ({
     }
 }) => {
     useEffect(() => { getProfiles() }, [getProfiles]);
-    useEffect(() => {getLocationFromId(searchLocation)}, [getLocationFromId])
-
 
     const [searchLocation, setSearchLocation] = useState(null);
+    useEffect(() => {getLocationFromId(searchLocation)}, [searchLocation])
+    const defaultTimeZone = momentTZ.tz.guess();
+
+    useEffect(() => {
+        setFormData({ ...formData, dateFor: datepickerUTC(dateFor, location.timezone)});
+    }, [location]);
 
     function roundedDateTime (inDate) {
         const coeff = 1000 * 60 * 30;
@@ -45,18 +49,27 @@ const RequestPersonal = ({
     const [musicianNameEnabled, toggleMusician] = useState(true);
     const [timePicker, setTime] = useState(roundedDateTime(new Date()));
     const [profileObject, setProfileObject] = useState('');
+<<<<<<< HEAD
     const [timeAvailability, setTimeAvailability] = useState([]);
     const defaultTimeZone = momentTZ.tz.guess();
+=======
+>>>>>>> 573bcb0e1a62eb3677da78975a84aa83b6ce0f9c
     const timeZonesList = momentTZ.tz.names();
 
     function roundedDateTime (inDate) {
-            // Returns a rounded date to the nearest half-hour
-            const coeff = 1000 * 60 * 30;
-            const roundedDate = new Date(Math.round(inDate / coeff) * coeff);
+        // Returns a rounded date to the nearest half-hour
+        const coeff = 1000 * 60 * 30;
+        const roundedDate = new Date(Math.round(inDate / coeff) * coeff);
 
-            return roundedDate
-        };
+        return roundedDate
+    };
 
+    function datepickerUTC (e, timezone) {
+        const flattime = moment(e).utc(true).format('YYYY-MM-DDTHH:mm:ss');
+        const modifiedTime = moment.tz(flattime, timezone).utc().format();
+
+        return modifiedTime;
+    }
     const [formData, setFormData] = useState({
         requesterName: '',
         requesterNumber: '',
@@ -69,7 +82,7 @@ const RequestPersonal = ({
         listenerTimezone: defaultTimeZone,
         listenerNumber: '',
         asap: false,
-        dateFor: moment(timePicker).utc(true).format(),
+        dateFor: datepickerUTC(timePicker, location.timezone),
         type: 'personal'
     });
 
@@ -89,14 +102,11 @@ const RequestPersonal = ({
         type
          } = formData;
 
-    const [selectedTimezone, setSelectedTimezone] = useState(Intl.DateTimeFormat().resolvedOptions().timeZone)
-    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
-    function datepickerUTC (e, timezone) {
-        const flattime = moment(e).utc(true).format('YYYY-MM-DDTHH:mm:ss');
-        const modifiedTime = moment.tz(flattime, listenerTimezone).utc().format();
+     useEffect(() => {
+        setFormData({ ...formData, listenerTimezone: location.timezone});
+    }, [location]);
 
-        return modifiedTime;
-    }
+    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
     if(request !== null && request._id !== null) {
         return <Redirect to={`/request/response/${request._id}`} />
     }
@@ -153,10 +163,18 @@ const RequestPersonal = ({
                   <div className="form-group">
                     <GooglePlacesAutocomplete
                     apiKey="AIzaSyAL44Nx7XNZVHgRQd0dugCD8zvw8CJYRc8"
+                    minLengthAutocomplete="3"
+                    withSessionToken={true}
                     selectProps={{
                         searchLocation,
                         onChange: setSearchLocation
-                    }}/>
+                    }}
+                    />
+                    Place ID: {searchLocation ? (searchLocation.value.place_id) : (null)}<br/>
+                    Place: {searchLocation ? (location.location) : (null)}<br/>
+                    Timezone: {location ? (location.timezone) : (null)}<br/>
+                    Latitude: {location ? (location.latitude) : (null)}<br/>
+                    Longitude: {location ? (location.longitude) : (null)}<br/>
                 </div>
                 <p>
                     <input type="checkbox" name="preferredMusician" checked={preferredMusician} value={preferredMusician} onChange={e => {
@@ -183,21 +201,6 @@ const RequestPersonal = ({
                         avail => (profile._id === preferredMusicianName ? (
                             <Fragment>{console.log(avail)}<ProfileAvailability key={avail._id} availability={avail} /></Fragment>) : (<Fragment></Fragment>)))))}}
                 </div>
-                <div className="form-group textarea">
-                <h4>Timezone</h4>
-                    <select name="listenerTimezone"
-                     value={listenerTimezone}
-                     contentEditable={false}
-                     onChange={ e => {
-                         setFormData({ ...formData,
-                                      dateFor: datepickerUTC(timePicker, e.value)});
-                         onChange(e);
-                    }}
-                     >
-                        {timeZonesList.map(e => (<Fragment><option value={e}>{e}</option></Fragment>))}
-                    </select>
-                </div>
-                {console.log(selectedTimezone)}
                 <div className="form-group">
                     <h4>Time requested</h4>
                     <DatePicker
@@ -209,8 +212,7 @@ const RequestPersonal = ({
                               includeDates={timeAvailability}
                               onChange={e => {
                                   setTime(e);
-                                  setFormData({ ...formData,
-                                      dateFor: datepickerUTC(e, listenerTimezone)});
+                                  setFormData({ ...formData, dateFor: datepickerUTC(e, location.timezone)});
                               }}/>
                 </div>
                 {dateFor} in {listenerTimezone}<br/>
