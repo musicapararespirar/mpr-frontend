@@ -45,6 +45,7 @@ const RequestPersonal = ({
     const [musicianNameEnabled, toggleMusician] = useState(true);
     const [timePicker, setTime] = useState(roundedDateTime(new Date()));
     const [profileObject, setProfileObject] = useState('');
+    const [timeAvailability, setTimeAvailability] = useState([]);
     const defaultTimeZone = momentTZ.tz.guess();
     const timeZonesList = momentTZ.tz.names();
 
@@ -99,6 +100,8 @@ const RequestPersonal = ({
     if(request !== null && request._id !== null) {
         return <Redirect to={`/request/response/${request._id}`} />
     }
+    console.log(preferredMusicianName);
+
     return     <Fragment>
         <Link to='/' className='btn'>
             Back home
@@ -178,7 +181,7 @@ const RequestPersonal = ({
                 {musicianNameEnabled ? (null) : (profiles.map(profile =>
                     profile.availability.map(
                         avail => (profile._id === preferredMusicianName ? (
-                            <Fragment><ProfileAvailability key={avail._id} availability={avail} /></Fragment>) : (<Fragment></Fragment>)))))}
+                            <Fragment>{console.log(avail)}<ProfileAvailability key={avail._id} availability={avail} /></Fragment>) : (<Fragment></Fragment>)))))}}
                 </div>
                 <div className="form-group textarea">
                 <h4>Timezone</h4>
@@ -202,6 +205,8 @@ const RequestPersonal = ({
                               locale={es}
                               inline
                               showTimeSelect
+                              includeTimes={timeAvailability}
+                              includeDates={timeAvailability}
                               onChange={e => {
                                   setTime(e);
                                   setFormData({ ...formData,
