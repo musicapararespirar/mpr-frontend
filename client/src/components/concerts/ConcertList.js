@@ -58,6 +58,11 @@ const ConcertList = ({ concertList }) => {
          Header: 'Time (Theirs)',
          accessor: a => (
             <Fragment><Moment tz={a.listenerTimezone} format="MM/DD LT">{a.dateFor}</Moment><br /></Fragment>)
+        },
+        {
+         Header: 'Accepted',
+         accessor: a => (
+            <Fragment>{a.scheduled ? ('Yes') : ('No')}<br /></Fragment>)
         }
      ],
      []
@@ -98,7 +103,7 @@ const ConcertList = ({ concertList }) => {
          {rows.map(row => {
            prepareRow(row)
            return (
-             <tr className='table' {...row.getRowProps()} style={{ background: row.original.scheduled ? '#006837' : '#a50026' }}>
+             <tr className='table' {...row.getRowProps()} style={{  }}>
                {row.cells.map(cell => {
                  return (
                    <td {...cell.getCellProps()}>

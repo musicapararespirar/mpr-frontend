@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { requestConcert } from '../../actions/concert';
-import momentTZ from 'moment-timezone';
 import es from 'date-fns/locale/es';
 import "moment/locale/es";
 import Moment from 'react-moment';
@@ -12,7 +11,7 @@ import { getProfiles } from '../../actions/profile';
 import ProfileAvailability from '../profile/ProfileAvailability';
 import DatePicker from 'react-datepicker';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
-import { getLocationFromId } from '../../actions/external';
+import { getLocationFromId } from '../../actions/location';
 
 const RequestPersonal = ({
     requestConcert,
@@ -33,7 +32,6 @@ const RequestPersonal = ({
 
     const [searchLocation, setSearchLocation] = useState(null);
     useEffect(() => {getLocationFromId(searchLocation)}, [searchLocation])
-    const defaultTimeZone = momentTZ.tz.guess();
 
     useEffect(() => {
         setFormData({ ...formData, dateFor: datepickerUTC(dateFor, location.timezone)});
@@ -49,12 +47,7 @@ const RequestPersonal = ({
     const [musicianNameEnabled, toggleMusician] = useState(true);
     const [timePicker, setTime] = useState(roundedDateTime(new Date()));
     const [profileObject, setProfileObject] = useState('');
-<<<<<<< HEAD
     const [timeAvailability, setTimeAvailability] = useState([]);
-    const defaultTimeZone = momentTZ.tz.guess();
-=======
->>>>>>> 573bcb0e1a62eb3677da78975a84aa83b6ce0f9c
-    const timeZonesList = momentTZ.tz.names();
 
     function roundedDateTime (inDate) {
         // Returns a rounded date to the nearest half-hour
@@ -79,13 +72,12 @@ const RequestPersonal = ({
         preferredMusicianName: '',
         listenerMessage: '',
         listenerName: '',
-        listenerTimezone: defaultTimeZone,
+        listenerTimezone: location.timezone,
         listenerNumber: '',
         asap: false,
         dateFor: datepickerUTC(timePicker, location.timezone),
         type: 'personal'
     });
-
     const {
         requesterName,
         requesterNumber,
@@ -102,9 +94,14 @@ const RequestPersonal = ({
         type
          } = formData;
 
+console.log(dateFor);
      useEffect(() => {
-        setFormData({ ...formData, listenerTimezone: location.timezone});
+        setFormData({ ...formData, listenerTimezone: location.timezone})
     }, [location]);
+
+     useEffect(() => {
+         setFormData({ ...formData, dateFor: datepickerUTC(timePicker, listenerTimezone)})
+    }, [listenerTimezone]);
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
     if(request !== null && request._id !== null) {
@@ -167,8 +164,31 @@ const RequestPersonal = ({
                     withSessionToken={true}
                     selectProps={{
                         searchLocation,
-                        onChange: setSearchLocation
-                    }}
+                        onChange: setSearchLocation,
+                        styles: {
+                            container: (provided) => ({
+                                ...provided,
+                                color: 'black',
+                                width: '18.5rem'
+                            }),
+                            group: (provided) => ({
+                                ...provided,
+                                color: 'black',
+                            }),
+                            input: (provided) => ({
+                                ...provided,
+                                color: 'black',
+                            }),
+                            option: (provided) => ({
+                                ...provided,
+                                color: 'black',
+                            }),
+                            singleValue: (provided) => ({
+                                ...provided,
+                                color: 'black',
+                            }),
+
+                    }}}
                     />
                     Place ID: {searchLocation ? (searchLocation.value.place_id) : (null)}<br/>
                     Place: {searchLocation ? (location.location) : (null)}<br/>
@@ -199,7 +219,10 @@ const RequestPersonal = ({
                 {musicianNameEnabled ? (null) : (profiles.map(profile =>
                     profile.availability.map(
                         avail => (profile._id === preferredMusicianName ? (
-                            <Fragment>{console.log(avail)}<ProfileAvailability key={avail._id} availability={avail} /></Fragment>) : (<Fragment></Fragment>)))))}}
+                            <Fragment>{console.log(avail)}<ProfileAvailability key={avail._id} availability={avail} /></Fragment>
+                        ) : (
+                            <Fragment></Fragment>
+                        )))))}
                 </div>
                 <div className="form-group">
                     <h4>Time requested</h4>
@@ -208,22 +231,23 @@ const RequestPersonal = ({
                               locale={es}
                               inline
                               showTimeSelect
-                              includeTimes={timeAvailability}
-                              includeDates={timeAvailability}
                               onChange={e => {
                                   setTime(e);
-                                  setFormData({ ...formData, dateFor: datepickerUTC(e, location.timezone)});
+                                  setFormData({ ...formData, dateFor: datepickerUTC(e, listenerTimezone)});
                               }}/>
                 </div>
                 {dateFor} in {listenerTimezone}<br/>
-                {moment(dateFor).tz(listenerTimezone).format("LLLL")}                (<Moment fromNow>{dateFor}</Moment>)<br/>
-                <input type="submit" value="Request!" className="btn btn-primary my-1" />
-                <Link to="/" className="btn btn-light my-1">Go Back</Link>
+
+                {moment(dateFor).tz(listenerTimezone).format("LLLL")} (<Moment fromNow>{dateFor}</Moment>)<br/>
+                {listenerTimezone !== "null" ? (
+                <Fragment><input type="submit" value="Request!" className="btn btn-primary my-1" />
+                <Link to="/" className="btn btn-light my-1" >Go Back</Link></Fragment>) : (<Fragment>Cannot determine timezone. Please contact us instead</Fragment>)}
             </form>
     </Fragment>
 
-
 }
+
+
 RequestPersonal.propTypes = {
     requestConcert: PropTypes.func.isRequired,
     getProfiles: PropTypes.func.isRequired,

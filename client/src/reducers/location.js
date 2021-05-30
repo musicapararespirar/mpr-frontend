@@ -2,12 +2,13 @@ import {
     GET_LOCATION,
     LOCATION_ERROR,
 } from '../actions/types';
+import momentTZ from 'moment-timezone';
 
 const initialState = {
     latitude: null,
     longitude: null,
     location: null,
-    timezone: null,
+    timezone: "null"
 }
 
 export default function(state = initialState, action) {
