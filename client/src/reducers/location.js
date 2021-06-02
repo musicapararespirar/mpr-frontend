@@ -8,7 +8,8 @@ const initialState = {
     latitude: null,
     longitude: null,
     location: null,
-    timezone: "null"
+    timezoneLocal: momentTZ.tz.guess(),
+    timezoneChosen: null
 }
 
 export default function(state = initialState, action) {
@@ -20,8 +21,9 @@ export default function(state = initialState, action) {
                 ...state,
                 latitude: payload.latitude,
                 longitude: payload.longitude,
-                location: payload.location,
-                timezone: payload.timezone
+                name: payload.location,
+                timezoneLocal: momentTZ.tz.guess(),
+                timezoneChosen: payload.timezone
             };
         case LOCATION_ERROR:
             return {

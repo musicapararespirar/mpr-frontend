@@ -2,78 +2,123 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ConcertSchema = new Schema({
-    requesterName: {
-        type: String
+  status: {
+    type: String,
+    required: true
+  },
+  onlineLink: {
+    type: String
+  },
+  type: {
+    type: String,
+    required: true
+  },
+  message: {
+    type: String
+  },
+  isGift: {
+    type: Boolean,
+    required: true
+  },
+  durationSeconds: {
+    type: Number
+  },
+  requester: {
+    name: {
+      type: String,
+      required: true
     },
-    dateAdded:
-        {
-            type: Date,
-            default: Date.now
-        },
-    reason: {
-        type: String
+    number: {
+      type: Number,
+      required: true
     },
-    preferredMusicianName: {
-        type: String
+    email: {
+      type: Number,
+      required: true
     },
-    preferredMusician: {
-        type: Boolean
+    isListener: {
+      type: Boolean,
+      required: true
     },
-    preferredMusicianObject: {
-        type: Schema.Types.ObjectId,
-        ref: 'users'
+    timezone: {
+      type: String,
+      required: true
+    }
+  },
+  listener: {
+    name: {
+      type: String
     },
-    listenerMessage: {
-        type: String
+    number: {
+      type: Number
     },
-    listenerName: {
-        type: String
+    email: {
+      type: Number
     },
-    listenerTimezone: {
-        type: String
+    placeName: {
+      type: String
     },
-    listenerNumber: {
-        type: Number
+    placeLatitude: {
+      type: Number
+    },
+    placeLongitude: {
+      type: Number
+    },
+    isInstitution: {
+      type: Boolean,
+      required: true
+    },
+    timezone: {
+      type: String,
+      required: true
+    },
+    language: {
+      type: String
+    }
+  },
+  musician: {
+    isPreferred: {
+      type: Boolean,
+      required: true
+    },
+    id: {
+      type: Schema.Types.ObjectId,
+      ref: 'users'
+    },
+  },
+  time: {
+    dateAddedUTC: {
+        type: Date,
+        default: Date.now
     },
     asap: {
-        type: Boolean
+      type: Boolean,
+      required: true
     },
-    dateFor: {
-        type: Date
+    dateForUTC: {
+      type: Date
     },
-    scheduled: {
-        type: Boolean,
-        default: false
-    },
-    requestState: {
-        type: String
-    },
-    requestType: {
+  },
+  notes: [
+    {
+      from: {
+        type: Schema.Types.ObjectId,
+        ref: 'users',
+        required: true
+      },
+      text: {
         type: String,
         required: true
-    },
-    duration: {
-        type: Number
-    },
-    notes: [
-        {
-            coordinator: {
-                type: Schema.Types.ObjectId,
-                ref: 'users'
-            },
-            text: {
-                type: String,
-                required: true
-            },
-            name: {
-                type: String
-            },
-            date: {
-                type: Date,
-                default: Date.now
-            }
-        }
-    ]
+      },
+      name: {
+        type: String
+      },
+      date: {
+        type: Date,
+        default: Date.now
+      }
+    }
+  ]
 });
 
 module.exports = Concert = mongoose.model('concert', ConcertSchema);

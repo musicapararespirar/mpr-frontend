@@ -97,7 +97,6 @@ export const requestConcert = formData => async dispatch => {
             'Content-Type': 'application/json'
         }
     }
-
     try {
         const res = await axios.post('/api/concert', formData, config);
 
@@ -107,7 +106,6 @@ export const requestConcert = formData => async dispatch => {
         });
 
         dispatch(setAlert('Request Added', 'success'));
-
     } catch(err) {
         dispatch({
             type: CONCERT_ERROR,

@@ -12,6 +12,7 @@ import ProfileAvailability from '../profile/ProfileAvailability';
 import DatePicker from 'react-datepicker';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import { getLocationFromId } from '../../actions/location';
+import Toggle from 'react-toggle'
 
 const RequestPersonal = ({
     requestConcert,
@@ -28,87 +29,103 @@ const RequestPersonal = ({
         error
     }
 }) => {
-    useEffect(() => { getProfiles() }, [getProfiles]);
-
-    const [searchLocation, setSearchLocation] = useState(null);
-    useEffect(() => {getLocationFromId(searchLocation)}, [searchLocation])
-
-    useEffect(() => {
-        setFormData({ ...formData, dateFor: datepickerUTC(dateFor, location.timezone)});
-    }, [location]);
-
+    // Returns a rounded date to the nearest half-hour
     function roundedDateTime (inDate) {
-        const coeff = 1000 * 60 * 30;
-        const roundedDate = new Date(Math.round(inDate / coeff) * coeff);
-
-        return roundedDate;
-    }
-
-    const [musicianNameEnabled, toggleMusician] = useState(true);
-    const [timePicker, setTime] = useState(roundedDateTime(new Date()));
-    const [profileObject, setProfileObject] = useState('');
-    const [timeAvailability, setTimeAvailability] = useState([]);
-
-    function roundedDateTime (inDate) {
-        // Returns a rounded date to the nearest half-hour
         const coeff = 1000 * 60 * 30;
         const roundedDate = new Date(Math.round(inDate / coeff) * coeff);
 
         return roundedDate
     };
 
+    // Helps datepicker return a UTC time from the chosen timezone
     function datepickerUTC (e, timezone) {
         const flattime = moment(e).utc(true).format('YYYY-MM-DDTHH:mm:ss');
         const modifiedTime = moment.tz(flattime, timezone).utc().format();
 
         return modifiedTime;
     }
+
+    useEffect(() => { getProfiles() }, [getProfiles]);
+
+    // Variables for Location searching
+    const [searchLocation, setSearchLocation] = useState(null);
+    useEffect(() => {getLocationFromId(searchLocation)}, [searchLocation])
+
+    // If location changes, update the time requested
+    useEffect(() => {
+        setFormData({ ...formData, time: {
+            dateForUTC: datepickerUTC(formData.time.dateForUTC, location.timezone) }});
+    }, [location]);
+
+    // Variable to hold time suitable for datepicker - always uses local time
+    // therefore is different to what should be stored in DB
+    const [timePicker, setTime] = useState(roundedDateTime(new Date()));
+
     const [formData, setFormData] = useState({
-        requesterName: '',
-        requesterNumber: '',
-        requesterEmail: '',
-        requestType: 'personal',
-        preferredMusician: false,
+        requester: {
+            name: '',
+            number: null,
+            email: '',
+            isListener: true,
+            timezone: location.timezoneLocal
+        },
+        listener: {
+            name: '',
+            number: null,
+            email: '',
+            language: '',
+            timezone: location.timezoneChosen,
+            placeName: location.location,
+            placeLatitude: location.latitude,
+            placeLongitude: location.longitude,
+            isInstitution: false,
+        },
+        musician: {
+            isPreferred: false,
+            id: ''
+        },
+        time: {
+            asap: false
+        },
         preferredMusicianName: '',
         listenerMessage: '',
         listenerName: '',
         listenerTimezone: location.timezone,
         listenerNumber: '',
-        asap: false,
         dateFor: datepickerUTC(timePicker, location.timezone),
         type: 'personal'
     });
-    const {
-        requesterName,
-        requesterNumber,
-        requesterEmail,
-        requestType,
-        preferredMusician,
-        preferredMusicianName,
-        listenerMessage,
-        listenerName,
-        listenerTimezone,
-        listenerNumber,
-        asap,
-        dateFor,
-        type
-         } = formData;
+    const [userEntity, setUserEntity] = useState('Your');
+    useEffect(() => {
+        if (formData.requester.isListener) {
+            setUserEntity('Your');
+        } else {
+            setUserEntity('Their');
+        }
+    }, [formData.requester.isListener]);
 
-console.log(dateFor);
-     useEffect(() => {
-        setFormData({ ...formData, listenerTimezone: location.timezone})
+    useEffect(() => {
+        setFormData({
+            ...formData,
+            listenerTimezone: location.timezone})
     }, [location]);
 
+    const [toggle, setToggle] = useState(false);
+    const triggerToggle = () => {
+        setToggle( !toggle )
+    }
      useEffect(() => {
-         setFormData({ ...formData, dateFor: datepickerUTC(timePicker, listenerTimezone)})
+         setFormData({
+             ...formData,
+             time: {
+                 dateFor: datepickerUTC(timePicker, formData.listener.timezone)
+            }})
     }, [listenerTimezone]);
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
     if(request !== null && request._id !== null) {
         return <Redirect to={`/request/response/${request._id}`} />
     }
-    console.log(preferredMusicianName);
-
     return     <Fragment>
         <Link to='/' className='btn'>
             Back home
@@ -125,33 +142,67 @@ console.log(dateFor);
                 requestConcert(formData);
             }}>
                 <div className="form-group">
-                    <input type="text" placeholder="* Your name" name="requesterName" value={requesterName} onChange={e => onChange(e)} required />
-                </div>
-                <div className="form-group">
-                    <input type="text" placeholder="* Your number" name="requesterNumber" value={requesterNumber} onChange={e => onChange(e)} required />
-                </div>
-                <div className="form-group">
-                    <input type="text" placeholder="* Your email" name="requesterEmail" value={requesterEmail} onChange={e => onChange(e)} required />
-                </div>
-                <div className="form-group">
-                    <input type="radio" id="personal" name="requestType"
-                        value="personal" onChange={e => onChange(e)} checked={requestType==='personal'}/>
-                    <label for="personal">For me</label><br/>
+                    <p>Will this concert be:<br/></p>
+                    <input type="radio" name="requester.isListener"
+                        onChange={e => {
+                            setFormData({
+                                ...formData,
+                                requester: {
+                                    isListener: true
+                                }
+                            });
+                        }} checked={formData.requester.isListener}/>
+                    <label for={true}>For you, or</label><br/>
 
-                    <input type="radio" id="gift" name="requestType"
-                        value="gift" onChange={e => onChange(e)}/>
-                    <label for="gift">For someone else</label><br/>
+                    <input type="radio" name="requester.isListener"
+                        onChange={e => {
+                            setFormData({
+                                ...formData,
+                                requester: {
+                                    isListener: false
+                                }
+                            });
+                        }} checked={!formData.requester.isListener}/>
+                    <label for={false}>For someone else</label><br/>
                 </div>
 
-                {requestType === 'gift' ? (
+                <div className="form-group">
+                    <input type="text"
+                    placeholder={`* Your name`}
+                    name="requesterName"
+                    value={requesterName}
+                    onChange={e => onChange(e)}
+                    required />
+                </div>
+
+                <div className="form-group">
+                    <input
+                    type="text"
+                    placeholder="* Your email"
+                    name="requesterEmail"
+                    value={requesterEmail}
+                    onChange={e => onChange(e)}
+                    required />
+                <small className="form-text">If we need to contact you</small>
+                </div>
+
+                <div className="form-group">
+                    <input
+                    type="text"
+                    placeholder={`* ${userEntity} number`}
+                    name="requesterNumber"
+                    value={requesterNumber}
+                    onChange={e => onChange(e)}
+                    required />
+                    <small className="form-text">Where we should send {`${userEntity.toLowerCase()}`} concert (Whatsapp)</small>
+                </div>
+
+                {!formData.requester.isListener? (
                 <Fragment><div className="form-group">
                     <input type="text" placeholder="* Their name" name="listenerName" value={listenerName} onChange={e => onChange(e)} required />
                 </div>
                 <div className="form-group">
-                    <input type="text" placeholder="* Their number" name="listenerNumber" value={listenerNumber} onChange={e => onChange(e)} required />
-                </div>
-                <div className="form-group">
-                    <input type="text" placeholder="Message for listener" name="listenerMessage" value={listenerMessage} onChange={e => onChange(e)} required />
+                    <input type="text" placeholder="Message for them (Optional)" name="listenerMessage" value={listenerMessage} onChange={e => onChange(e)} required />
                 </div>
                 </Fragment>
 
@@ -165,65 +216,104 @@ console.log(dateFor);
                     selectProps={{
                         searchLocation,
                         onChange: setSearchLocation,
+                        placeholder: `* ${userEntity} city`,
                         styles: {
                             container: (provided) => ({
                                 ...provided,
+                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                                 width: '18.5rem'
                             }),
                             group: (provided) => ({
                                 ...provided,
+                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                             }),
                             input: (provided) => ({
                                 ...provided,
+                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                             }),
                             option: (provided) => ({
                                 ...provided,
+                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                             }),
                             singleValue: (provided) => ({
                                 ...provided,
+                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                             }),
 
                     }}}
                     />
-                    Place ID: {searchLocation ? (searchLocation.value.place_id) : (null)}<br/>
-                    Place: {searchLocation ? (location.location) : (null)}<br/>
-                    Timezone: {location ? (location.timezone) : (null)}<br/>
-                    Latitude: {location ? (location.latitude) : (null)}<br/>
-                    Longitude: {location ? (location.longitude) : (null)}<br/>
+                    <small className="form-text">
+                        This helps us determine {`${userEntity.toLowerCase()}`} timezone
+                    </small>
                 </div>
+                <p className="lead">Customise {`${userEntity.toLowerCase()}`} booking</p>
+                    <p>We will schedule your request as soon as possible.</p>
+                    <p>If you have a musician or time request, let us know</p><br/>
                 <p>
-                    <input type="checkbox" name="preferredMusician" checked={preferredMusician} value={preferredMusician} onChange={e => {
-                        setFormData({ ...formData, preferredMusician: !preferredMusician });
-                        toggleMusician(!musicianNameEnabled);
+                    <input
+                    type="checkbox"
+                    name="preferredMusician"
+                    checked={formData.musician.isPreferred}
+                    onChange={e => {console.log("what??");
+                        setFormData({
+                            ...formData,
+                            musician: {
+                                isPreferred: !formData.musician.isPreferred
+                            } });
                     }} /> {' '}Request specific musician
                 </p>
+                <p>
+                    <input
+                    type="checkbox"
+                    name="preferredTime"
+                    checked={formData.time.asap}
+                    onChange={e => {
+                        setFormData({
+                            ...formData,
+                            time: {
+                                asap: !formData.time.asap
+                            } });
+                    }} /> {' '}Request specific time
+                </p>
                 <div className="form-group">
-                {musicianNameEnabled ? (null) : (
+                {formData.musician.isPreferred ? (
                 <select name="preferredMusicianName"
                         contentEditable={false}
-                        value={preferredMusicianName}
-                        onChange={ e => { onChange(e) }}
-                        disabled={musicianNameEnabled ? 'disabled' : ''}>
-                        <option value="" selected disabled hidden>Choose Musician</option>
+                        onChange={e => {
+                        setFormData({
+                            ...formData,
+                            musician: {
+                                id: e.target.value
+                            } });
+                            }}>
+                        <option>Choose Musician</option>
                         {profiles.map(profile => (
                             <Fragment>
                                 <option value={profile._id}>{profile.user.name}</option>
                             </Fragment>))}
                 </select>
-                )}
-                {musicianNameEnabled ? (null) : (profiles.map(profile =>
+                ) : (null) }
+                {formData.musician.isPreferred ? (profiles.map(profile =>
                     profile.availability.map(
-                        avail => (profile._id === preferredMusicianName ? (
-                            <Fragment>{console.log(avail)}<ProfileAvailability key={avail._id} availability={avail} /></Fragment>
+                        avail => (profile._id === formData.musician.id ? (
+                            <Fragment><ProfileAvailability key={avail._id} availability={avail} /></Fragment>
                         ) : (
                             <Fragment></Fragment>
-                        )))))}
+                        ))))) : (null)}
                 </div>
+                <label>
+                <Toggle
+                    name='milkIsReady'
+                    icons={{
+                        checked: <i className="fas fa-gift" />,
+                        unchecked: <i className="far fa-smile" />
+                }}/><span>A gift</span>
+                </label>
                 <div className="form-group">
                     <h4>Time requested</h4>
                     <DatePicker
@@ -236,17 +326,12 @@ console.log(dateFor);
                                   setFormData({ ...formData, dateFor: datepickerUTC(e, listenerTimezone)});
                               }}/>
                 </div>
-                {dateFor} in {listenerTimezone}<br/>
 
-                {moment(dateFor).tz(listenerTimezone).format("LLLL")} (<Moment fromNow>{dateFor}</Moment>)<br/>
-                {listenerTimezone !== "null" ? (
                 <Fragment><input type="submit" value="Request!" className="btn btn-primary my-1" />
-                <Link to="/" className="btn btn-light my-1" >Go Back</Link></Fragment>) : (<Fragment>Cannot determine timezone. Please contact us instead</Fragment>)}
+                <Link to="/" className="btn btn-light my-1" >Go Back</Link></Fragment>
             </form>
     </Fragment>
-
 }
-
 
 RequestPersonal.propTypes = {
     requestConcert: PropTypes.func.isRequired,
