@@ -13,6 +13,8 @@ import DatePicker from 'react-datepicker';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import { getLocationFromId } from '../../actions/location';
 import Toggle from 'react-toggle'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const RequestPersonal = ({
     requestConcert,
@@ -196,13 +198,19 @@ const RequestPersonal = ({
                     required />
                 <small className="form-text">Should we need to contact you</small>
 
-                    <input
-                    type="text"
-                    placeholder={`* ${userEntity} number`}
-                    name="number"
-                    value={formData.requester.number}
-                    onChange={e => onChangeRequester(e)}
-                    required />
+                    <PhoneInput
+                        placeholder={`* ${userEntity} number`}
+                        value={formData.requester.number}
+                        onChange={e => {
+                            setFormData({
+                                ...formData,
+                                listener: {
+                                    ...formData.listener,
+                                    number: e
+                                }
+                            });
+                        }}
+                    />
                     <small className="form-text">Where we should send {`${userEntity.toLowerCase()}`} concert (Whatsapp)</small>
 
                 {!formData.requester.isListener? (
@@ -237,31 +245,60 @@ const RequestPersonal = ({
                         onChange: setSearchLocation,
                         placeholder: `* ${userEntity} city`,
                         styles: {
+                            control: (provided) => ({
+                                ...provided,
+                                fontFamily: 'Raleway, sans-serif',
+                                color: 'black',
+                                height: '30px',
+                                minHeight: '30px',
+                                width: '18.5rem',
+                                borderRadius: 50
+                            }),
                             container: (provided) => ({
                                 ...provided,
                                 fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                                 width: '18.5rem'
                             }),
-                            group: (provided) => ({
+                            valueContainer: (provided) => ({
                                 ...provided,
                                 fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
+                                height: '30px',
+                                padding: '0 6px',
+                                width: '18.5rem'
                             }),
                             input: (provided) => ({
                                 ...provided,
                                 fontFamily: 'Raleway, sans-serif',
+                                margin: '0px',
+                                width: '18.5rem',
+                                padding: '2px'
+                            }),
+                            indicatorsContainer: (provided) => ({
+                                ...provided,
+                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
+                                height: '30px',
+                            }),
+                            indicatorsSeparator: (provided) => ({
+                                ...provided,
+                                fontFamily: 'Raleway, sans-serif',
+                                color: 'black',
+                                display: 'none',
                             }),
                             option: (provided) => ({
                                 ...provided,
                                 fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
+                                width: '18.5rem',
                             }),
                             singleValue: (provided) => ({
                                 ...provided,
                                 fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
+                                width: '18.5rem',
+                                margin: '3px'
                             }),
 
                     }}}
@@ -283,30 +320,32 @@ const RequestPersonal = ({
                             musician: {
                                 isPreferred: !formData.musician.isPreferred
                             } });
-                    }} /> {' '}Request specific musician
+                    }} /> {' '}Request musician
 
                 {formData.musician.isPreferred ? (
-                <select name="preferredMusicianName"
+                <div className="form-group">
+                    <select name="preferredMusicianName"
                         contentEditable={false}
                         onChange={e => {
                         setFormData({
-                            ...formData,
-                            musician: {
-                                ...formData.musician,
-                                id: e.target.value
-                            } });
-                            }}>
-                        <option>Choose Musician</option>
+                                ...formData,
+                                musician: {
+                                    ...formData.musician,
+                                    id: e.target.value
+                                } });
+                                }}>
+                        <option className="form">Choose Musician</option>
                         {profiles.map(profile => (
                             <Fragment>
                                 <option value={profile._id}>{profile.user.name}</option>
                             </Fragment>))}
-                </select>
+                    </select>
+                </div>
                 ) : (null) }
                 {formData.musician.isPreferred ? (profiles.map(profile =>
                     profile.availability.map(
                         avail => (profile._id === formData.musician.id ? (
-                            <Fragment><ProfileAvailability key={avail._id} availability={avail} /></Fragment>
+                            <ProfileAvailability key={avail._id} availability={avail} />
                         ) : (
                             <Fragment></Fragment>
                         ))))) : (null)}
@@ -322,7 +361,7 @@ const RequestPersonal = ({
                                 ...formData.time,
                                 asap: !formData.time.asap
                             } });
-                    }} /> {' '}Request specific time
+                    }} /> {' '}Request time
                 </p>
                 {formData.time.asap ? (
                 <div className="form-group">

@@ -267,15 +267,32 @@ img {
 .form input[type='email'],
 .form input[type='password'],
 .form input[type='date'],
-.form select,
 .form textarea {
   display: block;
   width: 18.5rem;
-  padding: 0.2rem;
-  font-size: 1.2rem;
+  height: 30px;
+  padding: 0.8rem;
+  font-size: 1.0rem;
   border: 1px solid #ccc;
+  border-radius: 50px;
 }
 
+.PhoneInput {
+  width: 18.5rem;
+  height: 30px;
+}
+.PhoneInput select {
+    width: 38px;
+}
+.PhoneInputInput {
+  width: 18.5rem;
+  display: block;
+  height: 30px;
+  padding: 0.8rem;
+  font-size: 1.0rem;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+}
 .vertical-middle {
   vertical-align: middle;
 }
