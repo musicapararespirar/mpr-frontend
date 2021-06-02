@@ -54,6 +54,7 @@ const RequestPersonal = ({
     // If location changes, update the time requested
     useEffect(() => {
         setFormData({ ...formData, time: {
+            ...formData.time,
             dateForUTC: datepickerUTC(formData.time.dateForUTC, location.timezone) }});
     }, [location]);
 
@@ -87,11 +88,7 @@ const RequestPersonal = ({
         time: {
             asap: false
         },
-        preferredMusicianName: '',
-        listenerMessage: '',
-        listenerName: '',
-        listenerTimezone: location.timezone,
-        listenerNumber: '',
+        message: '',
         dateFor: datepickerUTC(timePicker, location.timezone),
         type: 'personal'
     });
@@ -107,7 +104,10 @@ const RequestPersonal = ({
     useEffect(() => {
         setFormData({
             ...formData,
-            listenerTimezone: location.timezone})
+            listener: {
+                ...formData.listener,
+                timezone: location.timezone
+            }})
     }, [location]);
 
     const [toggle, setToggle] = useState(false);
@@ -118,11 +118,21 @@ const RequestPersonal = ({
          setFormData({
              ...formData,
              time: {
+                 ...formData.time,
                  dateFor: datepickerUTC(timePicker, formData.listener.timezone)
             }})
-    }, [listenerTimezone]);
+    }, [formData.listener.timezone]);
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+    const onChangeListener = e => setFormData({
+        ...formData, listener: {
+            ...formData.listener,
+            [e.target.name]: e.target.value }});
+    const onChangeRequester = e => setFormData({
+        ...formData, requester: {
+            ...formData.requester,
+            [e.target.name]: e.target.value
+        }});
     if(request !== null && request._id !== null) {
         return <Redirect to={`/request/response/${request._id}`} />
     }
@@ -148,6 +158,7 @@ const RequestPersonal = ({
                             setFormData({
                                 ...formData,
                                 requester: {
+                                    ...formData.requester,
                                     isListener: true
                                 }
                             });
@@ -159,6 +170,7 @@ const RequestPersonal = ({
                             setFormData({
                                 ...formData,
                                 requester: {
+                                    ...formData.requester,
                                     isListener: false
                                 }
                             });
@@ -169,46 +181,53 @@ const RequestPersonal = ({
                 <div className="form-group">
                     <input type="text"
                     placeholder={`* Your name`}
-                    name="requesterName"
-                    value={requesterName}
-                    onChange={e => onChange(e)}
+                    name="name"
+                    value={formData.requester.name}
+                    onChange={e => onChangeRequester(e)}
                     required />
                 </div>
 
-                <div className="form-group">
                     <input
                     type="text"
                     placeholder="* Your email"
-                    name="requesterEmail"
-                    value={requesterEmail}
-                    onChange={e => onChange(e)}
+                    name="email"
+                    value={formData.requester.email}
+                    onChange={e => onChangeRequester(e)}
                     required />
-                <small className="form-text">If we need to contact you</small>
-                </div>
+                <small className="form-text">Should we need to contact you</small>
 
-                <div className="form-group">
                     <input
                     type="text"
                     placeholder={`* ${userEntity} number`}
-                    name="requesterNumber"
-                    value={requesterNumber}
-                    onChange={e => onChange(e)}
+                    name="number"
+                    value={formData.requester.number}
+                    onChange={e => onChangeRequester(e)}
                     required />
                     <small className="form-text">Where we should send {`${userEntity.toLowerCase()}`} concert (Whatsapp)</small>
-                </div>
 
                 {!formData.requester.isListener? (
-                <Fragment><div className="form-group">
-                    <input type="text" placeholder="* Their name" name="listenerName" value={listenerName} onChange={e => onChange(e)} required />
+                <Fragment>
+                <div className="form-group">
+                    <input
+                    type="text"
+                    placeholder="* Their name"
+                    name="name"
+                    value={formData.listener.name}
+                    onChange={e => onChangeListener(e)}
+                    required />
                 </div>
                 <div className="form-group">
-                    <input type="text" placeholder="Message for them (Optional)" name="listenerMessage" value={listenerMessage} onChange={e => onChange(e)} required />
+                    <input
+                    type="text"
+                    placeholder="Message for them (Optional)"
+                    name="message"
+                    value={formData.message}
+                    onChange={e => onChange(e)}/>
                 </div>
                 </Fragment>
 
                 ) : (null)}
 
-                  <div className="form-group">
                     <GooglePlacesAutocomplete
                     apiKey="AIzaSyAL44Nx7XNZVHgRQd0dugCD8zvw8CJYRc8"
                     minLengthAutocomplete="3"
@@ -250,12 +269,11 @@ const RequestPersonal = ({
                     <small className="form-text">
                         This helps us determine {`${userEntity.toLowerCase()}`} timezone
                     </small>
-                </div>
                 <p className="lead">Customise {`${userEntity.toLowerCase()}`} booking</p>
                     <p>We will schedule your request as soon as possible.</p>
                     <p>If you have a musician or time request, let us know</p><br/>
-                <p>
-                    <input
+
+                <input
                     type="checkbox"
                     name="preferredMusician"
                     checked={formData.musician.isPreferred}
@@ -266,21 +284,7 @@ const RequestPersonal = ({
                                 isPreferred: !formData.musician.isPreferred
                             } });
                     }} /> {' '}Request specific musician
-                </p>
-                <p>
-                    <input
-                    type="checkbox"
-                    name="preferredTime"
-                    checked={formData.time.asap}
-                    onChange={e => {
-                        setFormData({
-                            ...formData,
-                            time: {
-                                asap: !formData.time.asap
-                            } });
-                    }} /> {' '}Request specific time
-                </p>
-                <div className="form-group">
+
                 {formData.musician.isPreferred ? (
                 <select name="preferredMusicianName"
                         contentEditable={false}
@@ -288,6 +292,7 @@ const RequestPersonal = ({
                         setFormData({
                             ...formData,
                             musician: {
+                                ...formData.musician,
                                 id: e.target.value
                             } });
                             }}>
@@ -305,15 +310,21 @@ const RequestPersonal = ({
                         ) : (
                             <Fragment></Fragment>
                         ))))) : (null)}
-                </div>
-                <label>
-                <Toggle
-                    name='milkIsReady'
-                    icons={{
-                        checked: <i className="fas fa-gift" />,
-                        unchecked: <i className="far fa-smile" />
-                }}/><span>A gift</span>
-                </label>
+                <p>
+                    <input
+                    type="checkbox"
+                    name="preferredTime"
+                    checked={formData.time.asap}
+                    onChange={e => {
+                        setFormData({
+                            ...formData,
+                            time: {
+                                ...formData.time,
+                                asap: !formData.time.asap
+                            } });
+                    }} /> {' '}Request specific time
+                </p>
+                {formData.time.asap ? (
                 <div className="form-group">
                     <h4>Time requested</h4>
                     <DatePicker
@@ -323,9 +334,9 @@ const RequestPersonal = ({
                               showTimeSelect
                               onChange={e => {
                                   setTime(e);
-                                  setFormData({ ...formData, dateFor: datepickerUTC(e, listenerTimezone)});
+                                  setFormData({ ...formData, dateFor: datepickerUTC(e, formData.listener.timezone)});
                               }}/>
-                </div>
+                </div>) : (null)}
 
                 <Fragment><input type="submit" value="Request!" className="btn btn-primary my-1" />
                 <Link to="/" className="btn btn-light my-1" >Go Back</Link></Fragment>
