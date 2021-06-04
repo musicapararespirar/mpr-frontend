@@ -18,8 +18,9 @@ const ConcertAbout = ({
         ...titlesTranslation
     }
 
-    return <Provider language={languageCode} translation={allTranslations}>
+    return <section className="inner-landing-container"><Provider language={languageCode} translation={allTranslations}>
     <Fragment>
+
             <p className="lead">
                 <i className="fas fa-music"></i> <Translate text="Concerts" />
             </p>
@@ -33,7 +34,7 @@ const ConcertAbout = ({
                 <i className="small-container fab fa-facebook fa" /> lasociedad.bo
             </a>
         </div>
-            </Fragment></Provider>
+            </Fragment></Provider></section>
 }
 
 

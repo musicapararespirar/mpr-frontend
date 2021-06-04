@@ -17,6 +17,9 @@ import NavbarDropdown from 'react-navbar-dropdown';
 import landingTranslation from '../translation/landing';
 import titlesTranslation from '../translation/titles';
 import { Provider, Translate } from 'react-translated';
+import ConcertInfo from '../information/Concerts';
+import Contribute from '../information/Contribute';
+import { Parallax, Background } from 'react-parallax';
 
 const Landing = ({
     isAuthenticated,
@@ -29,7 +32,7 @@ const Landing = ({
     }
     const images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5]
     const images_mobile = [slideshow2, slideshow3, slideshow4]
-    const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
+    const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn(), MoveOut());
 
     // Combine translation files
     const allTranslations = {
@@ -68,7 +71,12 @@ const Landing = ({
             </ScrollPage>
 
             <ScrollPage page={1}>
-            <Animator animation={ZoomInScrollOut}>
+            <Parallax className="landing-container"
+                    strength={500}
+                    blur={10}
+                    bgImageStyle={{opacity: 0.2}}
+                    bgImage={slideshow3}>
+            <div className='inner-landing-container'>
             <h1 className="x-large"><Translate text="pideConcierto" /></h1>
             <Fragment>
                 <NavbarDropdown>
@@ -96,9 +104,30 @@ const Landing = ({
                     </NavbarDropdown.Menu>
                 </NavbarDropdown>
             </Fragment>
-            </Animator>
             <div ref={scrollRef} />
-            <LoginLogo />
+            <LoginLogo /></div></Parallax>
+            </ScrollPage>
+
+            <ScrollPage page={2}>
+                <Parallax
+                    className='landing-container'
+                    strength={500}
+                    blur={10}
+                    bgImageStyle={{opacity: 0.2}}
+                    bgImage={slideshow4}>
+                        <ConcertInfo />
+                </Parallax>
+            </ScrollPage>
+
+            <ScrollPage page={3}>
+            <Parallax
+                className='landing-container'
+                strength={500}
+                blur={10}
+                bgImageStyle={{opacity: 0.2}}
+                bgImage={slideshow5}>
+                    <Contribute />
+                </Parallax>
             </ScrollPage>
         </ScrollContainer></Provider>
     )
