@@ -20,7 +20,7 @@ const Contribute = ({
     return <Provider language={languageCode} translation={allTranslations}>
             <Fragment>
 
-        <section className="inner-landing-container contribute">
+
         <p className="lead">
             <i className="fas fa-music"></i> <Translate text="Contribute" />
         </p>
@@ -28,7 +28,6 @@ const Contribute = ({
         <p><Translate text="descriptionP2" /></p><br/>
         <p><Translate text="descriptionP3" /></p>
         <Link to='donate' className="btn btn-primary my-1"><Translate text="Donate" /> US$10</Link>
-        </section>
 
         </Fragment></Provider>
 

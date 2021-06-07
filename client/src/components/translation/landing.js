@@ -14,9 +14,14 @@ export default {
     es: 'revive',
     pt: 'reviver',
   },
-  'pideConcierto': {
-    en: 'REQUEST YOUR CONCERT',
-    es: 'PIDE TU CONCIERTO',
-    pt: 'SOLICITE SEU SHOW',
+  'pide': {
+    en: 'REQUEST YOUR',
+    es: 'PIDE TU',
+    pt: 'SOLICITE SEU',
   },
+  'concierto': {
+    en: "CONCERT",
+    es: "CONCIERTO",
+    pt: "SHOW"
+  }
 }
