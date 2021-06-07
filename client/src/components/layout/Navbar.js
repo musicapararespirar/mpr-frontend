@@ -178,12 +178,29 @@ const Navbar = ({
             </NavbarDropdown.Menu>
         </NavbarDropdown>
     );
-    return (<Provider language={languageCode} translation={titlesTranslation}>
+    const guestLinksBar = (
+        <ul>
+            <li><Link to="/about-us">INICIO</Link></li>
+            <li><Link to="/concerts">PIDE TU CONCIERTO</Link></li>
+            <li><Link to="/impact">GALERIA</Link></li>
+            <li><Link to="/contribute">TEMPORADAS</Link></li>
+            <li><Link to="/contact">ACERCA DE</Link></li>
+            <li><Link to="/contact">DONACIONES</Link></li>
+            {/*<li><Link to="/profiles">Musicians</Link></li>*/}
+            {/*<li><Link to="/register">Register</Link></li>*/}
+            {/*<li><Link to="/login">Login</Link></li>*/}
+        </ul>
+    );
+
+    return <Provider language={languageCode} translation={titlesTranslation}>
+        {window.innerWidth > 700 ? (<nav className="navbar">
+        {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)} </nav>) : (
         <nav className="navmenu">
             {languageButtons}
            {!authLoading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
-        </nav></Provider>
-    )
+        </nav>
+    )}
+    </Provider>
 }
 
 Navbar.propTypes = {
