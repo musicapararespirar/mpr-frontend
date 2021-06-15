@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -8,8 +8,11 @@ import NavbarDropdown from 'react-navbar-dropdown';
 import { setLanguage } from '../../actions/language';
 import titlesTranslation from '../translation/titles';
 import { Provider, Translate } from 'react-translated';
+import useDocumentScrollThrottled from './useDocumentScrollThrottled';
 
 const Navbar = ({
+    scrollRef,
+    click,
     auth: {
         isAuthenticated,
         loading: authLoading
@@ -21,7 +24,34 @@ const Navbar = ({
         loading: languageLoading
     }
 }) => {
-        const guestLinks = (
+
+    const scroll = (location) => {
+        const section = document.querySelector( `#${location}` );
+        if (section) {
+            section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+        }
+    }
+
+    const [shouldHideHeader, setShouldHideHeader] = useState(false);
+    const [shouldShowShadow, setShouldShowShadow] = useState(false);
+    const MINIMUM_SCROLL = 80;
+    const TIMEOUT_DELAY = 100;
+
+    useDocumentScrollThrottled(callbackData => {
+        const { previousScrollTop, currentScrollTop } = callbackData;
+        const isScrolledDown = previousScrollTop < currentScrollTop;
+        const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
+
+        setShouldShowShadow(currentScrollTop > 2);
+
+        setTimeout(() => {
+            setShouldHideHeader(isScrolledDown && isMinimumScrolled);
+        }, TIMEOUT_DELAY);
+    });
+    const shadowStyle = shouldShowShadow ? 'shadow' : '';
+    const hiddenStyle = shouldHideHeader ? 'hidden' : '';
+
+    const guestLinks = (
         <NavbarDropdown className="navmenu-icon">
             <NavbarDropdown.Toggle className="menu__item">
             <NavbarDropdown.Open>
@@ -179,13 +209,25 @@ const Navbar = ({
         </NavbarDropdown>
     );
     const guestLinksBar = (
-        <ul>
-            <li><Link to="/about-us">INICIO</Link></li>
-            <li><Link to="/concerts">PIDE TU CONCIERTO</Link></li>
-            <li><Link to="/impact">GALERIA</Link></li>
-            <li><Link to="/contribute">TEMPORADAS</Link></li>
-            <li><Link to="/contact">ACERCA DE</Link></li>
-            <li><Link to="/contact">DONACIONES</Link></li>
+        <ul style={{ padding: '0px 4px' }}>
+            <li><div onClick={e => (
+                window.scrollTo({ top: 0, behavior: 'smooth' }))}>INICIO</div>
+            </li>
+            <li>
+                <div onClick={e => (scroll('concert-pide'))}>PIDE TU CONCIERTO</div>
+            </li>
+            <li>
+                <div onClick={e => (scroll('galeria'))}>GALERIA</div>
+            </li>
+            <li>
+                <Link to="/contribute">TEMPORADAS</Link>
+            </li>
+            <li>
+                <Link to="/contact">ACERCA DE</Link>
+            </li>
+            <li>
+                <Link to="/contact">DONACIONES</Link>
+            </li>
             {/*<li><Link to="/profiles">Musicians</Link></li>*/}
             {/*<li><Link to="/register">Register</Link></li>*/}
             {/*<li><Link to="/login">Login</Link></li>*/}
@@ -193,7 +235,7 @@ const Navbar = ({
     );
 
     return <Provider language={languageCode} translation={titlesTranslation}>
-        {window.innerWidth > 700 ? (<nav className="navbar">
+        {window.innerWidth > 700 ? (<nav className={`navbar ${hiddenStyle}`}>
         {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)} </nav>) : (
         <nav className="navmenu">
             {languageButtons}

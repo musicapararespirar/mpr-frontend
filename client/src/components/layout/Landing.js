@@ -20,11 +20,11 @@ import { Parallax, Background } from 'react-parallax';
 import PideConcierto from './PideConcierto';
 
 const Landing = ({
+    scrollRef,
     isAuthenticated,
     language: { languageCode }
 }) => {
-    const scrollRef = useRef(null);
-    const executeScroll = () => scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+    const thisRef = useRef(scrollRef);
     if(isAuthenticated) {
        return <Redirect to='/dashboard' />
     }
@@ -39,6 +39,7 @@ const Landing = ({
     }
 
     return (<Provider language={languageCode} translation={allTranslations}>
+            <div id="concert-info" />
             <Parallax
                 strength={500}
                 bgImageStyle={{opacity: 0.2, height: '120vh'}}
@@ -46,10 +47,9 @@ const Landing = ({
                 bgImage={slideshow3}>
                 <section className="landing">
                 <img src={logoLarge} className="logo-image"/>
-                    <h4><Translate text="repiensa" /> | <Translate text="renueva" /> | <Translate text="revive" /></h4>
-                        <i ref={scrollRef} onClick={executeScroll} className="landing-arrow fas fa-chevron-down fa-5x hide-sm" />
                 </section>
 
+            <div id="concert-pide" />
             <Parallax
                     strength={500}
                     blur={10}
@@ -57,7 +57,8 @@ const Landing = ({
                     style={{background: '#4a2c75', clipPath: "polygon(0% 0%, 40% 0%, 50% 5%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
                     <section className="inner-landing-container">
-                    <div style={{ height: 500 }}><PideConcierto /></div>
+                    <div style={{ height: 500 }}><PideConcierto />
+                    </div>
                     </section>
             </Parallax></Parallax>
                 <Parallax

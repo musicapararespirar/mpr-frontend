@@ -55,7 +55,6 @@ const PideConcierto = ({
                     </NavbarDropdown.Menu>
                 </NavbarDropdown>
             </Fragment>
-            <div ref={scrollRef} />
             <LoginLogo /></Fragment>
 }
 
