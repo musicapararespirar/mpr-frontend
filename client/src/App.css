@@ -57,7 +57,7 @@ img {
 }
 /* Text Styles*/
 .x-large {
-  font-size: 5rem;
+/*   font-size: 5rem; */
   font-family: 'geddes_condensed', sans-serif;
   font-weight: 900;
   line-height: 1;
@@ -65,6 +65,27 @@ img {
   margin-bottom: 1rem;
 }
 
+.mpr-header {
+    text-align: 'justify';
+    white-space: 'nowrap';
+    font-family: 'sans-serif';
+    line-height: 0.85;
+    display: 'inline-block';
+    letter-spacing: '-5px';
+    font-weight: 'bold';
+    letter-spacing: -5px;
+}
+/*
+div {
+  text-align: justify;
+}*/
+/*
+.x-large:after {
+  content: "";
+  content: "";
+  display: inline-block;
+  width: 100%;
+}*/
 
 .large {
   font-size: 3rem;
@@ -884,13 +905,24 @@ button {
 
 .text-gold {
     color: #ea9d28;
-    font-family: 'geddes', sans-serif;
-    font-size: 3rem;
-    line-height: 0.8;
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.4;
     cursor: pointer;
 
-}
 
+}
+.line-gold:before {
+  background-color: #ea9d28;
+  content: "";
+  display: inline-block;
+  height: 3px;
+  position: relative;
+  vertical-align: middle;
+  width: 7rem;
+  margin-right: 0.5rem;
+
+}
 .landing-container {
     height: 100vh;
     width: 100vw;
@@ -902,12 +934,12 @@ button {
 }
 
 .inner-landing-container {
-  max-width: 25rem;
+  max-width: 45vw;
   margin: auto;
   overflow: visible;
   padding: 0 0rem;
-  margin-top: 20rem;
-  margin-bottom: 3rem;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
 .html {
