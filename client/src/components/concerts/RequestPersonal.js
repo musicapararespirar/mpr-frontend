@@ -142,13 +142,6 @@ const RequestPersonal = ({
         <Link to='/' className='btn'>
             Back home
         </Link>
-        <h1 className="large text-primary">
-            Request personal concert
-            </h1>
-            <p className="lead">
-                <i className="fas fa-code-branch"></i> Fill in your details below to request a concert
-            </p>
-            <small>* = required field</small>
             <form className="form" onSubmit={e => {
                 e.preventDefault();
                 requestConcert(formData);

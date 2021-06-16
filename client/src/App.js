@@ -23,7 +23,7 @@ import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
-import RequestPersonal from './components/concerts/RequestPersonal';
+
 import RequestInstitution from './components/concerts/RequestInstitution';
 import RequestResponse from './components/concerts/RequestResponse';
 import PrivateRoute from './components/routing/PrivateRoute';
@@ -67,7 +67,7 @@ const App = () => {
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/contribute" component={Contribute} />
                 <Route exact path="/impact" component={Impact} />
-                <Route exact path="/request/personal" component={RequestPersonal} />
+
                 <Route exact path="/request/institution" component={RequestInstitution} />
                 <Route exact path="/request/response/:id" component={RequestResponse} />
                 <Route exact path="/donate" component={Donate} />

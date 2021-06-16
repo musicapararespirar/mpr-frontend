@@ -1,4 +1,5 @@
 import React, { Fragment, useRef } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -18,6 +19,7 @@ import ConcertInfo from '../information/Concerts';
 import Contribute from '../information/Contribute';
 import { Parallax, Background } from 'react-parallax';
 import PideConcierto from './PideConcierto';
+import RequestPersonal from '../concerts/RequestPersonal';
 
 const Landing = ({
     scrollRef,
@@ -56,9 +58,13 @@ const Landing = ({
                     bgImageStyle={{opacity: 0.2}}
                     style={{background: '#4a2c75', clipPath: "polygon(0% 0%, 40% 0%, 50% 5%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
-                    <section className="inner-landing-container">
-                    <div style={{ height: 500 }}><PideConcierto />
-                    </div>
+                    <section className="inner-landing-container" style={{ height: 500 }}>
+                        <Router>
+                        <Switch>
+                            <Route exact path="/" component={PideConcierto}/>
+                            <Route exact path="/request/personal" component={RequestPersonal} />
+                            </Switch>
+                        </Router>
                     </section>
             </Parallax></Parallax>
                 <Parallax

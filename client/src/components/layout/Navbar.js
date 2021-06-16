@@ -1,5 +1,5 @@
 import React, { Fragment, useRef, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
@@ -24,6 +24,7 @@ const Navbar = ({
         loading: languageLoading
     }
 }) => {
+    const history = useHistory();
     const [isDesktop, setDesktop] = useState(window.innerWidth > 830);
 
     const updateMedia = () => { setDesktop(window.innerWidth > 830); }
@@ -218,8 +219,10 @@ const Navbar = ({
     );
     const guestLinksBar = (
         <ul style={{ padding: '0px 4px' }}>
-            <li><div onClick={e => (
-                window.scrollTo({ top: 0, behavior: 'smooth' }))}>INICIO</div>
+            <li><div onClick={e => {
+                history.push('/');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}>INICIO</div>
             </li>
             <li>
                 <div onClick={e => (scroll('concert-pide'))}>PIDE TU CONCIERTO</div>
@@ -244,7 +247,8 @@ const Navbar = ({
 
     return <Provider language={languageCode} translation={titlesTranslation}>
         {isDesktop ? (
-            <nav className={`navbar ${hiddenStyle}`}> {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)} </nav>) : (
+            <nav className={`navbar ${hiddenStyle}`}>
+            {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)} </nav>) : (
         <nav className={`navmenu ${hiddenStyle}`}>
             {languageButtons}
            {!authLoading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }

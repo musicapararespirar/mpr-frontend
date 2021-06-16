@@ -7,7 +7,6 @@ import concertTranslation from '../translation/concerts';
 import titlesTranslation from '../translation/titles';
 import PropTypes from 'prop-types';
 import NavbarDropdown from 'react-navbar-dropdown';
-import { Link as WebLink } from 'react-router-dom';
 import LoginLogo from './LoginLogo'
 
 
@@ -41,16 +40,16 @@ const PideConcierto = ({
                     </NavbarDropdown.Toggle>
                     <NavbarDropdown.Menu className="reqmenu-menu">
                         <div className="reqmenu-menu__row">
-                            <WebLink to='/request/personal'>
+                            <Link to='/request/personal'>
                                 <NavbarDropdown.Item className="reqmenu-item">
                                     <div className="reqmenu-item__text"><Translate text="Personal" /></div>
                                 </NavbarDropdown.Item>
-                            </WebLink>
-                            <WebLink to='/request/institution'>
+                            </Link>
+                            <Link to='/request/institution'>
                                 <NavbarDropdown.Item className="reqmenu-item">
                                     <div className="reqmenu-item__text"><Translate text="Institution" /></div>
                                 </NavbarDropdown.Item>
-                            </WebLink>
+                            </Link>
                         </div>
                     </NavbarDropdown.Menu>
                 </NavbarDropdown>
