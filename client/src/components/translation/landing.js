@@ -15,13 +15,13 @@ export default {
     pt: 'reviver',
   },
   'pide': {
-    en: 'REQUEST YOUR',
+    en: 'REQUEST',
     es: 'PIDE TU',
-    pt: 'SOLICITE SEU',
+    pt: 'SOLICITE',
   },
   'concierto': {
-    en: "CONCERT",
+    en: "YOUR CONCERT",
     es: "CONCIERTO",
-    pt: "SHOW"
+    pt: "SEU SHOW"
   }
 }

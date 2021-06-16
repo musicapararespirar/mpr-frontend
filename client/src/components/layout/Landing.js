@@ -58,7 +58,7 @@ const Landing = ({
                     bgImageStyle={{opacity: 0.2}}
                     style={{background: '#4a2c75', clipPath: "polygon(0% 0%, 40% 0%, 50% 5%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
-                    <section className="inner-landing-container" style={{ height: 500 }}>
+                    <section className="inner-landing-container" style={{ height: '50vw' }}>
                         <Router>
                         <Switch>
                             <Route exact path="/" component={PideConcierto}/>
@@ -74,7 +74,7 @@ const Landing = ({
                     style={{boxShadow: "inset 0px 60px 50px -60px #000000, inset 0px -60px 50px -60px #000000"}}
                     bgImage={slideshow4}>
                     <section className="inner-landing-container">
-                        <div style={{height: 500 }}><ConcertInfo /></div>
+                        <div style={{height: '50vw' }}><ConcertInfo /></div>
                     </section>
                 </Parallax>
             <Parallax
@@ -82,7 +82,7 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
                 bgImage={slideshow5}>
-                    <div style={{height:'100%'}}>
+                    <div style={{height:'50vw'}}>
                     <section className="inner-landing-container">
                         <Contribute />
                     </section>
