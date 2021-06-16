@@ -24,6 +24,14 @@ const Navbar = ({
         loading: languageLoading
     }
 }) => {
+    const [isDesktop, setDesktop] = useState(window.innerWidth > 830);
+
+    const updateMedia = () => { setDesktop(window.innerWidth > 830); }
+
+    useEffect(() => {
+        window.addEventListener("resize", updateMedia);
+        return () => window.removeEventListener("resize", updateMedia);
+    }, [])
 
     const scroll = (location) => {
         const section = document.querySelector( `#${location}` );
@@ -235,9 +243,9 @@ const Navbar = ({
     );
 
     return <Provider language={languageCode} translation={titlesTranslation}>
-        {window.innerWidth > 700 ? (<nav className={`navbar ${hiddenStyle}`}>
-        {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)} </nav>) : (
-        <nav className="navmenu">
+        {isDesktop ? (
+            <nav className={`navbar ${hiddenStyle}`}> {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)} </nav>) : (
+        <nav className={`navmenu ${hiddenStyle}`}>
             {languageButtons}
            {!authLoading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
         </nav>
