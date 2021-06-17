@@ -21,7 +21,7 @@ import PideConcierto from './PideConcierto';
 import RequestPersonal from '../concerts/RequestPersonal';
 import Gallery from '../information/Gallery';
 import Seasons from '../information/Seasons';
-import ImageGallery from '../information/ImageGallery';
+// import ImageGallery from '../information/ImageGallery';
 
 const Landing = ({
     scrollRef,
@@ -101,7 +101,7 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}>                    <section className="inner-landing-container">
                     <div style={{height:'50vw'}}>
-                            <ImageGallery />
+
                     </div>
                     </section>
                 </Parallax>
