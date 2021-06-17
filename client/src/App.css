@@ -648,15 +648,19 @@ button {
 
 .navmenu {
     z-index: 40;
-    align-items: right;
-    position: absolute;
+    align-items: flex-end;
+    justify-content: right;
+    position: fixed;
+    float: right;
     right: 20px;
     top: 15px;
     opacity: 0.9;
     display: flex;
-    justify-content: center;
     height: 30px;
     width: 80px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    line-height: 1;
 }
 
 .navmenu-menu {
@@ -841,7 +845,9 @@ button {
 .navbar.hidden {
   transform: translateY(-150%);
 }
-
+.navmenu.hidden {
+  transform: translateY(-200%);
+}
 
 /* Landing Page */
 .landing {

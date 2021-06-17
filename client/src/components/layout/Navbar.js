@@ -248,12 +248,14 @@ const Navbar = ({
     return <Provider language={languageCode} translation={titlesTranslation}>
         {isDesktop ? (
             <nav className={`navbar ${hiddenStyle}`}>
-            {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)} </nav>) : (
-        <nav className={`navmenu ${hiddenStyle}`}>
-            {languageButtons}
-           {!authLoading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
-        </nav>
-    )}
+                {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)}
+                    </nav>
+                      ) : (
+            <nav className={`navmenu ${hiddenStyle}`}>
+                {languageButtons}
+            {!authLoading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
+            </nav>
+        )}
     </Provider>
 }
 
