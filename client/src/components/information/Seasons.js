@@ -23,14 +23,15 @@ const Seasons = ({
     <Fragment>
 
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header gold'>
+            <h1 className='mpr-header gold' style={{ fontFamily: 'sans-serif' }}>
                 <Translate text='MUSICA' />
             </h1></Textfit>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header gold'><Translate text="PARA" /> <Translate text="RESPIRAR" /></h1></Textfit>
+            <h1 className='mpr-header gold' style={{ fontFamily: 'sans-serif' }}><Translate text="PARA" /> <Translate text="RESPIRAR" /></h1></Textfit>
             <div className="gold" style={{
                 fontSize: '3vw',
                 letterSpacing: '-3px',
+                fontFamily: 'sans-serif',
                 fontWeight: 'bold'}}>
                     LOS NÚMEROS:
             </div><br/>

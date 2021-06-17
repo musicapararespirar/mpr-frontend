@@ -26,11 +26,11 @@ const PideConcierto = ({
 
     return <Fragment>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header'>
+            <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}>
                 <Translate text="pide" />
             </h1></Textfit>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header'><Translate text="concierto" /></h1></Textfit>
+            <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}><Translate text="concierto" /></h1></Textfit>
                 <small style={{
                     fontFamily: ' sans-serif',
                     display: 'inline-block',

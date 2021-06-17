@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: 'geddes_condensed', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #232327;
@@ -594,18 +594,11 @@ button {
 }
 
 .languagemenu-icon {
-  display: flex;
-  flex-direction: column;
-  top: 4px;
-  right: 0px;
-  width: 25px;
-  height: 24px;
-  padding: 0px 2px;
-  background-color: #0;
+  padding: 2px 2px;
   border-radius: 5px;
   box-shadow: 0px 0px 2px #c3c5c7;
   text-align: center;
-  user-select: none;
+  line-height: 1;
 }
 
 .languagemenu-icon:hover {
@@ -785,20 +778,21 @@ button {
 
 /* Navbar */
 .navbar {
-    font-family: 'geddes', sans-serif;
+    font-family: sans-serif;
     font-weight: 500;
     display: flex;
-    justify-content: right;
-    font-family: sans-serif;
+    justify-content: flex-end;
+    align-items: flex-end;
     z-index: 40;
-    align-items: right;
     position: fixed;
+    float: right;
     right: 20px;
     top: 15px;
     width: 100%;
     color: white;
     transform: translateY(0);
     transition: transform 0.3s ease;
+    line-height: 1;
 }
 .navbar .navitem {
     align-items: center;
