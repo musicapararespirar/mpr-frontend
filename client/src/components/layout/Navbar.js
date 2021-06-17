@@ -225,19 +225,19 @@ const Navbar = ({
             }}>INICIO</div>
             </li>
             <li>
-                <div onClick={e => (scroll('concert-pide'))}>PIDE TU CONCIERTO</div>
+                <div onClick={e => (scroll('request-concert'))}>PIDE TU CONCIERTO</div>
             </li>
             <li>
-                <div onClick={e => (scroll('galeria'))}>GALERIA</div>
+                <div onClick={e => (scroll('gallery'))}>GALERIA</div>
             </li>
             <li>
-                <Link to="/contribute">TEMPORADAS</Link>
+                <div onClick={e => (scroll('seasons'))}>TEMPORADAS</div>
             </li>
             <li>
-                <Link to="/contact">ACERCA DE</Link>
+                <div onClick={e => (scroll('gallery'))}>ACERCA DE</div>
             </li>
             <li>
-                <Link to="/contact">DONACIONES</Link>
+                <div onClick={e => (scroll('gallery'))}>DONACIONES</div>
             </li>
             {/*<li><Link to="/profiles">Musicians</Link></li>*/}
             {/*<li><Link to="/register">Register</Link></li>*/}

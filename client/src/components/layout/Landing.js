@@ -15,11 +15,13 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import landingTranslation from '../translation/landing';
 import titlesTranslation from '../translation/titles';
 import { Provider, Translate } from 'react-translated';
-import ConcertInfo from '../information/Concerts';
 import Contribute from '../information/Contribute';
 import { Parallax, Background } from 'react-parallax';
 import PideConcierto from './PideConcierto';
 import RequestPersonal from '../concerts/RequestPersonal';
+import Gallery from '../information/Gallery';
+import Seasons from '../information/Seasons';
+import ImageGallery from '../information/ImageGallery';
 
 const Landing = ({
     scrollRef,
@@ -51,7 +53,7 @@ const Landing = ({
                 <img src={logoLarge} className="logo-image"/>
                 </section>
 
-            <div id="concert-pide" />
+            <div id="request-concert" />
             <Parallax
                     strength={500}
                     blur={10}
@@ -67,6 +69,8 @@ const Landing = ({
                         </Router>
                     </section>
             </Parallax></Parallax>
+
+            <div id="gallery" />
                 <Parallax
                     strength={500}
                     blur={10}
@@ -74,19 +78,32 @@ const Landing = ({
                     style={{boxShadow: "inset 0px 60px 50px -60px #000000, inset 0px -60px 50px -60px #000000"}}
                     bgImage={slideshow4}>
                     <section className="inner-landing-container">
-                        <div style={{height: '50vw' }}><ConcertInfo /></div>
+                        <div style={{height: '50vw' }}><Gallery /></div>
                     </section>
                 </Parallax>
+
+            <div id="seasons" />
             <Parallax
                 strength={500}
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
-                bgImage={slideshow5}>
-                    <div style={{height:'50vw'}}>
+                    style={{background: '#f2e9ec'}}>
                     <section className="inner-landing-container">
-                        <Contribute />
-                    </section>
+                    <div style={{height:'50vw'}}>
+                            <Seasons />
                     </div>
+                    </section>
+                </Parallax>
+
+                        <div id="seasons" />
+            <Parallax
+                strength={500}
+                blur={10}
+                bgImageStyle={{opacity: 0.2}}>                    <section className="inner-landing-container">
+                    <div style={{height:'50vw'}}>
+                            <ImageGallery />
+                    </div>
+                    </section>
                 </Parallax>
         </Provider>
     )

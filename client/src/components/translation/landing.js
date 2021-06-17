@@ -1,18 +1,18 @@
 export default {
-  'repiensa': {
-    en: 'rethink',
-    es: 'repiensa',
-    pt: 'repensar',
+  'MUSICA': {
+    en: 'MÚSICA',
+    es: 'MÚSICA',
+    pt: 'MÚSICA',
   },
-  'renueva': {
-    en: 'renew',
-    es: 'renueva',
-    pt: 'renovar',
+  'PARA': {
+    en: 'PARA',
+    es: 'PARA',
+    pt: 'PARA',
   },
-  'revive': {
-    en: 'revive',
-    es: 'revive',
-    pt: 'reviver',
+  'RESPIRAR': {
+    en: 'RESPIRAR',
+    es: 'RESPIRAR',
+    pt: 'RESPIRAR',
   },
   'pide': {
     en: 'REQUEST',

@@ -25,11 +25,11 @@ const PideConcierto = ({
     const scrollRef = useRef(null);
 
     return <Fragment>
-            <Textfit mode='single' forceSingleModeWidth={true}>
+            <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header'>
                 <Translate text="pide" />
             </h1></Textfit>
-            <Textfit mode='single' forceSingleModeWidth={true}>
+            <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header'><Translate text="concierto" /></h1></Textfit>
                 <small style={{
                     fontFamily: ' sans-serif',

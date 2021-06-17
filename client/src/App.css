@@ -57,35 +57,32 @@ img {
 }
 /* Text Styles*/
 .x-large {
-/*   font-size: 5rem; */
-  font-family: 'geddes_condensed', sans-serif;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -5px;
+  font-size: 3rem;
+  font-family: sans-serif;
+  font-weight: bold;
   margin-bottom: 1rem;
+  line-height: 1;
 }
 
 .mpr-header {
     text-align: 'justify';
     white-space: 'nowrap';
     font-family: 'sans-serif';
-    line-height: 0.85;
+    line-height: 0.9;
     display: 'inline-block';
     letter-spacing: '-5px';
     font-weight: 'bold';
-    letter-spacing: -5px;
+    letter-spacing: -4px;
 }
-/*
-div {
-  text-align: justify;
-}*/
-/*
-.x-large:after {
-  content: "";
-  content: "";
-  display: inline-block;
-  width: 100%;
-}*/
+
+.left-numbers {
+    float: left;
+}
+.dark-title {
+    color: #4a2c75;
+    font-size: 2rem;
+    float: right;
+}
 
 .large {
   font-size: 3rem;
@@ -903,14 +900,16 @@ button {
   z-index: 5;
 }
 
+.gold {
+    color: #ea9d28;
+}
+
 .text-gold {
     color: #ea9d28;
     font-family: sans-serif;
     font-size: 2.5rem;
     line-height: 1.4;
     cursor: pointer;
-
-
 }
 .line-gold:before {
   background-color: #ea9d28;

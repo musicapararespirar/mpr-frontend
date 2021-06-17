@@ -14,10 +14,20 @@ export default {
         es: 'Impacto',
         pt: 'Impacto'
     },
+    'Gallery': {
+        en: 'Gallery',
+        es: 'Galería',
+        pt: 'Galeria'
+    },
     'Donate': {
         en: 'Donate',
         es: 'Donar',
         pt: 'Doar'
+    },
+    'Seasons': {
+        en: 'Seasons',
+        es: 'Temporadas',
+        pt: 'Temporadas'
     },
     'Contribute': {
         en: 'Contribute',
