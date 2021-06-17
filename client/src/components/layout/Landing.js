@@ -58,14 +58,13 @@ const Landing = ({
                     display: 'block',
                     marginTop: '50vh',
                     }}>
-                    <Textfit mode='single' forceSingleModeWidth={true} max={200}>
                         <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}>
-                            <Translate text='MUSICA' />
-                        </h1></Textfit>
-                        <Textfit mode='single' forceSingleModeWidth={true} max={200}>
+                            <Textfit mode='single' forceSingleModeWidth={true} max={300}><Translate text='MUSICA' />
+                        </Textfit></h1>
+                        <Textfit mode='single' forceSingleModeWidth={true} max={300}>
                         <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}><Translate text="PARA" /> <Translate text="RESPIRAR" /></h1>
                     </Textfit>
-                    <Textfit mode='single' forceSingleModeWidth={true} max={200}><h1 className="mpr-header gold" style={{ fontFamily: 'sans-serif' }}><i className='line-gold' style={{marginLeft: 0, marginRight: 0, width: '8rem'}}/>24/7<i className='line-gold' style={{marginLeft: 0, marginRight: 0, width: '8rem'}}/></h1></Textfit>
+                    <Textfit mode='single' forceSingleModeWidth={true} max={200}><h1 className="mpr-header gold" style={{ fontFamily: 'sans-serif' }}><i className='line-gold' style={{marginLeft: '0.5rem', marginRight: 0, }}/>24/7<i className='line-gold' style={{marginLeft: '0.5rem', marginRight: 0}}/></h1></Textfit>
                 </section>
 
             <div id="request-concert" />

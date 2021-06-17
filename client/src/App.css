@@ -912,15 +912,16 @@ button {
     cursor: pointer;
 }
 
-.line-gold {
-  background-color: #ea9d28;
-  content: "";
-  display: inline-block;
-  height: 3px;
-  position: relative;
-  vertical-align: middle;
-  width: 6rem;
-  margin-right: 0.5rem;
+.line-gold:before {
+   background-color: #ea9d28;
+   content: "";
+   display: inline-block;
+   height: 3px;
+   position: relative;
+   vertical-align: middle;
+   width: 7rem;
+   margin-right: 0.5rem;
+
 
 }
 .landing-container {
@@ -937,7 +938,6 @@ button {
   max-width: 25rem;
   margin: auto;
   overflow: visible;
-  padding: 0 0rem;
   margin-top: 10rem;
   margin-bottom: 10rem;
 }
