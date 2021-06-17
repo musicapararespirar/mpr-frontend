@@ -22,6 +22,8 @@ import RequestPersonal from '../concerts/RequestPersonal';
 import Gallery from '../information/Gallery';
 import Seasons from '../information/Seasons';
 // import ImageGallery from '../information/ImageGallery';
+import { Textfit } from 'react-textfit';
+
 
 const Landing = ({
     scrollRef,
@@ -49,8 +51,21 @@ const Landing = ({
                 bgImageStyle={{opacity: 0.2, height: '120vh'}}
                 style={{boxShadow: "inset 0px 0px 50px -60px #000000, inset 0px -940px 90px -60px #000000"}}
                 bgImage={slideshow3}>
-                <section className="landing">
-                <img src={logoLarge} className="logo-image"/>
+                <section className="inner-landing-container" style={{
+                    height: '20vw',
+                    width: '30vw',
+                    textAlign: 'center',
+                    display: 'block',
+                    marginTop: '50vh',
+                    }}>
+                    <Textfit mode='single' forceSingleModeWidth={true} max={200}>
+                        <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}>
+                            <Translate text='MUSICA' />
+                        </h1></Textfit>
+                        <Textfit mode='single' forceSingleModeWidth={true} max={200}>
+                        <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}><Translate text="PARA" /> <Translate text="RESPIRAR" /></h1>
+                    </Textfit>
+                    <Textfit mode='single' forceSingleModeWidth={true} max={200}><h1 className="mpr-header gold" style={{ fontFamily: 'sans-serif' }}><i className='line-gold' style={{marginLeft: 0, marginRight: 0, width: '8rem'}}/>24/7<i className='line-gold' style={{marginLeft: 0, marginRight: 0, width: '8rem'}}/></h1></Textfit>
                 </section>
 
             <div id="request-concert" />

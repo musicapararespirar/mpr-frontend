@@ -911,14 +911,15 @@ button {
     line-height: 1.4;
     cursor: pointer;
 }
-.line-gold:before {
+
+.line-gold {
   background-color: #ea9d28;
   content: "";
   display: inline-block;
   height: 3px;
   position: relative;
   vertical-align: middle;
-  width: 7rem;
+  width: 6rem;
   margin-right: 0.5rem;
 
 }
@@ -933,7 +934,7 @@ button {
 }
 
 .inner-landing-container {
-  max-width: 45vw;
+  max-width: 25rem;
   margin: auto;
   overflow: visible;
   padding: 0 0rem;
