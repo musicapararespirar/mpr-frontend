@@ -15,6 +15,8 @@ import { getLocationFromId } from '../../actions/location';
 import Toggle from 'react-toggle'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import SlidingPane from "react-sliding-pane";
+import "react-sliding-pane/dist/react-sliding-pane.css";
 
 const RequestPersonal = ({
     requestConcert,
@@ -46,7 +48,6 @@ const RequestPersonal = ({
 
         return modifiedTime;
     }
-
     useEffect(() => { getProfiles() }, [getProfiles]);
 
     // Variables for Location searching
@@ -85,13 +86,13 @@ const RequestPersonal = ({
         },
         musician: {
             isPreferred: false,
-            id: ''
+            id: null
         },
         time: {
-            asap: false
+            asap: true,
+            dateForUTC: datepickerUTC(timePicker, location.timezone),
         },
         message: '',
-        dateFor: datepickerUTC(timePicker, location.timezone),
         type: 'personal'
     });
     const [userEntity, setUserEntity] = useState('Your');
@@ -125,6 +126,10 @@ const RequestPersonal = ({
             }})
     }, [formData.listener.timezone]);
 
+    const [slideState, setSlideState] = useState({
+        isPaneOpen: false,
+        isPaneOpenLeft: false
+    });
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
     const onChangeListener = e => setFormData({
         ...formData, listener: {
@@ -139,6 +144,20 @@ const RequestPersonal = ({
         return <Redirect to={`/request/response/${request._id}`} />
     }
     return     <Fragment>
+    <div style={{
+        position: 'absolute',
+        right: '-30%',
+        display: 'flex',
+        overflow: 'hidden',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end'
+    }}>
+    <div className="form" style={{
+                float: 'left',
+                minWidth: '30vw',
+                paddingLeft: '0.5rem',
+                paddingRight: '0.5rem',
+            }}>
         <Link to='/' className='btn'>
             Back home
         </Link>
@@ -299,11 +318,19 @@ const RequestPersonal = ({
                     <small className="form-text">
                         This helps us determine {`${userEntity.toLowerCase()}`} timezone
                     </small>
-                <p className="lead">Customise {`${userEntity.toLowerCase()}`} booking</p>
-                    <p>We will schedule your request as soon as possible.</p>
-                    <p>If you have a musician or time request, let us know</p><br/>
 
-                <input
+                <Fragment><input type="submit" value="Request!" className="btn btn-primary my-1" />
+                <Link to="/" className="btn btn-light my-1" >Go Back</Link>      <button    onClick={() => setSlideState({ isPaneOpen: true })}>
+                    Next >
+                </button></Fragment>
+            </form></div>
+            <div className="form" style={{
+                float: 'left',
+                minWidth: '30vw',
+                paddingLeft: '0.5rem',
+                paddingRight: '0.5rem'
+            }}>
+                            <input
                     type="checkbox"
                     name="preferredMusician"
                     checked={formData.musician.isPreferred}
@@ -346,7 +373,7 @@ const RequestPersonal = ({
                     <input
                     type="checkbox"
                     name="preferredTime"
-                    checked={formData.time.asap}
+                    checked={!formData.time.asap}
                     onChange={e => {
                         setFormData({
                             ...formData,
@@ -356,7 +383,7 @@ const RequestPersonal = ({
                             } });
                     }} /> {' '}Request time
                 </p>
-                {formData.time.asap ? (
+                {!formData.time.asap ? (
                 <div className="form-group">
                     <h4>Time requested</h4>
                     <DatePicker
@@ -369,10 +396,13 @@ const RequestPersonal = ({
                                   setFormData({ ...formData, dateFor: datepickerUTC(e, formData.listener.timezone)});
                               }}/>
                 </div>) : (null)}
-
-                <Fragment><input type="submit" value="Request!" className="btn btn-primary my-1" />
-                <Link to="/" className="btn btn-light my-1" >Go Back</Link></Fragment>
-            </form>
+            </div>
+             <div className="form" style={{
+                float: 'left',
+                minWidth: '30vw',
+                paddingLeft: '0.5rem',
+                paddingRight: '0.5rem'
+            }}>third pane </div></div>
     </Fragment>
 }
 

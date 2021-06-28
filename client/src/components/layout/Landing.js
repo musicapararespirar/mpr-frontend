@@ -53,9 +53,6 @@ const Landing = ({
                 bgImage={slideshow3}>
                 <section className="inner-landing-container" style={{
                     height: '20vw',
-                    width: '30vw',
-                    textAlign: 'center',
-                    display: 'block',
                     marginTop: '50vh',
                     }}>
                         <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}>
@@ -64,7 +61,7 @@ const Landing = ({
                         <Textfit mode='single' forceSingleModeWidth={true} max={300}>
                         <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}><Translate text="PARA" /> <Translate text="RESPIRAR" /></h1>
                     </Textfit>
-                    <Textfit mode='single' forceSingleModeWidth={true} max={200}><h1 className="mpr-header gold" style={{ fontFamily: 'sans-serif' }}><i className='line-gold' style={{marginLeft: '0.5rem', marginRight: 0, }}/>24/7<i className='line-gold' style={{marginLeft: '0.5rem', marginRight: 0}}/></h1></Textfit>
+                    <Textfit mode='single' forceSingleModeWidth={true} min={15} max={200}><h1 className="mpr-header gold" style={{ fontFamily: 'sans-serif' }}><i className='line-gold' style={{marginLeft: '0.5rem', marginRight: 0, }}/>24/7<i className='line-gold' style={{marginLeft: '0.5rem', marginRight: 0}}/></h1></Textfit>
                 </section>
 
             <div id="request-concert" />
@@ -74,7 +71,10 @@ const Landing = ({
                     bgImageStyle={{opacity: 0.2}}
                     style={{background: '#4a2c75', clipPath: "polygon(0% 0%, 40% 0%, 50% 5%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
-                    <section className="inner-landing-container" style={{ height: '50vw' }}>
+                    <section className="inner-landing-container" style={{
+                        height: '80vh',
+                        maxWidth: '90vw',
+                    }}  >
                         <Router>
                         <Switch>
                             <Route exact path="/" component={PideConcierto}/>

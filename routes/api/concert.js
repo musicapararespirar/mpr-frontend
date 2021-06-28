@@ -16,23 +16,40 @@ router.post(
     ],
     async (req, res) => {
         const errors = validationResult(req);
+        console.log(req.body);
         if (!errors.isEmpty()) {
             return res.status(400).json({ input: req.body , errors: errors.array() });
         }
 
         try {
             const newConcert = new Concert({
-                requesterName: req.body.requesterName,
-                requestType: req.body.requestType,
-                preferredMusician: req.body.preferredMusician,
-                preferredMusicianName: req.body.preferredMusicianName,
-                listenerMessage: req.body.listenerMessage,
-                listenerName: req.body.listenerName,
-                listenerLocation: req.body.listenerLocation,
-                listenerNumber: req.body.listenerNumber,
-                listenerTimezone: req.body.listenerTimezone,
-                asap: req.body.asap,
-                dateFor: req.body.dateFor,
+                requester: {
+                    name: req.body.requester.name,
+                    number: req.body.requester.number,
+                    email: req.body.requester.email,
+                    isListener: req.body.requester.isListener,
+                    timezone: req.body.requester.timezone
+                },
+                listener: {
+                    name: req.body.requester.isListener ? req.body.requester.name : req.body.listener.name,
+                    number: req.body.requester.isListener ? req.body.requester.number : req.body.listener.number,
+                    email: req.body.requester.isListener ? req.body.requester.email : req.body.listener.email,
+                    timezone: req.body.requester.isListener ? req.body.requester.timezone : req.body.listener.timezone,
+                    language: req.body.listener.language,
+                    placeName: req.body.listener.placeName,
+                    placeLatitude: req.body.listener.placeLatitude,
+                    placeLongitude: req.body.listener.placeLongitude,
+                    isInstitution: req.body.listener.isInstitution
+                },
+                musician: {
+                    isPreferred: req.body.musician.isPreferred,
+                    id: req.body.musician.id,
+                },
+                time: {
+                    asap: req.body.time.asap,
+                    dateForUTC: req.body.time.dateForUTC,
+                },
+                message: req.body.message,
             })
 
             const concert = await newConcert.save();
