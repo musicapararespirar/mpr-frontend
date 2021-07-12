@@ -53,7 +53,6 @@ const Landing = ({
                 bgImage={slideshow3}>
                 <section className="inner-landing-container" style={{
                     height: '20vw',
-                    width: '30vw',
                     textAlign: 'center',
                     display: 'block',
                     marginTop: '50vh',

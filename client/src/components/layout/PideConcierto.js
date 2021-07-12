@@ -32,7 +32,7 @@ const PideConcierto = ({
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}><Translate text="concierto" /></h1></Textfit>
                 <div style={{
-                    fontFamily: ' sans-serif',
+                    fontFamily: 'sans-serif',
                     display: 'inline-block',
                     letterSpacing: '1px',
                     fontSize: '0.6rem',
