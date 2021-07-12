@@ -25,6 +25,7 @@ const PideConcierto = ({
     const scrollRef = useRef(null);
 
     return <Fragment>
+        <div className="inner-landing-container" style={{height: '50vh'}}>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}>
                 <Translate text="pide" />
@@ -79,7 +80,7 @@ const PideConcierto = ({
                     fontWeight: 500,
                     color: '#ea9d28'
                 }}>vive la música en casa</small>
-            <LoginLogo /></Fragment>
+            <LoginLogo /></div></Fragment>
 }
 
 

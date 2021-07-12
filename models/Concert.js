@@ -33,7 +33,7 @@ const ConcertSchema = new Schema({
       required: true
     },
     email: {
-      type: Number,
+      type: String,
       required: true
     },
     isListener: {
@@ -53,7 +53,7 @@ const ConcertSchema = new Schema({
       type: Number
     },
     email: {
-      type: Number
+      type: String
     },
     placeName: {
       type: String

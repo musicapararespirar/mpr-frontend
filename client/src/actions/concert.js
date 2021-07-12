@@ -99,7 +99,6 @@ export const requestConcert = formData => async dispatch => {
     }
     try {
         const res = await axios.post('/api/concert', formData, config);
-
         dispatch({
             type: REQUEST_CONCERT,
             payload: res.data
