@@ -45,30 +45,6 @@ const PideConcierto = ({
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div><br/>
             <Fragment>
-                <NavbarDropdown>
-                    <NavbarDropdown.Toggle className="reqmenu__item">
-                    <NavbarDropdown.Open>
-                        <div className="text-gold"><Translate text="HERE" /></div>
-                    </NavbarDropdown.Open>
-                    <NavbarDropdown.Close>
-                        <div className="text-gold"><Translate text="HERE" /></div>
-                    </NavbarDropdown.Close>
-                    </NavbarDropdown.Toggle>
-                    <NavbarDropdown.Menu className="reqmenu-menu">
-                        <div className="reqmenu-menu__row">
-                            <Link to='/request/personal'>
-                                <NavbarDropdown.Item className="reqmenu-item">
-                                    <div className="reqmenu-item__text"><Translate text="Personal" /></div>
-                                </NavbarDropdown.Item>
-                            </Link>
-                            <Link to='/request/institution'>
-                                <NavbarDropdown.Item className="reqmenu-item">
-                                    <div className="reqmenu-item__text"><Translate text="Institution" /></div>
-                                </NavbarDropdown.Item>
-                            </Link>
-                        </div>
-                    </NavbarDropdown.Menu>
-                </NavbarDropdown>
             </Fragment><br/><br/><br/><br/>
             <small style={{
                     fontFamily: ' sans-serif',
@@ -80,7 +56,7 @@ const PideConcierto = ({
                     fontWeight: 500,
                     color: '#ea9d28'
                 }}>vive la música en casa</small>
-            <LoginLogo /></div></Fragment>
+            </div></Fragment>
 }
 
 
