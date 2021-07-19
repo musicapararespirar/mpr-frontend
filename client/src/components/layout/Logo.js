@@ -1,16 +1,20 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 import logo from '../../img/logo2.png';
 
 const Logo = ({ auth: { isAuthenticated, loading }, logout }) => {
+    const history = useHistory();
     return (
         <nav className="logo">
-            <Link to="/">
+            <div onClick={e => {
+                history.push('/');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}>
                 <img src={logo} alt="Logo" />
-            </Link>
+            </div>
         </nav>
     )
 }

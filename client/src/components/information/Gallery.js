@@ -29,7 +29,7 @@ const Gallery = ({
                 textAlign: 'center',
                 fontFamily: 'sans-serif'
             }}>
-                <Translate text="Gallery" />
+                <Translate text="About Us" />
             </h1></Textfit>
             </div></Fragment></Provider>
 }

@@ -72,46 +72,39 @@ const Navbar = ({
             </NavbarDropdown.Toggle>
             <NavbarDropdown.Menu className="navmenu-menu">
                 <div className="navmenu-menu__row">
-                    <Link to='/about-us'>
+                    <div onClick={e => (scroll('request-concert'))}>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="About" /></div>
+                            <div className="navmenu-item__text"><Translate text="PIDE CONCIERTO" /></div>
                         </NavbarDropdown.Item>
-                </Link>
+                    </div>
                 </div>
                 <div className="navmenu-menu__row">
-                    <Link to='/concerts'>
+                    <div onClick={e => (scroll('about-us'))}>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="Concerts" /></div>
+                            <div className="navmenu-item__text"><Translate text="ACERCA DE" /></div>
                         </NavbarDropdown.Item>
-                    </Link>
+                    </div>
                 </div>
                 <div className="navmenu-menu__row">
-                    <Link to='/impact'>
+                    <div onClick={e => (scroll('seasons'))}>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="Impact" /></div>
+                            <div className="navmenu-item__text"><Translate text="TEMPORADAS" /></div>
                         </NavbarDropdown.Item>
-                </Link>
+                    </div>
                 </div>
                 <div className="navmenu-menu__row">
-                <Link to='/donate'>
+                    <div onClick={e => (scroll('gallery'))}>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="Donate" /></div>
+                            <div className="navmenu-item__text"><Translate text="GALERIA" /></div>
                         </NavbarDropdown.Item>
-                    </Link>
+                    </div>
                 </div>
                 <div className="navmenu-menu__row">
-                    <Link to='/contribute'>
+                    <div onClick={e => (scroll('donate'))}>
                         <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="Contribute" /></div>
+                            <div className="navmenu-item__text"><Translate text="DONATE" /></div>
                         </NavbarDropdown.Item>
-                </Link>
-                </div>
-                <div className="navmenu-menu__row">
-                    <Link to='/contact'>
-                        <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="Contact Us" /></div>
-                        </NavbarDropdown.Item>
-                    </Link>
+                    </div>
                 </div>
             </NavbarDropdown.Menu>
         </NavbarDropdown>
@@ -219,25 +212,20 @@ const Navbar = ({
     );
     const guestLinksBar = (
         <ul style={{ padding: '0px 4px' }}>
-            <li><div onClick={e => {
-                history.push('/');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}>INICIO</div>
-            </li>
             <li>
                 <div onClick={e => (scroll('request-concert'))}>PIDE TU CONCIERTO</div>
             </li>
             <li>
-                <div onClick={e => (scroll('gallery'))}>GALERIA</div>
+                <div onClick={e => (scroll('about-us'))}>ACERCA DE</div>
             </li>
             <li>
                 <div onClick={e => (scroll('seasons'))}>TEMPORADAS</div>
             </li>
             <li>
-                <div onClick={e => (scroll('gallery'))}>ACERCA DE</div>
+                <div onClick={e => (scroll('gallery'))}>GALERIA</div>
             </li>
             <li>
-                <div onClick={e => (scroll('gallery'))}>DONACIONES</div>
+                <div onClick={e => (scroll('donate'))}>DONACIONES</div>
             </li>
             {/*<li><Link to="/profiles">Musicians</Link></li>*/}
             {/*<li><Link to="/register">Register</Link></li>*/}

@@ -86,7 +86,7 @@ const Landing = ({
                     </section>
             </Parallax></Parallax>
 
-            <div id="gallery" />
+            <div id="about-us" />
                 <Parallax
                     strength={500}
                     blur={10}
@@ -109,7 +109,7 @@ const Landing = ({
                     </section>
                 </Parallax>
 
-            <div id="imagegrid" />
+            <div id="gallery" />
             <Parallax
                 strength={500}
                 blur={10}
