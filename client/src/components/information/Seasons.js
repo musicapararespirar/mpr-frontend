@@ -21,7 +21,7 @@ const Seasons = ({
 
     return <Provider language={languageCode} translation={allTranslations}>
     <Fragment>
-
+        <div className="inner-landing-container">
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header gold' style={{ fontFamily: 'sans-serif' }}>
                 <Translate text='MUSICA' />
@@ -50,8 +50,7 @@ const Seasons = ({
                     <p className='x-large gold left-numbers'>274</p>
                     <p className='dark-title'>LLAMADAS</p>
                 <div style={{ clear: 'both'}} />
-            </div>
-            </Fragment><br/><br/><br/><br/>
+            </div><br/><br/><br/><br/>
             <small style={{
                     fontFamily: ' sans-serif',
                     display: 'inline-block',
@@ -62,6 +61,8 @@ const Seasons = ({
                     fontWeight: 500,
                     color: '#ea9d28'
                 }}>cada historia cuenta</small>
+            </div>
+            </Fragment>
             </Provider>
 }
 

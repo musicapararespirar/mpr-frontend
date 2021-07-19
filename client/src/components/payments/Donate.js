@@ -29,9 +29,6 @@ const Donate = ({
         </p>
             <p><Translate text="enterDetails" /></p>
         </section>
-        <Elements stripe={promise}>
-            <CheckoutForm amount="1000"/>
-        </Elements>
     </Fragment></Provider>
 }
 

@@ -945,6 +945,16 @@ button {
    width: 8rem;
    margin-right: 0.5rem;
 }
+.line-purple:before {
+   background-color: #492b74;
+   content: "";
+   display: inline-block;
+   height: 3px;
+   position: relative;
+   vertical-align: middle;
+   width: 8rem;
+   margin-right: 0.5rem;
+}
 .landing-container {
     height: 100vh;
     width: 100vw;

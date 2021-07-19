@@ -36,8 +36,8 @@ const PideConcierto = ({
                     fontFamily: 'sans-serif',
                     display: 'inline-block',
                     letterSpacing: '1px',
-                    fontSize: '0.6rem',
-                    lineHeight: 3,
+                    fontSize: '1rem',
+                    lineHeight: 2,
                     textAlign: 'justify',
                     fontWeight: 'lighter'
                 }}>

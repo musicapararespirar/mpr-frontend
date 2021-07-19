@@ -21,6 +21,8 @@ import PideConcierto from './PideConcierto';
 import RequestPersonal from '../concerts/RequestPersonal';
 import Gallery from '../information/Gallery';
 import Seasons from '../information/Seasons';
+import Donate from '../information/Donate';
+import Footer from '../information/Footer';
 // import ImageGallery from '../information/ImageGallery';
 import { Textfit } from 'react-textfit';
 
@@ -73,7 +75,7 @@ const Landing = ({
                     bgImageStyle={{opacity: 0.2}}
                     style={{background: '#4a2c75', clipPath: "polygon(0% 0%, 40% 0%, 50% 5%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
-                    <section >
+                    <section style={{height: '80vh'}}>
                         <Router>
                         <Switch>
                             <Route exact path="/" component={PideConcierto} />
@@ -91,7 +93,7 @@ const Landing = ({
                     style={{boxShadow: "inset 0px 60px 50px -60px #000000, inset 0px -60px 50px -60px #000000"}}
                     bgImage={slideshow4}>
                     <section className="inner-landing-container">
-                        <div style={{height: '50vw' }}><Gallery /></div>
+                    <Gallery />
                     </section>
                 </Parallax>
 
@@ -101,23 +103,39 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#f2e9ec'}}>
-                    <section className="inner-landing-container">
-                    <div style={{height:'50vw'}}>
+                    <section style={{height: '80vh'}}>
                             <Seasons />
-                    </div>
                     </section>
                 </Parallax>
 
-                        <div id="seasons" />
+            <div id="imagegrid" />
             <Parallax
                 strength={500}
                 blur={10}
-                bgImageStyle={{opacity: 0.2}}>                    <section className="inner-landing-container">
-                    <div style={{height:'50vw'}}>
-
-                    </div>
+                bgImageStyle={{opacity: 0.2}}>
+                <section style={{height: '80vh'}}>
+                </section>
+            </Parallax>
+            <div id="donate" />
+            <Parallax
+                strength={500}
+                blur={10}
+                bgImageStyle={{opacity: 0.2}}
+                    style={{background: '#ea9d28'}}>
+                    <section style={{height: '80vh'}}>
+                    <Donate />
                     </section>
                 </Parallax>
+            <div id="footer" />
+            <Parallax
+                strength={500}
+                blur={10}
+                bgImageStyle={{opacity: 0.2}}
+                style={{background: '#4a2c75'}}>
+                <section >
+                    <Footer />
+                </section>
+            </Parallax>
         </Provider>
     )
 }

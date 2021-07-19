@@ -55,7 +55,7 @@ const App = () => {
         <Logo />
         <Navbar />
         <Route exact path="/" component={Landing} />
-        <section className="container">
+        <section>
             <Alert />
             <Switch>
                 <Route exact path="/about-us" component={AboutUs} />
