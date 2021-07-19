@@ -55,7 +55,7 @@ const Seasons = ({
                     fontFamily: ' sans-serif',
                     display: 'inline-block',
                     letterSpacing: '2.5px',
-                    fontSize: '1.3vw',
+                    fontSize: '1rem',
                     lineHeight: 3,
                     textAlign: 'justify',
                     fontWeight: 500,
@@ -65,7 +65,6 @@ const Seasons = ({
             </Fragment>
             </Provider>
 }
-
 
 Seasons.propTypes = {
     language: PropTypes.object.isRequired

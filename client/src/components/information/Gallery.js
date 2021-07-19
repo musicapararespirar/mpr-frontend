@@ -21,6 +21,7 @@ const Gallery = ({
 
     return <Provider language={languageCode} translation={allTranslations}>
     <Fragment>
+        <div className="inner-landing-container">
 
             <Textfit mode='single' forceSingleModeWidth={true}>
             <h1 className='mpr-header' style={{
@@ -30,7 +31,7 @@ const Gallery = ({
             }}>
                 <Translate text="Gallery" />
             </h1></Textfit>
-            </Fragment></Provider>
+            </div></Fragment></Provider>
 }
 
 

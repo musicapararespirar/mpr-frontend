@@ -23,6 +23,7 @@ import Gallery from '../information/Gallery';
 import Seasons from '../information/Seasons';
 import Donate from '../information/Donate';
 import Footer from '../information/Footer';
+import ImageGrid from '../information/ImageGrid';
 // import ImageGallery from '../information/ImageGallery';
 import { Textfit } from 'react-textfit';
 
@@ -92,8 +93,8 @@ const Landing = ({
                     bgImageStyle={{opacity: 0.2}}
                     style={{boxShadow: "inset 0px 60px 50px -60px #000000, inset 0px -60px 50px -60px #000000"}}
                     bgImage={slideshow4}>
-                    <section className="inner-landing-container">
-                    <Gallery />
+                    <section style={{height: '80vh'}}>
+                        <Gallery />
                     </section>
                 </Parallax>
 
@@ -114,6 +115,7 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}>
                 <section style={{height: '80vh'}}>
+                    <ImageGrid />
                 </section>
             </Parallax>
             <div id="donate" />
