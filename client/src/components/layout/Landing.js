@@ -114,9 +114,8 @@ const Landing = ({
                 strength={500}
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}>
-                <section style={{height: '80vh'}}>
+
                     <ImageGrid />
-                </section>
             </Parallax>
             <div id="donate" />
             <Parallax

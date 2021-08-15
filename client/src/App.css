@@ -98,6 +98,11 @@ img {
     letter-spacing: -4px;
 }
 
+.gallery-item {
+  width: 200px;
+  padding: 5px;
+}
+
 .left-numbers {
     float: left;
 }

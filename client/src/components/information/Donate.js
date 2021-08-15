@@ -36,7 +36,19 @@ const Seasons = ({
                     textAlign: 'justify',
                 }}>
                 <i className='line-purple' />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Música para Respirar es una nueva forma de hacer música de manera más personal. Contribuye para que llegue a más personas de forma gratuita. Al apoyarnos estás gestionando la contratación de artistas en toda América latina y el mundo, el  trabajo de administración, coordinación, el diseño gráfico y principalmente haciendo llegar música a más personas.<br/><br/>
+
+                    CONTRIBUYE AQUÍ (Link de Gofundme)<br/>
+                    FOR TAX DEDUCTIBLE DONATIONS IN THE US CLICK HERE (Fractured Atlas)<br/>
+
+                    Música para Respirar 24/7 es posible gracias al apoyo de:<br/><br/>
+
+                    MAW<br/>
+                    KAS Foundation<br/>
+                    Fundación Proyecto Ser Humano<br/>
+                    Stefan Heucke<br/>
+                    65 apoyadores de Gofundme<br/>
+
                 </div><br/>
             <br/><br/><br/><br/>
             <small style={{
