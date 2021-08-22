@@ -19,7 +19,7 @@ import Contribute from '../information/Contribute';
 import { Parallax, Background } from 'react-parallax';
 import PideConcierto from './PideConcierto';
 import RequestPersonal from '../concerts/RequestPersonal';
-import Gallery from '../information/Gallery';
+import AboutUs from '../information/AboutUs';
 import Seasons from '../information/Seasons';
 import Donate from '../information/Donate';
 import Footer from '../information/Footer';
@@ -94,7 +94,7 @@ const Landing = ({
                     style={{boxShadow: "inset 0px 60px 50px -60px #000000, inset 0px -60px 50px -60px #000000"}}
                     bgImage={slideshow4}>
                     <section style={{height: '80vh'}}>
-                        <Gallery />
+                        <AboutUs />
                     </section>
                 </Parallax>
 

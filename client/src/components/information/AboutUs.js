@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { Provider, Translate } from 'react-translated';
 import aboutTranslation from '../translation/about';
 import titlesTranslation from '../translation/titles';
+import { Textfit } from 'react-textfit';
+
 
 const AboutUs = ({
     language: { languageCode }
@@ -15,16 +17,24 @@ const AboutUs = ({
         ...titlesTranslation
     }
     return <Provider language={languageCode} translation={allTranslations}>
-            <Fragment>
-            <p className="lead">
-            <i className="fas fa-music"></i> <Translate text="About Us" />
-            </p>
-            <p><Translate text="aboutDescriptionP1" /></p><br/>
-            <p><Translate text="aboutDescriptionP2" /></p><br/>
-            <p><Translate text="aboutDescriptionP3" /></p><br/>
-            <h4><Translate text="About" /> La Sociedad</h4><br/>
-            <p><Translate text="aboutLaSociedad" /></p><br/>
-            </Fragment></Provider>
+            <Fragment><div className="inner-landing-container">
+
+            <Textfit mode='single' forceSingleModeWidth={true}>
+            <h1 className='mpr-header' style={{
+                marginTop: '30%',
+                textAlign: 'center',
+                fontFamily: 'sans-serif'
+            }}>
+                <Translate text="About Us" />
+            </h1></Textfit>
+            <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
+                <Translate text="aboutDescriptionP1" /><br/><br/>
+
+                <Translate text="aboutDescriptionP2" /><br/><br/>
+                <Translate text="aboutDescriptionP3" /><br/><br/>
+                </p>
+            </div></Fragment>
+            </Provider>
 }
 
 AboutUs.propTypes = {
