@@ -612,7 +612,7 @@ button {
 .languagemenu {
     z-index: 40;
     align-items: right;
-    position: absolute;
+    position: fixed;
     right: 25px;
     top: 10px;
     opacity: 1;
@@ -622,7 +622,7 @@ button {
 }
 
 .languagemenu-icon {
-  padding: 2px 2px;
+  padding: 0px 2px;
   border-radius: 5px;
   box-shadow: 0px 0px 2px #c3c5c7;
   text-align: center;
@@ -811,16 +811,14 @@ button {
 /* Navbar */
 .navbar {
     font-family: sans-serif;
+    font-size: 18px;
     font-weight: 500;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
     z-index: 40;
     position: fixed;
     float: right;
     right: 20px;
-    top: 15px;
-    width: 100%;
+    top: 25px;
     color: white;
     transform: translateY(0);
     transition: transform 0.3s ease;
@@ -832,16 +830,14 @@ button {
     flex-grow: 1;
     justify-content: center;
     transition: background-color .2s ease-out;
+
 }
 .navbar ul {
   display: flex;
 }
-.navbar li{
-    display: inline-block;
-    position: relative;
+.navbar li {
     float: left;
-    padding: 0.2rem;
-    margin: 0 0.25rem;
+    margin: 0 2rem;
 }
 
 .navbar a {
@@ -871,7 +867,7 @@ button {
 }
 
 .navbar.hidden {
-  transform: translateY(-150%);
+  transform: translateY(-250%);
 }
 .navmenu.hidden {
   transform: translateY(-200%);

@@ -25,9 +25,9 @@ const Navbar = ({
     }
 }) => {
     const history = useHistory();
-    const [isDesktop, setDesktop] = useState(window.innerWidth > 830);
+    const [isDesktop, setDesktop] = useState(window.innerWidth > 1030);
 
-    const updateMedia = () => { setDesktop(window.innerWidth > 830); }
+    const updateMedia = () => { setDesktop(window.innerWidth > 1030); }
 
     useEffect(() => {
         window.addEventListener("resize", updateMedia);
@@ -211,7 +211,7 @@ const Navbar = ({
         </NavbarDropdown>
     );
     const guestLinksBar = (
-        <ul style={{ padding: '0px 4px' }}>
+        <ul>
             <li>
                 <div onClick={e => (scroll('request-concert'))}>PIDE TU CONCIERTO</div>
             </li>
