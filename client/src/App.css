@@ -813,6 +813,7 @@ button {
     font-family: sans-serif;
     font-size: 18px;
     font-weight: 500;
+    text-shadow: 1px 1px 8px black;
     display: flex;
     z-index: 40;
     position: fixed;
@@ -844,6 +845,7 @@ button {
   color: white;
   padding: 0.2rem;
   margin: 0 0.25rem;
+  border: 30px solid transparent;
 }
 
 .navbar div:hover {
