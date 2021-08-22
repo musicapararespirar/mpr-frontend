@@ -1,5 +1,5 @@
-import React, { Fragment, useRef, useState, useEffect } from 'react'
-import { Link, useHistory } from 'react-router-dom';
+import React, { Fragment, useRef, useState, useEffect, useCallback } from 'react'
+import { Link, useHistory,useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
@@ -9,6 +9,7 @@ import { setLanguage } from '../../actions/language';
 import titlesTranslation from '../translation/titles';
 import { Provider, Translate } from 'react-translated';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
+
 
 const Navbar = ({
     scrollRef,
@@ -28,7 +29,7 @@ const Navbar = ({
     const [isDesktop, setDesktop] = useState(window.innerWidth > 1030);
 
     const updateMedia = () => { setDesktop(window.innerWidth > 1030); }
-
+    const siteLocation = useLocation();
     useEffect(() => {
         window.addEventListener("resize", updateMedia);
         return () => window.removeEventListener("resize", updateMedia);
@@ -36,8 +37,12 @@ const Navbar = ({
 
     const scroll = (location) => {
         const section = document.querySelector( `#${location}` );
-        if (section) {
+        if (section && siteLocation.pathname == '/') {
+            console.log(section);
             section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+        } else {
+            console.log(location);
+            history.push(`/#${location}`);
         }
     }
 
@@ -235,7 +240,7 @@ const Navbar = ({
 
     return <Provider language={languageCode} translation={titlesTranslation}>
         {isDesktop ? (
-            <nav className={`navbar ${hiddenStyle}`}>
+            <nav className={`navbar ${hiddenStyle}`}>{siteLocation.pathname}
                 {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)}
                     </nav>
                       ) : (

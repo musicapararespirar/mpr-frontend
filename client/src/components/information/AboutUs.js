@@ -17,19 +17,13 @@ const AboutUs = ({
         ...titlesTranslation
     }
     return <Provider language={languageCode} translation={allTranslations}>
-            <Fragment><div className="inner-landing-container">
+            <Fragment><div className="container">
 
-            <Textfit mode='single' forceSingleModeWidth={true}>
-            <h1 className='mpr-header' style={{
-                marginTop: '30%',
-                textAlign: 'center',
-                fontFamily: 'sans-serif'
-            }}>
+            <h1>
                 <Translate text="About Us" />
-            </h1></Textfit>
+             </h1>
             <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
                 <Translate text="aboutDescriptionP1" /><br/><br/>
-
                 <Translate text="aboutDescriptionP2" /><br/><br/>
                 <Translate text="aboutDescriptionP3" /><br/><br/>
                 </p>

@@ -25,7 +25,7 @@ const Gallery = ({
 
             <Textfit mode='single' forceSingleModeWidth={true}>
             <h1 className='mpr-header' style={{
-                marginTop: '60%',
+                marginTop: '30%',
                 textAlign: 'center',
                 fontFamily: 'sans-serif'
             }}>

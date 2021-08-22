@@ -2,6 +2,7 @@ import React, { Fragment, useRef } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import logoLarge from '../../img/logo-large.png';
 import slideshow1 from '../../img/landing1.jpeg';
@@ -12,6 +13,7 @@ import slideshow5 from '../../img/landing5.jpeg';
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn } from "react-scroll-motion";
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
+import aboutTranslation from '../translation/about';
 import landingTranslation from '../translation/landing';
 import titlesTranslation from '../translation/titles';
 import { Provider, Translate } from 'react-translated';
@@ -43,6 +45,7 @@ const Landing = ({
 
     // Combine translation files
     const allTranslations = {
+        ...aboutTranslation,
         ...landingTranslation,
         ...titlesTranslation
     }
@@ -94,7 +97,42 @@ const Landing = ({
                     style={{boxShadow: "inset 0px 60px 50px -60px #000000, inset 0px -60px 50px -60px #000000"}}
                     bgImage={slideshow4}>
                     <section style={{height: '80vh'}}>
-                        <AboutUs />
+                        <Fragment>
+                        <div className="inner-landing-container">
+
+                            <Textfit mode='single' forceSingleModeWidth={true}>
+                            <h1 className='mpr-header' style={{
+                                marginTop: '30%',
+                                textAlign: 'center',
+                                fontFamily: 'sans-serif'
+                            }}>
+                                <Translate text="ABOUT US" />
+                            </h1></Textfit>
+                            <div style={{
+                    fontFamily: 'sans-serif',
+                    display: 'inline-block',
+                    letterSpacing: '1px',
+                    fontSize: '1rem',
+                    lineHeight: 2,
+                    textAlign: 'justify',
+                    fontWeight: 'lighter'
+                }}>
+                <i className='line-gold' />
+                                <Translate text="aboutDescriptionP1" /><br/><br/>
+                    <Link to="/about-us" style={{
+                    fontFamily: ' sans-serif',
+                    display: 'inline-block',
+                    letterSpacing: '2.5px',
+                    fontSize: '1rem',
+                    lineHeight: 3,
+                    textAlign: 'justify',
+                    fontWeight: 500,
+                    color: '#ea9d28'
+                }}>Read more <i className="fas fa-long-arrow-alt-right" /></Link>
+                </div><br/>
+                            </div>
+                        </Fragment>
+
                     </section>
                 </Parallax>
 

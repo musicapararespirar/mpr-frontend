@@ -9,6 +9,11 @@ export default {
         es: 'Sobre',
         pt: 'Sobre'
     },
+    'ABOUT US': {
+        en: 'ABOUT US',
+        es: 'SOBRE NOSOTROS',
+        pt: 'SOBRE NÓS'
+    },
     'Impact': {
         en: 'Impact',
         es: 'Impacto',
