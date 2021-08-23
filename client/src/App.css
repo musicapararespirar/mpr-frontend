@@ -673,6 +673,50 @@ button {
     font-style: normal;
   }
 
+.example1-dropdown-menu {
+	 display: flex;
+	 flex-direction: column;
+	 top: 28px;
+	 right: 0;
+	 padding: 8px 0px;
+	 background-color: #fff;
+	 border-radius: 3px;
+	 box-shadow: 0px 0px 5px #c3c5c7;
+}
+ .example1-dropdown-menu-enter {
+	 opacity: 0;
+}
+ .example1-dropdown-menu-enter-active {
+	 opacity: 1;
+	 transition: 0.2s ease-in;
+}
+ .example1-dropdown-menu-exit {
+	 opacity: 1;
+}
+ .example1-dropdown-menu-exit-active {
+	 opacity: 0;
+	 transition: 0.2s ease-in;
+}
+ .example1-dropdown-menu-item {
+	 display: flex;
+	 flex-direction: row;
+	 justify-content: center;
+	 align-items: center;
+	 padding: 6px 26px;
+	 font-size: 12px;
+	 color: #333537;
+}
+ .example1-dropdown-menu-item:hover {
+	 background-color: #f3f5f7;
+}
+ .example1-dropdown-menu-item__spacer {
+	 width: 6px;
+}
+ .example1-dropdown-menu-item__text {
+	 padding: 0px 2px;
+}
+
+
 .navmenu {
     z-index: 40;
     align-items: flex-end;
@@ -847,9 +891,12 @@ button {
 }
 
 .navbar div:hover {
-/*   color: #ea9d28; */
-  text-shadow: 0 0 20px grey, 0 0 1px #ea9d28;
+/*   text-shadow: 0 0 20px grey, 0 0 1px #ea9d28; */
   cursor: pointer;
+}
+
+.navbar-selected {
+    text-shadow: 0 0 20px grey, 0 0 1px #ea9d28;
 }
 
 .navbar .welcome span {

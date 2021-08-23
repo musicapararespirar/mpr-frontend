@@ -1,5 +1,6 @@
 import React, { Fragment, useRef, useState, useEffect, useCallback } from 'react'
 import { Link, useHistory,useLocation } from 'react-router-dom';
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
@@ -7,9 +8,10 @@ import Spinner from '../layout/Spinner';
 import NavbarDropdown from 'react-navbar-dropdown';
 import { setLanguage } from '../../actions/language';
 import titlesTranslation from '../translation/titles';
+import navbarTranslation from '../translation/navbar';
 import { Provider, Translate } from 'react-translated';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
-
+import NavbarMenu from './NavbarMenu'
 
 const Navbar = ({
     scrollRef,
@@ -218,29 +220,65 @@ const Navbar = ({
     const guestLinksBar = (
         <ul>
             <li>
-                <div onClick={e => (scroll('request-concert'))}>PIDE TU CONCIERTO</div>
+                <NavbarMenu
+                    navTitle="ABOUT"
+                    navItems={[
+                        {text: 'Música para Respirar', link: '/about-us#mpr'},
+                        {text: 'La Sociedad', link: '/about-us#lasociedad'},
+                        {text: 'Team', link: '/about-us#team'},
+                        {text: 'Support', link: '/about-us#support'},
+                              ]}/>
             </li>
             <li>
-                <div onClick={e => (scroll('about-us'))}>ACERCA DE</div>
+                <NavbarMenu
+                    navTitle="REQUEST A CONCERT"
+                    navItems={[
+                        {text: 'Personal Concert', link: '/request#personal'},
+                        {text: 'Gift a Concert', link: '/request#gift'},
+                        {text: 'Institutional', link: '/request#institutional'},
+                        {text: 'Tips for your Concert', link: '/request#tips'},
+                              ]}/>
             </li>
             <li>
-                <div onClick={e => (scroll('seasons'))}>TEMPORADAS</div>
+                <NavbarMenu
+                    navTitle="IMPACT"
+                    navItems={[
+                        {text: 'Numbers', link: '/impact#numbers'},
+                        {text: 'Map', link: '/impact#map'},
+                        {text: 'Press', link: '/impact#press'},
+                        {text: 'Reports', link: '/impact#reports'},
+                              ]}/>
             </li>
             <li>
-                <div onClick={e => (scroll('gallery'))}>GALERIA</div>
+                <NavbarMenu
+                    navTitle="MEDIA"
+                    navItems={[
+                        {text: 'Musicians', link: '/media#musicians'},
+                        {text: 'Pictures', link: '/media#pictures'},
+                        {text: 'Videos', link: '/media#videos'},
+                              ]}/>
             </li>
             <li>
-                <div onClick={e => (scroll('donate'))}>DONACIONES</div>
+                <HashLink smooth to="/#donate">
+                    <Translate text="SUPPORT US" />
+                </HashLink>
             </li>
-            {/*<li><Link to="/profiles">Musicians</Link></li>*/}
-            {/*<li><Link to="/register">Register</Link></li>*/}
-            {/*<li><Link to="/login">Login</Link></li>*/}
+            <li>
+                <NavbarMenu
+                    navTitle="CONTACT US"
+                    navItems={[
+                        {text: 'Email', link: '/contact#email'},
+                        {text: 'Facebook', link: '/contact#facebook'},
+                        {text: 'Instagram', link: '/contact#instagram'},
+                        {text: 'Twitter', link: '/contact#twitter'},
+                              ]}/>
+            </li>
         </ul>
     );
 
-    return <Provider language={languageCode} translation={titlesTranslation}>
+    return <Provider language={languageCode} translation={navbarTranslation}>
         {isDesktop ? (
-            <nav className={`navbar ${hiddenStyle}`}>{siteLocation.pathname}
+            <nav className={`navbar ${hiddenStyle}`}>
                 {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)}
                     </nav>
                       ) : (

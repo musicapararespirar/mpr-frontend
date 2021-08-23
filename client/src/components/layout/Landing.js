@@ -21,7 +21,7 @@ import Contribute from '../information/Contribute';
 import { Parallax, Background } from 'react-parallax';
 import PideConcierto from './PideConcierto';
 import RequestPersonal from '../concerts/RequestPersonal';
-import AboutUs from '../information/AboutUs';
+import AboutUs from '../information/AboutUsLanding';
 import Seasons from '../information/Seasons';
 import Donate from '../information/Donate';
 import Footer from '../information/Footer';
@@ -97,42 +97,7 @@ const Landing = ({
                     style={{boxShadow: "inset 0px 60px 50px -60px #000000, inset 0px -60px 50px -60px #000000"}}
                     bgImage={slideshow4}>
                     <section style={{height: '80vh'}}>
-                        <Fragment>
-                        <div className="inner-landing-container">
-
-                            <Textfit mode='single' forceSingleModeWidth={true}>
-                            <h1 className='mpr-header' style={{
-                                marginTop: '30%',
-                                textAlign: 'center',
-                                fontFamily: 'sans-serif'
-                            }}>
-                                <Translate text="ABOUT US" />
-                            </h1></Textfit>
-                            <div style={{
-                    fontFamily: 'sans-serif',
-                    display: 'inline-block',
-                    letterSpacing: '1px',
-                    fontSize: '1rem',
-                    lineHeight: 2,
-                    textAlign: 'justify',
-                    fontWeight: 'lighter'
-                }}>
-                <i className='line-gold' />
-                                <Translate text="aboutDescriptionP1" /><br/><br/>
-                    <Link to="/about-us" style={{
-                    fontFamily: ' sans-serif',
-                    display: 'inline-block',
-                    letterSpacing: '2.5px',
-                    fontSize: '1rem',
-                    lineHeight: 3,
-                    textAlign: 'justify',
-                    fontWeight: 500,
-                    color: '#ea9d28'
-                }}>Read more <i className="fas fa-long-arrow-alt-right" /></Link>
-                </div><br/>
-                            </div>
-                        </Fragment>
-
+                        <AboutUs />
                     </section>
                 </Parallax>
 
