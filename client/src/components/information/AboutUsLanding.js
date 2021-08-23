@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { Provider, Translate } from 'react-translated';
 import aboutTranslation from '../translation/about';
 import titlesTranslation from '../translation/titles';
+import landingTranslation from '../translation/landing';
 import { Textfit } from 'react-textfit';
 
 
@@ -15,7 +16,8 @@ const AboutUs = ({
     // Combine translation files
     const allTranslations = {
         ...aboutTranslation,
-        ...titlesTranslation
+        ...titlesTranslation,
+        ...landingTranslation
     }
     return <Provider language={languageCode} translation={allTranslations}>
             <Fragment>
@@ -38,7 +40,7 @@ const AboutUs = ({
                     fontWeight: 'lighter'
                 }}>
                 <i className='line-gold' />
-                                <Translate text="aboutDescriptionP1" /><br/><br/>
+                    <Translate text="aboutDescriptionP1" /><br/><br/>
                     <Link to="/about-us" style={{
                     fontFamily: ' sans-serif',
                     display: 'inline-block',
@@ -48,7 +50,8 @@ const AboutUs = ({
                     textAlign: 'justify',
                     fontWeight: 500,
                     color: '#ea9d28'
-                }}>Read more <i className="fas fa-long-arrow-alt-right" /></Link>
+                }}><Translate text="Read more" />
+                <i className="fas fa-long-arrow-alt-right" /></Link>
                 </div><br/></div>
 
                 </Fragment>

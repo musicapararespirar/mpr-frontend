@@ -23,5 +23,10 @@ export default {
     en: "YOUR CONCERT",
     es: "CONCIERTO",
     pt: "SEU SHOW"
+  },
+  'Read more': {
+    en: "Read more",
+    es: "Lee más",
+    pt: "Leia mais"
   }
 }

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Provider, Translate } from 'react-translated';
 import aboutTranslation from '../translation/about';
 import titlesTranslation from '../translation/titles';
+import navbarTranslation from '../translation/navbar';
 import { Textfit } from 'react-textfit';
 
 
@@ -14,7 +15,8 @@ const AboutUs = ({
     // Combine translation files
     const allTranslations = {
         ...aboutTranslation,
-        ...titlesTranslation
+        ...titlesTranslation,
+        ...navbarTranslation
     }
     return <Provider language={languageCode} translation={allTranslations}>
             <Fragment><div className="container">
@@ -26,7 +28,22 @@ const AboutUs = ({
                 <Translate text="aboutDescriptionP1" /><br/><br/>
                 <Translate text="aboutDescriptionP2" /><br/><br/>
                 <Translate text="aboutDescriptionP3" /><br/><br/>
-                </p>
+            </p>
+
+            <h1>
+                <Translate text="La Sociedad" />
+             </h1>
+            <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
+                <Translate text="aboutLaSociedadP1" /><br/><br/>
+                <Translate text="aboutLaSociedadP2" /><br/><br/>
+            </p>
+
+            <h1>
+                <Translate text="Team" />
+             </h1>
+            <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
+                <Translate text="theTeam" /><br/><br/>
+            </p>
             </div></Fragment>
             </Provider>
 }
