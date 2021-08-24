@@ -1,4 +1,5 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
@@ -18,32 +19,49 @@ const AboutUs = ({
         ...titlesTranslation,
         ...navbarTranslation
     }
+    const [visibilityMPR, toggleVisibilityMPR] = useState(false);
+    const [visibilityLaSociedad, toggleVisibilityLaSociedad] = useState(false);
+    const [visibilityTeam, toggleVisibilityTeam] = useState(false);
+
+    useEffect(() => {
+        window.location.hash == "#mpr" && toggleVisibilityMPR(true)
+    }, []);
+    useEffect(() => {
+        window.location.hash == "#lasociedad" && toggleVisibilityLaSociedad(true)
+    }, []);
+    useEffect(() => {
+        window.location.hash == "#team" && toggleVisibilityTeam(true)
+    }, []);
+
+
     return <Provider language={languageCode} translation={allTranslations}>
             <Fragment><div className="container">
-
-            <h1>
-                <Translate text="About Us" />
+            <h1 id="mpr">
+                <button onClick={() => {toggleVisibilityMPR(!visibilityMPR)}}><Translate text="MÚSICA PARA RESPIRAR" /></button>
              </h1>
+                { visibilityMPR ?
             <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
                 <Translate text="aboutDescriptionP1" /><br/><br/>
                 <Translate text="aboutDescriptionP2" /><br/><br/>
                 <Translate text="aboutDescriptionP3" /><br/><br/>
-            </p>
+            </p> : null}
 
-            <h1>
-                <Translate text="La Sociedad" />
+            <h1 id="lasociedad">
+                <button onClick={() => {toggleVisibilityLaSociedad(!visibilityLaSociedad)}}><Translate text="LA SOCIEDAD"/></button>
              </h1>
-            <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
-                <Translate text="aboutLaSociedadP1" /><br/><br/>
-                <Translate text="aboutLaSociedadP2" /><br/><br/>
-            </p>
+                { visibilityLaSociedad ?
+                    <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
+                        <Translate text="aboutLaSociedadP1" /><br/><br/>
+                        <Translate text="aboutLaSociedadP2" /><br/><br/>
+                    </p> : null}
 
-            <h1>
-                <Translate text="Team" />
+            <h1 id="team">
+                <button onClick={() => {toggleVisibilityTeam(!visibilityTeam)}}><Translate text="TEAM" /></button>
              </h1>
-            <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
-                <Translate text="theTeam" /><br/><br/>
-            </p>
+            { visibilityTeam ?
+                <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
+                    <Translate text="theTeam" /><br/><br/>
+                </p> : null}
             </div></Fragment>
             </Provider>
 }

@@ -226,7 +226,6 @@ const Navbar = ({
                         {text: 'Música para Respirar', link: '/about-us#mpr'},
                         {text: 'La Sociedad', link: '/about-us#lasociedad'},
                         {text: 'Team', link: '/about-us#team'},
-                        {text: 'Support', link: '/about-us#support'},
                               ]}/>
             </li>
             <li>

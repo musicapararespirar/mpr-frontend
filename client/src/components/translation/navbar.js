@@ -15,9 +15,19 @@ export default {
         es: 'La Sociedad',
         pt: ''
     },
+    'LA SOCIEDAD': {
+        en: 'LA SOCIEDAD',
+        es: 'LA SOCIEDAD',
+        pt: ''
+    },
     'Team': {
         en: 'Team',
         es: 'El Equipo',
+        pt: ''
+    },
+    'TEAM': {
+        en: 'TEAM',
+        es: 'EL EQUIPO',
         pt: ''
     },
     'Support': {
