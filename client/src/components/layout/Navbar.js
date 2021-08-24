@@ -223,38 +223,38 @@ const Navbar = ({
                 <NavbarMenu
                     navTitle="ABOUT"
                     navItems={[
-                        {text: 'Música para Respirar', link: '/about-us#mpr'},
-                        {text: 'La Sociedad', link: '/about-us#lasociedad'},
-                        {text: 'Team', link: '/about-us#team'},
+                        {num: 1, text: 'Música para Respirar', link: '/about-us#mpr'},
+                        {num: 2, text: 'La Sociedad', link: '/about-us#lasociedad'},
+                        {num: 3, text: 'Team', link: '/about-us#team'},
                               ]}/>
             </li>
             <li>
                 <NavbarMenu
                     navTitle="REQUEST A CONCERT"
                     navItems={[
-                        {text: 'Personal Concert', link: '/request#personal'},
-                        {text: 'Gift a Concert', link: '/request#gift'},
-                        {text: 'Institutional', link: '/request#institutional'},
-                        {text: 'Tips for your Concert', link: '/request#tips'},
+                        {num: 1, text: 'Personal Concert', link: '/request#personal'},
+                        {num: 2, text: 'Gift a Concert', link: '/request#gift'},
+                        {num: 3, text: 'Institutional', link: '/request#institutional'},
+                        {num: 4, text: 'Tips for your Concert', link: '/request#tips'},
                               ]}/>
             </li>
             <li>
                 <NavbarMenu
                     navTitle="IMPACT"
                     navItems={[
-                        {text: 'Numbers', link: '/impact#numbers'},
-                        {text: 'Map', link: '/impact#map'},
-                        {text: 'Press', link: '/impact#press'},
-                        {text: 'Reports', link: '/impact#reports'},
+                        {num: 1, text: 'Numbers', link: '/impact#numbers'},
+                        {num: 2, text: 'Map', link: '/impact#map'},
+                        {num: 3, text: 'Press', link: '/impact#press'},
+                        {num: 4, text: 'Reports', link: '/impact#reports'},
                               ]}/>
             </li>
             <li>
                 <NavbarMenu
                     navTitle="MEDIA"
                     navItems={[
-                        {text: 'Musicians', link: '/media#musicians'},
-                        {text: 'Pictures', link: '/media#pictures'},
-                        {text: 'Videos', link: '/media#videos'},
+                        {num: 1, text: 'Musicians', link: '/media#musicians'},
+                        {num: 2, text: 'Pictures', link: '/media#pictures'},
+                        {num: 3, text: 'Videos', link: '/media#videos'},
                               ]}/>
             </li>
             <li>
@@ -266,10 +266,10 @@ const Navbar = ({
                 <NavbarMenu
                     navTitle="CONTACT US"
                     navItems={[
-                        {text: 'Email', link: '/contact#email'},
-                        {text: 'Facebook', link: '/contact#facebook'},
-                        {text: 'Instagram', link: '/contact#instagram'},
-                        {text: 'Twitter', link: '/contact#twitter'},
+                        {num: 1, text: 'Email', link: '/contact#email'},
+                        {num: 2, text: 'Facebook', link: '/contact#facebook'},
+                        {num: 3, text: 'Instagram', link: '/contact#instagram'},
+                        {num: 4, text: 'Twitter', link: '/contact#twitter'},
                               ]}/>
             </li>
         </ul>

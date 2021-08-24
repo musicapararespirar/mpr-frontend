@@ -33,8 +33,8 @@ const NavbarMenu = ({
                     classNames="example1-dropdown-menu"
                     timeout={200}
                 >
-                {navItems.map( item =>  (
-                <NavbarDropdown.Item className="example1-dropdown-menu-item">
+                {navItems.map( (item, idx) =>  (
+                <NavbarDropdown.Item key={idx} className="example1-dropdown-menu-item">
                     <div className="example1-dropdown-menu-item__text">
                         <HashLink
                             style={{color: 'black'}}
@@ -52,10 +52,6 @@ const NavbarMenu = ({
         </Provider>
 }
 
-NavbarMenu.propTypes = {
-    logout: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired
-}
 
 const mapStateToProps = state => ({
     language: state.language

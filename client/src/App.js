@@ -50,7 +50,6 @@ const App = () => {
     return (
     <Provider store={store}>
     <Router>
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
     <Fragment>
         <Logo />
         <Navbar />
@@ -69,7 +68,7 @@ const App = () => {
                 <Route exact path="/impact" component={Impact} />
 
                 <Route exact path="/request/institution" component={RequestInstitution} />
-                <Route exact path="/request/response/:id" component={RequestResponse} />
+                {/*<Route exact path="/request/response/:id" component={RequestResponse} />*/}
                 <Route exact path="/donate" component={Donate} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/concerts/:id" component={IndividualConcert} />
@@ -82,7 +81,6 @@ const App = () => {
             </Switch>
         </section>
         </Fragment>
-    </MuiPickersUtilsProvider>
     </Router>
     </Provider>
 )};

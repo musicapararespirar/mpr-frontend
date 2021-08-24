@@ -6,10 +6,11 @@ import Spinner from '../layout/Spinner';
 import { getConcertResponseById } from '../../actions/concert';
 import Moment from 'react-moment';
 import 'moment-timezone';
+
 import {ChatWidget, ChatWindow, Papercups} from '@papercups-io/chat-widget';
 import {Storytime} from '@papercups-io/storytime';
 
-const st = Storytime.init({
+{/*const st = Storytime.init({
   accountId: '9020932e-93af-4211-aae8-82b13f49f3ca',
 
 //   Optionally pass in metadata to identify the customer
@@ -21,7 +22,7 @@ const st = Storytime.init({
 
   // Optionally specify the base URL
   baseUrl: 'https://chat.evanjt.com',
-});
+});*/}
 
 const IndividualConcert = ({
 
