@@ -19,36 +19,18 @@ const NavbarMenu = ({
     navItems
 }) => {
     return <Provider language={languageCode} translation={navbarTranslation}>
-            <NavbarDropdown>
-                <NavbarDropdown.Toggle className="menu__item">
-                <NavbarDropdown.Open>
-                    <div><Translate text={navTitle} /></div>
-                </NavbarDropdown.Open>
-                <NavbarDropdown.Close>
-                    <div className="navbar-selected"><Translate text={navTitle} /></div>
-                </NavbarDropdown.Close>
-                </NavbarDropdown.Toggle>
-                <NavbarDropdown.CSSTransitionMenu
-                    className="example1-dropdown-menu"
-                    classNames="example1-dropdown-menu"
-                    timeout={200}
-                >
-                {navItems.map( (item, idx) =>  (
-                <NavbarDropdown.Item key={idx} className="example1-dropdown-menu-item">
-                    <div className="example1-dropdown-menu-item__text">
-                        <HashLink
-                            style={{color: 'black'}}
-                            activeStyle={{
-                                color: 'black',
-                                display: 'inline-block' }}
-                            smooth
-                            to={item.link}><Translate text={item.text} />
-                        </HashLink>
-                    </div>
-                </NavbarDropdown.Item>))}
+            <div className="dropdown">
+                <button className="dropbtn"><Translate text={navTitle} /></button>
+                <div className="dropdown-content">
+                {navItems.map((item, idx) => (
+                    <HashLink
+                        smooth
+                        to={item.link}><Translate text={item.text} />
+                    </HashLink>
+                ))}
+                </div>
+            </div>
 
-                </NavbarDropdown.CSSTransitionMenu>
-            </NavbarDropdown>
         </Provider>
 }
 

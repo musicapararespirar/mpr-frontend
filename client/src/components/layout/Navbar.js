@@ -218,61 +218,59 @@ const Navbar = ({
         </NavbarDropdown>
     );
     const guestLinksBar = (
-        <ul>
-            <li>
-                <NavbarMenu
-                    navTitle="ABOUT"
-                    navItems={[
-                        {num: 1, text: 'Música para Respirar', link: '/about-us#mpr'},
-                        {num: 2, text: 'La Sociedad', link: '/about-us#lasociedad'},
-                        {num: 3, text: 'Team', link: '/about-us#team'},
-                              ]}/>
-            </li>
-            <li>
-                <NavbarMenu
-                    navTitle="REQUEST A CONCERT"
-                    navItems={[
-                        {num: 1, text: 'Personal Concert', link: '/request#personal'},
-                        {num: 2, text: 'Gift a Concert', link: '/request#gift'},
-                        {num: 3, text: 'Institutional', link: '/request#institutional'},
-                        {num: 4, text: 'Tips for your Concert', link: '/request#tips'},
-                              ]}/>
-            </li>
-            <li>
-                <NavbarMenu
-                    navTitle="IMPACT"
-                    navItems={[
-                        {num: 1, text: 'Numbers', link: '/impact#numbers'},
-                        {num: 2, text: 'Map', link: '/impact#map'},
-                        {num: 3, text: 'Press', link: '/impact#press'},
-                        {num: 4, text: 'Reports', link: '/impact#reports'},
-                              ]}/>
-            </li>
-            <li>
-                <NavbarMenu
-                    navTitle="MEDIA"
-                    navItems={[
-                        {num: 1, text: 'Musicians', link: '/media#musicians'},
-                        {num: 2, text: 'Pictures', link: '/media#pictures'},
-                        {num: 3, text: 'Videos', link: '/media#videos'},
-                              ]}/>
-            </li>
-            <li>
+        <Fragment>
+            <NavbarMenu
+                navTitle="ABOUT"
+                navItems={[
+                    {num: 1, text: 'Música para Respirar', link: '/about-us#mpr'},
+                    {num: 2, text: 'La Sociedad', link: '/about-us#lasociedad'},
+                    {num: 3, text: 'Team', link: '/about-us#team'},
+                            ]}/>
+            <NavbarMenu
+                navTitle="REQUEST A CONCERT"
+                navItems={[
+                    {num: 1, text: 'Personal Concert', link: '/request#personal'},
+                    {num: 2, text: 'Gift a Concert', link: '/request#gift'},
+                    {num: 3, text: 'Institutional', link: '/request#institutional'},
+                    {num: 4, text: 'Tips for your Concert', link: '/request#tips'},
+                            ]}/>
+            <NavbarMenu
+                navTitle="IMPACT"
+                navItems={[
+                    {num: 1, text: 'Numbers', link: '/impact#numbers'},
+                    {num: 2, text: 'Map', link: '/impact#map'},
+                    {num: 3, text: 'Press', link: '/impact#press'},
+                    {num: 4, text: 'Reports', link: '/impact#reports'},
+                            ]}/>
+            <NavbarMenu
+                navTitle="MEDIA"
+                navItems={[
+                    {num: 1, text: 'Musicians', link: '/media#musicians'},
+                    {num: 2, text: 'Pictures', link: '/media#pictures'},
+                    {num: 3, text: 'Videos', link: '/media#videos'},
+                            ]}/>
+            <div className="dropdown"><button className="dropbtn">
                 <HashLink smooth to="/#donate">
                     <Translate text="SUPPORT US" />
                 </HashLink>
-            </li>
-            <li>
-                <NavbarMenu
-                    navTitle="CONTACT US"
-                    navItems={[
-                        {num: 1, text: 'Email', link: '/contact#email'},
-                        {num: 2, text: 'Facebook', link: '/contact#facebook'},
-                        {num: 3, text: 'Instagram', link: '/contact#instagram'},
-                        {num: 4, text: 'Twitter', link: '/contact#twitter'},
-                              ]}/>
-            </li>
-        </ul>
+            </button>
+            </div>
+            <NavbarMenu
+                navTitle="CONTACT US"
+                navItems={[
+                    {num: 1, text: 'Email', link: '/contact#email'},
+                    {num: 2, text: 'Facebook', link: '/contact#facebook'},
+                    {num: 3, text: 'Instagram', link: '/contact#instagram'},
+                    {num: 4, text: 'Twitter', link: '/contact#twitter'},
+                            ]}/>
+
+            <div className="dropdown">
+                <button className="dropbtn"><Translate text="LANGUAGE" /></button>
+                <div className="dropdown-content" onClick={() => setLanguage("es")} href="#!">
+                        <Translate text="English" />
+                </div>
+            </div>
+        </Fragment>
     );
 
     return <Provider language={languageCode} translation={navbarTranslation}>
