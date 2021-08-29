@@ -237,10 +237,10 @@ const Navbar = ({
             <NavbarMenu
                 navTitle="IMPACT"
                 navItems={[
-                    {num: 1, text: 'Numbers', link: '/impact#numbers'},
-                    {num: 2, text: 'Map', link: '/impact#map'},
-                    {num: 3, text: 'Press', link: '/impact#press'},
-                    {num: 4, text: 'Reports', link: '/impact#reports'},
+                    {num: 1, text: 'Numbers', link: '/#impact-numbers'},
+                    {num: 2, text: 'Map', link: '/#impact-map'},
+                    {num: 3, text: 'Press', link: '/#impact-press'},
+                    {num: 4, text: 'Reports', link: '/#impact-reports'},
                             ]}/>
             <NavbarMenu
                 navTitle="MEDIA"

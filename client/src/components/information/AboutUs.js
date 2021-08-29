@@ -24,7 +24,6 @@ const AboutUs = ({
     const [visibilityTeam, toggleVisibilityTeam] = useState(false);
 
     useEffect(() => {
-        window.location.hash == "#mpr" && toggleVisibilityMPR(true)
         if (window.location.hash == "#mpr") {
             toggleVisibilityTeam(false);
             toggleVisibilityLaSociedad(false);

@@ -348,7 +348,8 @@ img {
 }
 
 .dropdown {
-    width: 45%;
+/*     width: 45%; */
+    text-align: center;
     color: #000;
     z-index: 10;
 }
@@ -859,18 +860,24 @@ button {
   text-shadow: 0 0 20px grey, 0 0 1px white;
   display: flex;
   z-index: 40;
-  position: fixed;
-  float: right;
-  right: 20px;
+  position: absolute;
+/*   float: right; */
+/*   margin-left: auto; */
+/*   float: center; */
+/*   left: auto; */
+/*   right: auto; */
   top: 25px;
   color: transparent;
   transform: translateY(0);
   transition: transform 0.3s ease;
   line-height: 1;
+  overflow: visible;
+  background-color: transparent;
+  width: 100%;
+  text-align: center;
 }
 .navbar .navitem {
     align-items: center;
-    display: flex;
     flex-grow: 1;
     justify-content: center;
     transition: background-color .2s ease-out;
@@ -881,29 +888,6 @@ button {
   color: white;
 }
 
-.navbar div:hover {
-/*   text-shadow: 0 0 20px grey, 0 0 1px #ea9d28; */
-  cursor: pointer;
-}
-
-.navbar-selected {
-    text-shadow: 0 0 20px grey, 0 0 1px #ea9d28;
-}
-
-.navbar .welcome span {
-  margin-right: 0.6rem;
-}
-.navbar .loggedin {
-    position: absolute;
-    right: 10px;
-    top: 65px;
-    width: 400px;
-    opacity: 0.9;
-}
-
-.navbar.shadow {
-  box-shadow: 0 9px 9px -9px rgba(0, 0, 0, 0.13);
-}
 
 .navbar.hidden {
   transform: translateY(-250%);
@@ -1447,13 +1431,6 @@ transform-origin: 0 0; /* see note above */
   -moz-box-shadow: 0px 0px 5px 5px #0099E0;
   box-shadow: 0px 0px 5px 5px #0099E0;
 }
- /* Navbar container */
-.navbar {
-  overflow: visible;
-  background-color: transparent;
-  width: 90%;
-  right: 80px;
-}
 
 .impact {
   color: #482b72;
@@ -1474,6 +1451,7 @@ transform-origin: 0 0; /* see note above */
 /* The dropdown container */
 .dropdown {
   padding: 5px 1rem;
+  margin: auto;
 }
 
 /* Dropdown button */

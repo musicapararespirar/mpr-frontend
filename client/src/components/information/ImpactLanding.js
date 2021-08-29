@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { Link } from 'react-router-dom';
@@ -20,6 +20,14 @@ const ImpactLanding = ({
         ...titlesTranslation,
         ...navbarTranslation
     }
+    const [featureSelected, setFeatureSelected] = useState(null);
+
+    useEffect(() => {
+        if (window.location.hash === '#impact-map') {
+            setFeatureSelected(window.location.hash);
+        }
+        console.log(window.location.hash);
+    }, [window.location.hash]);
 
     return <Provider language={languageCode} translation={allTranslations}>
         <Fragment>
@@ -29,10 +37,26 @@ const ImpactLanding = ({
                     <Translate text="IMPACT" />
                 </h1>
             </Textfit><br/>
-                <button>NUMBERS</button>
-                <button>MAPS</button>
-                <button>PRESS</button>
-                <button>REPORTS</button>
+            {console.log(window.location.hash)}
+            {featureSelected ? (
+                (featureSelected && featureSelected === '#impact-map') ? (
+                    <Fragment>
+                        <h1 style={{textAlign: 'center'}}>Under Construction!</h1>
+                        <button onClick={e => (setFeatureSelected(null))}>
+                            <i className="fas fa-long-arrow-alt-left" /> Back
+                        </button>
+                    </Fragment>
+                ) : (
+                    'somethingelse'
+                )
+            ) : (
+                <Fragment>
+                    <button>NUMBERS</button>
+                    <button id='impact-map' onClick={e => (setFeatureSelected('#impact-map'))}>MAPS</button>
+                    <button>PRESS</button>
+                    <button>REPORTS</button>
+                </Fragment>
+            )}
             <br/><br/><br/>
             <small style={{
                     display: 'inline-block',
