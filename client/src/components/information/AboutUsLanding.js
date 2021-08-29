@@ -22,7 +22,9 @@ const AboutUs = ({
     return <Provider language={languageCode} translation={allTranslations}>
             <Fragment>
                 <div className="inner-landing-container">
-                <Textfit mode='single' forceSingleModeWidth={true}>
+                <Textfit mode='single'
+                forceSingleModeWidth={true}
+                min={30}>
                 <h1 className='mpr-header' style={{
                     marginTop: '30%',
                     textAlign: 'center',

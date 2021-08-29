@@ -54,11 +54,11 @@ const Landing = ({
             <div id="concert-info" />
             <Parallax
                 strength={500}
-                bgImageStyle={{opacity: 0.2, height: '120vh'}}
+                bgImageStyle={{opacity: 0.2, height: '90%'}}
                 style={{boxShadow: "inset 0px 0px 50px -60px #000000, inset 0px -940px 90px -60px #000000"}}
                 bgImage={slideshow3}>
                 <section className="inner-landing-container" style={{
-                    height: '40vh',
+                    height: '500px',
                     textAlign: 'center',
                     display: 'block',
             marginTop: '15vh'
@@ -81,7 +81,7 @@ const Landing = ({
                     bgImageStyle={{opacity: 0.2}}
                     style={{background: '#4a2c75', clipPath: "polygon(0% 0%, 40% 0%, 50% 5%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
-                    <section style={{height: '80vh'}}>
+                    <section style={{height: '800px'}}>
                         <Router>
                         <Switch>
                             <Route exact path="/" component={PideConcierto} />
@@ -98,7 +98,7 @@ const Landing = ({
                     bgImageStyle={{opacity: 0.2}}
                     style={{boxShadow: "inset 0px 60px 50px -60px #000000, inset 0px -60px 50px -60px #000000"}}
                     bgImage={slideshow4}>
-                    <section style={{height: '80vh'}}>
+                    <section style={{height: '800px'}}>
                         <AboutUs />
                     </section>
                 </Parallax>
@@ -109,26 +109,26 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#f2e9ec'}}>
-                    <section style={{height: '80vh'}}>
+                    <section style={{height: '800px'}}>
                             <Seasons />
                     </section>
                 </Parallax>
 
-            <div id="gallery" />
+            {/*<div id="gallery" />
             <Parallax
                 strength={500}
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}>
 
                     <ImageGrid />
-            </Parallax>
+            </Parallax>*/}
             <div id="donate" />
             <Parallax
                 strength={500}
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#ea9d28'}}>
-                    <section style={{height: '80vh'}}>
+                    <section style={{height: '800px'}}>
                     <Donate />
                     </section>
                 </Parallax>
