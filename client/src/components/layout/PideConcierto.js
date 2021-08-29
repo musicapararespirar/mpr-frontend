@@ -42,7 +42,12 @@ const PideConcierto = ({
                     fontWeight: 'lighter'
                 }}>
                 <i className='line-gold' />
-                    <Translate text='ConcertMainParagraph' />
+                    <Translate
+                    text='ConcertMainParagraph'
+                    renderMap={{
+                        renderFacebook: () => <a className='footer-container' href="https://facebook.com">Facebook</a>,
+                        renderInstagram: () => <a className='footer-container' href="https://instagram.com">Instagram</a>
+                    }}/>
                 </div><br/>
             <Fragment>
             </Fragment><br/><br/><br/><br/>

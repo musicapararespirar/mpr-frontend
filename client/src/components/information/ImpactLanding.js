@@ -51,10 +51,10 @@ const ImpactLanding = ({
                 )
             ) : (
                 <Fragment>
-                    <button>NUMBERS</button>
+                    <button onClick={e => (setFeatureSelected('#impact-map'))}>NUMBERS</button>
                     <button id='impact-map' onClick={e => (setFeatureSelected('#impact-map'))}>MAPS</button>
-                    <button>PRESS</button>
-                    <button>REPORTS</button>
+                    <button onClick={e => (setFeatureSelected('#impact-map'))}>PRESS</button>
+                    <button onClick={e => (setFeatureSelected('#impact-map'))}>REPORTS</button>
                 </Fragment>
             )}
             <br/><br/><br/>
