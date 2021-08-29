@@ -18,13 +18,14 @@ const PideConcierto = ({
 }) => {
     // Combine translation files
     const allTranslations = {
-        ...concertTranslation,
-        ...titlesTranslation
+        ...titlesTranslation,
+        ...concertTranslation
     }
 
     const scrollRef = useRef(null);
 
-    return <Fragment>
+    return <Provider language={languageCode} translation={allTranslations}>
+    <Fragment>
         <div className="inner-landing-container" style={{height: '50vh'}}>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header'>
@@ -41,7 +42,7 @@ const PideConcierto = ({
                     fontWeight: 'lighter'
                 }}>
                 <i className='line-gold' />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <Translate text='ConcertMainParagraph' />
                 </div><br/>
             <Fragment>
             </Fragment><br/><br/><br/><br/>
@@ -54,7 +55,7 @@ const PideConcierto = ({
                     fontWeight: 500,
                     color: '#ea9d28'
                 }}>vive la música en casa</small>
-            </div></Fragment>
+            </div></Fragment></Provider>
 }
 
 

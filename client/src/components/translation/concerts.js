@@ -1,7 +1,18 @@
 export default {
-  'Description': {
-    en: 'To receive a concert, you or the listener just needs to send their name and number to the social networks of La Sociedad, or via our requests on this page, and within 30 minutes an artist will be in contact to present a concert.',
-    es: 'Para recibir un concierto, el o la oyente simplemente debe enviar su nombre y número de teléfono a las redes sociales de La Sociedad, o hacerlo a través de esta página y en hasta 30 minutos un artista se contactará con ustedes para brindarles un concierto.',
-    pt: 'Para receber um concerto, o ouvinte deve simplesmente enviar o seu nome e número de telefone para as redes sociais da La Sociedad, ou fazê-lo através desta página e em até 30 minutos um artista entrará em contacto consigo para lhes dar um show.',
+  'ConcertMainParagraph': {
+    en: 'To request a concert is very easy! All you need to do is send us your name and phone number via private message to our Facebook or Instagram accounts during the week of Musica para Respirar 24/7. Within 30 minutes, one of our musicians will contact you and perform a live concert through the video-calling platform of your choice. The concerts are available 24/7 and last around 20 minutes',
+    es: 'Recibir un mini-concierto de Música para Respirar 24/7 es fácil, solo necesitas escribirnos por mensaje interno a nuestras redes sociales en Facebook o Instagram durantes las semanas de Música para Respirar 24/7. Uno de nuestros músicos te contactará y realizará un concierto en vivo para tí a través de Zoom, Whatsapp o la plataforma de video-llamada de tu preferencia. Los conciertos están disponibles 24 horas al día y duran alrededor de 20 minutos.',
+    pt: '',
   },
+  'pide': {
+    en: 'REQUEST',
+    es: 'PIDE TU',
+    pt: 'SOLICITA ',
+  },
+  'concierto': {
+    en: 'A CONCERT',
+    es: 'CONCIERTO',
+    pt: 'SEU SHOW',
+  },
+
 }
