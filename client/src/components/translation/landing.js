@@ -28,5 +28,15 @@ export default {
     en: "Read more",
     es: "Lee más",
     pt: "Leia mais"
-  }
+  },
+  'designby': {
+    en: "designed by",
+    es: "diseñada por",
+    pt: "projetado por"
+  },
+  'and': {
+    en: "and",
+    es: "y",
+    pt: "e"
+  },
 }

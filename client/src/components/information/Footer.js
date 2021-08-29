@@ -29,13 +29,8 @@ const Seasons = ({
             marginBottom: '1rem',
             textAlign: 'center'
         }}>
-            <small style={{
-                letterSpacing: '2.5px',
-                fontSize: '0.6rem',
-                lineHeight: 3,
-                fontWeight: 500,
-                color: 'white'
-            }}>MÚSICA PARA RESPIRAR 24/7, 2021.</small>
+            <small className='footer-container'>MÚSICA PARA RESPIRAR 24/7, 2021</small><br/>
+            <small className='footer-container'><Translate text="designby" />: Bear Brothers <Translate text="and" /> <a href="https://evanjt.com">Evan Thomas</a></small>
             </div></Fragment>
             </Provider>
 }

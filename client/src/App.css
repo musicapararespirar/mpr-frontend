@@ -996,13 +996,23 @@ button {
    margin-right: 0.5rem;
 }
 .landing-container {
-    height: 100vh;
-    width: 100vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
+    height: '800px'
+}
+
+.footer-container {
+  letter-spacing: 2.5px;
+/*   font-size: 0.6rem; */
+/*   line-height: 3; */
+  font-weight: 500;
+  color: #ea9d28;
+}
+
+.footer-container a {
+  color: #ea9d28;
+}
+
+.footer-container a:hover {
+  color: white;
 }
 
 .slide-pane {
