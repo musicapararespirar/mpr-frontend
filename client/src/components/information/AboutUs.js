@@ -25,13 +25,26 @@ const AboutUs = ({
 
     useEffect(() => {
         window.location.hash == "#mpr" && toggleVisibilityMPR(true)
-    }, []);
+        if (window.location.hash == "#mpr") {
+            toggleVisibilityTeam(false);
+            toggleVisibilityLaSociedad(false);
+            toggleVisibilityMPR(true);
+        }
+    }, [window.location.hash]);
     useEffect(() => {
-        window.location.hash == "#lasociedad" && toggleVisibilityLaSociedad(true)
-    }, []);
+        if (window.location.hash == "#lasociedad") {
+            toggleVisibilityTeam(false);
+            toggleVisibilityLaSociedad(true);
+            toggleVisibilityMPR(false);
+        }
+    }, [window.location.hash]);
     useEffect(() => {
-        window.location.hash == "#team" && toggleVisibilityTeam(true)
-    }, []);
+        if (window.location.hash == "#team") {
+            toggleVisibilityTeam(true);
+            toggleVisibilityLaSociedad(false);
+            toggleVisibilityMPR(false);
+        }
+    }, [window.location.hash]);
 
 
     return <Provider language={languageCode} translation={allTranslations}>
@@ -40,7 +53,7 @@ const AboutUs = ({
                 <button onClick={() => {toggleVisibilityMPR(!visibilityMPR)}}><Translate text="MÚSICA PARA RESPIRAR" /></button>
              </h1>
                 { visibilityMPR ?
-            <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
+            <p style={{ textAlign: 'justify', }}>
                 <Translate text="aboutDescriptionP1" /><br/><br/>
                 <Translate text="aboutDescriptionP2" /><br/><br/>
                 <Translate text="aboutDescriptionP3" /><br/><br/>
@@ -50,7 +63,7 @@ const AboutUs = ({
                 <button onClick={() => {toggleVisibilityLaSociedad(!visibilityLaSociedad)}}><Translate text="LA SOCIEDAD"/></button>
              </h1>
                 { visibilityLaSociedad ?
-                    <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
+                    <p style={{ textAlign: 'justify', }}>
                         <Translate text="aboutLaSociedadP1" /><br/><br/>
                         <Translate text="aboutLaSociedadP2" /><br/><br/>
                     </p> : null}
@@ -59,7 +72,7 @@ const AboutUs = ({
                 <button onClick={() => {toggleVisibilityTeam(!visibilityTeam)}}><Translate text="TEAM" /></button>
              </h1>
             { visibilityTeam ?
-                <p style={{ fontFamily: 'sans-serif', textAlign: 'justify', }}>
+                <p style={{ textAlign: 'justify', }}>
                     <Translate text="theTeam" /><br/><br/>
                 </p> : null}
             </div></Fragment>

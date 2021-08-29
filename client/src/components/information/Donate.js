@@ -23,11 +23,10 @@ const Seasons = ({
         <Fragment>
         <div className="inner-landing-container" style={{height: '50vh'}}>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}>
+            <h1 className='mpr-header'>
                 <Translate text="DONATE" />
             </h1></Textfit>
                 <div style={{
-                    fontFamily: 'sans-serif',
                     display: 'inline-block',
                     letterSpacing: '1px',
                     fontSize: '1rem',
@@ -52,7 +51,6 @@ const Seasons = ({
                 </div><br/>
             <br/><br/><br/><br/>
             <small style={{
-                    fontFamily: 'sans-serif',
                     display: 'inline-block',
                     letterSpacing: '2.5px',
                     fontSize: '1rem',

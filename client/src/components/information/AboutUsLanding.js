@@ -26,12 +26,10 @@ const AboutUs = ({
                 <h1 className='mpr-header' style={{
                     marginTop: '30%',
                     textAlign: 'center',
-                    fontFamily: 'sans-serif'
                 }}>
                     <Translate text="ABOUT US" />
                 </h1></Textfit>
                 <div style={{
-                    fontFamily: 'sans-serif',
                     display: 'inline-block',
                     letterSpacing: '1px',
                     fontSize: '1rem',
@@ -42,7 +40,6 @@ const AboutUs = ({
                 <i className='line-gold' />
                     <Translate text="aboutDescriptionP1" /><br/><br/>
                     <Link to="/about-us#mpr" style={{
-                    fontFamily: ' sans-serif',
                     display: 'inline-block',
                     letterSpacing: '2.5px',
                     fontSize: '1rem',

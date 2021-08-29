@@ -266,8 +266,13 @@ const Navbar = ({
 
             <div className="dropdown">
                 <button className="dropbtn"><Translate text="LANGUAGE" /></button>
-                <div className="dropdown-content" onClick={() => setLanguage("es")} href="#!">
-                        <Translate text="English" />
+                <div className="dropdown-content">
+                    <div onClick={() => setLanguage("en")} href="#!">
+                        <a href="#!">English</a></div>
+                    <div onClick={() => setLanguage("es")} href="#!">
+                        <a href="#!">Español</a></div>
+                    <div onClick={() => setLanguage("pt")} href="#!">
+                        <a href="#!">Português</a></div>
                 </div>
             </div>
         </Fragment>
@@ -276,12 +281,11 @@ const Navbar = ({
     return <Provider language={languageCode} translation={navbarTranslation}>
         {isDesktop ? (
             <nav className={`navbar ${hiddenStyle}`}>
-                {!authLoading && (<Fragment>{ guestLinksBar } {languageButtons}</Fragment>)}
-                    </nav>
-                      ) : (
+                {!authLoading && (<Fragment>{ guestLinksBar }</Fragment>)}
+            </nav>
+                ) : (
             <nav className={`navmenu ${hiddenStyle}`}>
-                {languageButtons}
-            {!authLoading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
+                {!authLoading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
             </nav>
         )}
     </Provider>

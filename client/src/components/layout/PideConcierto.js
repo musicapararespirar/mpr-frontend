@@ -27,13 +27,12 @@ const PideConcierto = ({
     return <Fragment>
         <div className="inner-landing-container" style={{height: '50vh'}}>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}>
+            <h1 className='mpr-header'>
                 <Translate text="pide" />
             </h1></Textfit>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header' style={{ fontFamily: 'sans-serif' }}><Translate text="concierto" /></h1></Textfit>
+            <h1 className='mpr-header'><Translate text="concierto" /></h1></Textfit>
                 <div style={{
-                    fontFamily: 'sans-serif',
                     display: 'inline-block',
                     letterSpacing: '1px',
                     fontSize: '1rem',
@@ -47,7 +46,6 @@ const PideConcierto = ({
             <Fragment>
             </Fragment><br/><br/><br/><br/>
             <small style={{
-                    fontFamily: ' sans-serif',
                     display: 'inline-block',
                     letterSpacing: '2.5px',
                     fontSize: '1rem',

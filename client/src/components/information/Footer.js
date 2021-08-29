@@ -30,7 +30,6 @@ const Seasons = ({
             textAlign: 'center'
         }}>
             <small style={{
-                fontFamily: 'sans-serif',
                 letterSpacing: '2.5px',
                 fontSize: '0.6rem',
                 lineHeight: 3,

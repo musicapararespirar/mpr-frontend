@@ -35,7 +35,7 @@ import store from './store';
 import setAuthToken from './utils/setAuthToken';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
-
+import "@fontsource/josefin-sans";
 if(localStorage.token) {
     setAuthToken(localStorage.token)
 }

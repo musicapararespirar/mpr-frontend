@@ -252,7 +252,6 @@ const RequestPersonal = ({
                         styles: {
                             control: (provided) => ({
                                 ...provided,
-                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                                 height: '30px',
                                 minHeight: '30px',
@@ -261,13 +260,11 @@ const RequestPersonal = ({
                             }),
                             container: (provided) => ({
                                 ...provided,
-                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                                 width: '18.5rem'
                             }),
                             valueContainer: (provided) => ({
                                 ...provided,
-                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                                 height: '30px',
                                 padding: '0 6px',
@@ -275,32 +272,27 @@ const RequestPersonal = ({
                             }),
                             input: (provided) => ({
                                 ...provided,
-                                fontFamily: 'Raleway, sans-serif',
                                 margin: '0px',
                                 width: '18.5rem',
                                 padding: '2px'
                             }),
                             indicatorsContainer: (provided) => ({
                                 ...provided,
-                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                                 height: '30px',
                             }),
                             indicatorsSeparator: (provided) => ({
                                 ...provided,
-                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                                 display: 'none',
                             }),
                             option: (provided) => ({
                                 ...provided,
-                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                                 width: '18.5rem',
                             }),
                             singleValue: (provided) => ({
                                 ...provided,
-                                fontFamily: 'Raleway, sans-serif',
                                 color: 'black',
                                 width: '18.5rem',
                                 margin: '3px'

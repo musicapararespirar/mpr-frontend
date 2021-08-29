@@ -71,7 +71,7 @@ const Landing = ({
                     backgroundPosition: 'center',
                     height: '1vh'
                 }}>
-                    <h1 style={{fontSize: '0.9rem'}}>ESTÁ ES LA SEMANA DE MÚSICA PARA RESPIRAR 24/7, UNETE A</h1>
+                    <h1 style={{fontSize: '0.9rem'}}>ESTA ES LA SEMANA DE MÚSICA PARA RESPIRAR 24/7, UNETE A</h1>
                     <h1 style={{fontSize: '0.9rem'}}>NOSOTROS Y DISFRUTA DE MÚSICA EN VIVO DONDE SEA QUE ESTÉS</h1>
                 </section>
             <div id="request-concert" />
