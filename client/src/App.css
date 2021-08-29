@@ -1455,6 +1455,21 @@ transform-origin: 0 0; /* see note above */
   right: 80px;
 }
 
+.impact {
+  color: #482b72;
+}
+
+.impact button {
+  color: #482b72;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+  display: block;
+}
+
+.impact button:hover {
+  color: white;
+}
 
 /* The dropdown container */
 .dropdown {

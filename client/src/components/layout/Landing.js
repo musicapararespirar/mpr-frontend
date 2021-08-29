@@ -22,6 +22,7 @@ import { Parallax, Background } from 'react-parallax';
 import PideConcierto from './PideConcierto';
 import RequestPersonal from '../concerts/RequestPersonal';
 import AboutUs from '../information/AboutUsLanding';
+import Impact from '../information/ImpactLanding';
 import Seasons from '../information/Seasons';
 import Donate from '../information/Donate';
 import Footer from '../information/Footer';
@@ -74,6 +75,7 @@ const Landing = ({
                     <h1 style={{fontSize: '0.9rem'}}>ESTA ES LA SEMANA DE MÚSICA PARA RESPIRAR 24/7, UNETE A</h1>
                     <h1 style={{fontSize: '0.9rem'}}>NOSOTROS Y DISFRUTA DE MÚSICA EN VIVO DONDE SEA QUE ESTÉS</h1>
                 </section>
+
             <div id="request-concert" />
             <Parallax
                     strength={500}
@@ -90,6 +92,25 @@ const Landing = ({
                         </Router>
                     </section>
             </Parallax></Parallax>
+
+            <div id="gallery" />
+            <Parallax
+                strength={500}
+                blur={10}
+                bgImageStyle={{opacity: 0.2}}>
+
+                    <ImageGrid />
+            </Parallax>
+
+            <Parallax
+                strength={500}
+                blur={10}
+                bgImageStyle={{opacity: 0.2}}
+                    style={{background: '#ea9d28'}}>
+                    <section className="landing-container">
+                            <Impact />
+                    </section>
+            </Parallax>
 
             <div id="about-us" />
                 <Parallax
@@ -112,16 +133,8 @@ const Landing = ({
                     <section className="landing-container">
                             <Seasons />
                     </section>
-                </Parallax>
+            </Parallax>
 
-            {/*<div id="gallery" />
-            <Parallax
-                strength={500}
-                blur={10}
-                bgImageStyle={{opacity: 0.2}}>
-
-                    <ImageGrid />
-            </Parallax>*/}
             <div id="donate" />
             <Parallax
                 strength={500}
