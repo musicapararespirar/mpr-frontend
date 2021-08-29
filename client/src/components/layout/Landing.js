@@ -21,6 +21,7 @@ import Contribute from '../information/Contribute';
 import { Parallax, Background } from 'react-parallax';
 import PideConcierto from './PideConcierto';
 import RequestPersonal from '../concerts/RequestPersonal';
+import Supporters from '../information/Supporters';
 import AboutUs from '../information/AboutUsLanding';
 import Impact from '../information/ImpactLanding';
 import Seasons from '../information/Seasons';
@@ -140,11 +141,22 @@ const Landing = ({
                 strength={500}
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
-                    style={{background: '#ea9d28'}}>
+                    style={{background: '#4a2c75'}}>
                     <section className="landing-container">
                     <Donate />
                     </section>
-                </Parallax>
+            </Parallax>
+
+            <div id="supporters" />
+            <Parallax
+                strength={500}
+                blur={10}
+                bgImageStyle={{opacity: 0.2}}
+                    style={{background: '#ea9d28'}}>
+                    <section>
+                    <Supporters />
+                    </section>
+            </Parallax>
             <div id="footer" />
             <Parallax
                 strength={500}

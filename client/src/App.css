@@ -717,6 +717,17 @@ button {
 	 padding: 0px 2px;
 }
 
+.img-container {
+  height: 100px;
+  display: flex;
+}
+
+.img-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 20px;
+}
 
 .navmenu {
     z-index: 40;
@@ -1008,6 +1019,14 @@ button {
 
 .inner-landing-container {
   max-width: 25rem;
+  margin: auto;
+  overflow: visible;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.wide-landing-container {
+  max-width: 40rem;
   margin: auto;
   overflow: visible;
   margin-top: 10rem;
