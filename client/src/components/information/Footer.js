@@ -30,7 +30,7 @@ const Seasons = ({
             textAlign: 'center'
         }}>
             <small className='footer-container'>MÚSICA PARA RESPIRAR 24/7, 2021</small><br/>
-            <small className='footer-container'><Translate text="designby" />: Bear Brothers <Translate text="and" /> <a href="https://evanjt.com">Evan Thomas</a></small>
+            <small className='footer-container'><Translate text="designby" />: <a href="https://www.instagram.com/bear.brothers">Bear Brothers</a> <Translate text="and" /> <a href="https://evanjt.com">Evan Thomas</a></small>
             </div></Fragment>
             </Provider>
 }
