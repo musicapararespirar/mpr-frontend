@@ -873,6 +873,7 @@ button {
   z-index: 40;
   position: fixed;
   top: 25px;
+  padding-left: 40px;
   color: transparent;
   transform: translateY(0);
   transition: transform 0.3s ease;
