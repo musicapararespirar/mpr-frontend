@@ -60,7 +60,7 @@ const Landing = ({
                 style={{boxShadow: "inset 0px 0px 50px -60px #000000, inset 0px -940px 90px -60px #000000"}}
                 bgImage={slideshow3}>
                 <section className="inner-landing-container" style={{
-                    height: '500px',
+                    height: '30vh',
                     textAlign: 'center',
                     display: 'block',
             marginTop: '15vh'
