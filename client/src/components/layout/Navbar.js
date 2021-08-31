@@ -1,5 +1,5 @@
 import React, { Fragment, useRef, useState, useEffect, useCallback } from 'react'
-import { Link, useHistory,useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { HashLink, NavHashLink } from 'react-router-hash-link';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -39,18 +39,6 @@ const Navbar = ({
 
     const [mobileNavbarIsOpen, setMobileNavbarIsOpen] = useState(false);
     const [languageSelected, setLanguageSelected] = useState(false);
-
-    const scroll = (location) => {
-        const section = document.querySelector( `#${location}` );
-        if (section && siteLocation.pathname == '/') {
-            console.log(section);
-            section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-        } else {
-            console.log(location);
-            history.push(`/#${location}`);
-        }
-    }
-
     const [shouldHideHeader, setShouldHideHeader] = useState(false);
     const [shouldShowShadow, setShouldShowShadow] = useState(false);
     const MINIMUM_SCROLL = 80;
@@ -113,6 +101,7 @@ const Navbar = ({
 
     function clickMenu() {
         if (window.scrollY > 0) {
+            history.push('/');
             setMobileNavbarIsOpen(true);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
@@ -130,6 +119,8 @@ const Navbar = ({
         } else if (input === 'pt') {
             setLanguage("pt");
             setLanguageSelected(false);
+        } else {
+            history.push(input);
         }
         setMobileNavbarIsOpen(false);
     }
