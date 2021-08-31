@@ -30,7 +30,7 @@ const Numbers = ({
             <div className="white" style={{
                 fontSize: '2rem',
                 fontWeight: 'bold'}}>
-                    LOS NÚMEROS:
+                    <Translate text="THE NUMBERS" />:
             </div><br/>
             <ul className='numbers-dot'>
                 <li><span className='x-large left-numbers'>65</span><span className="title white"><Translate text="MUSICIANS" /></span></li><br/><br/><br/>
