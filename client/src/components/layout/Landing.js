@@ -23,8 +23,7 @@ import PideConcierto from './PideConcierto';
 import RequestPersonal from '../concerts/RequestPersonal';
 import Supporters from '../information/Supporters';
 import AboutUs from '../information/AboutUs';
-import Impact from '../information/ImpactLanding';
-import Seasons from '../information/Seasons';
+import Impact from '../information/Impact';
 import Donate from '../information/Donate';
 import Footer from '../information/Footer';
 import ImageGrid from '../information/ImageGrid';
@@ -127,17 +126,6 @@ const Landing = ({
                         <AboutUs />
                     </section>
                 </Parallax>
-
-            <div id="seasons" />
-            <Parallax
-                strength={500}
-                blur={10}
-                bgImageStyle={{opacity: 0.2}}
-                    style={{background: '#f2e9ec'}}>
-                    <section className="landing-container">
-                            <Seasons />
-                    </section>
-            </Parallax>
 
             <div id="donate" />
             <Parallax

@@ -43,9 +43,17 @@ const PideConcierto = ({
                 }}>
                 <i className='line-gold' />
                     <Translate text='ConcertMainParagraphPreSocials'/>
-                    <a className="gold" href="https://facebook.com">Facebook</a>
+                    <a
+                        className="gold-link"
+                        href="https://www.facebook.com/lasociedad.bo/"
+                        target='_blank'>Facebook
+                    </a>
                     <Translate text='or'/>
-                    <a className="gold" href="https://instagram.com">Instagram</a>
+                    <a
+                        className="gold-link"
+                        href="https://www.instagram.com/lasociedad.bo"
+                        target='_blank'>Instagram
+                    </a>
                     <Translate text='ConcertMainParagraphPostSocials'/>
                 </div><br/>
             <Fragment>

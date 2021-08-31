@@ -106,10 +106,17 @@ img {
 .left-numbers {
     float: left;
 }
-.dark-title {
+
+.dark {
     color: #4a2c75;
+}
+.title {
     font-size: 2rem;
     float: right;
+}
+
+.dots {
+    background: '.' repeat-x bottom;
 }
 
 .large {
@@ -930,6 +937,10 @@ button {
 
 }
 
+.white {
+    color: white;
+}
+
 .navbar a {
   color: white;
 }
@@ -997,7 +1008,10 @@ button {
     color: #ea9d28;
 }
 
-.gold:hover {
+.gold-link {
+    color: #ea9d28;
+}
+.gold-link:hover {
     color: white;
 }
 
