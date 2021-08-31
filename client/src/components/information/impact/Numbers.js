@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Provider, Translate } from 'react-translated';
-import concertTranslation from '../../translation/concerts';
+import impactTranslation from '../../translation/impact';
 import titlesTranslation from '../../translation/landing';
 import PropTypes from 'prop-types';
 import { Textfit } from 'react-textfit';
@@ -14,7 +14,7 @@ const Numbers = ({
 }) => {
     // Combine translation files
     const allTranslations = {
-        ...concertTranslation,
+        ...impactTranslation,
         ...titlesTranslation
     }
 
@@ -33,10 +33,10 @@ const Numbers = ({
                     LOS NÚMEROS:
             </div><br/>
             <ul className='numbers-dot'>
-                <li><span className='x-large left-numbers'>65</span><span className="title white">MUSICOS</span></li><br/><br/><br/>
-                <li><span className='x-large left-numbers'>3542</span><span className="title white">TIEMPO</span></li><br/><br/><br/>
-                <li><span className='x-large left-numbers'>456</span><span className="title white">OYENTES</span></li><br/><br/><br/>
-                <li><span className='x-large left-numbers'>274</span><span className="title white">LLAMADAS</span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>65</span><span className="title white"><Translate text="MUSICIANS" /></span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>3542</span><span className="title white"><Translate text="TIME" /></span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>456</span><span className="title white"><Translate text="LISTENERS" /></span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>274</span><span className="title white"><Translate text="CALLS" /></span></li><br/><br/><br/>
             </ul>
 
             </Fragment>

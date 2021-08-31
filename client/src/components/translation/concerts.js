@@ -10,7 +10,7 @@ export default {
     pt: ' ou '
   },
   'ConcertMainParagraphPostSocials': {
-      en: ' accounts during the week of Musica para Respirar 24/7. Within 30 minutes, one of our musicians will contact you and perform a live concert through the video-calling platform of your choice. The concerts are available 24/7 and last around 20 minutes.',
+      en: ' accounts during the week of Música para Respirar 24/7. Within 30 minutes, one of our musicians will contact you and perform a live concert through the video-calling platform of your choice. The concerts are available 24/7 and last around 20 minutes.',
       es: ' durantes las semanas de Música para Respirar 24/7. Uno de nuestros músicos te contactará y realizará un concierto en vivo para tí a través de Zoom, Whatsapp o la plataforma de video-llamada de tu preferencia. Los conciertos están disponibles 24 horas al día y duran alrededor de 20 minutos.',
     pt: '',
   },

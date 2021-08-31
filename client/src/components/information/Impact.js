@@ -4,6 +4,7 @@ import Spinner from '../layout/Spinner';
 import { Link } from 'react-router-dom';
 import { Provider, Translate } from 'react-translated';
 import supportTranslation from '../translation/support';
+import impactTranslation from '../translation/impact';
 import titlesTranslation from '../translation/landing';
 import navbarTranslation from '../translation/navbar';
 import PropTypes from 'prop-types';
@@ -19,6 +20,7 @@ const ImpactLanding = ({
     // Combine translation files
     const allTranslations = {
         ...supportTranslation,
+        ...impactTranslation,
         ...titlesTranslation,
         ...navbarTranslation
     }
@@ -46,7 +48,7 @@ const ImpactLanding = ({
                     textAlign: 'justify',
                     fontWeight: 500,
                     color: '#492b74'
-                }}>cada historia cuenta...</small>
+                }}><Translate text="cada historia cuenta" />...</small>
             </div>
         </Fragment>
     );

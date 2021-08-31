@@ -21,9 +21,9 @@ const Support = ({
 
     return <Provider language={languageCode} translation={allTranslations}>
         <Fragment>
-        <div className="inner-landing-container" style={{textAlign: 'center', minHeight: '50vh'}}>
+        <div className="inner-landing-container" style={{minHeight: '50vh'}}>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header'>
+            <h1 style={{textAlign: 'center'}} className='mpr-header'>
                 <Translate text="SUPPORT US" />
             </h1></Textfit>
                 <div style={{
@@ -58,7 +58,7 @@ const Support = ({
                     textAlign: 'justify',
                     fontWeight: 500,
                     color: '#ea9d28'
-                }}>la música está llamandote</small>
+                }}><Translate text="la música está llamandote" />...</small>
             </div></Fragment>
             </Provider>
 }

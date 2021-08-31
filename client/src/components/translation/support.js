@@ -38,5 +38,10 @@ export default {
         en: "For tax deductible donations in the USA",
         es: "Para donaciones deducibles de impuestos en EEUU",
         pt: "Para doações dedutíveis de impostos nos EUA",
-    }
+    },
+      "la música está llamandote": {
+      en: "the music is calling",
+      es: "la música está llamandote",
+      pt: ""
+}
 }

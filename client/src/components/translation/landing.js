@@ -39,4 +39,14 @@ export default {
     es: "Diseño web",
     pt: "Design web",
   },
+  'thisisP1': {
+    en: 'THIS IS THE WEEK OF MÚSICA PARA RESPIRAR 24/7, JOIN',
+    es: 'ESTA ES LA SEMANA DE MÚSICA PARA RESPIRAR 24/7, UNETE A',
+    pt: 'ESTA É A SEMANA DA MÚSICA PARA RESPIRAR 24/7, JUNTE-SE',
+    },
+  'thisisP2': {
+    en: 'US AND ENJOY LIVE MUSIC WHEREVER YOU ARE',
+    es: 'NOSOTROS Y DISFRUTA DE MÚSICA EN VIVO DONDE SEA QUE ESTÉS',
+    pt: 'NÓS E DESFRUTE DE MÚSICA AO VIVO ONDE VOCÊ ESTIVER ',
+}
 }
