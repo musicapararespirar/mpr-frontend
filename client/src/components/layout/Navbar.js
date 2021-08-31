@@ -37,7 +37,7 @@ const Navbar = ({
         return () => window.removeEventListener("resize", updateMedia);
     }, [])
 
-    const [mobileNavbarIsOpen, setMobileNavbarIsOpen] = useState(true);
+    const [mobileNavbarIsOpen, setMobileNavbarIsOpen] = useState(false);
     const [languageSelected, setLanguageSelected] = useState(false);
 
     const scroll = (location) => {
