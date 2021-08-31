@@ -68,53 +68,23 @@ const Navbar = ({
     });
     const shadowStyle = shouldShowShadow ? 'shadow' : '';
     const hiddenStyle = shouldHideHeader ? 'hidden' : '';
-
+    const navbarLinks = [{title: 'ABOUT', link: '/#about'},
+                         {title: 'REQUEST A CONCERT', link: '/#request'},
+                         {title: 'IMPACT', link: '/#impact'},
+                         {title: 'MEDIA', link: '/#media'},
+                         {title: 'SUPPORT US', link: '/#support'},
+                         {title: 'CONTACT US', link: '/#contact'},
+                         ]
     const desktopNavbar = (
         <Fragment>
-            <NavbarMenu
-                navTitle="ABOUT"
-                navItems={[
-                    {num: 1, text: 'Música para Respirar', link: '/about-us#mpr'},
-                    {num: 2, text: 'La Sociedad', link: '/about-us#lasociedad'},
-                    {num: 3, text: 'Team', link: '/about-us#team'},
-                            ]}/>
-            <NavbarMenu
-                navTitle="REQUEST A CONCERT"
-                navItems={[
-                    {num: 1, text: 'Personal Concert', link: '/request#personal'},
-                    {num: 2, text: 'Gift a Concert', link: '/request#gift'},
-                    {num: 3, text: 'Institutional', link: '/request#institutional'},
-                    {num: 4, text: 'Tips for your Concert', link: '/request#tips'},
-                            ]}/>
-            <NavbarMenu
-                navTitle="IMPACT"
-                navItems={[
-                    {num: 1, text: 'Numbers', link: '/#impact-numbers'},
-                    {num: 2, text: 'Map', link: '/#impact-map'},
-                    {num: 3, text: 'Press', link: '/#impact-press'},
-                    {num: 4, text: 'Reports', link: '/#impact-reports'},
-                            ]}/>
-            <NavbarMenu
-                navTitle="MEDIA"
-                navItems={[
-                    {num: 1, text: 'Musicians', link: '/media#musicians'},
-                    {num: 2, text: 'Pictures', link: '/media#pictures'},
-                    {num: 3, text: 'Videos', link: '/media#videos'},
-                            ]}/>
-            <div className="dropdown"><button className="dropbtn">
-                <HashLink smooth to="/#donate">
-                    <Translate text="SUPPORT US" />
-                </HashLink>
-            </button>
-            </div>
-            <NavbarMenu
-                navTitle="CONTACT US"
-                navItems={[
-                    {num: 1, text: 'Email', link: '/contact#email'},
-                    {num: 2, text: 'Facebook', link: '/contact#facebook'},
-                    {num: 3, text: 'Instagram', link: '/contact#instagram'},
-                    {num: 4, text: 'Twitter', link: '/contact#twitter'},
-                            ]}/>
+           {navbarLinks.map((item, idx) => (
+                <div className="dropdown"><button className="dropbtn">
+                    <HashLink smooth to={item.link}>
+                        <Translate text={item.title} />
+                    </HashLink>
+                </button>
+                </div>
+            ))}
 
             <div className="dropdown" style={{marginTop: '12px'}}>
                 <button className="dropbtn"><Translate text="LANGUAGE" />

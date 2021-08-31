@@ -61,7 +61,6 @@ const Landing = ({
                 bgImage={slideshow3}>
                 <section className="inner-landing-container" style={{
                     minHeight: '1vh',
-//                     height:
                     marginBottom: '35vh',
                     textAlign: 'center',
                     display: 'block',
@@ -79,7 +78,7 @@ const Landing = ({
                     <h1 style={{fontSize: '0.9rem'}}>NOSOTROS Y DISFRUTA DE MÚSICA EN VIVO DONDE SEA QUE ESTÉS</h1>
                 </section>
 
-            <div id="request-concert" />
+            <div id="request" />
             <Parallax
                     strength={500}
                     blur={10}
@@ -96,7 +95,7 @@ const Landing = ({
                     </section>
             </Parallax></Parallax>
 
-            {/*<div id="gallery" />
+            {/*<div id="media" />
             <Parallax
                 strength={500}
                 blur={10}
@@ -104,18 +103,18 @@ const Landing = ({
 
                     <ImageGrid />
             </Parallax>*/}
+            <div id="impact" />
+                <Parallax
+                    strength={500}
+                    blur={10}
+                    bgImageStyle={{opacity: 0.2}}
+                        style={{background: '#ea9d28'}}>
+                        <section className="landing-container">
+                            <Impact />
+                        </section>
+                </Parallax>
 
-            <Parallax
-                strength={500}
-                blur={10}
-                bgImageStyle={{opacity: 0.2}}
-                    style={{background: '#ea9d28'}}>
-                    <section className="landing-container">
-                        <Impact />
-                    </section>
-            </Parallax>
-
-            <div id="about-us" />
+            <div id="about" />
                 <Parallax
                     strength={500}
                     blur={10}
@@ -151,7 +150,7 @@ const Landing = ({
                     </section>
             </Parallax>
 
-            <div id="supporters" />
+            <div id="support" />
             <Parallax
                 strength={500}
                 blur={10}

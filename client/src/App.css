@@ -1504,6 +1504,9 @@ transform-origin: 0 0; /* see note above */
     color: #ea9d28;
 }
 
+.about button:hover {
+    color: white;
+}
 .impact {
   color: #482b72;
 }
