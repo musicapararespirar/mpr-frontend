@@ -62,7 +62,7 @@ const Landing = ({
                 <section className="inner-landing-container" style={{
                     minHeight: '1vh',
 //                     height:
-                    marginBottom: '15vh',
+                    marginBottom: '35vh',
                     textAlign: 'center',
                     display: 'block',
                     marginTop: '15vh'

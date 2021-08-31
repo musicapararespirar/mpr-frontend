@@ -98,8 +98,7 @@ const AboutUs = ({
                 {displayInformationFor && displayInformationFor === "MusicaParaRespirar" ? mpr : null}
                 {displayInformationFor && displayInformationFor === "LaSociedad" ? lasociedad : null}
                 {displayInformationFor && displayInformationFor === "Team" ? team : null}
-
-                </Fragment>
+            </Fragment>
             </Provider>
 }
 

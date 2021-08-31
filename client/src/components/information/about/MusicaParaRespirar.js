@@ -31,7 +31,7 @@ const AboutUs = ({
                     margin: 'auto',
                     textAlign: 'center',
                     display: 'block',
-                    }} src={mprImage} />
+                    }} src={mprImage} /><br/>
                     <Translate text="aboutDescriptionP1" /><br/><br/>
                     <Translate text="aboutDescriptionP2" /><br/><br/>
                     <Translate text="aboutDescriptionP3" />

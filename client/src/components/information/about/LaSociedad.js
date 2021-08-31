@@ -24,10 +24,10 @@ const LaSociedad = ({
 
     return <Provider language={languageCode} translation={allTranslations}>
             <Fragment>
-            <p className="wide-landing-container about" style={{ textAlign: 'justify', }}>
-                    <Translate text="aboutDescriptionP1" /><br/><br/>
-                    <Translate text="aboutDescriptionP2" /><br/><br/>
-                    <Translate text="aboutDescriptionP3" />
+            <p className="wide-landing-container about"
+                style={{ textAlign: 'justify', }}>
+                    <Translate text="aboutLaSociedadP1" /><br/><br/>
+                    <Translate text="aboutLaSociedadP2" />
             </p>
             </Fragment>
             </Provider>
