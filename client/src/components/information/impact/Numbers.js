@@ -29,7 +29,6 @@ const Numbers = ({
             <h1 className='mpr-header white'><Translate text="PARA" /> <Translate text="RESPIRAR" /></h1></Textfit>
             <div className="white" style={{
                 fontSize: '2rem',
-                letterSpacing: '-4px',
                 fontWeight: 'bold'}}>
                     LOS NÚMEROS:
             </div><br/>
