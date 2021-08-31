@@ -32,7 +32,7 @@ const AboutUs = ({
                     textAlign: 'center',
                     display: 'block',
                     }} src={mprImage} /><br/>
-                    <Translate text="aboutDescriptionP1" /><br/><br/>
+                    <i className='line-gold' /><Translate text="aboutDescriptionP1" /><br/><br/>
                     <Translate text="aboutDescriptionP2" /><br/><br/>
                     <Translate text="aboutDescriptionP3" />
                 </p>

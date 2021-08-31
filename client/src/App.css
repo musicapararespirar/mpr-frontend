@@ -997,6 +997,10 @@ button {
     color: #ea9d28;
 }
 
+.gold:hover {
+    color: white;
+}
+
 .text-gold {
     color: #ea9d28;
     font-family: "Josefin Sans";
@@ -1017,6 +1021,17 @@ button {
 }
 .line-purple:before {
    background-color: #492b74;
+   content: "";
+   display: inline-block;
+   height: 3px;
+   position: relative;
+   vertical-align: middle;
+   width: 8rem;
+   margin-right: 0.5rem;
+}
+
+.line-pink:before {
+   background-color: #ed008c;
    content: "";
    display: inline-block;
    height: 3px;

@@ -7,6 +7,7 @@ import aboutTranslation from '../../translation/about';
 import titlesTranslation from '../../translation/titles';
 import navbarTranslation from '../../translation/navbar';
 import { Textfit } from 'react-textfit';
+import lasociedadImage from '../../../img/lasociedad.png';
 
 
 const LaSociedad = ({
@@ -26,7 +27,13 @@ const LaSociedad = ({
             <Fragment>
             <p className="wide-landing-container about"
                 style={{ textAlign: 'justify', }}>
-                    <Translate text="aboutLaSociedadP1" /><br/><br/>
+                <img style={{
+                    width: '70%',
+                    margin: 'auto',
+                    textAlign: 'center',
+                    display: 'block',
+                    }} src={lasociedadImage} /><br/>
+                    <i className='line-pink' /><Translate text="aboutLaSociedadP1" /><br/><br/>
                     <Translate text="aboutLaSociedadP2" />
             </p>
             </Fragment>
