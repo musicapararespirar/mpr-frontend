@@ -115,8 +115,31 @@ img {
     float: right;
 }
 
-.dots {
-    background: '.' repeat-x bottom;
+ul.numbers-dot {
+    max-width: 40em;
+    padding: 0;
+    overflow-x: hidden;
+    list-style: none;
+}
+
+ul.numbers-dot li:before {
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    color: white;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 20px;
+    content:". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "
+}
+ul.numbers-dot span:first-child {
+    padding-right: 0.1em;
+    background: #ea9d28;
+}
+ul.numbers-dot span + span {
+    float: right;
+    padding-left: 0.1em;
+    background: #ea9d28
 }
 
 .large {
@@ -1114,6 +1137,22 @@ button {
     scroll-snap-type: y mandatory;
     overflow: auto;
     height: 100vh;
+}
+
+.donate-button {
+    text-align: center;
+}
+
+.donate-button p {
+    color: #ea9d28;
+}
+
+.donate-button h1 {
+    line-height: 1;
+}
+
+.donate-button button:hover {
+    color: #ea9d28;
 }
 
 .profile {

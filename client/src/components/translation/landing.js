@@ -36,7 +36,7 @@ export default {
   },
   'webdesign': {
     en: "Web design",
-    es: "Diseño gráfico",
+    es: "Diseño web",
     pt: "Design web",
   },
 }

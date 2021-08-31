@@ -24,7 +24,7 @@ const Supporters = ({
 
     return <Provider language={languageCode} translation={allTranslations}>
         <Fragment>
-        <div className="wide-landing-container" style={{height: '300px'}}>
+        <div className="wide-landing-container" style={{textAlign: 'center', height: '300px'}}>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header'>
                 <Translate text="SUPPORTERS" />

@@ -36,8 +36,8 @@ const AboutUs = ({
 
     const about = (
         <Fragment>
-            <div className="inner-landing-container about">
-            <Textfit mode='single' forceSingleModeWidth={true} min={55}>
+            <div className="inner-landing-container about" style={{textAlign: 'center'}}>
+            <Textfit mode='single' forceSingleModeWidth={true} min={30}>
                 <h1 className='mpr-header'>
                     <Translate text="ABOUT US" />
                 </h1>

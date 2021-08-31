@@ -60,7 +60,7 @@ const Landing = ({
                 bgImage={slideshow3}>
                 <section className="inner-landing-container" style={{
                     minHeight: '1vh',
-                    marginBottom: '35vh',
+                    marginBottom: '27vh',
                     textAlign: 'center',
                     display: 'block',
                     marginTop: '15vh'
@@ -70,7 +70,7 @@ const Landing = ({
                 <section className='wide-landing-container' style={{
                     textAlign: 'center',
                     backgroundPosition: 'center',
-                    marginBottom: '10vh',
+                    marginBottom: '18vh',
                     height: '1vh'
                 }}>
                     <h1 style={{fontSize: '0.9rem'}}>ESTA ES LA SEMANA DE MÚSICA PARA RESPIRAR 24/7, UNETE A</h1>

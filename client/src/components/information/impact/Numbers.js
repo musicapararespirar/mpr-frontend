@@ -32,20 +32,13 @@ const Numbers = ({
                 fontWeight: 'bold'}}>
                     LOS NÚMEROS:
             </div><br/>
-            <div style={{whiteSpace: 'nowrap',width: '99%', overflow: 'hidden'}}>
-                <div className='x-large left-numbers'>65</div>
-                <div className='white title'>..................................MUSICOS</div>
-                <div style={{ clear: 'both', whiteSpace: 'nowrap'}} />
-                    <p  className='x-large left-numbers'>3542</p>
-                    <p className='white title'>.............................TIEMPO</p>
-                <div style={{ clear: 'both', whiteSpace: 'nowrap'}} />
-                    <p className='x-large left-numbers'>456</p>
-                    <p className='white title'>............................OYENTES</p>
-                <div style={{ clear: 'both', whiteSpace: 'nowrap'}} />
-                    <p className='x-large left-numbers'>274</p>
-                    <p className='white title'>........................LLAMADAS</p>
-                <div style={{ clear: 'both', whiteSpace: 'nowrap'}} /><br/>
-            </div>
+            <ul className='numbers-dot'>
+                <li><span className='x-large left-numbers'>65</span><span className="title white">MUSICOS</span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>3542</span><span className="title white">TIEMPO</span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>456</span><span className="title white">OYENTES</span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>274</span><span className="title white">LLAMADAS</span></li><br/><br/><br/>
+            </ul>
+
             </Fragment>
             </Provider>
 }
