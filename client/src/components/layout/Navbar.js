@@ -37,6 +37,8 @@ const Navbar = ({
         return () => window.removeEventListener("resize", updateMedia);
     }, [])
 
+    const [mobileNavbarIsOpen, setMobileNavbarIsOpen] = useState(true);
+
     const scroll = (location) => {
         const section = document.querySelector( `#${location}` );
         if (section && siteLocation.pathname == '/') {
@@ -67,157 +69,7 @@ const Navbar = ({
     const shadowStyle = shouldShowShadow ? 'shadow' : '';
     const hiddenStyle = shouldHideHeader ? 'hidden' : '';
 
-    const guestLinks = (
-        <NavbarDropdown className="navmenu-icon">
-            <NavbarDropdown.Toggle className="menu__item">
-            <NavbarDropdown.Open>
-                <i className="fas fa-bars fa-3x" />
-            </NavbarDropdown.Open>
-            <NavbarDropdown.Close>
-                <i className="fa fa-times fa-3x" />
-            </NavbarDropdown.Close>
-            </NavbarDropdown.Toggle>
-            <NavbarDropdown.Menu className="navmenu-menu">
-                <div className="navmenu-menu__row">
-                    <div onClick={e => (scroll('request-concert'))}>
-                        <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="PIDE CONCIERTO" /></div>
-                        </NavbarDropdown.Item>
-                    </div>
-                </div>
-                <div className="navmenu-menu__row">
-                    <div onClick={e => (scroll('about-us'))}>
-                        <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="ACERCA DE" /></div>
-                        </NavbarDropdown.Item>
-                    </div>
-                </div>
-                <div className="navmenu-menu__row">
-                    <div onClick={e => (scroll('seasons'))}>
-                        <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="TEMPORADAS" /></div>
-                        </NavbarDropdown.Item>
-                    </div>
-                </div>
-                <div className="navmenu-menu__row">
-                    <div onClick={e => (scroll('gallery'))}>
-                        <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="GALERIA" /></div>
-                        </NavbarDropdown.Item>
-                    </div>
-                </div>
-                <div className="navmenu-menu__row">
-                    <div onClick={e => (scroll('donate'))}>
-                        <NavbarDropdown.Item className="navmenu-item">
-                            <div className="navmenu-item__text"><Translate text="DONATE" /></div>
-                        </NavbarDropdown.Item>
-                    </div>
-                </div>
-            </NavbarDropdown.Menu>
-        </NavbarDropdown>
-    );
-
-    const authLinks = (
-        <NavbarDropdown className="navmenu-icon">
-        <NavbarDropdown.Toggle className="menu__item">
-        <NavbarDropdown.Open>
-            <i className="fas fa-bars fa-3x" />
-        </NavbarDropdown.Open>
-        <NavbarDropdown.Close>
-            <i className="fa fa-times fa-3x" />
-        </NavbarDropdown.Close>
-        </NavbarDropdown.Toggle>
-        <NavbarDropdown.Menu className="navmenu-menu">
-            <div className="navmenu-menu__row">
-                <Link to='/about-us'>
-                    <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text"><Translate text="About" /></div>
-                    </NavbarDropdown.Item>
-                </Link>
-            </div>
-            <div className="navmenu-menu__row">
-                <Link to='/concerts'>
-                    <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text"><Translate text="Concerts" /></div>
-                    </NavbarDropdown.Item>
-                </Link>
-            </div>
-            <div className="navmenu-menu__row">
-                <Link to='/impact'>
-                    <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text"><Translate text="Impact" /></div>
-                    </NavbarDropdown.Item>
-                </Link>
-            </div>
-            <div className="navmenu-menu__row">
-                <Link to='/donate'>
-                    <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text"><Translate text="Donate" /></div>
-                    </NavbarDropdown.Item>
-                </Link>
-            </div>
-            <div className="navmenu-menu__row">
-                <Link to='/contribute'>
-                    <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text"><Translate text="Contribute" /></div>
-                    </NavbarDropdown.Item>
-                </Link>
-            </div>
-            <div className="navmenu-menu__row">
-                <Link to='/contact'>
-                    <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text"><Translate text="Contact Us" /></div>
-                    </NavbarDropdown.Item>
-                </Link>
-            </div>
-            <div className="navmenu-menu__row">
-                <Link to='/dashboard'>
-                    <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text"><Translate text="Dashboard" /></div>
-                    </NavbarDropdown.Item>
-                </Link>
-            </div>
-            <div className="navmenu-menu__row">
-                <a onClick={logout} href="#!">
-                    <NavbarDropdown.Item className="navmenu-item">
-                        <div className="navmenu-item__text"><Translate text="Logout" /></div>
-                    </NavbarDropdown.Item>
-                </a>
-            </div>
-        </NavbarDropdown.Menu>
-        </NavbarDropdown>
-    );
-
-    const languageButtons = (
-        <NavbarDropdown className="languagemenu-icon">
-            <NavbarDropdown.Toggle className="languagemenu__item">
-            <NavbarDropdown.Open>
-                <div>{languageCode.toUpperCase()}</div>
-            </NavbarDropdown.Open>
-            <NavbarDropdown.Close>
-                <div>{languageCode.toUpperCase()}</div>
-            </NavbarDropdown.Close>
-            </NavbarDropdown.Toggle>
-            <NavbarDropdown.Menu className="languagemenu-menu">
-                <a onClick={() => setLanguage("es")} href="#!">
-                    <NavbarDropdown.Item className="languagemenu-item">
-                        <div className="languagemenu-item__text">Español</div>
-                    </NavbarDropdown.Item>
-                </a>
-                <a onClick={() => setLanguage("pt")} href="#!">
-                    <NavbarDropdown.Item className="languagemenu-item">
-                        <div className="languagemenu-item__text">Português</div>
-                    </NavbarDropdown.Item>
-                </a>
-                <a onClick={() => setLanguage("en")} href="#!">
-                    <NavbarDropdown.Item className="languagemenu-item">
-                        <div className="languagemenu-item__text">English</div>
-                    </NavbarDropdown.Item>
-                </a>
-            </NavbarDropdown.Menu>
-        </NavbarDropdown>
-    );
-    const guestLinksBar = (
+    const desktopNavbar = (
         <Fragment>
             <NavbarMenu
                 navTitle="ABOUT"
@@ -264,8 +116,18 @@ const Navbar = ({
                     {num: 4, text: 'Twitter', link: '/contact#twitter'},
                             ]}/>
 
-            <div className="dropdown">
-                <button className="dropbtn"><Translate text="LANGUAGE" /></button>
+            <div className="dropdown" style={{marginTop: '12px'}}>
+                <button className="dropbtn"><Translate text="LANGUAGE" />
+                <div style={{
+                    position: 'relative',
+                    fontSize: '12px',
+                    margin: 'auto',
+                    left: 0,
+                    right: 0
+                }}>
+                        <Translate text="currentLanguage"/>
+                </div></button>
+
                 <div className="dropdown-content">
                     <div onClick={() => setLanguage("en")} href="#!">
                         <a href="#!">English</a></div>
@@ -278,14 +140,35 @@ const Navbar = ({
         </Fragment>
     );
 
+    const mobileNavbar = (
+        <Fragment>
+        <div className="topnav">
+            <a className="active" style={{
+                background: 'transparent',
+                height: '65px'}} />
+                {mobileNavbarIsOpen ?
+                    <div>
+                        <a href="#news">News</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#about">About</a>
+                    </div>
+                : null }
+            <div className='navmenu'
+                onClick={ e => (setMobileNavbarIsOpen(!mobileNavbarIsOpen))}>
+                <i className="fas fa-bars " />
+            </div>
+            </div>
+
+        </Fragment>);
+
     return <Provider language={languageCode} translation={navbarTranslation}>
         {isDesktop ? (
             <nav className={`navbar ${hiddenStyle}`}>
-                {!authLoading && (<Fragment>{ guestLinksBar }</Fragment>)}
+                { desktopNavbar }
             </nav>
                 ) : (
             <nav className={`navmenu ${hiddenStyle}`}>
-                {!authLoading && ( <Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
+                { mobileNavbar }
             </nav>
         )}
     </Provider>

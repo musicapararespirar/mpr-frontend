@@ -21,7 +21,7 @@ const Seasons = ({
 
     return <Provider language={languageCode} translation={allTranslations}>
         <Fragment>
-        <div className="inner-landing-container" style={{height: '50vh'}}>
+        <div className="inner-landing-container" style={{minHeight: '50vh'}}>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header'>
                 <Translate text="DONATE" />

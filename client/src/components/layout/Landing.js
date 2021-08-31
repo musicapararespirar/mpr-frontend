@@ -22,7 +22,7 @@ import { Parallax, Background } from 'react-parallax';
 import PideConcierto from './PideConcierto';
 import RequestPersonal from '../concerts/RequestPersonal';
 import Supporters from '../information/Supporters';
-import AboutUs from '../information/AboutUsLanding';
+import AboutUs from '../information/AboutUs';
 import Impact from '../information/ImpactLanding';
 import Seasons from '../information/Seasons';
 import Donate from '../information/Donate';
@@ -56,21 +56,23 @@ const Landing = ({
             <div id="concert-info" />
             <Parallax
                 strength={500}
-                bgImageStyle={{opacity: 0.2, height: '90%'}}
+                bgImageStyle={{opacity: 0.2, height: '70%'}}
                 style={{boxShadow: "inset 0px 0px 50px -60px #000000, inset 0px -940px 90px -60px #000000"}}
                 bgImage={slideshow3}>
                 <section className="inner-landing-container" style={{
-                    height: '30vh',
+                    minHeight: '1vh',
+//                     height:
+                    marginBottom: '15vh',
                     textAlign: 'center',
                     display: 'block',
-            marginTop: '15vh'
+                    marginTop: '15vh'
                     }}>
                     <img src={logoLarge}/><br/>
                 </section>
-                <section className='inner-landing-container' style={{
-                    maxWidth: '55rem',
+                <section className='wide-landing-container' style={{
                     textAlign: 'center',
                     backgroundPosition: 'center',
+                    marginBottom: '10vh',
                     height: '1vh'
                 }}>
                     <h1 style={{fontSize: '0.9rem'}}>ESTA ES LA SEMANA DE MÚSICA PARA RESPIRAR 24/7, UNETE A</h1>
@@ -94,14 +96,14 @@ const Landing = ({
                     </section>
             </Parallax></Parallax>
 
-            <div id="gallery" />
+            {/*<div id="gallery" />
             <Parallax
                 strength={500}
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}>
 
                     <ImageGrid />
-            </Parallax>
+            </Parallax>*/}
 
             <Parallax
                 strength={500}
@@ -109,7 +111,7 @@ const Landing = ({
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#ea9d28'}}>
                     <section className="landing-container">
-                            <Impact />
+                        <Impact />
                     </section>
             </Parallax>
 
@@ -118,7 +120,9 @@ const Landing = ({
                     strength={500}
                     blur={10}
                     bgImageStyle={{opacity: 0.2}}
-                    style={{boxShadow: "inset 0px 60px 50px -60px #000000, inset 0px -60px 50px -60px #000000"}}
+                    style={{
+                        minHeight: '1050px'
+                    }}
                     bgImage={slideshow4}>
                     <section className="landing-container">
                         <AboutUs />

@@ -145,4 +145,9 @@ export default {
         es: 'Twitter',
         pt: ''
     },
+    'currentLanguage': {
+        en: 'English',
+        es: 'Español',
+        pt: 'Portuguêse'
+    },
 }

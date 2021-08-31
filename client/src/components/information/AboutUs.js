@@ -1,14 +1,17 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
 import { Provider, Translate } from 'react-translated';
 import aboutTranslation from '../translation/about';
 import titlesTranslation from '../translation/titles';
+import landingTranslation from '../translation/landing';
 import navbarTranslation from '../translation/navbar';
 import { Textfit } from 'react-textfit';
-
+import MusicaParaRespirar from './about/MusicaParaRespirar';
+import LaSociedad from './about/LaSociedad';
+import Team from './about/Team';
 
 const AboutUs = ({
     language: { languageCode }
@@ -17,64 +20,86 @@ const AboutUs = ({
     const allTranslations = {
         ...aboutTranslation,
         ...titlesTranslation,
+        ...landingTranslation,
         ...navbarTranslation
     }
-    const [visibilityMPR, toggleVisibilityMPR] = useState(false);
-    const [visibilityLaSociedad, toggleVisibilityLaSociedad] = useState(false);
-    const [visibilityTeam, toggleVisibilityTeam] = useState(false);
+    const buttons = (
+        <Fragment>
+            <button onClick={e => {setDisplayInformationFor("MusicaParaRespirar")}}>Musica Para Respirar
+            <i className="fas fa-long-arrow-alt-right" /></button><br/>
+            <button onClick={e => {setDisplayInformationFor("LaSociedad")}}>La Sociedad
+            <i className="fas fa-long-arrow-alt-right" /></button><br/>
+            <button onClick={e => {setDisplayInformationFor("Team")}}><Translate text="Team" />
+            <i className="fas fa-long-arrow-alt-right" /></button>
+        </Fragment>
+    );
 
-    useEffect(() => {
-        if (window.location.hash == "#mpr") {
-            toggleVisibilityTeam(false);
-            toggleVisibilityLaSociedad(false);
-            toggleVisibilityMPR(true);
-        }
-    }, [window.location.hash]);
-    useEffect(() => {
-        if (window.location.hash == "#lasociedad") {
-            toggleVisibilityTeam(false);
-            toggleVisibilityLaSociedad(true);
-            toggleVisibilityMPR(false);
-        }
-    }, [window.location.hash]);
-    useEffect(() => {
-        if (window.location.hash == "#team") {
-            toggleVisibilityTeam(true);
-            toggleVisibilityLaSociedad(false);
-            toggleVisibilityMPR(false);
-        }
-    }, [window.location.hash]);
+    const about = (
+        <Fragment>
+            <div className="inner-landing-container about">
+            <Textfit mode='single' forceSingleModeWidth={true} min={55}>
+                <h1 className='mpr-header'>
+                    <Translate text="ABOUT US" />
+                </h1>
+            </Textfit>
+            <div style={{
+                display: 'inline-block',
+                letterSpacing: '1px',
+                fontSize: '1rem',
+                lineHeight: 2,
+                textAlign: 'justify',
+                fontWeight: 'lighter'
+            }}>
+                <i className='line-gold' />
+                    <Translate text="aboutDescriptionP1" /><br/><br/>
+            </div>
+            {buttons}
+        </div>
+        </Fragment>
+    );
 
+    const mpr = (
+        <Fragment>
+            <div className='wide-landing-container about'>
+                <MusicaParaRespirar />
+                <button onClick={e => (setDisplayInformationFor(null))}>
+                    <i className="fas fa-long-arrow-alt-left" /> Back
+                </button>
+            </div>
+        </Fragment>
+    );
 
+    const lasociedad = (
+        <Fragment>
+            <div className='wide-landing-container about'>
+                <LaSociedad />
+                <button onClick={e => (setDisplayInformationFor(null))}>
+                    <i className="fas fa-long-arrow-alt-left" /> Back
+                </button>
+            </div>
+        </Fragment>
+    );
+
+    const team = (
+        <Fragment>
+            <div className='wide-landing-container about'>
+                <Team />
+                <button onClick={e => (setDisplayInformationFor(null))}>
+                    <i className="fas fa-long-arrow-alt-left" /> Back
+                </button>
+            </div>
+        </Fragment>
+    );
+
+    const [displayInformationFor, setDisplayInformationFor] = useState(null);
     return <Provider language={languageCode} translation={allTranslations}>
-            <Fragment><div className="container">
-            <h1 id="mpr">
-                <button onClick={() => {toggleVisibilityMPR(!visibilityMPR)}}><Translate text="MÚSICA PARA RESPIRAR" /></button>
-             </h1>
-                { visibilityMPR ?
-            <p style={{ textAlign: 'justify', }}>
-                <Translate text="aboutDescriptionP1" /><br/><br/>
-                <Translate text="aboutDescriptionP2" /><br/><br/>
-                <Translate text="aboutDescriptionP3" /><br/><br/>
-            </p> : null}
+            <Fragment>
+                {!displayInformationFor ? about : null}
+                {displayInformationFor && displayInformationFor === "MusicaParaRespirar" ? mpr : null}
+                {displayInformationFor && displayInformationFor === "LaSociedad" ? lasociedad : null}
+                {displayInformationFor && displayInformationFor === "Team" ? team : null}
 
-            <h1 id="lasociedad">
-                <button onClick={() => {toggleVisibilityLaSociedad(!visibilityLaSociedad)}}><Translate text="LA SOCIEDAD"/></button>
-             </h1>
-                { visibilityLaSociedad ?
-                    <p style={{ textAlign: 'justify', }}>
-                        <Translate text="aboutLaSociedadP1" /><br/><br/>
-                        <Translate text="aboutLaSociedadP2" /><br/><br/>
-                    </p> : null}
-
-            <h1 id="team">
-                <button onClick={() => {toggleVisibilityTeam(!visibilityTeam)}}><Translate text="TEAM" /></button>
-             </h1>
-            { visibilityTeam ?
-                <p style={{ textAlign: 'justify', }}>
-                    <Translate text="theTeam" /><br/><br/>
-                </p> : null}
-            </div></Fragment>
+                </Fragment>
             </Provider>
 }
 
