@@ -135,12 +135,9 @@ const Navbar = ({
     }
     const languageLinks = (
         <Fragment>
-            <a onClick={() => clickLink("en")}>
-                English</a>
-            <div onClick={() => clickLink("es")}>
-                <a href="#!">Español</a></div>
-            <div onClick={() => clickLink("pt")}>
-                <a href="#!">Português</a></div>
+            <a onClick={() => clickLink("en")}>ENGLISH</a>
+            <a onClick={() => clickLink("es")}>ESPAÑOL</a>
+            <a onClick={() => clickLink("pt")}>PORTUGUÊS</a>
         </Fragment>
     );
     const mobileNavbar = (
