@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 import Spinner from '../layout/Spinner';
-import NavbarDropdown from 'react-navbar-dropdown';
 import { setLanguage } from '../../actions/language';
 import titlesTranslation from '../translation/titles';
 import navbarTranslation from '../translation/navbar';

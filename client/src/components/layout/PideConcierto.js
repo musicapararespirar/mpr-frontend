@@ -6,7 +6,6 @@ import { Provider, Translate } from 'react-translated';
 import concertTranslation from '../translation/concerts';
 import titlesTranslation from '../translation/titles';
 import PropTypes from 'prop-types';
-import NavbarDropdown from 'react-navbar-dropdown';
 import LoginLogo from './LoginLogo'
 import { Textfit } from 'react-textfit';
 

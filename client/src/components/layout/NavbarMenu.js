@@ -4,7 +4,6 @@ import { HashLink, NavHashLink } from 'react-router-hash-link';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Spinner from '../layout/Spinner';
-import NavbarDropdown from 'react-navbar-dropdown';
 import navbarTranslation from '../translation/navbar';
 import { Provider, Translate } from 'react-translated';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
