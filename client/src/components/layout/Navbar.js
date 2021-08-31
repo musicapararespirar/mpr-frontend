@@ -38,6 +38,7 @@ const Navbar = ({
     }, [])
 
     const [mobileNavbarIsOpen, setMobileNavbarIsOpen] = useState(true);
+    const [languageSelected, setLanguageSelected] = useState(false);
 
     const scroll = (location) => {
         const section = document.querySelector( `#${location}` );
@@ -71,7 +72,7 @@ const Navbar = ({
     const navbarLinks = [{title: 'ABOUT', link: '/#about'},
                          {title: 'REQUEST A CONCERT', link: '/#request'},
                          {title: 'IMPACT', link: '/#impact'},
-                         {title: 'MEDIA', link: '/#media'},
+//                          {title: 'MEDIA', link: '/#media'},
                          {title: 'SUPPORT US', link: '/#support'},
                          {title: 'CONTACT US', link: '/#contact'},
                          ]
@@ -110,24 +111,57 @@ const Navbar = ({
         </Fragment>
     );
 
+    function clickMenu() {
+        if (window.scrollY > 0) {
+            setMobileNavbarIsOpen(true);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+        setMobileNavbarIsOpen(!mobileNavbarIsOpen);
+        }
+    }
+
+    function clickLink(input) {
+        if (input === 'en') {
+            setLanguage("en");
+            setLanguageSelected(false);
+        } else if (input === 'es') {
+            setLanguage("es");
+            setLanguageSelected(false);
+        } else if (input === 'pt') {
+            setLanguage("pt");
+            setLanguageSelected(false);
+        }
+        setMobileNavbarIsOpen(false);
+    }
+    const languageLinks = (
+        <Fragment>
+            <a onClick={() => clickLink("en")}>
+                English</a>
+            <div onClick={() => clickLink("es")}>
+                <a href="#!">Español</a></div>
+            <div onClick={() => clickLink("pt")}>
+                <a href="#!">Português</a></div>
+        </Fragment>
+    );
     const mobileNavbar = (
         <Fragment>
-        <div className="topnav">
-            <a className="active" style={{
-                background: 'transparent',
-                height: '65px'}} />
-                {mobileNavbarIsOpen ?
+        {mobileNavbarIsOpen ?
+            <div className="topnav">
+                <a style={{background: 'transparent'}} />
                     <div>
-                        <a href="#news">News</a>
-                        <a href="#contact">Contact</a>
-                        <a href="#about">About</a>
+                     {navbarLinks.map((item, idx) => (
+                        <a href={item.link} onClick={e => {setMobileNavbarIsOpen(false)}}><Translate text={item.title} /></a>
+                        ))}
+                        {languageSelected ? languageLinks :
+                        <a onClick={() => setLanguageSelected(true)} href="#!">
+                        <Translate text="LANGUAGE" /></a>}
+
                     </div>
+                </div>
                 : null }
-            <div className='navmenu'
-                onClick={ e => (setMobileNavbarIsOpen(!mobileNavbarIsOpen))}>
-                <i className="fas fa-bars " />
-            </div>
-            </div>
+            <i
+            className="navmenu fas fa-bars fa-3x"
+            onClick={ e => (clickMenu())} />
 
         </Fragment>);
 
@@ -137,9 +171,7 @@ const Navbar = ({
                 { desktopNavbar }
             </nav>
                 ) : (
-            <nav className={`navmenu ${hiddenStyle}`}>
-                { mobileNavbar }
-            </nav>
+            <nav>{ mobileNavbar }</nav>
         )}
     </Provider>
 }

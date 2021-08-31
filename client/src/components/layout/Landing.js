@@ -5,14 +5,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import logoLarge from '../../img/logo-large.png';
-import slideshow1 from '../../img/landing1.jpeg';
-import slideshow2 from '../../img/landing2.jpeg';
+// import slideshow1 from '../../img/landing1.jpeg';
+// import slideshow2 from '../../img/landing2.jpeg';
 import slideshow3 from '../../img/landing3.jpeg';
 import slideshow4 from '../../img/landing4.jpeg';
 import slideshow5 from '../../img/landing5.jpeg';
-import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn } from "react-scroll-motion";
-import AliceCarousel from 'react-alice-carousel';
-import "react-alice-carousel/lib/alice-carousel.css";
 import aboutTranslation from '../translation/about';
 import landingTranslation from '../translation/landing';
 import titlesTranslation from '../translation/titles';
@@ -24,6 +21,7 @@ import RequestPersonal from '../concerts/RequestPersonal';
 import Supporters from '../information/Supporters';
 import Support from '../information/Support';
 import AboutUs from '../information/AboutUs';
+import Contact from '../information/Contact';
 import Impact from '../information/Impact';
 import Footer from '../information/Footer';
 import ImageGrid from '../information/ImageGrid';
@@ -40,9 +38,6 @@ const Landing = ({
     if(isAuthenticated) {
        return <Redirect to='/dashboard' />
     }
-    const images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5]
-    const images_mobile = [slideshow2, slideshow3, slideshow4]
-    const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn(), MoveOut());
 
     // Combine translation files
     const allTranslations = {
@@ -103,29 +98,29 @@ const Landing = ({
                     <ImageGrid />
             </Parallax>*/}
             <div id="impact" />
-                <Parallax
-                    strength={500}
-                    blur={10}
-                    bgImageStyle={{opacity: 0.2}}
-                        style={{background: '#ea9d28'}}>
-                        <section className="landing-container">
-                            <Impact />
-                        </section>
-                </Parallax>
+            <Parallax
+                strength={500}
+                blur={10}
+                bgImageStyle={{opacity: 0.2}}
+                    style={{background: '#ea9d28'}}>
+                    <section className="landing-container">
+                        <Impact />
+                    </section>
+            </Parallax>
 
             <div id="about" />
-                <Parallax
-                    strength={500}
-                    blur={10}
-                    bgImageStyle={{opacity: 0.2}}
-                    style={{
-                        minHeight: '1050px'
-                    }}
-                    bgImage={slideshow4}>
-                    <section className="landing-container">
-                        <AboutUs />
-                    </section>
-                </Parallax>
+            <Parallax
+                strength={500}
+                blur={10}
+                bgImageStyle={{opacity: 0.2}}
+                style={{
+                    minHeight: '1050px'
+                }}
+                bgImage={slideshow4}>
+                <section className="landing-container">
+                    <AboutUs />
+                </section>
+            </Parallax>
 
             <div id="support" />
             <Parallax
@@ -136,6 +131,17 @@ const Landing = ({
                     <section className="landing-container">
                     <Support />
                     </section>
+            </Parallax>
+
+            <div id="contact" />
+            <Parallax
+                strength={500}
+                blur={10}
+                bgImageStyle={{opacity: 0.2, height: '110%'}}
+                bgImage={slideshow5}>
+                <section className="landing-container">
+                    <Contact />
+                </section>
             </Parallax>
 
             <Parallax
