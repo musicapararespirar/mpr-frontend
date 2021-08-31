@@ -22,9 +22,9 @@ import { Parallax, Background } from 'react-parallax';
 import PideConcierto from './PideConcierto';
 import RequestPersonal from '../concerts/RequestPersonal';
 import Supporters from '../information/Supporters';
+import Support from '../information/Support';
 import AboutUs from '../information/AboutUs';
 import Impact from '../information/Impact';
-import Donate from '../information/Donate';
 import Footer from '../information/Footer';
 import ImageGrid from '../information/ImageGrid';
 // import ImageGallery from '../information/ImageGallery';
@@ -127,18 +127,17 @@ const Landing = ({
                     </section>
                 </Parallax>
 
-            <div id="donate" />
+            <div id="support" />
             <Parallax
                 strength={500}
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#4a2c75'}}>
                     <section className="landing-container">
-                    <Donate />
+                    <Support />
                     </section>
             </Parallax>
 
-            <div id="support" />
             <Parallax
                 strength={500}
                 blur={10}

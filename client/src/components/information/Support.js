@@ -3,19 +3,19 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { Link } from 'react-router-dom';
 import { Provider, Translate } from 'react-translated';
-import donateTranslation from '../translation/donate';
+import supportTranslation from '../translation/support';
 import titlesTranslation from '../translation/landing';
 import PropTypes from 'prop-types';
 import { Textfit } from 'react-textfit';
 
-const Seasons = ({
+const Support = ({
     language: {
         languageCode
     },
 }) => {
     // Combine translation files
     const allTranslations = {
-        ...donateTranslation,
+        ...supportTranslation,
         ...titlesTranslation
     }
 
@@ -34,7 +34,7 @@ const Seasons = ({
                     lineHeight: 2,
                     textAlign: 'justify',
                 }}>
-                <i className='line-purple' />
+                <i className='line-gold' />
                     Música para Respirar es una nueva forma de hacer música de manera más personal. Contribuye para que llegue a más personas de forma gratuita. Al apoyarnos estás gestionando la contratación de artistas en toda América latina y el mundo, el  trabajo de administración, coordinación, el diseño gráfico y principalmente haciendo llegar música a más personas.<br/><br/>
 
                     CONTRIBUYE AQUÍ (Link de Gofundme)<br/>
@@ -64,7 +64,7 @@ const Seasons = ({
 }
 
 
-Seasons.propTypes = {
+Support.propTypes = {
     language: PropTypes.object.isRequired
 }
 
@@ -72,4 +72,4 @@ const mapStateToProps = state => ({
     language: state.language
 });
 
-export default connect(mapStateToProps)(Seasons);
+export default connect(mapStateToProps)(Support);

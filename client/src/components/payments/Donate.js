@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from '../payments/CheckoutForm';
 import { Provider, Translate } from 'react-translated';
-import donateTranslation from '../translation/donate';
+import supportTranslation from '../translation/support';
 import titlesTranslation from '../translation/titles';
 import PropTypes from 'prop-types';
 
@@ -17,7 +17,7 @@ const Donate = ({
 }) => {
     // Combine translation files
     const allTranslations = {
-        ...donateTranslation,
+        ...supportTranslation,
         ...titlesTranslation
     }
 

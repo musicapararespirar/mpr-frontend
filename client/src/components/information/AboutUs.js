@@ -82,7 +82,7 @@ const AboutUs = ({
 
     const team = (
         <Fragment>
-            <div className='wide-landing-container about'>
+            <div className='wide-landing-container about' style={{maxWidth: '70%'}}>
                 <Team />
                 <button onClick={e => (setDisplayInformationFor(null))}>
                     <i className="fas fa-long-arrow-alt-left" /> Back

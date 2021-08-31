@@ -1044,6 +1044,10 @@ button {
    margin-right: 0.5rem;
 }
 
+.pink {
+    color: #ed008c;
+}
+
 .line-pink:before {
    background-color: #ed008c;
    content: "";
@@ -1269,6 +1273,74 @@ button {
 .link:hover {
    color: #aaaa7f;
 }
+.team-container {
+/*     margin: auto; */
+/*     align-items: center; */
+/*     justify-items: center; */
+/*     width: 100%; */
+/*     position: absolute; */
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Team-list Profile";
+}
+.Team-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.6fr 0.9fr 1.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Title Description Description"
+    "List List List"
+    "List List List";
+  grid-area: Team-list;
+}
+.Description { grid-area: Description; }
+.Title { grid-area: Title; }
+.List {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 0.5fr 1.5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "ic1 name1 ic7 name7"
+    "ic2 name2 ic8 name8"
+    "ic3 name3 ic9 name9"
+    "ic4 name4 ic10 name10"
+    "ic5 name5 ic11 name11"
+    "ic6 name6 ic12 name12";
+  grid-area: List;
+}
+.name1 { grid-area: name1; }
+.name2 { grid-area: name2; }
+.name3 { grid-area: name3; }
+.name4 { grid-area: name4; }
+.name5 { grid-area: name5; }
+.name6 { grid-area: name6; }
+.name7 { grid-area: name7; }
+.name8 { grid-area: name8; }
+.name9 { grid-area: name9; }
+.name10 { grid-area: name10; }
+.name11 { grid-area: name11; }
+.name12 { grid-area: name12; }
+.ic7 { grid-area: ic7; }
+.ic8 { grid-area: ic8; }
+.ic9 { grid-area: ic9; }
+.ic10 { grid-area: ic10; }
+.ic11 { grid-area: ic11; }
+.ic12 { grid-area: ic12; }
+.ic6 { grid-area: ic6; }
+.ic5 { grid-area: ic5; }
+.ic4 { grid-area: ic4; }
+.ic3 { grid-area: ic3; }
+.ic2 { grid-area: ic2; }
+.ic1 { grid-area: ic1; }
+.Profile { grid-area: Profile; }
+
+
+
 
 .fc {
 /*   background-color: #dedede; */

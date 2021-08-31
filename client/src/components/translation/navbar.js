@@ -150,4 +150,9 @@ export default {
         es: 'Español',
         pt: 'Portuguêse'
     },
+    'LANGUAGE': {
+        en: "LANGUAGE",
+        es: "IDIOMA",
+        pt: ""
+    }
 }
