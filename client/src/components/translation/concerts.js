@@ -24,5 +24,10 @@ export default {
     es: 'CONCIERTO',
     pt: 'SEU SHOW',
   },
+  "vive la música en casa": {
+      en: "live the music at home",
+      es: "vive la música en casa",
+      pt: ""
+}
 
 }

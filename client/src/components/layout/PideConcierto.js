@@ -66,7 +66,7 @@ const PideConcierto = ({
                     textAlign: 'justify',
                     fontWeight: 500,
                     color: '#ea9d28'
-                }}>vive la música en casa</small>
+                }}><Translate text="vive la música en casa" />...</small>
             </div></Fragment></Provider>
 }
 

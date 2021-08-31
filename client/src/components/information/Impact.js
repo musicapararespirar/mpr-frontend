@@ -29,9 +29,9 @@ const ImpactLanding = ({
 
     const buttons = (
         <Fragment>
-        <div className="inner-landing-container impact" style={{textAlign: 'center', minHeight: '50vh'}}>
+        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
         <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header'>
+            <h1 style={{textAlign: 'center'}} className='mpr-header'>
                 <Translate text="IMPACT" />
             </h1>
         </Textfit><br/>
