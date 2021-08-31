@@ -29,14 +29,14 @@ export default {
     es: "Lee más",
     pt: "Leia mais"
   },
-  'designby': {
-    en: "designed by",
-    es: "diseñada por",
-    pt: "projetado por"
+  'graphicdesign': {
+    en: "Graphic design",
+    es: "Diseño gráfico",
+    pt: "Design gráfico"
   },
-  'and': {
-    en: "and",
-    es: "y",
-    pt: "e"
+  'webdesign': {
+    en: "Web design",
+    es: "Diseño gráfico",
+    pt: "Design web",
   },
 }

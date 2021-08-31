@@ -9,6 +9,7 @@ import navbarTranslation from '../translation/navbar';
 import PropTypes from 'prop-types';
 import { Textfit } from 'react-textfit';
 import Numbers from './impact/Numbers';
+import UnderConstruction from './impact/UnderConstruction';
 
 const ImpactLanding = ({
     language: {
@@ -26,17 +27,17 @@ const ImpactLanding = ({
 
     const buttons = (
         <Fragment>
-        <div className="inner-landing-container impact" style={{minHeight: '30vh'}}>
+        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
         <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header'>
                 <Translate text="IMPACT" />
             </h1>
         </Textfit><br/>
             <button onClick={e => (setFeatureSelected('numbers'))}>NUMBERS</button>
-            <button id='impact-map' onClick={e => (setFeatureSelected('maps'))}>MAPS</button>
+            <button onClick={e => (setFeatureSelected('maps'))}>MAPS</button>
             <button onClick={e => (setFeatureSelected('press'))}>PRESS</button>
             <button onClick={e => (setFeatureSelected('reports'))}>REPORTS</button>
-        <br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/>
             <small style={{
                     display: 'inline-block',
                     letterSpacing: '2.5px',
@@ -51,7 +52,7 @@ const ImpactLanding = ({
     );
     const numbers = (
         <Fragment>
-        <div className="inner-landing-container impact">
+        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
             <Numbers />
             <button onClick={e => (setFeatureSelected(null))}>
                 <i className="fas fa-long-arrow-alt-left" /> Back
@@ -62,28 +63,34 @@ const ImpactLanding = ({
 
     const maps = (
         <Fragment>
-            <h1 style={{textAlign: 'center'}}>Maps</h1>
+        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
+            <UnderConstruction />
             <button onClick={e => (setFeatureSelected(null))}>
                 <i className="fas fa-long-arrow-alt-left" /> Back
             </button>
+        </div>
         </Fragment>
     );
 
     const press = (
         <Fragment>
-            <h1 style={{textAlign: 'center'}}>Press</h1>
+        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
+            <UnderConstruction />
             <button onClick={e => (setFeatureSelected(null))}>
                 <i className="fas fa-long-arrow-alt-left" /> Back
             </button>
+        </div>
         </Fragment>
     );
 
     const reports = (
         <Fragment>
-            <h1 style={{textAlign: 'center'}}>Reports</h1>
+        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
+            <UnderConstruction />
             <button onClick={e => (setFeatureSelected(null))}>
                 <i className="fas fa-long-arrow-alt-left" /> Back
             </button>
+        </div>
         </Fragment>
     );
     return <Provider language={languageCode} translation={allTranslations}>
