@@ -36,11 +36,19 @@ const Supporters = ({
                     color: '#492b74',
                     textAlign: 'center'
                 }}><Translate text="supportComment" /></p>
-            <div className='img-container'>
-                <img src={musacawes}/>
-                <img src={fundserhum}/>
-                <img src={kas}/>
-            </div><br/>
+
+                <div className="img-row">
+                    <div className="img-column">
+                        <img src={musacawes} style={{width: "75%"}} />
+                    </div>
+                    <div className="img-column">
+                        <img src={kas} style={{width: "100%"}} />
+                    </div>
+                    <div className="img-column">
+                        <img src={fundserhum} style={{width: "100%"}} />
+                    </div>
+                </div>
+
             <p style={{
                     fontSize: '1rem',
                     color: '#492b74',

@@ -747,16 +747,18 @@ button {
 	 padding: 0px 2px;
 }
 
-.img-container {
-  height: 100px;
-  display: flex;
+.img-column {
+  flex: 33.33%;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+
 }
 
-.img-container img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  padding: 20px;
+.img-row {
+  display: flex;
+    justify-content: center;
+  align-items: center;
 }
 
 .navmenu {
