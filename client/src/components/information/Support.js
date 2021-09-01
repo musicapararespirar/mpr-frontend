@@ -35,7 +35,8 @@ const Support = ({
                     fontWeight: 'lighter'
                 }}>
                 <i className='line-gold' />
-                    Música para Respirar es una nueva forma de hacer música de manera más personal. Contribuye para que llegue a más personas de forma gratuita. Al apoyarnos estás gestionando la contratación de artistas en toda América latina y el mundo, el  trabajo de administración, coordinación, el diseño gráfico y principalmente haciendo llegar música a más personas.<br/><br/>
+                <Translate text="supportUsLanding" />
+                    <br/><br/>
 
                     <div className='donate-button'>
                         <button>
