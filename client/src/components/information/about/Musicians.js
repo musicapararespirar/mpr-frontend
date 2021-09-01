@@ -66,10 +66,12 @@ const Musicians = ({
 
 
     function getMusiciansByCharacter() {
+//         const alphabet = [...Array('Z'.charCodeAt(0) - 'A'.charCodeAt(0) + 1).keys()];
         const instruments = getUniqueInstrumentList();
 
         var musiciansByLetter = [];
         for (let i = 0; i < instruments.length; i++) {
+//             const asciiChar = String.fromCharCode(instruments[i] + 'A'.charCodeAt(0));
             var instrumentArray = [];
 
             // Go through each letter and find surnames starting with it
@@ -89,6 +91,7 @@ const Musicians = ({
         return musiciansByLetter
     }
     const musicianDocument = getMusiciansByCharacter();
+    console.log(musicianDocument);
 
     return <Provider language={languageCode} translation={allTranslations}>
             <Fragment>
@@ -103,11 +106,11 @@ const Musicians = ({
                 {musicianDocument.map((group, idx) => (
                     <div>
                         <h1>
-                            {group.instrument}
+                            <Translate text={group.instrument} />
                         </h1>
 
                         {group.musicians.map((musician, i) => (
-                            <Fragment><p>{musician.firstName.trim()} {musician.lastName.trim()} <small className="gold">{musician.origen.trim()}</small></p></Fragment>
+                            <Fragment><p>{musician.firstName.trim()} {musician.lastName.trim()} <small className="gold"><Translate text={musician.origen.trim()} /></small></p></Fragment>
                         ))}
                     </div>
                 ))}
