@@ -101,6 +101,11 @@ export default {
         es: 'Artistas',
         pt: ''
     },
+    'MUSICIANS': {
+        en: 'MUSICIANS',
+        es: 'ARTISTAS',
+        pt: ''
+    },
     'Pictures': {
         en: 'Pictures',
         es: 'Fotos',

@@ -12,6 +12,7 @@ import { Textfit } from 'react-textfit';
 import MusicaParaRespirar from './about/MusicaParaRespirar';
 import LaSociedad from './about/LaSociedad';
 import Team from './about/Team';
+import Musicians from './about/Musicians';
 
 const AboutUs = ({
     language: { languageCode }
@@ -30,6 +31,8 @@ const AboutUs = ({
             <button onClick={e => {setDisplayInformationFor("LaSociedad")}}>La Sociedad
             <i className="fas fa-long-arrow-alt-right" /></button><br/>
             <button onClick={e => {setDisplayInformationFor("Team")}}><Translate text="Team" />
+            <i className="fas fa-long-arrow-alt-right" /></button><br/>
+            <button onClick={e => {setDisplayInformationFor("Musicians")}}><Translate text="Musicians" />
             <i className="fas fa-long-arrow-alt-right" /></button>
         </Fragment>
     );
@@ -69,6 +72,17 @@ const AboutUs = ({
         </Fragment>
     );
 
+    const musicians = (
+        <Fragment>
+            <div className='wide-landing-container about'>
+                <Musicians />
+                <button onClick={e => (setDisplayInformationFor(null))}>
+                    <i className="fas fa-long-arrow-alt-left" /> Back
+                </button>
+            </div>
+        </Fragment>
+    );
+
     const lasociedad = (
         <Fragment>
             <div className='wide-landing-container about'>
@@ -97,6 +111,7 @@ const AboutUs = ({
                 {!displayInformationFor ? about : null}
                 {displayInformationFor && displayInformationFor === "MusicaParaRespirar" ? mpr : null}
                 {displayInformationFor && displayInformationFor === "LaSociedad" ? lasociedad : null}
+                {displayInformationFor && displayInformationFor === "Musicians" ? musicians : null}
                 {displayInformationFor && displayInformationFor === "Team" ? team : null}
             </Fragment>
             </Provider>
