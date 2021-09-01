@@ -75,6 +75,9 @@ const AboutUs = ({
     const musicians = (
         <Fragment>
             <div className='wide-landing-container about'>
+                <button onClick={e => (setDisplayInformationFor(null))}>
+                    <i className="fas fa-long-arrow-alt-left" /> Back
+                </button>
                 <Musicians />
                 <button onClick={e => (setDisplayInformationFor(null))}>
                     <i className="fas fa-long-arrow-alt-left" /> Back

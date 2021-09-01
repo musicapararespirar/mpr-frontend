@@ -53,7 +53,7 @@ const Musicians = ({
     return <Provider language={languageCode} translation={allTranslations}>
             <Fragment>
             <p className="inner-landing-container about"
-                style={{ textAlign: 'justify', }}>
+                style={{ textAlign: 'justify', marginBottom: 0, marginTop: 0}}>
                 <Textfit mode='single' forceSingleModeWidth={true} min={30}>
                     <h1 className='mpr-header'>
                         <Translate text="MUSICIANS" />
