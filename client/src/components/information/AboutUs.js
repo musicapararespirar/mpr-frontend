@@ -42,7 +42,7 @@ const AboutUs = ({
             <div className="inner-landing-container about" style={{textAlign: 'center'}}>
             <Textfit mode='single' forceSingleModeWidth={true} min={30}>
                 <h1 className='mpr-header'>
-                    <Translate text="ABOUT US" />
+                    <Translate text="ABOUT" />
                 </h1>
             </Textfit>
             <div style={{
