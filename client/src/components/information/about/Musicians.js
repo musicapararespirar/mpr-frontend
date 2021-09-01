@@ -46,7 +46,24 @@ const Musicians = ({
             instrumentList.push(musicianList[j].instrument);
         }
 
-        return instrumentList.unique().sort();
+        const uniqueInstrumentList = instrumentList.unique();
+        var instrumentObject = [];
+        for (let j = 0; j < uniqueInstrumentList.length; j++) {
+            const instrumentInLanguage = aboutTranslation[uniqueInstrumentList[j]][languageCode];
+            instrumentObject.push({
+                instrument: uniqueInstrumentList[j],
+                instrumentInLanguage: instrumentInLanguage
+            });
+        }
+        const sortedInstrumentObject = instrumentObject.sort(dynamicSort('instrumentInLanguage'));
+
+        var simpleSortedUniqueList = [];
+        for (let j = 0; j < sortedInstrumentObject.length; j++) {
+            simpleSortedUniqueList.push(sortedInstrumentObject[j].instrument)
+        }
+
+        console.log(simpleSortedUniqueList);
+        return simpleSortedUniqueList;
     }
 
     function dynamicSort(property) {
@@ -66,21 +83,21 @@ const Musicians = ({
 
 
     function getMusiciansByCharacter() {
-//         const alphabet = [...Array('Z'.charCodeAt(0) - 'A'.charCodeAt(0) + 1).keys()];
         const instruments = getUniqueInstrumentList();
 
         var musiciansByLetter = [];
         for (let i = 0; i < instruments.length; i++) {
-//             const asciiChar = String.fromCharCode(instruments[i] + 'A'.charCodeAt(0));
             var instrumentArray = [];
 
             // Go through each letter and find surnames starting with it
             // then push to array if they exist
             for (let j = 0; j < musicianList.length; j++) {
+//                 console.log(musicianList[j].instrument + instruments[i])
                 if (musicianList[j].instrument === instruments[i]) {
                     instrumentArray.push(musicianList[j]);
                 }
             }
+        console.log(instrumentArray);
             // Push document to array only if there are objects inside
             if (instrumentArray.length > 0) {
                 musiciansByLetter.push({
@@ -91,7 +108,6 @@ const Musicians = ({
         return musiciansByLetter
     }
     const musicianDocument = getMusiciansByCharacter();
-    console.log(musicianDocument);
 
     return <Provider language={languageCode} translation={allTranslations}>
             <Fragment>
