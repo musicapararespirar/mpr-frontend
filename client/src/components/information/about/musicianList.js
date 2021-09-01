@@ -81,7 +81,6 @@ export default [
     {fullName: 'Gabriela Ruiz', firstName: 'Gabriela', lastName: 'Ruiz', instrument: 'piano', origen: 'bolivia'},
     {fullName: 'Miguel Salazar Hidalgo', firstName: 'Miguel', lastName: 'Salazar Hidalgo', instrument: 'violin', origen: 'bolivia'},
     {fullName: 'Bianca Santos', firstName: 'Bianca', lastName: 'Santos', instrument: 'trumpet', origen: 'brazil'},
-    {fullName: 'Bianca Santos', firstName: 'Bianca', lastName: 'Santos', instrument: 'trumpet', origen: 'brazil'},
     {fullName: 'Alfonso Silva Ramírez', firstName: 'Alfonso', lastName: 'Silva Ramírez', instrument: 'sonotherapist', origen: 'chile '},
     {fullName: 'Gabriel Takano', firstName: 'Gabriel', lastName: 'Takano', instrument: 'bass', origen: 'brazil'},
     {fullName: 'Gervasio Tarragona', firstName: 'Gervasio', lastName: 'Tarragona', instrument: 'clarinet', origen: 'uruguay'},
