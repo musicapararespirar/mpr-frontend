@@ -12,9 +12,7 @@ import { Textfit } from 'react-textfit';
 import MusicaParaRespirar from './about/MusicaParaRespirar';
 import LaSociedad from './about/LaSociedad';
 import Team from './about/Team';
-import MailchimpSubscribe from "react-mailchimp-subscribe"
 
-const mailchimpURL = "//evanjt.us5.list-manage.com/subscribe/post?u=18e4b7f031750b28dbf9ff1a5&amp;id=0abca7a592";
 
 const Contact = ({
     language: { languageCode }
@@ -27,7 +25,6 @@ const Contact = ({
         ...navbarTranslation
     }
 
-    const SimpleForm = () => <MailchimpSubscribe url={mailchimpURL}/>
 
     const [displayInformationFor, setDisplayInformationFor] = useState(null);
     return <Provider language={languageCode} translation={allTranslations}>
@@ -66,17 +63,7 @@ const Contact = ({
                 href="https://www.youtube.com/channel/UCbU3H6WfXEusfNVWY5opUyg"
                 target='_blank'>YouTube
             </a>.
-            <MailchimpSubscribe
-                url={mailchimpURL}
-                render={({ subscribe, status, message }) => (
-                <div>
-                    <SimpleForm onSubmitted={formData => subscribe(formData)} />
-                    {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
-                    {status === "error" && <div style={{ color: "red" }} dangerouslySetInnerHTML={{__html: message}}/>}
-                    {status === "success" && <div style={{ color: "green" }}>Subscribed !</div>}
-                </div>
-                )}
-            />
+
             </div>
 
         </div>
