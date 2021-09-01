@@ -21,7 +21,7 @@ export default [
     {fullName: 'Daniel Cerron', firstName: 'Daniel', lastName: 'Cerron', instrument: 'voice', origen: 'mexico'},
     {fullName: 'Maritza Cisneros', firstName: 'Maritza', lastName: 'Cisneros', instrument: 'bass', origen: 'mexico'},
     {fullName: 'Carla Claros', firstName: 'Carla', lastName: 'Claros', instrument: 'flute', origen: 'bolivia'},
-    {fullName: 'Willy Claure', firstName: 'Willy', lastName: 'Claure', instrument: 'singer songwriter', origen: 'bolívia'},
+    {fullName: 'Willy Claure', firstName: 'Willy', lastName: 'Claure', instrument: 'singer songwriter', origen: 'bolivia'},
     {fullName: 'Mariela Condo', firstName: 'Mariela', lastName: 'Condo', instrument: 'voice', origen: 'ecuador'},
     {fullName: 'Mayra Contreras', firstName: 'Mayra', lastName: 'Contreras', instrument: 'soprano', origen: 'chile'},
     {fullName: 'Luz Cortés', firstName: 'Luz', lastName: 'Cortés', instrument: 'oboe', origen: 'mexico'},
