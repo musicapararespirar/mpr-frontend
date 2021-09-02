@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import logoLarge from '../../img/logo-large.png';
-// import slideshow1 from '../../img/landing1.jpeg';
-// import slideshow2 from '../../img/landing2.jpeg';
 import slideshow3 from '../../img/landing3.jpeg';
 import slideshow4 from '../../img/landing4.jpeg';
 import slideshow5 from '../../img/landing5.jpeg';
@@ -17,7 +15,6 @@ import { Provider, Translate } from 'react-translated';
 import Contribute from '../information/Contribute';
 import { Parallax, Background } from 'react-parallax';
 import PideConcierto from './PideConcierto';
-import RequestPersonal from '../concerts/RequestPersonal';
 import Supporters from '../information/Supporters';
 import Support from '../information/Support';
 import AboutUs from '../information/AboutUs';
@@ -80,12 +77,7 @@ const Landing = ({
                     style={{background: '#4a2c75', clipPath: "polygon(0% 0%, 40% 0%, 50% 5%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
                     <section className="landing-container">
-                        <Router>
-                        <Switch>
-                            <Route exact path="/" component={PideConcierto} />
-                            <Route exact path="/request/personal" component={RequestPersonal} />
-                            </Switch>
-                        </Router>
+                        <PideConcierto />
                     </section>
             </Parallax></Parallax>
 
