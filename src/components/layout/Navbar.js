@@ -1,6 +1,5 @@
 import React, { Fragment, useRef, useState, useEffect, useCallback } from 'react'
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { HashLink, NavHashLink } from 'react-router-hash-link';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
@@ -10,7 +9,8 @@ import titlesTranslation from '../translation/titles';
 import navbarTranslation from '../translation/navbar';
 import { Provider, Translate } from 'react-translated';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
-import NavbarMenu from './NavbarMenu'
+import { HashLink, NavHashLink } from 'react-router-hash-link';
+
 
 const Navbar = ({
     scrollRef,
