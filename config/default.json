@@ -1,8 +1,0 @@
-{
-    "MongoURI": "mongodb+srv://evan882:mernstack553@devconnector.nsfoi.mongodb.net/mern?retryWrites=true&w=majority",
-    "jwtSecret": "5e23f08641e8afdca8f6646058d42662f2b4621b367638bdf656554df7268ca6",
-    "githubClientId": "acd71026083e28b783b8",
-    "githubSecret": "cb5dccc9037caf41f926d8582792edc55633227c",
-    "stripe": "sk_test_51IqaDELHTCikUAWZCZRAVOWUiN8B2uSoi0VI0S8Q93CraHQAJ5SnCJHUZ5lDoNkzqNN4h4N894w5m8jg0az7D1Pb00Vk0NF57I",
-    "google": "AIzaSyAL44Nx7XNZVHgRQd0dugCD8zvw8CJYRc8"
-}
