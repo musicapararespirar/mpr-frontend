@@ -1,8 +1,9 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
+  "name": "MusicaParaRespirar",
+  "version": "1.0.0",
+  "description": "Música Para Respirar",
   "dependencies": {
+    "@date-io/date-fns": "^2.11.0",
     "@fontsource/josefin-sans": "^4.5.0",
     "@fullcalendar/core": "^5.9.0",
     "@fullcalendar/interaction": "^5.9.0",
