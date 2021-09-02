@@ -6,7 +6,7 @@
     "WORKDIR /usr/src/app",
     "ENV PATH /usr/src/app/node_modules/.bin:$PATH",
     "COPY . /usr/src/app",
-    "RUN npm install && npm install -g create-react-app && npm run build",
+    "RUN npm install && npm run build",
     "ENV PORT 80",
     "ENV NODE_ENV production",
     "EXPOSE 80",
