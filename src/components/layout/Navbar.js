@@ -8,7 +8,6 @@ import { setLanguage } from '../../actions/language';
 import titlesTranslation from '../translation/titles';
 import navbarTranslation from '../translation/navbar';
 import { Provider, Translate } from 'react-translated';
-import useDocumentScrollThrottled from './useDocumentScrollThrottled';
 import { HashLink, NavHashLink } from 'react-router-hash-link';
 
 
@@ -43,17 +42,6 @@ const Navbar = ({
     const MINIMUM_SCROLL = 80;
     const TIMEOUT_DELAY = 100;
 
-    useDocumentScrollThrottled(callbackData => {
-        const { previousScrollTop, currentScrollTop } = callbackData;
-        const isScrolledDown = previousScrollTop < currentScrollTop;
-        const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
-
-        setShouldShowShadow(currentScrollTop > 2);
-
-        setTimeout(() => {
-            setShouldHideHeader(isScrolledDown && isMinimumScrolled);
-        }, TIMEOUT_DELAY);
-    });
     const shadowStyle = shouldShowShadow ? 'shadow' : '';
     const hiddenStyle = shouldHideHeader ? 'hidden' : '';
     const navbarLinks = [{title: 'ABOUT', link: '/#about'},
