@@ -159,5 +159,10 @@ export default {
         en: "LANGUAGE",
         es: "IDIOMA",
         pt: "IDIOMA"
+    },
+    'Back': {
+        en: "Back",
+        es: "Regresar",
+        pt: "Voltar"
     }
 }

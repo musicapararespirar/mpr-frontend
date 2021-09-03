@@ -27,6 +27,14 @@ const ImpactLanding = ({
     const [featureSelected, setFeatureSelected] = useState(null);
 
 
+    const backButton = (
+        <Fragment>
+            <button onClick={e => (setFeatureSelected(null))}>
+                <i className="fas fa-long-arrow-alt-left" /> <Translate text="Back" />
+            </button>
+        </Fragment>
+    );
+
     const buttons = (
         <Fragment>
         <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
@@ -56,9 +64,7 @@ const ImpactLanding = ({
         <Fragment>
         <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
             <Numbers />
-            <button onClick={e => (setFeatureSelected(null))}>
-                <i className="fas fa-long-arrow-alt-left" /> Back
-            </button>
+            {backButton}
         </div>
         </Fragment>
     );
@@ -67,9 +73,7 @@ const ImpactLanding = ({
         <Fragment>
         <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
             <UnderConstruction />
-            <button onClick={e => (setFeatureSelected(null))}>
-                <i className="fas fa-long-arrow-alt-left" /> Back
-            </button>
+            {backButton}
         </div>
         </Fragment>
     );
@@ -78,9 +82,7 @@ const ImpactLanding = ({
         <Fragment>
         <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
             <UnderConstruction />
-            <button onClick={e => (setFeatureSelected(null))}>
-                <i className="fas fa-long-arrow-alt-left" /> Back
-            </button>
+            {backButton}
         </div>
         </Fragment>
     );
@@ -89,9 +91,7 @@ const ImpactLanding = ({
         <Fragment>
         <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
             <UnderConstruction />
-            <button onClick={e => (setFeatureSelected(null))}>
-                <i className="fas fa-long-arrow-alt-left" /> Back
-            </button>
+            {backButton}
         </div>
         </Fragment>
     );

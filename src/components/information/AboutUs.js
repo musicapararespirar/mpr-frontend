@@ -61,13 +61,19 @@ const AboutUs = ({
         </Fragment>
     );
 
+    const backButton = (
+        <Fragment>
+                <button onClick={e => (setDisplayInformationFor(null))}>
+                    <i className="fas fa-long-arrow-alt-left" /> <Translate text="Back" />
+                </button>
+        </Fragment>
+    );
+
     const mpr = (
         <Fragment>
             <div className='wide-landing-container about'>
                 <MusicaParaRespirar />
-                <button onClick={e => (setDisplayInformationFor(null))}>
-                    <i className="fas fa-long-arrow-alt-left" /> Back
-                </button>
+                {backButton}
             </div>
         </Fragment>
     );
@@ -75,13 +81,9 @@ const AboutUs = ({
     const musicians = (
         <Fragment>
             <div className='wide-landing-container about'>
-                <button onClick={e => (setDisplayInformationFor(null))}>
-                    <i className="fas fa-long-arrow-alt-left" /> Back
-                </button>
+                {backButton}
                 <Musicians />
-                <button onClick={e => (setDisplayInformationFor(null))}>
-                    <i className="fas fa-long-arrow-alt-left" /> Back
-                </button>
+                {backButton}
             </div>
         </Fragment>
     );
@@ -90,9 +92,7 @@ const AboutUs = ({
         <Fragment>
             <div className='wide-landing-container about'>
                 <LaSociedad />
-                <button onClick={e => (setDisplayInformationFor(null))}>
-                    <i className="fas fa-long-arrow-alt-left" /> Back
-                </button>
+                {backButton}
             </div>
         </Fragment>
     );
@@ -101,9 +101,7 @@ const AboutUs = ({
         <Fragment>
             <div className='wide-landing-container about' style={{maxWidth: '70%'}}>
                 <Team />
-                <button onClick={e => (setDisplayInformationFor(null))}>
-                    <i className="fas fa-long-arrow-alt-left" /> Back
-                </button>
+                {backButton}
             </div>
         </Fragment>
     );
