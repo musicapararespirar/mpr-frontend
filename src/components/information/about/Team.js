@@ -75,42 +75,40 @@ const Team = ({
     return <Provider language={languageCode} translation={allTranslations}>
             <Fragment>
                 <div className="wide-landing-container team">
+                    <div className='x-large' style={{ marginBottom: '0px', width: '40%', float: 'left'}}>
+                        <Textfit mode='single' forceSingleModeWidth={true} max={200}>TEAM</Textfit>
+                    </div>
+                    <div className='pink' style={{float: 'right', width: '60%'}}>
+                        <Translate text="theTeam" />
+                    </div>
+                    <div style={{clear: 'both'}} />
 
-                        {visibilityProfile ? (
-                            <Fragment>
-                            <div className='container'>
-                                <div className='about' style={{
-                                    float: 'left',
-                                    width: '10%',
-                                    margin: '25% 0'
-                                    }}>
-                                    <button onClick={e => (setVisibilityProfile(null))}>
-                                        <i style={{ width: '2rem', margin: 'auto' }} className="fas fa-chevron-left fa-2x"/>
-                                    </button>
-                                </div>
-                                <div className="Profile" style={{textAlign: 'justify', float: 'left', width: '90%'}}>
-                                    <h1 className='x-large pink'>{getProfileByID(visibilityProfile).fullName.toUpperCase()}</h1>
-                                    <h2 className="pink"><Translate text={getProfileByID(visibilityProfile).title} /></h2>
-                                    <i className='line-pink' />{getProfileByID(visibilityProfile).bio}
-                                </div>
-                            </div>
-                                <div style={{clear: 'both'}} />
-                            </Fragment>
-                        ) : (
+                    {visibilityProfile ? (
                         <Fragment>
-                            <div className='x-large' style={{ marginBottom: '0px', width: '40%', float: 'left'}}>
-                                <Textfit mode='single' forceSingleModeWidth={true} max={200}>TEAM</Textfit>
+                            <div className='about' style={{
+                                float: 'left',
+                                margin: '25% 0'
+                                }}>
+                                <button onClick={e => (setVisibilityProfile(null))}>
+                                    <i style={{ margin: 'auto' }} className="fas fa-chevron-left fa-2x"/>
+                                </button>
                             </div>
-                            <div className='pink' style={{float: 'right', width: '60%'}}>
-                                <Translate text="theTeam" />
+                            <div className="Profile" style={{textAlign: 'justify', float: 'left', width: '90%', marginLeft: '10px'}}>
+                                <h1 className='x-large pink'>{getProfileByID(visibilityProfile).fullName.toUpperCase()}</h1>
+                                <h2 className="pink"><Translate text={getProfileByID(visibilityProfile).title} /></h2>
+                                <i className='line-pink' />{getProfileByID(visibilityProfile).bio}
                             </div>
-                            <div style={{ width: '100%', clear: 'both'}}>
-                                {teamTable}
-                            </div>
+                            <div style={{clear: 'both'}} />
                         </Fragment>
-                        )}
+                    ) : (
+                    <Fragment>
+                        <div style={{ width: '100%', clear: 'both'}}>
+                            {teamTable}
+                        </div>
+                    </Fragment>
+                    )}
 
-                        <br/><br/>
+                    <br/><br/>
                 </div>
             </Fragment>
             </Provider>
