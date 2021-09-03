@@ -51,7 +51,6 @@ export default {
         'viola': {en: 'Viola', es: 'Viola', pt: 'Viola'},
         'violin': {en: 'Violin', es: 'Violin', pt: 'Violino'},
         'voice': {en: 'Voice', es: 'Voz', pt: 'Voz'},
-
         'argentina': {en: 'Argentina', es: 'Argentina', pt: 'Argentina'},
         'bolivia': {en: 'Bolivia', es: 'Bolivia', pt: 'Bolívia'},
         'brazil': {en: 'Brazil', es: 'Brasil', pt: 'Brasil'},
@@ -67,7 +66,14 @@ export default {
         'spain': {en: 'Spain', es: 'España ', pt: 'Espanha'},
         'united states of america': {en: 'United States of America', es: 'USA', pt: 'Estados Unidos'},
         'uruguay': {en: 'Uruguay', es: 'Uruguay', pt: 'Uruguay'},
-
+        'co-founder': {pt: 'CO-FUNDADORA', en: 'CO-FOUNDER', es: 'CO-FUNDADORA'},
+        'finance director': {pt: 'DIRETORA FINANCEIRA', en: 'FINANCE DIRECTOR', es: 'DIRECTORA FINANCIERA'},
+        'press and communications': {pt: 'COORDENADORA DE IMPRENSA', en: 'PRESS AND COMMUNICATIONS', es: 'COORDINADORA PRENSA'},
+        'artistic production': {pt: 'PRODUTORA ARTÍSTICA', en: 'ARTISTIC PRODUCTION', es: 'PRODUCCIÓN ARTÍSTICA'},
+        'general support': {pt: 'SUPORTE GERAL ', en: 'GENERAL SUPPORT', es: 'APOYO GENERAL'},
+        'inst. coordinator': {pt: 'COORDENADORA INST.', en: 'INST. COORDINATOR', es: 'COORDINADORA INSTI.'},
+        'mpr coordinator': {pt: 'COORDENADORA MPR', en: 'MPR COORDINATOR', es: 'COORDINACIÓN MPR'},
+        'artistic production': {pt: 'PRODUTORA ARTÍSTICA', en: 'ARTISTIC PRODUCTION', es: 'PRODUCCIÓN ARTÍSTICA'},
 
 
 
