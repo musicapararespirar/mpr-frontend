@@ -1,13 +1,13 @@
 export default {
     "ContactUs": {
         en: "Contact us at",
-        es: "",
-        pt: ""
+        es: "Contáctanos",
+        pt: "Fale conosco"
     },
     "newsAndUpdates": {
         en: "For news and updates you can follow our social media channels on",
         es: "Para más noticias puedes seguirnos en",
-        pt: ""
+        pt: "Para mais notícias você pode nos seguir no"
     },
     "and": {
         en: "and",

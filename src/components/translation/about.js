@@ -2,31 +2,32 @@ export default {
     'aboutDescriptionP1': {
         en: 'Musica para Respirar (Music to Breathe) 24/7 is a project of the Bolivian Chamber Music Society (La Sociedad) that brings together professional musicians from across Latin America to offer online concerts to people impacted by COVID-19 everywhere. The concerts are free and provided via video calls by teams of musicians for 24 hours-a-day over the course of a week.',
         es: 'Música para Respirar 24/7 es un proyecto de la Sociedad Boliviana de Música de Cámara que reúne músicos y músicas profesionales de toda América Latina para ofrecer conciertos virtuales, con el propósito de dar un respiro musical a personas impactadas directa o indirectamente por la Covid-19 en todo el mundo. Los mini-conciertos son totalmente gratuitos y se realizan a través de videollamadas por músicos y músicas que están disponibles 24 horas al día por una semana.',
-        pt: ''
+        pt: 'Música para Respirar 24/7 é um projeto da Sociedade Boliviana de Música de Câmara que une músicos e músicas profissionais de toda a América Latina para oferecer concertos virtuais para pessoas impactadas pelo COVID-19 em todo o mundo. Os mini-concertos são totalmente gratuitos e realizados através de videochamadas por equipes de músicos e músicas disponíveis 24 horas por dia ao longo de uma semana.'
     },
     'aboutDescriptionP2': {
         en: 'Música para Respirar 24/7 was created to pay tribute and offer a brief respite to overstretched healthcare workers and anybody impacted by the COVID-19 pandemic. Besides helping to reduce feelings of isolation and providing a space for tranquility for the listener, Música para Respirar 24/7 also aims to democratize classical music by using social media to reach communities with limited access to the arts..',
         es: 'Lanzada en Agosto del 2020 cómo una respuesta artística a la crisis sanitaria global, la idea de tener músicos y músicas disponibles 24 horas al día fue conceptualizada como un tributo al personal del área de la salud y sus turnos extenuantes, así también como una declaración sobre la importancia de la música en tiempos de crisis. La intención de cada concierto es crear un espacio de tranquilidad y bienestar para cada oyente. ',
-        pt: ''
+        pt: 'Música para Respirar 24/7 foi criada para homenagear e oferecer um breve respiro aos trabalhadores da saúde sobrecarregados e à qualquer pessoa impactada pela pandemia de COVID-19. Além de reduzir a sensação de isolamento e proporcionar um espaço de tranquilidade ao ouvinte, Música para Respirar 24/7 também visa democratizar a música clássica por meio das mídias sociais, atingindo comunidades com acesso limitado às artes.'
         },
     'aboutDescriptionP3': {
         en: 'Since it was launched in August of 2020, Musica para Respirar 24/7 has brought together more than 80 musicians from across Latin America, Europe and the US and performed to more than 12,000 people in 50 countries around the world.  Healthcare workers, vulnerable children in orphanages and elderly people in retirement homes have been among the recipients of concerts. Música para Respirar 24/7 has also provided respite to hundreds of survivors of Covid-19 and their friends and families around the world.',
-        es: 'Hasta la fecha, estos conciertos han sido presentados por 80 músicos profesionales y han alcanzado a más de 12,000 personas en 50 países. Rápidamente, Música para Respirar 24/7 se ha convertido en una herramienta de democratización de la música clásica, llegando a poblaciones que inclusive antes de la pandemia no tenían acceso a esta expresión artística.'
+        es: 'Hasta la fecha, estos conciertos han sido presentados por 80 músicos profesionales y han alcanzado a más de 12,000 personas en 50 países. Rápidamente, Música para Respirar 24/7 se ha convertido en una herramienta de democratización de la música clásica, llegando a poblaciones que inclusive antes de la pandemia no tenían acceso a esta expresión artística.',
+        pt: 'Desde seu lançamento em Agosto de 2020, Música para Respirar 24/7 reuniu mais de 80 músicos e músicas de toda a America Latina, Europa e Estados Unidos e se apresentou para mais de 12.000 pessoas em 50 países ao redor do mundo. Profissionais da saúde, crianças em situação de vulnerabilidade, idosos em asilos estão entre os destinatários dos concertos. Música para Respirar 24/7 também realizou concertos para centenas de sobreviventes do COVID-19 e suas famílias ao redor do mundo.'
     },
     'aboutLaSociedadP1': {
-        en: 'The Bolivian Chamber Music Society (La Sociedad) was created in 2014 by musicians Camila Barrientos, Bruno Lourensetto and Sergio Escalera with the mission of making classical music available to all by creating, producing and promoting exceptional artistic content in Bolivia, Latin America and the world.',
-        es: 'La Sociedad Boliviana de Música de Cámara (La Sociedad) fue creada en 2014 por los músicos Camila Barrientos, Bruno Lourensetto y Sergio Escalera con la misión de democratizar el acceso a la música clásica, creando, produciendo y promoviendo experiencias de excepcional contenido artístico en Bolivia, Latinoamérica y el mundo.',
-        pt: ''
+        en: 'The Bolivian Chamber Music Society (La Sociedad) was created in 2014 by musicians Camila Barrientos, Bruno Lourensetto and Sergio Escalera with the mission of *making classical music available to all by creating, producing and promoting exceptional artistic content in Bolivia, Latin America and the world*.',
+        es: 'La Sociedad Boliviana de Música de Cámara (La Sociedad) fue creada en 2014 por los músicos Camila Barrientos, Bruno Lourensetto y Sergio Escalera con la misión de *democratizar el acceso a la música clásica, creando, produciendo y promoviendo experiencias de excepcional contenido artístico en Bolivia, Latinoamérica y el mundo*.',
+        pt: 'A Sociedade Boliviana de Música de Câmara (La Sociedad) foi criada em 2014 por Camila Barrientos, Bruno Lourensetto e Sergio Escalera com a missão de *democratizar o acesso à música clássica, criando, produzindo e promovendo experiências de excepcional contudo artístico na Bolivia, América Latina e no mundo*.'
         },
     'aboutLaSociedadP2': {
         en: "La Sociedad has organized annual festivals in Bolivia where it premiered works such as the Quartet for the End of Time by Oliver Messiaen, Soldier's Tale by Igor Stravinsky and In C by Terry Riley. Deeply committed to the future of classical music in the region, La Sociedad launched the program Promesas with the aim of providing professional opportunities to young Bolivian musicians in 2015.",
         es: 'En sus festivales anuales en Bolivia, presentó los estrenos bolivianos de obras como El Cuarteto para el Fin de los Tiempos de Oliver Messiaen, La historia del Soldado de Igor Stravinsky e In C de Terry Riley, entre otras. Comprometidos con el futuro de la música clásica en Bolivia crearon el proyecto “Promesas” para brindar oportunidades profesionales a jóvenes músicos bolivianos.',
-        pt: ''
+        pt: 'Em seus festivais anuais, La Sociedad apresentou estréias bolivianas de obras como O Quarteto para o Fim dos Tempos de Olivier Messiaen, A História do Soldado de Igor Stravinsky e In C de Terry Riley, entre outras obras. Comprometidos com o futuro da música clássica na Bolívia, La Sociedad lançou em 2015 o programa Promesas com o objetivo de oferecer oportunidades profissionais para jovens músicos bolivianos.'
         },
     'theTeam': {
         en: 'La Sociedad is made up of 10 musicians, six of whom were former Promesas recipients.',
         es: 'Actualmente está conformada por 10 músicos y músicas, 6 de las cuales fueron parte del proyecto Promesas.',
-        pt: ''
+        pt: 'La Sociedad é formada por 10 músicos e músicas, seis dos quais foram parte do projeto Promesas.'
         },
 
     // Instruments

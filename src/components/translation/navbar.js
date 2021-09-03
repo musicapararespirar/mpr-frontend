@@ -3,7 +3,7 @@ export default {
     'ABOUT': {
         en: 'ABOUT',
         es: 'ACERCA DE',
-        pt: ''
+        pt: 'SOBRE'
     },
     'Música para Respirar': {
         en: 'Música para Respirar',
@@ -18,12 +18,12 @@ export default {
     'LA SOCIEDAD': {
         en: 'LA SOCIEDAD',
         es: 'LA SOCIEDAD',
-        pt: ''
+        pt: 'LA SOCIEDAD'
     },
     'Team': {
         en: 'Team',
         es: 'El Equipo',
-        pt: ''
+        pt: 'Equipe'
     },
     'TEAM': {
         en: 'TEAM',
@@ -40,7 +40,7 @@ export default {
     'REQUEST A CONCERT': {
         en: 'REQUEST A CONCERT',
         es: 'PIDE TU CONCIERTO',
-        pt: ''
+        pt: 'PEÇA SEU CONCERTO'
     },
     'Personal Concert': {
         en: 'Personal Concert',
@@ -67,7 +67,7 @@ export default {
     'IMPACT': {
         en: 'IMPACT',
         es: 'IMPACTO',
-        pt: ''
+        pt: 'IMPACTO'
     },
     'Numbers': {
         en: 'Numbers',
@@ -94,17 +94,17 @@ export default {
     'MEDIA': {
         en: 'MEDIA',
         es: 'MEDIA',
-        pt: ''
+        pt: 'GALERIA'
     },
     'Musicians': {
         en: 'Musicians',
         es: 'Artistas',
-        pt: ''
+        pt: 'Artistas'
     },
     'MUSICIANS': {
         en: 'MUSICIANS',
         es: 'ARTISTAS',
-        pt: ''
+        pt: 'ARTISTAS'
     },
     'Pictures': {
         en: 'Pictures',
@@ -121,14 +121,14 @@ export default {
     'SUPPORT US': {
         en: 'SUPPORT US',
         es: 'CONTRIBUYE',
-        pt: ''
+        pt: 'CONTRIBUA'
     },
 
     // 6: Contact us
     'CONTACT US': {
         en: 'CONTACT US',
         es: 'CONTACTO',
-        pt: ''
+        pt: 'CONTATO'
     },
     'Email': {
         en: 'Email',
@@ -153,11 +153,11 @@ export default {
     'currentLanguage': {
         en: 'English',
         es: 'Español',
-        pt: 'Portuguêse'
+        pt: 'Português'
     },
     'LANGUAGE': {
         en: "LANGUAGE",
         es: "IDIOMA",
-        pt: ""
+        pt: "IDIOMA"
     }
 }

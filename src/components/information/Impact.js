@@ -35,10 +35,10 @@ const ImpactLanding = ({
                 <Translate text="IMPACT" />
             </h1>
         </Textfit><br/>
-            <button onClick={e => (setFeatureSelected('numbers'))}>NUMBERS</button>
-            <button onClick={e => (setFeatureSelected('maps'))}>MAPS</button>
-            <button onClick={e => (setFeatureSelected('press'))}>PRESS</button>
-            <button onClick={e => (setFeatureSelected('reports'))}>REPORTS</button>
+            <button onClick={e => (setFeatureSelected('numbers'))}><Translate text="NUMBERS" /></button>
+            <button onClick={e => (setFeatureSelected('maps'))}><Translate text="MAPS" /></button>
+            <button onClick={e => (setFeatureSelected('press'))}><Translate text="PRESS" /></button>
+            <button onClick={e => (setFeatureSelected('reports'))}><Translate text="REPORTS" /></button>
         <br/><br/><br/><br/><br/><br/>
             <small style={{
                     display: 'inline-block',

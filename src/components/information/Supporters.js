@@ -53,7 +53,7 @@ const Supporters = ({
                     fontSize: '1rem',
                     color: '#492b74',
                     textAlign: 'center'
-                }}>Stefan Heucke, Tenny Barron and Ursula Bentele, Martin Mueller, Hendrik Burgdörfer
+                }}>Stefan Heucke, Tenny Barron <Translate text="and" /> Ursula Bentele, Martin Mueller, Hendrik Burgdörfer
             </p><br/><br/><p style={{
                     fontSize: '1rem',
                     color: '#492b74',

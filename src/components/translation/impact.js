@@ -5,9 +5,9 @@ export default {
     pt: 'Em construção',
   },
   'THE NUMBERS': {
-    en: 'THE NUMBERS',
-    es: 'LOS NÚMEROS',
-    pt: 'OS NÚMEROS',
+    en: 'NUMBERS',
+    es: 'CIFRAS',
+    pt: 'NÚMEROS',
   },
   'MUSICIANS': {
     en: 'MUSICIANS',
@@ -15,9 +15,9 @@ export default {
     pt: 'MÚSICOS',
   },
     'TIME': {
-    en: 'TIME',
-    es: 'TIEMPO',
-    pt: 'TEMPO',
+    en: 'MINUTES',
+    es: 'MINUTOS',
+    pt: 'MINUTOS',
   },
     'LISTENERS': {
     en: 'LISTENERS',
@@ -25,13 +25,33 @@ export default {
     pt: 'OUVINTES',
   },
       'CALLS': {
-    en: 'CALLS',
+    en: 'CONCERTS',
     es: 'LLAMADAS',
-    pt: 'CHAMADAS',
+    pt: 'CONCERTOS',
   },
   "cada historia cuenta": {
       en: "every moment counts",
       es: "cada historia cuenta",
-      pt: ""
-}
+      pt: "toda história conta"
+  },
+  'NUMBERS': {
+    en: 'NUMBERS',
+    es: 'CIFRAS',
+    pt: 'NÚMEROS',
+},
+  'MAPS': {
+    en: 'MAPS',
+    es: 'MAPA',
+    pt: 'MAPA',
+},
+  'PRESS': {
+    en: 'PRESS',
+    es: 'PRENSA',
+    pt: 'IMPRENSA',
+},
+  'REPORTS': {
+    en: 'REPORTS',
+    es: 'REPORTES',
+    pt: 'REPORTES',
+  },
 }

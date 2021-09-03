@@ -76,7 +76,7 @@ const Team = ({
             <Fragment>
                 <div className="wide-landing-container team">
                     <div className='x-large' style={{ marginBottom: '0px', width: '40%', float: 'left'}}>
-                        <Textfit mode='single' forceSingleModeWidth={true} max={200}>TEAM</Textfit>
+                        <Textfit mode='single' forceSingleModeWidth={true} max={200}><Translate text="TEAM" /></Textfit>
                     </div>
                     <div className='pink' style={{float: 'right', width: '60%'}}>
                         <Translate text="theTeam" />

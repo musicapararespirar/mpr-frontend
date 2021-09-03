@@ -17,12 +17,12 @@ export default {
     'SUPPORT US': {
         en: 'SUPPORT US',
         es: 'CONTRIBUYE',
-        pt: ''
+        pt: 'CONTRIBUA'
     },
     'supportUsLanding': {
         en: "Música para Respirar 24/7 is a new way of making music in a more personal way. By donating whatever you can, you will help us cover the costs of administration, graphic design and, mainly, the costs of hiring musicians in all of Latin America. Funds raised will be used to help the project reach even more people, many of whom don't have access to classical music.",
         es: "Música para Respirar 24/7 es una nueva forma de hacer música de manera más personal. Contribuye para que llegue a más gente de forma totalmente gratuita. Al apoyarnos estás gestionando el  trabajo de administración, coordinación, diseño gráfico y la contratación de artistas en toda América latina y el mundo.",
-        pt: ''
+        pt: 'Música para Respirar 24/7 é uma nova forma de fazer música muito mais pessoal. Doando qualquer quantia você estará nos ajudando a cobrir os gastos de administração, design gráfico e o mais importante, a contratação de artistas em toda América Latina e no mundo. Os fundos são utilizados para que o projeto alcance ainda mais pessoas, muitas das quais não têm acesso à música clássica.'
     },
     "CLICK HERE": {
         en: "CLICK HERE",
@@ -40,8 +40,8 @@ export default {
         pt: "Para doações dedutíveis de impostos nos EUA",
     },
       "la música está llamandote": {
-      en: "the music is calling",
+      en: "the music is calling you",
       es: "la música está llamandote",
-      pt: ""
+      pt: "a música está chamando você"
 }
 }
