@@ -114,6 +114,7 @@ const AboutUs = ({
                 {displayInformationFor && displayInformationFor === "LaSociedad" ? lasociedad : null}
                 {displayInformationFor && displayInformationFor === "Musicians" ? musicians : null}
                 {displayInformationFor && displayInformationFor === "Team" ? team : null}
+            <br/><br/>
             </Fragment>
             </Provider>
 }

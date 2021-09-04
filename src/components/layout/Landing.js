@@ -51,8 +51,8 @@ const Landing = ({
                 style={{boxShadow: "inset 0px 0px 50px -60px #000000, inset 0px -940px 90px -60px #000000"}}
                 bgImage={slideshow3}>
                 <section className="inner-landing-container" style={{
-                    minHeight: '1vh',
-                    marginBottom: '20vh',
+                    minHeight: '35vh',
+                    marginBottom: '0vh',
                     textAlign: 'center',
                     display: 'block',
                     marginTop: '15vh'
@@ -62,7 +62,7 @@ const Landing = ({
                 <section className='wide-landing-container' style={{
                     textAlign: 'center',
                     backgroundPosition: 'center',
-                    marginBottom: '18vh',
+                    marginBottom: '100px',
                     height: '1vh'
                 }}>
                     <h1 style={{fontSize: '0.9rem'}}><Translate text="thisisP1" /></h1>
