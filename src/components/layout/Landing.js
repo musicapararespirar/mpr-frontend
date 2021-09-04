@@ -106,7 +106,11 @@ const Landing = ({
             <Parallax
                 strength={500}
                 blur={10}
-                bgImageStyle={{opacity: 0.2, height: '80vh'}}
+                bgImageStyle={{
+                    opacity: 0.2,
+                    height: '80vh',
+                    minWidth: '100vw',
+                    minHeight: '120%'}}
                 bgImage={slideshow4}>
                 <section className="landing-container" style={{minHeight: '50vh'}}>
                     <AboutUs />
@@ -128,7 +132,11 @@ const Landing = ({
             <Parallax
                 strength={500}
                 blur={10}
-                bgImageStyle={{opacity: 0.2, height: '110%'}}
+                bgImageStyle={{
+                    opacity: 0.2,
+                    height: '80vh',
+                    minWidth: '100vw',
+                    minHeight: '120%'}}
                 bgImage={slideshow5}>
                 <section className="landing-container" style={{minHeight: '50vh'}}>
                     <Contact />
