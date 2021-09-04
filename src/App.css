@@ -1740,7 +1740,7 @@ transform-origin: 0 0; /* see note above */
 /* Dropdown button */
 .dropdown .dropbtn {
 /*   text-shadow: 0 1px white; */
-  font-size: 19px;
+  font-size: 1rem;
   border: none;
   outline: none;
   overflow: hidden;
@@ -1758,7 +1758,7 @@ transform-origin: 0 0; /* see note above */
 /* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
-  font-size: 17px;
+  font-size: 0.9rem;
   position: absolute;
   background-color: transparent;
   opacity: .95;

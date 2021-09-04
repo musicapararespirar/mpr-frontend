@@ -66,7 +66,7 @@ const Navbar = ({
                 <button className="dropbtn"><Translate text="LANGUAGE" />
                 <div style={{
                     position: 'relative',
-                    fontSize: '12px',
+                    fontSize: '0.7rem',
                     margin: 'auto',
                     left: 0,
                     right: 0

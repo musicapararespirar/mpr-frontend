@@ -47,17 +47,17 @@ const Landing = ({
             <div id="concert-info" />
             <Parallax
                 strength={500}
-                bgImageStyle={{opacity: 0.2, height: '70%'}}
+                bgImageStyle={{opacity: 0.2, height: '120vh', minWidth: '100vw'}}
                 style={{boxShadow: "inset 0px 0px 50px -60px #000000, inset 0px -940px 90px -60px #000000"}}
                 bgImage={slideshow3}>
                 <section className="inner-landing-container" style={{
                     minHeight: '1vh',
-                    marginBottom: '27vh',
+                    marginBottom: '20vh',
                     textAlign: 'center',
                     display: 'block',
                     marginTop: '15vh'
                     }}>
-                    <img src={logoLarge}/><br/>
+                    <img src={logoLarge} style={{width: '70%'}}/><br/>
                 </section>
                 <section className='wide-landing-container' style={{
                     textAlign: 'center',
@@ -74,9 +74,11 @@ const Landing = ({
                     strength={500}
                     blur={10}
                     bgImageStyle={{opacity: 0.2}}
-                    style={{background: '#4a2c75', clipPath: "polygon(0% 0%, 40% 0%, 50% 5%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
+                    style={{
+                        background: '#4a2c75',
+                        clipPath: "polygon(0% 0%, 40% 0%, 50% 5%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
-                    <section className="landing-container">
+                    <section className="landing-container" style={{minHeight: '50vh'}}>
                         <PideConcierto />
                     </section>
             </Parallax></Parallax>
@@ -95,7 +97,7 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#ea9d28'}}>
-                    <section className="landing-container">
+                    <section className="landing-container" style={{minHeight: '50vh'}}>
                         <Impact />
                     </section>
             </Parallax>
@@ -104,12 +106,9 @@ const Landing = ({
             <Parallax
                 strength={500}
                 blur={10}
-                bgImageStyle={{opacity: 0.2}}
-                style={{
-                    minHeight: '1050px'
-                }}
+                bgImageStyle={{opacity: 0.2, height: '80vh'}}
                 bgImage={slideshow4}>
-                <section className="landing-container">
+                <section className="landing-container" style={{minHeight: '50vh'}}>
                     <AboutUs />
                 </section>
             </Parallax>
@@ -120,7 +119,7 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#4a2c75'}}>
-                    <section className="landing-container">
+                    <section className="landing-container" style={{minHeight: '50vh'}}>
                     <Support />
                     </section>
             </Parallax>
@@ -131,7 +130,7 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2, height: '110%'}}
                 bgImage={slideshow5}>
-                <section className="landing-container">
+                <section className="landing-container" style={{minHeight: '50vh'}}>
                     <Contact />
                 </section>
             </Parallax>
@@ -142,7 +141,7 @@ const Landing = ({
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#ea9d28'}}>
                     <section>
-                    <Supporters />
+                        <Supporters />
                     </section>
             </Parallax>
             <div id="footer" />

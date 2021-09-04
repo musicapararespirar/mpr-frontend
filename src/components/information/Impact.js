@@ -37,7 +37,6 @@ const ImpactLanding = ({
 
     const buttons = (
         <Fragment>
-        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
         <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 style={{textAlign: 'center'}} className='mpr-header'>
                 <Translate text="IMPACT" />
@@ -57,53 +56,45 @@ const ImpactLanding = ({
                     fontWeight: 500,
                     color: '#492b74'
                 }}><Translate text="cada historia cuenta" />...</small>
-            </div>
         </Fragment>
     );
     const numbers = (
         <Fragment>
-        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
             <Numbers />
             {backButton}
-        </div>
         </Fragment>
     );
 
     const maps = (
         <Fragment>
-        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
             <UnderConstruction />
             {backButton}
-        </div>
         </Fragment>
     );
 
     const press = (
         <Fragment>
-        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
             <UnderConstruction />
             {backButton}
-        </div>
         </Fragment>
     );
 
     const reports = (
         <Fragment>
-        <div className="inner-landing-container impact" style={{minHeight: '50vh'}}>
+
             <UnderConstruction />
             {backButton}
-        </div>
         </Fragment>
     );
     return <Provider language={languageCode} translation={allTranslations}>
         <Fragment>
-
-            {!featureSelected ? buttons : null}
-            {featureSelected && featureSelected === 'numbers' ? numbers : null}
-            {featureSelected && featureSelected === 'maps' ? maps : null}
-            {featureSelected && featureSelected === 'press' ? press : null}
-            {featureSelected && featureSelected === 'reports' ? reports : null}
-
+            <div className="inner-landing-container impact">
+                {!featureSelected ? buttons : null}
+                {featureSelected && featureSelected === 'numbers' ? numbers : null}
+                {featureSelected && featureSelected === 'maps' ? maps : null}
+                {featureSelected && featureSelected === 'press' ? press : null}
+                {featureSelected && featureSelected === 'reports' ? reports : null}
+            </div>
             </Fragment>
             </Provider>
 }
