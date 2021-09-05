@@ -8,7 +8,8 @@ import './App.css';
 // Redux imports
 import { Provider } from 'react-redux';
 import store from './store';
-import "@fontsource/josefin-sans";
+import "@fontsource/voltaire";
+// import { useFonts } from '@expo-google-fonts/voltaire';
 
 const App = () => {
     return (
