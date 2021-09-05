@@ -43,5 +43,5 @@ export default {
       en: "the music is calling you",
       es: "la música está llamandote",
       pt: "a música está chamando você"
-}
+    }
 }
