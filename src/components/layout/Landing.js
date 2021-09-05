@@ -50,19 +50,19 @@ const Landing = ({
             <Parallax
                 strength={500}
                 bgImageStyle={
-                    (window.innerWidth > 1030) ? {
-                        opacity: 0.2, height: '120vh', minWidth: '100vw'
-
-                    } : {opacity: 0.2, height: '85vh', minWidth: '85vw'}}
-                style={{boxShadow: "inset 0px 0px 50px -60px #000000, inset 0px -940px 90px -60px #000000"}}
-                bgImage={slideshow3}>
+                    window.innerWidth > 1030 ? {
+                        opacity: 0.2, height: '100vh', minWidth: '100vw'
+                    } : {
+                        opacity: 0.2, height: '88vh', minWidth: '80vw'
+                    }}
+                style={{
+                    boxShadow: "inset 0px 0px 50px -60px #000000, inset 0px -940px 90px -60px #000000"}}
+                bgImage={slideshow2}>
                 <section className="inner-landing-container" style={{
-//                     minHeight: '35vh',
                     marginBottom: '0vh',
                     marginTop: '40vh',
                     textAlign: 'center',
                     display: 'block',
-//                     marginTop: '15vh'
                     }}>
                     <img src={logoLarge} style={{width: '70%'}}/><br/>
                 </section>
@@ -83,7 +83,7 @@ const Landing = ({
                     bgImageStyle={{opacity: 0.2}}
                     style={{
                         background: '#4a2c75',
-                        clipPath: "polygon(0% 0%, 40% 0%, 50% 5%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
+                        clipPath: "polygon(0% 0%, 40vw 0%, 50vw 7vw, 60vw 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
                     <section className="landing-container" style={{minHeight: '50vh'}}>
                         <PideConcierto />
