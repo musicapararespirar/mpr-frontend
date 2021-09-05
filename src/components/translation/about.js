@@ -44,7 +44,7 @@ export default {
     'multi-instrumentalist': {en: 'Multi-Instrumentalist', es: 'Multi-Instrumentista', pt: 'Multi-instrumentalist'},
     'music therapist': {en: 'Music Therapist', es: 'Musicoterapeuta', pt: 'Musicoterapeuta'},
     'oboe': {en: 'Oboe', es: 'Oboe', pt: 'Oboé'},
-    'percusion': {en: 'Percusion', es: 'Percusión', pt: 'Percussão'},
+    'percusion': {en: 'Percussion', es: 'Percusión', pt: 'Percussão'},
     'piano': {en: 'Piano', es: 'Piano', pt: 'Piano'},
     'saxophone': {en: 'Saxophone', es: 'Saxofón', pt: 'Saxofone'},
     'singer songwriter': {en: 'Singer Songwriter', es: 'Cantautor', pt: 'Cantor e compositor'},

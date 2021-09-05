@@ -95,7 +95,7 @@ const Team = ({
                             </div>
                             <div className="Profile" style={{textAlign: 'justify', float: 'left', width: '90%', marginLeft: '10px'}}>
                                 <h1 className='x-large pink' style={{display: 'table-caption', margin: 0}}>{getProfileByID(visibilityProfile).fullName.toUpperCase()}</h1>
-                                <h2 className="pink" style={{fontWeight: 0}}><Translate text={getProfileByID(visibilityProfile).title} /></h2>
+                                <h2 className="pink" style={{fontWeight: 0}}><Translate text={getProfileByID(visibilityProfile).title} /> | <Translate text={getProfileByID(visibilityProfile).instrument} /></h2>
                                 <i className='line-pink' /><Translate text={getProfileByID(visibilityProfile).bio} /><br/><br/>
                                 {getProfileByID(visibilityProfile).quote ? (
                                     <i>"<Translate text={getProfileByID(visibilityProfile).quote} />"</i>

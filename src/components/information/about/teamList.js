@@ -14,7 +14,7 @@ export default [
     {
         id: 1,
         fullName: 'Camila Barrientos',
-        instrument: '',
+        instrument: 'clarinet',
         title: 'co-founderF',
         thumbnail: camila,
         bio: 'camilabio',
@@ -23,7 +23,7 @@ export default [
     {
         id: 2,
         fullName: 'Bruno Lourensetto',
-        instrument: '',
+        instrument: 'trumpet',
         title: 'co-founderM',
         thumbnail: bruno,
         bio: 'brunobio',
@@ -32,7 +32,7 @@ export default [
     {
         id: 3,
         fullName: 'Andrea García',
-        instrument: '',
+        instrument: 'cello',
         title: 'finance director',
         thumbnail: vania,
         bio: 'vaniabio',
@@ -41,7 +41,7 @@ export default [
     {
         id: 4,
         fullName: 'Anahí Garvizu',
-        instrument: '',
+        instrument: 'cello',
         title: 'press and communications',
         thumbnail: anahi,
         bio: 'anahibio',
@@ -50,7 +50,7 @@ export default [
     {
         id: 5,
         fullName: 'Claudia Machicado',
-        instrument: '',
+        instrument: 'bass',
         title: 'artistic production',
         thumbnail: claudia,
         bio: 'claudiabio',
@@ -59,7 +59,7 @@ export default [
     {
         id: 6,
         fullName: 'Fernando López',
-        instrument: '',
+        instrument: 'piano',
         title: 'media support',
         thumbnail: fernando,
         bio: 'fernandobio',
@@ -68,7 +68,7 @@ export default [
     {
         id: 7,
         fullName: 'Gabriel Bilbao',
-        instrument: '',
+        instrument: 'violin',
         title: 'support',
         thumbnail: gabriel,
         bio: 'gabrielbio',
@@ -77,7 +77,7 @@ export default [
     {
         id: 8,
         fullName: 'Karin Cuellar',
-        instrument: '',
+        instrument: 'violin',
         title: 'inst. coordinator',
         thumbnail: karin,
         bio: 'karinbio',
@@ -86,7 +86,7 @@ export default [
     {
         id: 9,
         fullName: 'Karla Jiménez',
-        instrument: '',
+        instrument: 'clarinet',
         title: 'mpr coordinator',
         thumbnail: karla,
         bio: 'karlabio',
@@ -95,7 +95,7 @@ export default [
     {
         id: 10,
         fullName: 'Paola Machicado',
-        instrument: '',
+        instrument: 'percusion',
         title: 'artistic production',
         thumbnail: paola,
         bio: 'paolabio',
