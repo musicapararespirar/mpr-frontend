@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,7 @@ import concertTranslation from '../translation/concerts';
 import titlesTranslation from '../translation/titles';
 import PropTypes from 'prop-types';
 import LoginLogo from './LoginLogo'
+import ConcertTypes from '../information/concerts/ConcertTypes.js';
 import { Textfit } from 'react-textfit';
 
 
@@ -20,12 +21,19 @@ const PideConcierto = ({
         ...titlesTranslation,
         ...concertTranslation
     }
+    const backButton = (
+        <Fragment>
+            <button onClick={e => (setTypesActive(false))}>
+                <i className="fas fa-long-arrow-alt-left" /> <Translate text="Back" />
+            </button>
+        </Fragment>
+    );
 
-    const scrollRef = useRef(null);
+    const [typesActive, setTypesActive] = useState(false);
 
-    return <Provider language={languageCode} translation={allTranslations}>
-    <Fragment>
-        <div className="inner-landing-container" style={{minHeight: '30vh'}}>
+    const requestMainPage = (
+        <Fragment>
+            <div className='inner-landing-container about'>
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header'>
                 <Translate text="pide" />
@@ -54,9 +62,15 @@ const PideConcierto = ({
                         target='_blank'>Instagram
                     </a>
                     <Translate text='ConcertMainParagraphPostSocials'/>
-                </div><br/>
-            <Fragment>
-            </Fragment><br/><br/><br/><br/>
+                </div><br/><br/>
+                <button onClick={e => setTypesActive(true)}
+                    className="gold-link" style={{textAlign: 'left', lineHeight: '0.9'}}>
+                    <h1>TYPES OF</h1>
+                    <h1>CONCERTS</h1>
+                </button>
+            <br/><br/><br/>
+
+
             <small style={{
                     display: 'inline-block',
                     letterSpacing: '2.5px',
@@ -66,7 +80,18 @@ const PideConcierto = ({
                     fontWeight: 500,
                     color: '#ea9d28'
                 }}><Translate text="vive la música en casa" />...</small>
-            </div></Fragment></Provider>
+            </div>
+            </Fragment>
+    );
+
+    return <Provider language={languageCode} translation={allTranslations}>
+        <Fragment>
+            {typesActive ? <ConcertTypes /> : requestMainPage }
+            <div className='inner-landing-container about'>
+                {typesActive ? backButton : null}
+            </div>
+        </Fragment>
+    </Provider>
 }
 
 

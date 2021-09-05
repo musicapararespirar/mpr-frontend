@@ -133,7 +133,7 @@ ul.numbers-dot li:before {
     width: 0;
     white-space: nowrap;
     color: white;
-    margin-top: 12px;
+    margin-top: 10px;
     font-weight: bold;
     font-size: 20px;
     content:". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "
@@ -1671,6 +1671,24 @@ transform-origin: 0 0; /* see note above */
 
 .about button:hover {
     color: white;
+}
+
+.request p {
+    font-size: 1.2rem;
+}
+
+.request button {
+    display: inline-block;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: white;
+}
+
+.request button:hover {
+    color: #ea9d28;
 }
 
 .team {

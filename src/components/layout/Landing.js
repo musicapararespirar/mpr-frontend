@@ -83,9 +83,10 @@ const Landing = ({
                     bgImageStyle={{opacity: 0.2}}
                     style={{
                         background: '#4a2c75',
+                        minHeight: '90vh',
                         clipPath: "polygon(0% 0%, 40vw 0%, 50vw 7vw, 60vw 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
-                    <section className="landing-container" style={{minHeight: '50vh'}}>
+                    <section className="landing-container" style={{minHeight: '70vh'}}>
                         <PideConcierto />
                     </section>
             </Parallax></Parallax>

@@ -25,10 +25,26 @@ const Numbers = ({
             <h1 className='mpr-header'> <Translate text="THE NUMBERS" /></h1></Textfit>
 <br/>
             <ul className='numbers-dot'>
-                <li><span className='x-large left-numbers'>80</span><span className="numbers-text white"><Translate text="MUSICIANS" /></span></li><br/><br/><br/>
-                <li><span className='x-large left-numbers'>90383</span><span className="numbers-text white"><Translate text="TIME" /></span></li><br/><br/><br/>
-                <li><span className='x-large left-numbers'>12036</span><span className="numbers-text white"><Translate text="LISTENERS" /></span></li><br/><br/><br/>
-                <li><span className='x-large left-numbers'>3399</span><span className="numbers-text white "><Translate text="CALLS" /></span></li><br/><br/><br/>
+                <li>
+                    <span className='x-large left-numbers'>80</span>
+                    <span className="numbers-text white"><Translate text="MUSICIANS" /></span>
+                </li>
+                <br/><br/><br/>
+                <li>
+                    <span className='x-large left-numbers'>90383</span>
+                    <span className="numbers-text white"><Translate text="TIME" /></span>
+                </li>
+                <br/><br/><br/>
+                <li>
+                    <span className='x-large left-numbers'>12036</span>
+                    <span className="numbers-text white"><Translate text="LISTENERS" /></span>
+                </li>
+                <br/><br/><br/>
+                <li>
+                    <span className='x-large left-numbers'>3399</span>
+                    <span className="numbers-text white "><Translate text="CALLS" /></span>
+                </li>
+                <br/><br/><br/>
             </ul>
              <br/>
             <small style={{
