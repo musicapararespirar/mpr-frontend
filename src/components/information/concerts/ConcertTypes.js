@@ -96,7 +96,7 @@ const ConcertTypes = ({
 
     return <Provider language={languageCode} translation={allTranslations}>
     <Fragment>
-        <div className="wide-landing-container" style={{marginBottom: 0}} >
+        <div className="wide-landing-container" style={{marginBottom: 0, minHeight: '50vh'}} >
             <div style={{
                 float: 'left',
                 width: '45%',

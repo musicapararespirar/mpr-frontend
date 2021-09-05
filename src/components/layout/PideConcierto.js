@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Provider, Translate } from 'react-translated';
 import concertTranslation from '../translation/concerts';
 import titlesTranslation from '../translation/titles';
+import navbarTranslation from '../translation/navbar';
 import PropTypes from 'prop-types';
 import LoginLogo from './LoginLogo'
 import ConcertTypes from '../information/concerts/ConcertTypes.js';
@@ -19,7 +20,8 @@ const PideConcierto = ({
     // Combine translation files
     const allTranslations = {
         ...titlesTranslation,
-        ...concertTranslation
+        ...concertTranslation,
+        ...navbarTranslation
     }
     const backButton = (
         <Fragment>
@@ -87,7 +89,7 @@ const PideConcierto = ({
     return <Provider language={languageCode} translation={allTranslations}>
         <Fragment>
             {typesActive ? <ConcertTypes /> : requestMainPage }
-            <div className='inner-landing-container about'>
+            <div className='wide-landing-container about' style={{ bottom: '5vh', marginTop: '10vh'}}>
                 {typesActive ? backButton : null}
             </div>
         </Fragment>
