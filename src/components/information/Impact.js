@@ -41,21 +41,12 @@ const ImpactLanding = ({
             <h1 style={{textAlign: 'center'}} className='mpr-header'>
                 <Translate text="IMPACT" />
             </h1>
-        </Textfit><br/>
+        </Textfit><br/><br/><br/>
             <button onClick={e => (setFeatureSelected('numbers'))}><Translate text="NUMBERS" /></button>
             <button onClick={e => (setFeatureSelected('maps'))}><Translate text="MAPS" /></button>
             <button onClick={e => (setFeatureSelected('press'))}><Translate text="PRESS" /></button>
             <button onClick={e => (setFeatureSelected('reports'))}><Translate text="REPORTS" /></button>
-        <br/><br/><br/><br/><br/><br/>
-            <small style={{
-                    display: 'inline-block',
-                    letterSpacing: '2.5px',
-                    fontSize: '1rem',
-                    lineHeight: 3,
-                    textAlign: 'justify',
-                    fontWeight: 500,
-                    color: '#492b74'
-                }}><Translate text="cada historia cuenta" />...</small>
+        <br/><br/><br/><br/>
         </Fragment>
     );
     const numbers = (

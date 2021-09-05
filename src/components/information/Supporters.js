@@ -25,8 +25,9 @@ const Supporters = ({
     return <Provider language={languageCode} translation={allTranslations}>
         <Fragment>
         <div className="wide-landing-container" style={{textAlign: 'center', height: '300px'}}>
-            <Textfit mode='single' forceSingleModeWidth={true} max={200}>
+            <Textfit mode='single' forceSingleModeWidth={true} max={70}>
             <h1 className='mpr-header'>
+
                 <Translate text="SUPPORTERS" />
             </h1></Textfit>
 
@@ -53,7 +54,8 @@ const Supporters = ({
                     fontSize: '1rem',
                     color: '#492b74',
                     textAlign: 'center'
-                }}>Stefan Heucke, Tenny Barron <Translate text="and" /> Ursula Bentele, Martin Mueller, Hendrik Burgdörfer
+                }}>Stefan Heucke, Tenny Barron <Translate text="and" /> Ursula Bentele, Martin Mueller, Hendrik Burgdörfer,<br/>
+                Eduardo <Translate text="and" /> Bobby Arboleda, Marcelo Jordan
             </p><br/><br/><p style={{
                     fontSize: '1rem',
                     color: '#492b74',

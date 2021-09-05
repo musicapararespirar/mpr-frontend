@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import logoLarge from '../../img/logo-large.png';
+import slideshow1 from '../../img/landing1.jpeg';
+import slideshow2 from '../../img/landing2.jpeg';
 import slideshow3 from '../../img/landing3.jpeg';
 import slideshow4 from '../../img/landing4.jpeg';
 import slideshow5 from '../../img/landing5.jpeg';
@@ -47,26 +49,31 @@ const Landing = ({
             <div id="concert-info" />
             <Parallax
                 strength={500}
-                bgImageStyle={{opacity: 0.2, height: '120vh', minWidth: '100vw'}}
+                bgImageStyle={
+                    (window.innerWidth > 1030) ? {
+                        opacity: 0.2, height: '120vh', minWidth: '100vw'
+
+                    } : {opacity: 0.2, height: '85vh', minWidth: '85vw'}}
                 style={{boxShadow: "inset 0px 0px 50px -60px #000000, inset 0px -940px 90px -60px #000000"}}
                 bgImage={slideshow3}>
                 <section className="inner-landing-container" style={{
-                    minHeight: '35vh',
+//                     minHeight: '35vh',
                     marginBottom: '0vh',
+                    marginTop: '40vh',
                     textAlign: 'center',
                     display: 'block',
-                    marginTop: '15vh'
+//                     marginTop: '15vh'
                     }}>
                     <img src={logoLarge} style={{width: '70%'}}/><br/>
                 </section>
                 <section className='wide-landing-container' style={{
                     textAlign: 'center',
                     backgroundPosition: 'center',
-                    marginBottom: '100px',
+                    marginBottom: '30px',
                     height: '1vh'
                 }}>
-                    <h1 style={{fontSize: '0.9rem'}}><Translate text="thisisP1" /></h1>
-                    <h1 style={{fontSize: '0.9rem'}}><Translate text="thisisP2" /></h1>
+                    <h1 style={{fontSize: '0.7rem'}}><Translate text="thisisP1" /></h1>
+                    <h1 style={{fontSize: '0.7rem'}}><Translate text="thisisP2" /></h1>
                 </section>
 
             <div id="request" />
@@ -97,7 +104,7 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#ea9d28'}}>
-                    <section className="landing-container" style={{minHeight: '50vh'}}>
+                    <section className="landing-container" style={{minHeight: '60vh'}}>
                         <Impact />
                     </section>
             </Parallax>

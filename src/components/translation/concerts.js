@@ -1,6 +1,6 @@
 export default {
   'ConcertMainParagraphPreSocials': {
-    en: 'To request a concert is very easy! All you need to do is send us your name and phone number via private message to our ',
+    en: 'It is very easy to request a concert! All you need to do is send us your name and phone number via private message to our ',
     es: 'Recibir un mini-concierto de Música para Respirar 24/7 es fácil, solo necesitas escribirnos por mensaje interno a nuestras redes sociales en ',
     pt: 'Receber um mini-concerto é muito fácil! É só enviar seu nome e número de WhatsApp por mensagem às nossas páginas de ',
   },
@@ -17,12 +17,12 @@ export default {
   'pide': {
     en: 'REQUEST',
     es: 'PIDE TU',
-    pt: 'SOLICITA ',
+    pt: 'PEÇA SEU',
   },
   'concierto': {
     en: 'A CONCERT',
     es: 'CONCIERTO',
-    pt: 'SEU SHOW',
+    pt: 'CONCERTO',
   },
   "vive la música en casa": {
       en: "live the music at home",

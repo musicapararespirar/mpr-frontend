@@ -22,22 +22,24 @@ const Numbers = ({
     <Fragment>
 
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header white'>
-                <Translate text='MUSICA' />
-            </h1></Textfit>
-            <Textfit mode='single' forceSingleModeWidth={true} max={200}>
-            <h1 className='mpr-header white'><Translate text="PARA" /> <Translate text="RESPIRAR" /></h1></Textfit>
-            <div className="white" style={{
-                fontSize: '2rem',
-                fontWeight: 'bold'}}>
-                    <Translate text="THE NUMBERS" />:
-            </div><br/>
+            <h1 className='mpr-header'> <Translate text="THE NUMBERS" /></h1></Textfit>
+<br/>
             <ul className='numbers-dot'>
-                <li><span className='x-large left-numbers'>65</span><span className="title white"><Translate text="MUSICIANS" /></span></li><br/><br/><br/>
-                <li><span className='x-large left-numbers'>3542</span><span className="title white"><Translate text="TIME" /></span></li><br/><br/><br/>
-                <li><span className='x-large left-numbers'>456</span><span className="title white"><Translate text="LISTENERS" /></span></li><br/><br/><br/>
-                <li><span className='x-large left-numbers'>274</span><span className="title white"><Translate text="CALLS" /></span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>80</span><span className="numbers-text white"><Translate text="MUSICIANS" /></span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>90383</span><span className="numbers-text white"><Translate text="TIME" /></span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>12036</span><span className="numbers-text white"><Translate text="LISTENERS" /></span></li><br/><br/><br/>
+                <li><span className='x-large left-numbers'>3399</span><span className="numbers-text white "><Translate text="CALLS" /></span></li><br/><br/><br/>
             </ul>
+             <br/>
+            <small style={{
+                    display: 'inline-block',
+                    letterSpacing: '2.5px',
+                    fontSize: '1rem',
+                    lineHeight: 3,
+                    textAlign: 'justify',
+                    fontWeight: 500,
+                    color: '#492b74'
+                }}><Translate text="cada historia cuenta" />...</small>
 
             </Fragment>
             </Provider>

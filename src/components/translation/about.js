@@ -73,11 +73,13 @@ export default {
     'uruguay': {en: 'Uruguay', es: 'Uruguay', pt: 'Uruguay'},
 
     // Titles
-    'co-founder': {pt: 'CO-FUNDADORA', en: 'CO-FOUNDER', es: 'CO-FUNDADORA'},
+    'co-founderF': {pt: 'CO-FUNDADORA', en: 'CO-FOUNDER', es: 'CO-FUNDADORA'},
+    'co-founderM': {pt: 'CO-FUNDADOR', en: 'CO-FOUNDER', es: 'CO-FUNDADOR'},
     'finance director': {pt: 'DIRETORA FINANCEIRA', en: 'FINANCE DIRECTOR', es: 'DIRECTORA FINANCIERA'},
     'press and communications': {pt: 'COORDENADORA DE IMPRENSA', en: 'PRESS AND COMMUNICATIONS', es: 'COORDINADORA PRENSA'},
     'artistic production': {pt: 'PRODUTORA ARTÍSTICA', en: 'ARTISTIC PRODUCTION', es: 'PRODUCCIÓN ARTÍSTICA'},
-    'general support': {pt: 'SUPORTE GERAL ', en: 'GENERAL SUPPORT', es: 'APOYO GENERAL'},
+    'support': {pt: 'APOIO', en: 'SUPPORT', es: 'APOYO'},
+    'media support': {pt: 'APOIO MEDIA', en: 'MEDIA SUPPORT', es: 'APOYO MEDIA'},
     'inst. coordinator': {pt: 'COORDENADORA INST.', en: 'INST. COORDINATOR', es: 'COORDINADORA INSTI.'},
     'mpr coordinator': {pt: 'COORDENADORA MPR', en: 'MPR COORDINATOR', es: 'COORDINACIÓN MPR'},
     'artistic production': {pt: 'PRODUTORA ARTÍSTICA', en: 'ARTISTIC PRODUCTION', es: 'PRODUCCIÓN ARTÍSTICA'},

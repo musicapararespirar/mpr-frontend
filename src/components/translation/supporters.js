@@ -11,8 +11,8 @@ export default {
     },
     'SUPPORTERS': {
         en: "SUPPORTERS",
-        es: "APOYADORES",
-        pt: 'APOIADORES'
+        es: "APOYO",
+        pt: 'APOIO'
     },
     'and': {
         en: 'and',
