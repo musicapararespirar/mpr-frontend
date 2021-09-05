@@ -1675,6 +1675,19 @@ transform-origin: 0 0; /* see note above */
 
 .request p {
     font-size: 1.2rem;
+    width: 100%;
+}
+
+.press button {
+    letter-spacing: 3px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ea9d28;
+}
+
+.press h3 {
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .request button {

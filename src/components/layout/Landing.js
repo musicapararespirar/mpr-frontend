@@ -105,7 +105,7 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#ea9d28'}}>
-                    <section className="landing-container" style={{minHeight: '60vh'}}>
+                    <section className="landing-container" style={{minHeight: '80vh'}}>
                         <Impact />
                     </section>
             </Parallax>

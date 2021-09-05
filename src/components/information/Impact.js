@@ -10,6 +10,7 @@ import navbarTranslation from '../translation/navbar';
 import PropTypes from 'prop-types';
 import { Textfit } from 'react-textfit';
 import Numbers from './impact/Numbers';
+import Press from './impact/Press';
 import UnderConstruction from './impact/UnderConstruction';
 
 const ImpactLanding = ({
@@ -30,7 +31,7 @@ const ImpactLanding = ({
     const backButton = (
         <Fragment>
             <button onClick={e => (setFeatureSelected(null))}>
-                <i className="fas fa-long-arrow-alt-left" /> <Translate text="Back" />
+                <i className="fas fa-long-arrow-alt-left" style={{alignItems: 'left'}}/> <Translate text="Back" />
             </button>
         </Fragment>
     );
@@ -51,41 +52,48 @@ const ImpactLanding = ({
     );
     const numbers = (
         <Fragment>
+        <div className="inner-landing-container impact">
             <Numbers />
             {backButton}
+        </div>
         </Fragment>
     );
 
     const maps = (
         <Fragment>
-            <UnderConstruction />
+        <div className="inner-landing-container impact">
+        <UnderConstruction />
             {backButton}
+        </div>
         </Fragment>
     );
 
     const press = (
         <Fragment>
-            <UnderConstruction />
+        <div className="wide-landing-container impact" style={{marginBottom: '10vh'}}>
+        <Press />
             {backButton}
+        </div>
         </Fragment>
     );
 
     const reports = (
         <Fragment>
-
+        <div className="inner-landing-container impact">
             <UnderConstruction />
             {backButton}
+        </div>
         </Fragment>
     );
     return <Provider language={languageCode} translation={allTranslations}>
         <Fragment>
             <div className="inner-landing-container impact">
                 {!featureSelected ? buttons : null}
+            </div>
                 {featureSelected && featureSelected === 'numbers' ? numbers : null}
                 {featureSelected && featureSelected === 'maps' ? maps : null}
                 {featureSelected && featureSelected === 'press' ? press : null}
                 {featureSelected && featureSelected === 'reports' ? reports : null}
-            </div>
             </Fragment>
             </Provider>
 }

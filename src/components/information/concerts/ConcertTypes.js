@@ -32,6 +32,7 @@ const ConcertTypes = ({
         }
 
     }
+    const institutionLink = getInstututionLink();
     const personalConcert = (
         <Fragment>
                 <h1 className='mpr-header gold' style={{
@@ -55,7 +56,7 @@ const ConcertTypes = ({
                 </h1>
                 <p style={{textAlign: 'justify'}}>
                     <i className='line-gold' /><Translate text="institutionalConcertTextP1" />
-                    <a className='gold-link' target="_blank" href={getInstututionLink()}><Translate text="thepresentation" /></a>
+                    <a className='gold-link' target="_blank" href={institutionLink}><Translate text="thepresentation" /></a>
                     <Translate text="institutionalConcertTextP2" />
                     <a className='gold-link' href='mailto:lasociedad.bo@gmail.com'>lasociedad.bo@gmail.com</a>.
                 </p>

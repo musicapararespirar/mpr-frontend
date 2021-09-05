@@ -20,7 +20,6 @@ const Numbers = ({
 
     return <Provider language={languageCode} translation={allTranslations}>
     <Fragment>
-
             <Textfit mode='single' forceSingleModeWidth={true} max={200}>
             <h1 className='mpr-header'> <Translate text="THE NUMBERS" /></h1></Textfit>
 <br/>
@@ -56,7 +55,6 @@ const Numbers = ({
                     fontWeight: 500,
                     color: '#492b74'
                 }}><Translate text="cada historia cuenta" />...</small>
-
             </Fragment>
             </Provider>
 }
