@@ -41,7 +41,18 @@ const ConcertTypes = ({
                     <Translate text="PERSONAL" />
                 </h1>
                 <p style={{textAlign: 'justify'}}>
-                    <i className='line-gold' /><Translate text="personalConcertText" />
+                    <i className='line-gold' />
+                    <Translate text="personalConcertTextP1" />
+                    <a
+                        className="gold-link"
+                        href="https://www.facebook.com/lasociedad.bo/"
+                        target='_blank'>Facebook
+                    </a><Translate text="or" />
+                    <a
+                        className="gold-link"
+                        href="https://www.instagram.com/lasociedad.bo"
+                        target='_blank'>Instagram
+                    </a><Translate text="personalConcertTextP2" />
                 </p>
         </Fragment>
     );

@@ -54,10 +54,15 @@ export default {
     es: "TIPS PARA TU CONCIERTO",
     pt: "DICAS PARA O CONCERTO"
   },
-  "personalConcertText": {
-    en: "This is the ideal 1:1 Música para Respirar 24/7 experience. Request an immediate concert by writing a private message with your name and phone number to our social networks and a musician will contact you within 30 minutes. You can also schedule your concert for a time that suits you during the week of Música para Respirar 24/7.",
-    es: "Un concierto sólo para ti. Durante las semanas de Música para Respirar 24/7, pide un concierto inmediato enviando un mensaje interno con tu nombre y número de Whatsapp a nuestras redes sociales y un músico te contactará en hasta 30 minutos. También puedes programarlo para un horario que te convenga durante esa semana.",
-    pt: "Esta é a experiência 1:1  ideal de Música para Respirar 24/7. Peça um concerto pessoal imediato enviando uma mensagem com seu nome e número de WhatsApp às nossas redes sociais e um músico te contactará em até 30 minutos. Você também pode agendar um concerto para um melhor horário durante as semanas de Música para Respirar 24/7."
+  "personalConcertTextP1": {
+    en: "This is the ideal 1:1 Música para Respirar 24/7 experience. Request an immediate concert by writing a private message with your name and phone number to ",
+    es: "Un concierto sólo para ti. Durante las semanas de Música para Respirar 24/7, pide un concierto inmediato enviando un mensaje interno con tu nombre y número de Whatsapp a ",
+    pt: "Esta é a experiência 1:1  ideal de Música para Respirar 24/7. Peça um concerto pessoal imediato enviando uma mensagem com seu nome e número de WhatsApp o "
+  },
+    "personalConcertTextP2": {
+    en: " and a musician will contact you within 30 minutes. You can also schedule your concert for a time that suits you during the week of Música para Respirar 24/7.",
+    es: " y un músico te contactará en hasta 30 minutos. También puedes programarlo para un horario que te convenga durante esa semana.",
+    pt: " e um músico te contactará em até 30 minutos. Você também pode agendar um concerto para um melhor horário durante as semanas de Música para Respirar 24/7."
   },
     "institutionalConcertTextP1": {
     en: "Música para Respirar 24/7 also provides concerts to schools, hospitals, retirement homes,  orphanages and any other organization that offers social support. These concerts can be organized for groups or individually. To find more details about these please read the ",
