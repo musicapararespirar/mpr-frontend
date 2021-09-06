@@ -9,7 +9,7 @@ import './App.css';
 import { Provider } from 'react-redux';
 import store from './store';
 import "@fontsource/voltaire";
-// import { useFonts } from '@expo-google-fonts/voltaire';
+import "@fontsource/josefin-sans";
 
 const App = () => {
     return (

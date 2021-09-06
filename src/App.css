@@ -858,6 +858,7 @@ button {
 
 /* Style navigation menu links */
 .topnav a {
+  font-family: "Josefin Sans";
   color: white;
   padding: 14px 1px;
   text-decoration: none;
@@ -952,7 +953,7 @@ button {
 
 /* Navbar */
 .navbar {
-  font-family: "Voltaire";
+  font-family: "Josefin Sans";
   font-size: 18px;
   font-weight: 500;
   text-shadow: 0 0 20px grey, 0 0 1px white;
