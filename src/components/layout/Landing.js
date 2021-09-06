@@ -118,7 +118,7 @@ const Landing = ({
                     minWidth: '100vw',
                     minHeight: '120%'}}
                 bgImage={slideshow4}>
-                <section className="landing-container" style={{minHeight: '75vh'}}>
+                <section className="landing-container" style={{minHeight: '95vh'}}>
                     <AboutUs />
                 </section>
             </Parallax>
