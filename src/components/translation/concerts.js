@@ -11,7 +11,7 @@ export default {
   },
   'ConcertMainParagraphPostSocials': {
       en: ' accounts during the week of Música para Respirar 24/7. Within 30 minutes, one of our musicians will contact you and perform a live concert through the video-calling platform of your choice. The concerts are available 24/7 and last around 20 minutes.',
-      es: ' durantes las semanas de Música para Respirar 24/7. Uno de nuestros músicos te contactará y realizará un concierto en vivo para tí a través de Zoom, Whatsapp o la plataforma de video-llamada de tu preferencia. Los conciertos están disponibles 24 horas al día y duran alrededor de 20 minutos.',
+      es: ' durante las semanas de Música para Respirar 24/7. Uno de nuestros músicos te contactará y realizará un concierto en vivo para tí a través de Zoom, Whatsapp o la plataforma de video-llamada de tu preferencia. Los conciertos están disponibles 24 horas al día y duran alrededor de 20 minutos.',
     pt: ' durante as semanas de Música para Respirar 24/7. Um de nossos músicos entrará em contato e realizará um concerto ao vivo para você através do Zoom, WhatsApp ou a plataforma de videochamada de sua preferência. Os concertos estão disponíveis as 24 horas do dia e duram ao redor de 20 minutos.',
   },
   'pide': {
@@ -34,6 +34,17 @@ export default {
     es: "TIPOS DE CONCIERTOS",
     pt: "TIPOS DE CONCERTOS"
   },
+    "CONCERTS": {
+    en: "CONCERTS",
+    es: "CONCIERTOS",
+    pt: "CONCERTOS"
+  },
+    "TYPESOF": {
+    en: "TYPES OF",
+    es: "TIPOS DE",
+    pt: "TIPOS DE"
+  },
+
     "PERSONAL": {
     en: "PERSONAL",
     es: "CONCIERTOS PERSONALES",
@@ -79,10 +90,15 @@ export default {
     es: 'la siguiente presentación',
     pt: 'o Booklet de Concertos Institucionais'
   },
-    "giftConcertText": {
-    en: "If you would like to send a concert to a loved one, you only need to send us their contact information via our Facebook or Instagram pages [put hyperlinks] and we will get in touch with them. For this type of concert, we ask you to let your loved one know they will be receiving a very special treat at the specific time, in order to avoid problems of communication and timing.",
-    es: "Envía un concierto a un ser querido, solo necesitas mandarnos su nombre, su número de teléfono y  la hora que deseas que lo contactemos por mensaje privado a nuestras redes sociales. Es importante que le avises que esté atento a recibir una sorpresa especial alrededor del horario combinado.",
-    pt: "Se você gostaria de enviar um concerto para uma pessoa querida, só precisa nos enviar seus dados de contato através de nossas páginas de Facebook ou Instagram e nós entraremos em contato com eles. Para este tipo de concerto, pedimos que comunique ao ouvinte que receberá um presente muito especial na hora específica, para evitar problemas de comunicação e timing."
+    "giftConcertTextP1": {
+    en: "If you would like to send a concert to a loved one, you only need to send us their contact information via our ",
+    es: "Envía un concierto a un ser querido, solo necesitas mandarnos su nombre, su número de teléfono y la hora que deseas que lo contactemos por mensaje privado a ",
+    pt: "Se você gostaria de enviar um concerto para uma pessoa querida, só precisa nos enviar seus dados de contato através de nossas páginas de "
+  },
+  "giftConcertTextP2": {
+    en: " pages and we will get in touch with them. For this type of concert, we ask you to let your loved one know they will be receiving a very special treat at the specific time, in order to avoid problems of communication and timing.",
+    es: ". Es importante que le avises que esté atento a recibir una sorpresa especial alrededor del horario combinado.",
+    pt: " e nós entraremos em contato com eles. Para este tipo de concerto, pedimos que comunique ao ouvinte que receberá um presente muito especial na hora específica, para evitar problemas de comunicação e timing."
   },
     "tipsConcertText1": {
     en: "Make sure your Wifi connection is working properly and try to be close to your router if possible",
@@ -95,18 +111,18 @@ export default {
     pt: "A qualidade de som nas videochamadas do Zoom é melhor. Assim, recomendamos o download do aplicativo se você ainda não o tem"
   },
       "tipsConcertText3": {
-    en: "Use headphones if you have them to enhance the experience of your concert.",
+    en: "Use headphones if you have them to enhance the experience of your concert",
     es: "Si tienes audífonos a la mano no dudes en usarlos para mejorar aún más la calidad de sonido de tu concierto",
     pt: "Use fones de ouvido ou amplificadores para melhorar ainda mais a qualidade de som do seu concerto"
   },
       "tipsConcertText4": {
-    en: "Please remember to  mute your microphone during the performance to improve sound quality.",
-    es: "",
+    en: "Please remember to  mute your microphone during the performance to improve sound quality",
+    es: "Acuérdate de colocar tu micrófono en mudo durante las piezas musicales, mejorará la calidad de sonido",
     pt: "Lembre-se de desligar seu microfone quando a música começar"
   },
       "tipsConcertText5": {
-    en: "All our musicians will be very happy to talk to you, so feel free to ask any questions before, during or after the performance.",
-    es: "",
+    en: "All our musicians will be very happy to talk to you, so feel free to ask any questions before, during or after the performance",
+    es: "Todos nuestros músicos y músicas están felices de conversar contigo, saber qué tipo de música te gusta y responder cualquier pregunta que tengas",
     pt: "Nossos músicos estarão felizes em conversar com você, por isso sinta-se à vontade para fazer perguntas antes, durante ou depois da performance"
   },
 

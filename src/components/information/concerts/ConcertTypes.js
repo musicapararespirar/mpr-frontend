@@ -84,7 +84,18 @@ const ConcertTypes = ({
                 </h1>
         </Textfit>
                 <p style={{textAlign: 'justify'}}>
-                    <i className='line-gold' /><Translate text="giftConcertText" />
+                    <i className='line-gold' />
+                    <Translate text="giftConcertTextP1" />
+                    <a
+                        className="gold-link"
+                        href="https://www.facebook.com/lasociedad.bo/"
+                        target='_blank'>Facebook
+                    </a><Translate text="or" />
+                    <a
+                        className="gold-link"
+                        href="https://www.instagram.com/lasociedad.bo"
+                        target='_blank'>Instagram
+                    </a><Translate text="giftConcertTextP2" />
                 </p>
         </Fragment>
     );

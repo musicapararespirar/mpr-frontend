@@ -67,8 +67,8 @@ const PideConcierto = ({
                 </div><br/><br/>
                 <button onClick={e => setTypesActive(true)}
                     className="gold-link" style={{textAlign: 'left', lineHeight: '0.9'}}>
-                    <h1>TYPES OF</h1>
-                    <h1>CONCERTS</h1>
+                    <h1><Translate text="TYPESOF" /></h1>
+                    <h1><Translate text="CONCERTS" /></h1>
                 </button>
             <br/><br/><br/>
 
