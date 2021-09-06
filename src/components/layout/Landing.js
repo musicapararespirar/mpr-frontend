@@ -84,7 +84,7 @@ const Landing = ({
                         minHeight: '90vh',
                         clipPath: "polygon(0% 0%, 40vw 0%, 50vw 7vw, 60vw 0%, 100% 0%, 100% 100%, 0% 100%)"}}
                     >
-                    <section className="landing-container" style={{minHeight: '90vh'}}>
+                    <section className="landing-container" style={{minHeight: '100vh'}}>
                         <PideConcierto />
                     </section>
             </Parallax></Parallax>
@@ -103,7 +103,7 @@ const Landing = ({
                 blur={10}
                 bgImageStyle={{opacity: 0.2}}
                     style={{background: '#ea9d28'}}>
-                    <section className="landing-container" style={{minHeight: '80vh'}}>
+                    <section className="landing-container" style={{minHeight: '85vh'}}>
                         <Impact />
                     </section>
             </Parallax>
@@ -118,7 +118,7 @@ const Landing = ({
                     minWidth: '100vw',
                     minHeight: '120%'}}
                 bgImage={slideshow4}>
-                <section className="landing-container" style={{minHeight: '50vh'}}>
+                <section className="landing-container" style={{minHeight: '75vh'}}>
                     <AboutUs />
                 </section>
             </Parallax>

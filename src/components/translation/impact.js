@@ -6,7 +6,7 @@ export default {
   },
   'THE NUMBERS': {
     en: 'NUMBERS',
-    es: 'CIFRAS',
+    es: 'NÚMEROS',
     pt: 'NÚMEROS',
   },
   'MUSICIANS': {
@@ -36,7 +36,7 @@ export default {
   },
   'NUMBERS': {
     en: 'NUMBERS',
-    es: 'CIFRAS',
+    es: 'NÚMEROS',
     pt: 'NÚMEROS',
 },
   'MAPS': {
