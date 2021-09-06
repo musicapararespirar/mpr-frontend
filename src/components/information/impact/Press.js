@@ -42,7 +42,7 @@ const Press = ({
                 </button></a><br/>
                 <a href="https://www.wionews.com/videos/music-to-breathe-bolivian-music-project-offers-comfort-during-pandemic-322243" target="_blank">
                 <button style={{paddingRight: '30%', width: '100%', textAlign: 'right'}}>
-                    <i>"Músicos apresentam concertos individuais gratuitos por videochamada"</i><br/><h3 style={{textAlign: 'right'}}>Wion News, India, Reuters
+                    <i>"'Music to breathe': Bolivian music project offers comfort during pandemic"</i><br/><h3 style={{textAlign: 'right'}}>Wion News, India, Reuters
 
                     </h3>
                 </button></a>
