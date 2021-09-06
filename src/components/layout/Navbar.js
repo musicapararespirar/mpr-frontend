@@ -87,7 +87,7 @@ const Navbar = ({
     );
 
     function clickMenu() {
-        if (window.scrollY > 0) {
+        if (window.scrollY > 350) {
             history.push('/');
             setMobileNavbarIsOpen(true);
             window.scrollTo({ top: 0, behavior: 'smooth' });

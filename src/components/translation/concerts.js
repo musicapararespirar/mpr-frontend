@@ -68,7 +68,7 @@ export default {
   "personalConcertTextP1": {
     en: "This is the ideal 1:1 Música para Respirar 24/7 experience. Request an immediate concert by writing a private message with your name and phone number to ",
     es: "Un concierto sólo para ti. Durante las semanas de Música para Respirar 24/7, pide un concierto inmediato enviando un mensaje interno con tu nombre y número de Whatsapp a ",
-    pt: "Esta é a experiência 1:1  ideal de Música para Respirar 24/7. Peça um concerto pessoal imediato enviando uma mensagem com seu nome e número de WhatsApp o "
+    pt: "Esta é a experiência 1:1  ideal de Música para Respirar 24/7. Peça um concerto pessoal imediato enviando uma mensagem com seu nome e número de WhatsApp no "
   },
     "personalConcertTextP2": {
     en: " and a musician will contact you within 30 minutes. You can also schedule your concert for a time that suits you during the week of Música para Respirar 24/7.",
