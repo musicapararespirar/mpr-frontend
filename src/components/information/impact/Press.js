@@ -6,11 +6,6 @@ import impactTranslation from '../../translation/impact';
 import titlesTranslation from '../../translation/landing';
 import PropTypes from 'prop-types';
 import { Textfit } from 'react-textfit';
-import elpais from '../../../img/news/elpais.png';
-import eluniversal from '../../../img/news/eluniversal.png';
-import veja from '../../../img/news/veja.png';
-import teleamaz from '../../../img/news/teleamaz.png';
-
 
 const Press = ({
     language: {
@@ -34,20 +29,19 @@ const Press = ({
 
                 <a href="https://elpais.com/sociedad/2020-08-29/musica-para-respirar-una-bocanada-de-aire-para-las-personas-que-enfrentan-el-coronavirus-en-bolivia.html" target="_blank">
                 <button style={{paddingLeft: '30%', width: '100%', textAlign: 'right'}}>
-                    <i>"‘Música para respirar’, una bocanada de aire para las personas que enfrentan el coronavirus en Bolivia"</i><br/>
-                    <img style={{width: '20%'}} src={elpais} />
+                    <i>"‘Música para respirar’, una bocanada de aire para las personas que enfrentan el coronavirus en Bolivia"</i><br/><h3 style={{textAlign: 'right'}}>El País, España</h3>
                 </button><br/></a>
 
                 <a href="https://www.eluniversal.com.co/salud/musica-para-distraer-a-enfermos-de-covid-19-en-bolivia-EC3271413" target="_blank">
                 <button style={{paddingRight: '50%', width: '100%', textAlign: 'right'}}>
-                    <i>"150 conciertos en dos días"</i><br/>
-                    <img style={{width: '30%'}} src={eluniversal} />
+                    <i>"150 conciertos en dos días"</i><br/><h3 style={{textAlign: 'right'}}>El Universal, Colombia
+                    </h3>
                 </button><br/></a>
 
                 <a href="https://vejasp.abril.com.br/blog/terraco-paulistano/musicos-apresentam-concertos-individuais-gratuitos-por-videochamada/" target="_blank">
                 <button style={{paddingLeft: '30%', width: '100%', textAlign: 'right'}}>
-                    <i>"Músicos apresentam concertos individuais gratuitos por videochamada"</i><br/>
-                    <img style={{width: '30%'}} src={veja} />
+                    <i>"Músicos apresentam concertos individuais gratuitos por videochamada"</i><br/><h3 style={{textAlign: 'right'}}>Veja, Brasil
+                    </h3>
                 </button></a><br/>
 
                 <a href="https://www.wionews.com/videos/music-to-breathe-bolivian-music-project-offers-comfort-during-pandemic-322243" target="_blank">
@@ -58,7 +52,8 @@ const Press = ({
 
                 <a href="https://www.facebook.com/watch/?v=207457094716880&ref=sharing" target="_blank">
                 <button style={{paddingLeft: '30%', width: '100%', textAlign: 'right'}}>
-                    <i className="fas fa-film" />Reportaje en Video<br/><img style={{width: '15%'}} src={teleamaz} />
+                    <i className="fas fa-film" />Reportaje en Video<br/><h3 style={{textAlign: 'right'}}>Teleamazonas, Ecuador
+                    </h3>
                 </button></a>
             <br/>
 </div>
