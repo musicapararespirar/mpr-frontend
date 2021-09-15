@@ -70,8 +70,8 @@ const Landing = ({
                     marginBottom: '30px',
                     height: '1vh'
                 }}>
-                    <h1 style={{fontSize: '0.7rem'}}><Translate text="thisisP1" /></h1>
-                    <h1 style={{fontSize: '0.7rem'}}><Translate text="thisisP2" /></h1>
+                    {/*<h1 style={{fontSize: '0.7rem'}}><Translate text="thisisP1" /></h1>
+                    <h1 style={{fontSize: '0.7rem'}}><Translate text="thisisP2" /></h1>*/}
                 </section>
 
             <div id="request" />
