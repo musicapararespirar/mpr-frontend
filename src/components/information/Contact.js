@@ -44,22 +44,26 @@ const Contact = ({
                 textAlign: 'justify',
                 fontWeight: 'lighter'
             }}>
-            <Translate text="ContactUs" />: <a className='pink-link' href="mailto:lasociedad.bo@gmail.com">LASOCIEDAD.BO@GMAIL.COM</a><br/><br/>
+            <Translate text="ContactUs" />: <a onClick={e => window.umami('Clicked Email Link (contact)')} className='pink-link' href="mailto:lasociedad.bo@gmail.com">LASOCIEDAD.BO@GMAIL.COM</a><br/><br/>
             <Translate text="newsAndUpdates" />:<br/>
             <a
                 className="gold-link"
+                onClick={e => window.umami('Clicked Facebook (contact)')}
                 href="https://www.facebook.com/lasociedad.bo/"
                 target='_blank'>Facebook
             </a>, <a
                 className="gold-link"
+                onClick={e => window.umami('Clicked Instagram (contact)')}
                 href="https://www.instagram.com/lasociedad.bo"
                 target='_blank'>Instagram
             </a>, <a
                 className="gold-link"
+                onClick={e => window.umami('Clicked Twitter (contact)')}
                 href="https://twitter.com/musicabolivia"
                 target='_blank'>Twitter
             </a> <Translate text='and'/> <a
                 className="gold-link"
+                onClick={e => window.umami('Clicked YouTube (contact)')}
                 href="https://www.youtube.com/channel/UCbU3H6WfXEusfNVWY5opUyg"
                 target='_blank'>YouTube
             </a>.

@@ -66,7 +66,7 @@ const PideConcierto = ({
                     <Translate text='ConcertMainParagraphPostSocials'/>
                 </div><br/><br/>
                 <button onClick={e => setTypesActive(true)}
-                    className="gold-link" style={{textAlign: 'left', lineHeight: '0.9'}}>
+                    className="gold-link umami--click--TypesOfConcerts" style={{textAlign: 'left', lineHeight: '0.9'}}>
                     <h1><Translate text="TYPESOF" /></h1>
                     <h1><Translate text="CONCERTS" /></h1>
                 </button>

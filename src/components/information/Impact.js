@@ -43,10 +43,22 @@ const ImpactLanding = ({
                 <Translate text="IMPACT" />
             </h1>
         </Textfit><br/><br/><br/>
-            <button onClick={e => (setFeatureSelected('numbers'))}><Translate text="NUMBERS" /></button>
-            <button onClick={e => (setFeatureSelected('maps'))}><Translate text="MAPS" /></button>
-            <button onClick={e => (setFeatureSelected('press'))}><Translate text="PRESS" /></button>
-            <button onClick={e => (setFeatureSelected('reports'))}><Translate text="REPORTS" /></button>
+            <button onClick={e => {
+                setFeatureSelected('numbers');
+                window.umami('Clicked impact-numbers');
+            }}><Translate text="NUMBERS" /></button>
+            <button onClick={e => {
+                setFeatureSelected('maps');
+                window.umami('Clicked impact-maps');
+            }}><Translate text="MAPS" /></button>
+            <button onClick={e => {
+                setFeatureSelected('press');
+                window.umami('Clicked impact-press');
+            }}><Translate text="PRESS" /></button>
+            <button onClick={e => {
+                setFeatureSelected('reports');
+                window.umami('Clicked impact-reports');
+            }}><Translate text="REPORTS" /></button>
         <br/><br/><br/><br/>
         </Fragment>
     );

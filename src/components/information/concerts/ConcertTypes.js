@@ -45,11 +45,13 @@ const ConcertTypes = ({
                     <Translate text="personalConcertTextP1" />
                     <a
                         className="gold-link"
+                        onClick={e => window.umami('Clicked Facebook')}
                         href="https://www.facebook.com/lasociedad.bo/"
                         target='_blank'>Facebook
                     </a><Translate text="or" />
                     <a
                         className="gold-link"
+                        onClick={e => window.umami('Clicked Instagram')}
                         href="https://www.instagram.com/lasociedad.bo"
                         target='_blank'>Instagram
                     </a><Translate text="personalConcertTextP2" />
@@ -67,9 +69,9 @@ const ConcertTypes = ({
                 </h1>
                 <p style={{textAlign: 'justify'}}>
                     <i className='line-gold' /><Translate text="institutionalConcertTextP1" />
-                    <a className='gold-link' target="_blank" href={institutionLink}><Translate text="thepresentation" /></a>
+                    <a onClick={e => window.umami('Clicked Institutional Concerts Booklet')} className='gold-link' target="_blank" href={institutionLink}><Translate text="thepresentation" /></a>
                     <Translate text="institutionalConcertTextP2" />
-                    <a className='gold-link' href='mailto:lasociedad.bo@gmail.com'>lasociedad.bo@gmail.com</a>.
+                    <a onClick={e => window.umami('Clicked Email Link')} className='gold-link' href='mailto:lasociedad.bo@gmail.com'>lasociedad.bo@gmail.com</a>.
                 </p>
         </Fragment>
     );
@@ -88,11 +90,13 @@ const ConcertTypes = ({
                     <Translate text="giftConcertTextP1" />
                     <a
                         className="gold-link"
+                        onClick={e => window.umami('Clicked Facebook')}
                         href="https://www.facebook.com/lasociedad.bo/"
                         target='_blank'>Facebook
                     </a><Translate text="or" />
                     <a
-                        className="gold-link"
+                        className="gold-link umami--click--Instagram"
+                        onClick={e => window.umami('Clicked Instagram')}
                         href="https://www.instagram.com/lasociedad.bo"
                         target='_blank'>Instagram
                     </a><Translate text="giftConcertTextP2" />
@@ -130,15 +134,27 @@ const ConcertTypes = ({
                     <Translate text="typesOfConcerts" />:
                 </h1><br/>
                 <div className='request'>
-                    <button onClick={e => setConcertType('personal')}>
+                    <button onClick={e => {
+                        setConcertType('personal');
+                        window.umami('Select concert information (personal)');
+                    }}>
                         <p className={concertType === 'personal' ? 'gold' : ''}>
                         <Translate text="PERSONAL" /></p>
                     </button><br/><br/>
-                    <button onClick={e => setConcertType('institutional')}>
+                    <button onClick={e => {
+                        setConcertType('institutional');
+                        window.umami('Select concert information (institutional)');
+                    }}>
                         <p className={concertType === 'institutional' ? 'gold' : ''}><Translate text="INSTITUTIONAL" /></p></button><br/><br/>
-                    <button onClick={e => setConcertType('gift')}>
+                    <button onClick={e => {
+                        setConcertType('gift');
+                        window.umami('Select concert information (gift)');
+                    }}>
                         <p className={concertType === 'gift' ? 'gold' : ''}><Translate text="GIFTACONCERT" /></p></button><br/><br/>
-                    <button onClick={e => setConcertType('tips')}>
+                    <button onClick={e => {
+                        setConcertType('tips');
+                        window.umami('Select concert information (tips)');
+                    }}>
                         <p className={concertType === 'tips' ? 'gold' : ''}><Translate text="TIPSFORCONCERT" /></p></button><br/>
                 </div>
             </div>

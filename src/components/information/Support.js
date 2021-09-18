@@ -39,14 +39,14 @@ const Support = ({
                     <br/><br/>
 
                     <div className='donate-button'>
-                        <a href="https://www.gofundme.com/f/7cqcrg-musica-para-respirar-247" target="_blank">
+                        <a onClick={e => window.umami('Clicked GoFundMe')} href="https://www.gofundme.com/f/7cqcrg-musica-para-respirar-247" target="_blank">
                             <button>
                                 <h1><Translate text="CLICK HERE" /></h1>
                                 <p><Translate text="toDonateGoFundMe" /></p>
                             </button>
                         </a>
                         <br/><br/>
-                        <a href="https://fundraising.fracturedatlas.org/musica-para-respirar-24-7" target="_blank">
+                        <a onClick={e => window.umami('Clicked FracturedAtlas')} href="https://fundraising.fracturedatlas.org/musica-para-respirar-24-7" target="_blank">
                             <button>
                                 <h1><Translate text="CLICK HERE" /></h1>
                                 <p><Translate text="toDonateUSA" /></p>

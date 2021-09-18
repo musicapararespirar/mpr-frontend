@@ -26,13 +26,25 @@ const AboutUs = ({
     }
     const buttons = (
         <Fragment>
-            <button onClick={e => {setDisplayInformationFor("MusicaParaRespirar")}}>Musica Para Respirar
+            <button onClick={e => {
+                setDisplayInformationFor("MusicaParaRespirar");
+                window.umami('Clicked about-MPR');
+            }}>Musica Para Respirar
             <i className="fas fa-long-arrow-alt-right" /></button><br/>
-            <button onClick={e => {setDisplayInformationFor("LaSociedad")}}>La Sociedad
+            <button onClick={e => {
+                setDisplayInformationFor("LaSociedad");
+                window.umami('Clicked about-laSociedad');
+            }}>La Sociedad
             <i className="fas fa-long-arrow-alt-right" /></button><br/>
-            <button onClick={e => {setDisplayInformationFor("Team")}}><Translate text="Team" />
+            <button onClick={e => {
+                setDisplayInformationFor("Team");
+                window.umami('Clicked about-Team');
+            }}><Translate text="Team" />
             <i className="fas fa-long-arrow-alt-right" /></button><br/>
-            <button onClick={e => {setDisplayInformationFor("Musicians")}}><Translate text="Musicians" />
+            <button onClick={e => {
+                setDisplayInformationFor("Musicians");
+                window.umami('Clicked about-Musicians');
+            }}><Translate text="Musicians" />
             <i className="fas fa-long-arrow-alt-right" /></button>
         </Fragment>
     );
