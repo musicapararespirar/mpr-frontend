@@ -6,7 +6,7 @@ COPY ["package.json", "yarn.lock", "./"]
 RUN yarn install --frozen-lockfile --silent
 RUN yarn global add react-scripts
 COPY . ./
-CMD yarn build
+RUN yarn build
 
 # Production
 FROM nginx:stable-alpine
