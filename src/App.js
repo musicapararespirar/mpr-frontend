@@ -15,32 +15,13 @@ import {Helmet} from "react-helmet";
 
 
 const App = () => {
-    useEffect(() => {
-        return (
-        <div className="application">
-            <Helmet>
-                <script async defer data-website-id="8fb3419d-bc6d-4c1b-85a1-36d5d6ab60d4" src="https://umami.evanjt.com/umami.js"></script>
-            </Helmet>
-        </div>
-        )
-        const script = document.createElement('script');
-        script.src = "https://umami.evanjt.com/umami.js";
-        script.async = true;
-        script.defer = true;
-        script["data-website-id"] = "8fb3419d-bc6d-4c1b-85a1-36d5d6ab60d4";
-        console.log(script);
-        const websiteId = "8fb3419d-bc6d-4c1b-85a1-36d5d6ab60d4";
-        const dataDomain = "localhost";
-
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script);
-        }
-
-    }, []);
     return (
     <Provider store={store}>
+    <div className="application">
+        <Helmet>
+            <script async defer data-website-id="a59d1fa2-ade3-4f34-8417-5fdb271798a5" src="https://stats.musicapararespirar.com/umami.js"></script>
+        </Helmet>
+    </div>
     <Router>
     <Fragment>
         <Logo />
