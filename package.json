@@ -5,6 +5,7 @@
   "dependencies": {
     "@fontsource/josefin-sans": "^4.5.0",
     "@fontsource/voltaire": "^4.5.0",
+    "@parcellab/react-use-umami": "^2.0.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
@@ -14,6 +15,7 @@
     "moment-timezone": "^0.5.33",
     "react": "^17.0.2",
     "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
     "react-image-lightbox": "^5.1.4",
     "react-parallax": "^3.3.0",
     "react-redux": "^7.2.2",
