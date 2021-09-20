@@ -20,6 +20,7 @@ const App = () => {
     <div className="application">
         <Helmet>
             <script async defer data-website-id="a59d1fa2-ade3-4f34-8417-5fdb271798a5" src="https://stats.musicapararespirar.com/umami.js"></script>
+            <link rel="canonical" href="https://musicapararespirar.com" />
         </Helmet>
     </div>
     <Router>
