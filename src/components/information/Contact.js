@@ -43,7 +43,7 @@ const Contact = ({
 
     const handleSubmit = async event => {
         try {
-            const res = await axios.post('http://api.musicapararespirar.com/v1/newsletter/subscriber/new', formData );
+            const res = await axios.post('https://api.musicapararespirar.com/v1/newsletter/subscriber/new', formData );
             console.log(res);
             if(res.status === 200) {
                 setSendIsSpinner(false);
