@@ -38,6 +38,10 @@ const Contact = ({
         message: null
     });
 
+    useEffect(() => {
+        setFormData({...formData, language: languageCode})
+    }, [languageCode])
+
     const [sendIsSpinner, setSendIsSpinner] = useState(false);
 
 
