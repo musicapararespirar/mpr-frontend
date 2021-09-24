@@ -161,9 +161,9 @@ const Contact = ({
                                 ...formData,
                                 language: e.target.value
                         })}}>
-                        <option id='portuguese' value="portuguese" selected={languageCode==='pt'}>Português</option>
-                        <option id='spanish' value="spanish" selected={languageCode==='es'}>Español</option>
-                        <option id='english' value="english" selected={languageCode==='en'}>English</option>
+                        <option id='pt' value="pt" selected={languageCode==='pt'}>Português</option>
+                        <option id='es' value="es" selected={languageCode==='es'}>Español</option>
+                        <option id='en' value="en" selected={languageCode==='en'}>English</option>
                     </select>
                 </div>
 
