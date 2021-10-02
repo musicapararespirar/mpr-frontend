@@ -55,7 +55,7 @@ export default {
         pt: "Erro, tente novamente por favor"
     },
     "userExists": {
-        en: "Use already exists!",
+        en: "User already exists!",
         es: "Usuario existente (ya te tenemos en nuestros registros!)",
         pt: "Usuario já existente (temos você em nossos registros!)"
     },
