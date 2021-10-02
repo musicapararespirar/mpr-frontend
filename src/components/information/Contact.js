@@ -35,7 +35,7 @@ const Contact = ({
 
     const [formResponse, setFormResponse] = useState({
         type: null,
-        message: null
+        message: ''
     });
 
     useEffect(() => {
