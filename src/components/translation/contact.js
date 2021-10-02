@@ -43,5 +43,20 @@ export default {
         en: "SEND",
         es: "ENVIAR",
         pt: "MANDAR"
-    }
+    },
+    "userAdded": {
+        en: "Welcome :)",
+        es: "Bienvenidx :)",
+        pt: "Bem-vinde :)"
+    },
+    "serverError": {
+        en: "Error, try again",
+        es: "Error, inténtalo de nuevo por favor ",
+        pt: "Erro, tente novamente por favor"
+    },
+    "userExists": {
+        en: "Use already exists!",
+        es: "Usuario existente (ya te tenemos en nuestros registros!)",
+        pt: "Usuario já existente (temos você em nossos registros!)"
+    },
 }

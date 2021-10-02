@@ -51,17 +51,17 @@ const Contact = ({
             console.log(res);
             if(res.status === 200) {
                 setSendIsSpinner(false);
-                setFormResponse({type: "success", message: "Welcome :)"})
+                setFormResponse({type: "success", message: "userAdded"})
             }
         }
         catch(err) {
             console.log(err.response.status);
             if(err.response.status === 400 && err.response.data.detail === "newsletter_user_exists") {
                 setSendIsSpinner(false);
-                setFormResponse({type: "error", message: "User already exists!"});
+                setFormResponse({type: "error", message: "userExists"});
             } else {
                 setSendIsSpinner(false);
-                setFormResponse({type: "error", message: "Server error try again"})
+                setFormResponse({type: "error", message: "serverError"})
             }
             console.log(err.response);
         }
@@ -172,7 +172,7 @@ const Contact = ({
                 </div>
 
                 {sendIsSpinner ? <Spinner /> : <input style={{fontSize: '2rem'}} type="submit" value="SEND" />}
-                <br/>{formResponse.message}
+                <br/><Translate text={formResponse.message} />
             </form>
             )}
         </Translator>
