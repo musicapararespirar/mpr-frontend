@@ -11,8 +11,8 @@ export default {
     },
     "andmailinglist": {
         en: "and also join our mailing list",
-        es: "",
-        pt: ""
+        es: "y también inscribirte en nuestro mailing list",
+        pt: "e também inscrever-se na nossa mailing list"
     },
     "and": {
         en: "and",

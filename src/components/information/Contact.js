@@ -171,7 +171,7 @@ const Contact = ({
                     </select>
                 </div>
 
-                {sendIsSpinner ? <Spinner /> : <input style={{fontSize: '2rem'}} type="submit" value="SEND" />}
+                {sendIsSpinner ? <Spinner /> : <input style={{fontSize: '2rem'}} type="submit" value={translate({text: 'SEND'})} />}
                 <br/><Translate text={formResponse.message} />
             </form>
             )}
