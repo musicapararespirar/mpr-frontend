@@ -19,7 +19,7 @@ const App = () => {
     <Provider store={store}>
     <div className="application">
         <Helmet>
-            <script async defer data-website-id="a59d1fa2-ade3-4f34-8417-5fdb271798a5" src="https://stats.musicapararespirar.com/umami.js"></script>
+            <script async defer data-website-id="1528b4e1-a93d-42f8-9980-a18d949e3c6b" src="https://stats.musicapararespirar.com/umami.js"></script>
             <link rel="canonical" href="https://musicapararespirar.com/" />
         </Helmet>
     </div>
