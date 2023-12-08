@@ -1,15 +1,22 @@
-# Build environment
-FROM node:16.9.1 as builder
+FROM node:20.8.1-alpine as builder
+
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
+# Set the working directory in the container
 WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
-COPY ["package.json", "yarn.lock", "./"]
-RUN yarn install --frozen-lockfile --silent
-RUN yarn global add react-scripts
-COPY . ./
+
+COPY package.json yarn.lock ./
+RUN yarn install
+
+# Copy the rest of your application source code to the container
+COPY . .
 RUN yarn build
 
-# Production
-FROM nginx:stable-alpine
+FROM nginx:1.12-alpine
+
 COPY --from=builder /app/build /usr/share/nginx/html
+# Expose the port your application will listen on (if applicable)
 EXPOSE 80
+
+# Start your Yarn application
 CMD ["nginx", "-g", "daemon off;"]
