@@ -22,7 +22,6 @@ import Contact from '../information/Contact';
 import Impact from '../information/Impact';
 import Footer from '../information/Footer';
 import ImageGrid from '../information/ImageGrid';
-// import ImageGallery from '../information/ImageGallery';
 import { Textfit } from 'react-textfit';
 
 
@@ -70,11 +69,9 @@ const Landing = ({
                     marginBottom: '30px',
                     height: '1vh'
                 }}>
-                    {/*<h1 style={{fontSize: '0.7rem'}}><Translate text="thisisP1" /></h1>
-                    <h1 style={{fontSize: '0.7rem'}}><Translate text="thisisP2" /></h1>*/}
                 </section>
 
-            <div id="request" />
+            {/* <div id="request" />
             <Parallax
                     strength={500}
                     blur={10}
@@ -87,16 +84,8 @@ const Landing = ({
                     <section className="landing-container" style={{minHeight: '100vh'}}>
                         <PideConcierto />
                     </section>
-            </Parallax></Parallax>
-
-            {/*<div id="media" />
-            <Parallax
-                strength={500}
-                blur={10}
-                bgImageStyle={{opacity: 0.2}}>
-
-                    <ImageGrid />
-            </Parallax>*/}
+            </Parallax> */}
+        </Parallax>
             <div id="impact" />
             <Parallax
                 strength={500}
