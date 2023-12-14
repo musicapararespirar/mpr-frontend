@@ -104,7 +104,7 @@ const News = ({
                                                 color="primary"
 
                                         gutterBottom
-                                        dangerouslySetInnerHTML={{__html: moment(new Date(post.date)).fromNow()}} />
+                                        dangerouslySetInnerHTML={{__html: moment.utc(new Date(post.date_gmt)).local().fromNow()}} />
                                     <Typography
                                         variant="body2"
                                         component="p"
