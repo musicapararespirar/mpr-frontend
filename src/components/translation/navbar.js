@@ -20,6 +20,11 @@ export default {
         es: 'LA SOCIEDAD',
         pt: 'LA SOCIEDAD'
     },
+    'NEWS': {
+        en: 'NEWS',
+        es: 'NOTICIAS',
+        pt: 'NOTÍCIAS'
+    },
     'Team': {
         en: 'Team',
         es: 'El Equipo',

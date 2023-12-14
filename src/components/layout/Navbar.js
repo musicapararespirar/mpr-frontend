@@ -45,7 +45,8 @@ const Navbar = ({
     const shadowStyle = shouldShowShadow ? 'shadow' : '';
     const hiddenStyle = shouldHideHeader ? 'hidden' : '';
     const navbarLinks = [{title: 'ABOUT', link: '/#about'},
-                        //  {title: 'REQUEST A CONCERT', link: '/#request'},
+        //  {title: 'REQUEST A CONCERT', link: '/#request'},
+                         {title: 'NEWS', link: '/#news'},
                          {title: 'IMPACT', link: '/#impact'},
 //                          {title: 'MEDIA', link: '/#media'},
                          {title: 'SUPPORT US', link: '/#support'},

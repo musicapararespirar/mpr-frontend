@@ -14,7 +14,8 @@ import titlesTranslation from '../translation/titles';
 import { Provider, Translate } from 'react-translated';
 import Contribute from '../information/Contribute';
 import { Parallax, Background } from 'react-parallax';
-import PideConcierto from './PideConcierto';
+// import PideConcierto from './PideConcierto';
+import News from './News';
 import Supporters from '../information/Supporters';
 import Support from '../information/Support';
 import AboutUs from '../information/AboutUs';
@@ -85,6 +86,20 @@ const Landing = ({
                         <PideConcierto />
                     </section>
             </Parallax> */}
+            <div id="news" />
+            <Parallax
+                    strength={500}
+                    blur={10}
+                    bgImageStyle={{opacity: 0.2}}
+                    style={{
+                        background: '#4a2c75',
+                        minHeight: '90vh',
+                        clipPath: "polygon(0% 0%, 40vw 0%, 50vw 7vw, 60vw 0%, 100% 0%, 100% 100%, 0% 100%)"}}
+                    >
+                    <section className="landing-container" style={{minHeight: '30vh'}}>
+                        <News />
+                    </section>
+            </Parallax>
         </Parallax>
             <div id="impact" />
             <Parallax
