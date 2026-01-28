@@ -2,10 +2,10 @@
   "name": "MusicaParaRespirar",
   "version": "1.0.0",
   "description": "Música Para Respirar",
+  "homepage": "https://musicapararespirar.com",
   "dependencies": {
     "@fontsource/josefin-sans": "^4.5.0",
     "@fontsource/voltaire": "^4.5.0",
-    "@parcellab/react-use-umami": "^2.0.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
